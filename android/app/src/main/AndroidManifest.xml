@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.flutter.deligo">
    <application
-        android:label="deligo"
+        android:label="Deligo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

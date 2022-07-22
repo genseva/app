@@ -36,20 +36,19 @@ class _LoginUIState extends State<LoginUI> {
             height: MediaQuery.of(context).size.height,
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 100),
-                Image.asset('Assets.logo', scale: 3.2),
+                Image.asset('assets/logo_main.png', scale: 3.2),
                 Text(
                   // "${locale.welcomeTo}\n${AppConfig.appName}",
-                  "welcome to",
-                  style: theme.textTheme.headline5!
-                      .copyWith(fontWeight: FontWeight.w700),
+                  "Hey mate,",
+                  style: theme.textTheme.caption!.copyWith(fontSize: 14),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'locale.enterPhoneNumber',
-                  style: theme.textTheme.caption!.copyWith(fontSize: 14),
+                  'Sign in now',
+                  style: theme.textTheme.headline5!,
                 ),
                 const Spacer(),
                 // EntryField(

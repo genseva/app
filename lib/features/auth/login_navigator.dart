@@ -29,7 +29,7 @@ class LoginNavigator extends StatelessWidget {
       },
       child: Navigator(
         key: navigatorKey,
-        initialRoute: LoginRoutes.loginRoot,
+        initialRoute: LoginRoutes.loginPage,
         onGenerateRoute: (RouteSettings settings) {
           late WidgetBuilder builder;
           switch (settings.name) {
