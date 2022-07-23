@@ -44,16 +44,16 @@ class LoginNavigator extends StatelessWidget {
               break;
             case LoginRoutes.registration:
               builder = (BuildContext _) => RegistrationPage(
-                settings.arguments as String?,
-              );
+                    settings.arguments as String?,
+                  );
               break;
             case LoginRoutes.verification:
               builder = (BuildContext _) => VerificationPage(
                     () => Navigator.pushReplacementNamed(
-                  context,
-                  PageRoutes.busesRoute,
-                ),
-              );
+                      context,
+                      PageRoutes.busesRoute,
+                    ),
+                  );
               break;
           }
           return MaterialPageRoute(builder: builder, settings: settings);

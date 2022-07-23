@@ -17,7 +17,7 @@ ThemeData appTheme = ThemeData(
 
   ///text theme
   textTheme: const TextTheme(
-      bodyText1: TextStyle(),
+          bodyText1: TextStyle(),
           bodyText2: TextStyle(),
           headline6: TextStyle(),
           headline5: TextStyle(),
