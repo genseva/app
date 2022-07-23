@@ -130,6 +130,9 @@ class _VerificationUIState extends State<VerificationUI> {
               ),
               CustomButton(
                 text: locale.submit,
+                onTap: () {
+                  widget.interactor.verifyOtp('otp');
+                },
               ),
               const SizedBox(
                 height: 32,

@@ -51,7 +51,7 @@ class LoginNavigator extends StatelessWidget {
               builder = (BuildContext _) => VerificationPage(
                     () => Navigator.pushReplacementNamed(
                       context,
-                      PageRoutes.busesRoute,
+                      PageRoutes.bottomNavigation,
                     ),
                   );
               break;

@@ -259,6 +259,146 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What are you looking for today?`
+  String get whatAreYouLookingFor {
+    return Intl.message(
+      'What are you looking for today?',
+      name: 'whatAreYouLookingFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search item or store`
+  String get searchItemOrStore {
+    return Intl.message(
+      'Search item or store',
+      name: 'searchItemOrStore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save extra while ordering`
+  String get saveExtraWhileOrdering {
+    return Intl.message(
+      'Save extra while ordering',
+      name: 'saveExtraWhileOrdering',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See all`
+  String get seeAll {
+    return Intl.message(
+      'See all',
+      name: 'seeAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offers`
+  String get offers {
+    return Intl.message(
+      'Offers',
+      name: 'offers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `RIDE`
+  String get ride {
+    return Intl.message(
+      'RIDE',
+      name: 'ride',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CABS`
+  String get cabs {
+    return Intl.message(
+      'CABS',
+      name: 'cabs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FOOD`
+  String get food {
+    return Intl.message(
+      'FOOD',
+      name: 'food',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GROCERY`
+  String get grocery {
+    return Intl.message(
+      'GROCERY',
+      name: 'grocery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MEDICINE`
+  String get medicine {
+    return Intl.message(
+      'MEDICINE',
+      name: 'medicine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PARCEL`
+  String get parcel {
+    return Intl.message(
+      'PARCEL',
+      name: 'parcel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SERVICE`
+  String get service {
+    return Intl.message(
+      'SERVICE',
+      name: 'service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SHOP`
+  String get shop {
+    return Intl.message(
+      'SHOP',
+      name: 'shop',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

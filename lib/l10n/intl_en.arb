@@ -20,5 +20,19 @@
   "enterOtp": "Enter 4 digit OTP",
   "submit": "Submit",
   "minLeft": "min left",
-  "resend": "RESEND"
+  "resend": "RESEND",
+  "home": "Home",
+  "whatAreYouLookingFor": "What are you looking for today?",
+  "searchItemOrStore": "Search item or store",
+  "saveExtraWhileOrdering": "Save extra while ordering",
+  "seeAll": "See all",
+  "offers": "Offers",
+  "ride": "RIDE",
+  "cabs": "CABS",
+  "food": "FOOD",
+  "grocery": "GROCERY",
+  "medicine": "MEDICINE",
+  "parcel": "PARCEL",
+  "service": "SERVICE",
+  "shop": "SHOP"
 }

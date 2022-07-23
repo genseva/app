@@ -7,6 +7,19 @@ ThemeData appTheme = ThemeData(
   primaryColor: mainColor,
   primaryColorDark: blackColor,
 
+  ///bottom bar theme
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    selectedItemColor: mainColor,
+    selectedLabelStyle: TextStyle(
+      color: blackColor,
+      fontSize: 10,
+    ),
+    unselectedLabelStyle: const TextStyle(
+      fontSize: 10,
+    ),
+    unselectedItemColor: const Color(0xffc0c5c1),
+  ),
+
   ///appBar theme
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.transparent,

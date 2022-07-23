@@ -21,6 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "cabs": MessageLookupByLibrary.simpleMessage("CABS"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
@@ -34,20 +35,36 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterVerificationCodeSent": MessageLookupByLibrary.simpleMessage(
             "Enter verification code sent on given number"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
+        "food": MessageLookupByLibrary.simpleMessage("FOOD"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
+        "grocery": MessageLookupByLibrary.simpleMessage("GROCERY"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "medicine": MessageLookupByLibrary.simpleMessage("MEDICINE"),
         "minLeft": MessageLookupByLibrary.simpleMessage("min left"),
+        "offers": MessageLookupByLibrary.simpleMessage("Offers"),
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue with"),
+        "parcel": MessageLookupByLibrary.simpleMessage("PARCEL"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "resend": MessageLookupByLibrary.simpleMessage("RESEND"),
+        "ride": MessageLookupByLibrary.simpleMessage("RIDE"),
+        "saveExtraWhileOrdering":
+            MessageLookupByLibrary.simpleMessage("Save extra while ordering"),
+        "searchItemOrStore":
+            MessageLookupByLibrary.simpleMessage("Search item or store"),
+        "seeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
+        "service": MessageLookupByLibrary.simpleMessage("SERVICE"),
+        "shop": MessageLookupByLibrary.simpleMessage("SHOP"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now"),
         "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
+        "whatAreYouLookingFor": MessageLookupByLibrary.simpleMessage(
+            "What are you looking for today?"),
         "youAreNotRegistered":
             MessageLookupByLibrary.simpleMessage("You\'re not registered yet")
       };

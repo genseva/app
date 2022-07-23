@@ -8,6 +8,7 @@ class CustomTextField extends StatelessWidget {
   final String? initialValue;
   final TextEditingController? textEditingController;
   final TextInputType? textInputType;
+  final Icon? prefixIcon;
 
   const CustomTextField(
       {Key? key,
@@ -15,7 +16,8 @@ class CustomTextField extends StatelessWidget {
       required this.hintText,
       this.initialValue,
       this.textEditingController,
-      this.textInputType})
+      this.textInputType,
+      this.prefixIcon})
       : super(key: key);
 
   @override
@@ -40,6 +42,7 @@ class CustomTextField extends StatelessWidget {
           initialValue: initialValue,
           style: Theme.of(context).textTheme.headline5!.copyWith(fontSize: 15),
           decoration: InputDecoration(
+            prefixIcon: prefixIcon,
             filled: true,
             fillColor: const Color(0xfff5f7f9),
             // isDense: true,
