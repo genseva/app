@@ -23,9 +23,15 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change Language"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "enterEmailAddress":
+            MessageLookupByLibrary.simpleMessage("Enter email address"),
+        "enterFullName":
+            MessageLookupByLibrary.simpleMessage("Enter full name"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
         "orContinueWith":
@@ -33,6 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
-        "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now")
+        "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now"),
+        "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
+        "youAreNotRegistered":
+            MessageLookupByLibrary.simpleMessage("You're not registered yet")
       };
 }

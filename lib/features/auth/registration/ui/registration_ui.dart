@@ -1,4 +1,7 @@
 import 'package:animation_wrappers/animation_wrappers.dart';
+import 'package:deligo/app_config/colors.dart';
+import 'package:deligo/components/custom_button.dart';
+import 'package:deligo/components/custom_field.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -17,20 +20,9 @@ class RegistrationUI extends StatefulWidget {
 }
 
 class _RegistrationUIState extends State<RegistrationUI> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _emailController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     var locale = AppLocalizations.of(context);
-    var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(),
       body: FadedSlideAnimation(
@@ -45,51 +37,82 @@ class _RegistrationUIState extends State<RegistrationUI> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 40),
-                Image.asset('Assets.logo', scale: 3.2),
                 Text(
-                  // "${locale.join} ${AppConfig.appName}\n${locale.community}",
-                  "tesst",
-                  style: theme.textTheme.headline5,
+                  locale.signUpNow,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline5!
+                      .copyWith(fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(
+                  height: 12,
+                ),
                 Text(
-                  'locale.registrationSubtitle',
-                  style: theme.textTheme.caption!.copyWith(fontSize: 14),
+                  locale.youAreNotRegistered,
+                  style: Theme.of(context).textTheme.caption!,
                 ),
-                const Spacer(),
-                // EntryField(
-                //   Icon(Icons.person, color: theme.primaryColor, size: 20),
-                //   locale.fullName,
-                //   borderType: BorderType.topRound,
-                // ),
-                // EntryField(
-                //   Icon(Icons.email, color: theme.primaryColor, size: 20),
-                //   locale.emailAddress,
-                //   borderType: BorderType.none,
-                // ),
-                // EntryField(
-                //   Icon(
-                //     Icons.phone_android,
-                //     color: theme.primaryColor,
-                //     size: 20,
-                //   ),
-                //   locale.phoneNumber,
-                //   borderType: BorderType.bottomRound,
-                // ),
-                // const Spacer(),
-                // CustomButton(
-                //   locale.signUp,
-                //   () {
-                //     widget.registrationInteractor
-                //         .register('phoneNumber', 'name', 'email');
-                //   },
-                // ),
-                // const Spacer(flex: 4),
+                const SizedBox(
+                  height: 28,
+                ),
+                Stack(
+                  alignment: Alignment.topRight,
+                  children: [
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/placeholder_profile.png',
+                        height: 85,
+                        width: 85,
+                      ),
+                    ),
+                    CircleAvatar(
+                        radius: 14,
+                        backgroundColor: blackColor,
+                        child: Icon(
+                          Icons.photo_camera,
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          size: 14,
+                        )),
+                  ],
+                ),
+                const SizedBox(
+                  height: 28,
+                ),
+                CustomTextField(
+                  hintText: locale.enterPhoneNumber,
+                  title: locale.phoneNumber,
+                  initialValue: widget.phoneNumber!.isEmpty
+                      ? '+1 987 654 3210'
+                      : widget.phoneNumber,
+                  textInputType: TextInputType.phone,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                CustomTextField(
+                  hintText: locale.enterFullName,
+                  title: locale.fullName,
+                  initialValue: 'Samantha Smith',
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                CustomTextField(
+                  hintText: locale.enterEmailAddress,
+                  title: locale.emailAddress,
+                  initialValue: 'samanthasmith@gmail.com',
+                ),
               ],
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: Padding(
+        padding:
+            const EdgeInsets.only(bottom: 28.0, left: 16, right: 16, top: 8),
+        child: CustomButton(onTap: () {
+          widget.registrationInteractor
+              .register('phoneNumber', 'name', 'email');
+        }),
       ),
     );
   }

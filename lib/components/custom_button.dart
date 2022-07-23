@@ -18,8 +18,8 @@ class CustomButton extends StatelessWidget {
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               side: const BorderSide(color: Color(0xffebebeb)),
               borderRadius: BorderRadius.circular(10))),
-          padding:
-              MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 20)),
+          padding: MaterialStateProperty.all(
+              const EdgeInsets.symmetric(vertical: 20)),
           elevation: MaterialStateProperty.all(0),
           backgroundColor: MaterialStateProperty.all(
               buttonColor ?? Theme.of(context).primaryColor)),

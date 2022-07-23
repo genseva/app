@@ -5,8 +5,17 @@ class CustomTextField extends StatelessWidget {
   /// pass title only if required to display
   final String? title;
   final String hintText;
+  final String? initialValue;
+  final TextEditingController? textEditingController;
+  final TextInputType? textInputType;
 
-  const CustomTextField({Key? key, this.title, required this.hintText})
+  const CustomTextField(
+      {Key? key,
+      this.title,
+      required this.hintText,
+      this.initialValue,
+      this.textEditingController,
+      this.textInputType})
       : super(key: key);
 
   @override
@@ -23,10 +32,13 @@ class CustomTextField extends StatelessWidget {
                 .copyWith(fontSize: 14, color: greyTextColor),
           ),
         const SizedBox(
-          height: 18,
+          height: 14,
         ),
-        TextField(
-          style: Theme.of(context).textTheme.caption,
+        TextFormField(
+          keyboardType: textInputType,
+          controller: textEditingController,
+          initialValue: initialValue,
+          style: Theme.of(context).textTheme.headline5!.copyWith(fontSize: 15),
           decoration: InputDecoration(
             filled: true,
             fillColor: const Color(0xfff5f7f9),

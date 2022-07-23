@@ -8,5 +8,11 @@
   "facebook": "Facebook",
   "google": "Google",
   "changeLanguage": "Change Language",
-  "selectLanguage": "Select Language"
+  "selectLanguage": "Select Language",
+  "signUpNow": "Sign up Now",
+  "youAreNotRegistered": "You're not registered yet",
+  "enterFullName": "Enter full name",
+  "fullName": "Full Name",
+  "enterEmailAddress": "Enter email address",
+  "emailAddress": "Email Address"
 }

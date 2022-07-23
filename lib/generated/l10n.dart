@@ -139,6 +139,66 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Sign up Now`
+  String get signUpNow {
+    return Intl.message(
+      'Sign up Now',
+      name: 'signUpNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You're not registered yet`
+  String get youAreNotRegistered {
+    return Intl.message(
+      'You\'re not registered yet',
+      name: 'youAreNotRegistered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter full name`
+  String get enterFullName {
+    return Intl.message(
+      'Enter full name',
+      name: 'enterFullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get fullName {
+    return Intl.message(
+      'Full Name',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter email address`
+  String get enterEmailAddress {
+    return Intl.message(
+      'Enter email address',
+      name: 'enterEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Address`
+  String get emailAddress {
+    return Intl.message(
+      'Email Address',
+      name: 'emailAddress',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

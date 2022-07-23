@@ -23,8 +23,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Cambiar idioma"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage(
+            "Dirección de correo electrónico"),
+        "enterFullName":
+            MessageLookupByLibrary.simpleMessage("Ingrese el nombre completo"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Ingresa número telefónico"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Nombre completo"),
         "phoneNumber":
             MessageLookupByLibrary.simpleMessage("Número de teléfono"),
         "selectLanguage":

@@ -56,18 +56,18 @@ class _LoginUIState extends State<LoginUI> {
                 ),
                 const SizedBox(height: 60),
                 CustomTextField(
+                  textEditingController: _numberController,
                   hintText: locale.enterPhoneNumber,
                   title: 'Phone Number',
+                  textInputType: TextInputType.phone,
                 ),
                 const SizedBox(height: 32),
-                const CustomButton(),
-                // CustomButton(
-                //   locale.signIn,
-                //   () {
-                //     widget.loginInteractor
-                //         .loginWithPhone('isoCode', 'mobileNumber');
-                //   },
-                // ),
+                CustomButton(
+                  onTap: () {
+                    widget.loginInteractor
+                        .loginWithPhone('', _numberController.text);
+                  },
+                ),
                 const SizedBox(height: 42),
                 Text(
                   locale.orContinueWith,
