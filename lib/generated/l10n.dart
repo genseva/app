@@ -270,6 +270,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Orders`
+  String get orders {
+    return Intl.message(
+      'Orders',
+      name: 'orders',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `What are you looking for today?`
   String get whatAreYouLookingFor {
     return Intl.message(

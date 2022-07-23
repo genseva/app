@@ -25,29 +25,29 @@ class BottomNavigationState extends State<BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    var appLocalization = AppLocalizations.of(context);
+    var locale = AppLocalizations.of(context);
     final List<BottomNavigationBarItem> barItems = [
-      const BottomNavigationBarItem(
-        label: 'Home',
-        icon: Icon(Icons.home),
+      BottomNavigationBarItem(
+        label: locale.home,
+        icon: const Icon(Icons.home),
       ),
-      const BottomNavigationBarItem(
-        label: 'Offers',
-        icon: Icon(Icons.home),
+      BottomNavigationBarItem(
+        label: locale.offers,
+        icon: const Icon(Icons.home),
       ),
-      const BottomNavigationBarItem(
-        label: 'Orders',
-        icon: Icon(Icons.home),
+      BottomNavigationBarItem(
+        label: locale.orders,
+        icon: const Icon(Icons.home),
       ),
     ];
 
-    final List<Widget> _children = [
+    final List<Widget> children = [
       HomeScreen(),
       const FlutterLogo(),
       const FlutterLogo(),
     ];
     return Scaffold(
-      body: _children[_currentIndex],
+      body: children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (val) {
           setState(() {

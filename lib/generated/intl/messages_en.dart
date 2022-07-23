@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "offers": MessageLookupByLibrary.simpleMessage("Offers"),
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue with"),
+        "orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "parcel": MessageLookupByLibrary.simpleMessage("PARCEL"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "resend": MessageLookupByLibrary.simpleMessage("RESEND"),

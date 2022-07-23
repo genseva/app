@@ -6,7 +6,7 @@ class PageRoutes {
 
   Map<String, WidgetBuilder> routes() {
     return {
-      bottomNavigation: (context) => BottomNavigation(),
+      bottomNavigation: (context) => const BottomNavigation(),
     };
   }
 }
