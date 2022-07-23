@@ -1,4 +1,7 @@
 import 'package:animation_wrappers/animations/faded_slide_animation.dart';
+import 'package:deligo/app_config/colors.dart';
+import 'package:deligo/components/custom_button.dart';
+import 'package:deligo/components/custom_field.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -38,28 +41,26 @@ class _LoginUIState extends State<LoginUI> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 100),
-                Image.asset('assets/logo_main.png', scale: 3.2),
+                Expanded(
+                    child: Image.asset('assets/logo_main.png', scale: 3.2)),
                 Text(
-                  // "${locale.welcomeTo}\n${AppConfig.appName}",
-                  "Hey mate,",
-                  style: theme.textTheme.caption!.copyWith(fontSize: 14),
+                  "${locale.heyMate},",
+                  style: theme.textTheme.caption!
+                      .copyWith(fontSize: 14, color: greyTextColor),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Sign in now',
-                  style: theme.textTheme.headline5!,
+                  locale.signInNow,
+                  style: theme.textTheme.headline5!
+                      .copyWith(fontSize: 22, fontWeight: FontWeight.w600),
                 ),
-                const Spacer(),
-                // EntryField(
-                //   Icon(
-                //     Icons.phone_android,
-                //     size: 20,
-                //     color: theme.primaryColor,
-                //   ),
-                //   locale.phoneNumber,
-                // ),
+                const SizedBox(height: 60),
+                CustomTextField(
+                  hintText: locale.enterPhoneNumber,
+                  title: 'Phone Number',
+                ),
                 const SizedBox(height: 32),
+                const CustomButton(),
                 // CustomButton(
                 //   locale.signIn,
                 //   () {
@@ -67,7 +68,32 @@ class _LoginUIState extends State<LoginUI> {
                 //         .loginWithPhone('isoCode', 'mobileNumber');
                 //   },
                 // ),
-                const Spacer(flex: 5),
+                const SizedBox(height: 42),
+                Text(
+                  locale.orContinueWith,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 32),
+                Row(
+                  children: [
+                    Expanded(
+                        child: CustomButton(
+                      prefixIcon: 'assets/fb.png',
+                      text: locale.facebook,
+                      buttonColor: Theme.of(context).scaffoldBackgroundColor,
+                    )),
+                    const SizedBox(
+                      width: 12,
+                    ),
+                    Expanded(
+                        child: CustomButton(
+                      prefixIcon: 'assets/google.png',
+                      text: locale.google,
+                      buttonColor: Theme.of(context).scaffoldBackgroundColor,
+                    )),
+                  ],
+                ),
+                const SizedBox(height: 42),
               ],
             ),
           ),

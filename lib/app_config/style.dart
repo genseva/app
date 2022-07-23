@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ThemeData appTheme = ThemeData(
   fontFamily: 'ProductSans',
   scaffoldBackgroundColor: Colors.white,
-  primaryColor: Colors.green,
+  primaryColor: mainColor,
   primaryColorDark: blackColor,
 
   ///appBar theme
@@ -12,17 +12,16 @@ ThemeData appTheme = ThemeData(
     backgroundColor: Colors.transparent,
     elevation: 0,
     iconTheme: IconThemeData(color: Colors.black),
-    titleTextStyle:
-        TextStyle(fontFamily: 'ProductSans', color: Colors.black),
+    titleTextStyle: TextStyle(fontFamily: 'ProductSans', color: Colors.black),
   ),
 
   ///text theme
   textTheme: const TextTheme(
-          bodyText1: TextStyle(),
+      bodyText1: TextStyle(),
           bodyText2: TextStyle(),
           headline6: TextStyle(),
           headline5: TextStyle(),
-          caption: TextStyle(),
+          caption: TextStyle(fontSize: 15),
           button: TextStyle())
       .apply(bodyColor: Colors.black),
 );

@@ -50,11 +50,91 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  /// `testing`
-  String get test {
+  /// `Hey mate`
+  String get heyMate {
     return Intl.message(
-      'testing',
-      name: 'test',
+      'Hey mate',
+      name: 'heyMate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in now`
+  String get signInNow {
+    return Intl.message(
+      'Sign in now',
+      name: 'signInNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Phone Number`
+  String get enterPhoneNumber {
+    return Intl.message(
+      'Enter Phone Number',
+      name: 'enterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or Continue with`
+  String get orContinueWith {
+    return Intl.message(
+      'Or Continue with',
+      name: 'orContinueWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook`
+  String get facebook {
+    return Intl.message(
+      'Facebook',
+      name: 'facebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google`
+  String get google {
+    return Intl.message(
+      'Google',
+      name: 'google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Language`
+  String get changeLanguage {
+    return Intl.message(
+      'Change Language',
+      name: 'changeLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Language`
+  String get selectLanguage {
+    return Intl.message(
+      'Select Language',
+      name: 'selectLanguage',
       desc: '',
       args: [],
     );
@@ -67,6 +147,16 @@ class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'de'),
+      Locale.fromSubtags(languageCode: 'es'),
+      Locale.fromSubtags(languageCode: 'fr'),
+      Locale.fromSubtags(languageCode: 'id'),
+      Locale.fromSubtags(languageCode: 'it'),
+      Locale.fromSubtags(languageCode: 'pt'),
+      Locale.fromSubtags(languageCode: 'ro'),
+      Locale.fromSubtags(languageCode: 'sw'),
+      Locale.fromSubtags(languageCode: 'tr'),
     ];
   }
 

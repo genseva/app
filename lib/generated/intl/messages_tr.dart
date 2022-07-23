@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a tr locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,22 +17,15 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'tr';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changeLanguage":
-            MessageLookupByLibrary.simpleMessage("Change Language"),
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("Dili değiştir"),
         "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
-        "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
-        "google": MessageLookupByLibrary.simpleMessage("Google"),
-        "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
-        "orContinueWith":
-            MessageLookupByLibrary.simpleMessage("Or Continue with"),
-        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
-        "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Select Language"),
-        "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now")
+            MessageLookupByLibrary.simpleMessage("Telefon Numarasını Girin"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefon numarası"),
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Dil Seçin")
       };
 }

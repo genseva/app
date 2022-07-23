@@ -1,3 +1,4 @@
+import 'package:deligo/features/language/ui/language_page.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -29,28 +30,30 @@ class LoginNavigator extends StatelessWidget {
       },
       child: Navigator(
         key: navigatorKey,
-        initialRoute: LoginRoutes.loginPage,
+        initialRoute: LoginRoutes.loginRoot,
         onGenerateRoute: (RouteSettings settings) {
           late WidgetBuilder builder;
           switch (settings.name) {
             case LoginRoutes.loginRoot:
-              builder = (BuildContext _) => const FlutterLogo();///Language Page
+              builder = (BuildContext _) => const LanguagePage(
+                    fromRoot: true,
+                  );
               break;
             case LoginRoutes.loginPage:
               builder = (BuildContext _) => const LoginPage();
               break;
             case LoginRoutes.registration:
               builder = (BuildContext _) => RegistrationPage(
-                    settings.arguments as String?,
-                  );
+                settings.arguments as String?,
+              );
               break;
             case LoginRoutes.verification:
               builder = (BuildContext _) => VerificationPage(
                     () => Navigator.pushReplacementNamed(
-                      context,
-                      PageRoutes.busesRoute,
-                    ),
-                  );
+                  context,
+                  PageRoutes.busesRoute,
+                ),
+              );
               break;
           }
           return MaterialPageRoute(builder: builder, settings: settings);
