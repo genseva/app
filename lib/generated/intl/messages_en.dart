@@ -28,20 +28,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter email address"),
         "enterFullName":
             MessageLookupByLibrary.simpleMessage("Enter full name"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Enter 4 digit OTP"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
+        "enterVerificationCodeSent": MessageLookupByLibrary.simpleMessage(
+            "Enter verification code sent on given number"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
+        "minLeft": MessageLookupByLibrary.simpleMessage("min left"),
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "resend": MessageLookupByLibrary.simpleMessage("RESEND"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now"),
         "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "youAreNotRegistered":
-            MessageLookupByLibrary.simpleMessage("You're not registered yet")
+            MessageLookupByLibrary.simpleMessage("You\'re not registered yet")
       };
 }

@@ -27,11 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Adresa de e-mail"),
         "enterFullName":
             MessageLookupByLibrary.simpleMessage("Introduceți numele complet"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Introduceți OTP"),
         "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Introduceti numarul de telefon"),
         "fullName": MessageLookupByLibrary.simpleMessage("Numele complet"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Număr de telefon"),
         "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Selecteaza limba")
+            MessageLookupByLibrary.simpleMessage("Selecteaza limba"),
+        "submit": MessageLookupByLibrary.simpleMessage("Trimite"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verificare")
       };
 }

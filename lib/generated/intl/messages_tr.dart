@@ -24,10 +24,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Dili değiştir"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("E-posta Adresi"),
         "enterFullName": MessageLookupByLibrary.simpleMessage("Tam Adı Girin"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("OTP\'yi girin"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Telefon Numarasını Girin"),
         "fullName": MessageLookupByLibrary.simpleMessage("Ad Soyad"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefon numarası"),
-        "selectLanguage": MessageLookupByLibrary.simpleMessage("Dil Seçin")
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Dil Seçin"),
+        "submit": MessageLookupByLibrary.simpleMessage("Göndermek"),
+        "verification": MessageLookupByLibrary.simpleMessage("Doğrulama")
       };
 }

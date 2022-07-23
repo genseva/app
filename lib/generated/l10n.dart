@@ -199,6 +199,66 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Verification`
+  String get verification {
+    return Intl.message(
+      'Verification',
+      name: 'verification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter verification code sent on given number`
+  String get enterVerificationCodeSent {
+    return Intl.message(
+      'Enter verification code sent on given number',
+      name: 'enterVerificationCodeSent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter 4 digit OTP`
+  String get enterOtp {
+    return Intl.message(
+      'Enter 4 digit OTP',
+      name: 'enterOtp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `min left`
+  String get minLeft {
+    return Intl.message(
+      'min left',
+      name: 'minLeft',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `RESEND`
+  String get resend {
+    return Intl.message(
+      'RESEND',
+      name: 'resend',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -14,5 +14,11 @@
   "enterFullName": "Enter full name",
   "fullName": "Full Name",
   "enterEmailAddress": "Enter email address",
-  "emailAddress": "Email Address"
+  "emailAddress": "Email Address",
+  "verification": "Verification",
+  "enterVerificationCodeSent": "Enter verification code sent on given number",
+  "enterOtp": "Enter 4 digit OTP",
+  "submit": "Submit",
+  "minLeft": "min left",
+  "resend": "RESEND"
 }

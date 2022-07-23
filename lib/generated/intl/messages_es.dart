@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "Dirección de correo electrónico"),
         "enterFullName":
             MessageLookupByLibrary.simpleMessage("Ingrese el nombre completo"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Ingresar OTP"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Ingresa número telefónico"),
         "fullName": MessageLookupByLibrary.simpleMessage("Nombre completo"),
         "phoneNumber":
             MessageLookupByLibrary.simpleMessage("Número de teléfono"),
         "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Seleccione el idioma")
+            MessageLookupByLibrary.simpleMessage("Seleccione el idioma"),
+        "submit": MessageLookupByLibrary.simpleMessage("Enviar"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verificación")
       };
 }

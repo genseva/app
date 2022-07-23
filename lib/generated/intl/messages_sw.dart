@@ -26,10 +26,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailAddress": MessageLookupByLibrary.simpleMessage("Barua pepe"),
         "enterFullName":
             MessageLookupByLibrary.simpleMessage("Ingiza Jina Kamili"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Ingiza OTP"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Weka Nambari ya Simu"),
         "fullName": MessageLookupByLibrary.simpleMessage("Jina kamili"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nambari ya simu"),
-        "selectLanguage": MessageLookupByLibrary.simpleMessage("Chagua Lugha")
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Chagua Lugha"),
+        "submit": MessageLookupByLibrary.simpleMessage("Wasilisha"),
+        "verification": MessageLookupByLibrary.simpleMessage("Uthibitishaji")
       };
 }
