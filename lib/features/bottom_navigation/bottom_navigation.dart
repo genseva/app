@@ -49,13 +49,14 @@ class BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         onTap: (val) {
           setState(() {
             _currentIndex = val;
           });
         },
         currentIndex: _currentIndex,
-        elevation: 20,
+        elevation: 5,
         items: barItems,
       ),
     );

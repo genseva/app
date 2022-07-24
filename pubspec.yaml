@@ -52,6 +52,8 @@ flutter:
     - assets/
     - assets/category/
     - assets/banner/
+    - assets/header/
+    - assets/food/
 
   fonts:
     - family: ProductSans

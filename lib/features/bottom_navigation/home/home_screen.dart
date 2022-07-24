@@ -1,13 +1,15 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_field.dart';
 import 'package:deligo/generated/l10n.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class Category {
   String image;
   String title;
+  Function()? onTap;
 
-  Category(this.image, this.title);
+  Category(this.image, this.title, this.onTap);
 }
 
 class HomeScreen extends StatelessWidget {
@@ -24,14 +26,18 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final List<Category> categories = [
-      Category('assets/category/catg_ride.png', locale.ride),
-      Category('assets/category/catg_cab.png', locale.cabs),
-      Category('assets/category/catg_food.png', locale.food),
-      Category('assets/category/catg_grocery.png', locale.grocery),
-      Category('assets/category/catg_medicine.png', locale.medicine),
-      Category('assets/category/catg_parcel.png', locale.parcel),
-      Category('assets/category/catg_hanydman.png', locale.service),
-      Category('assets/category/catg_ecommerce.png', locale.shop),
+      Category('assets/category/catg_ride.png', locale.ride, null),
+      Category('assets/category/catg_cab.png', locale.cabs, null),
+      Category(
+        'assets/category/catg_food.png',
+        locale.food,
+        () => Navigator.pushNamed(context, PageRoutes.orderFoodScreen),
+      ),
+      Category('assets/category/catg_grocery.png', locale.grocery, null),
+      Category('assets/category/catg_medicine.png', locale.medicine, null),
+      Category('assets/category/catg_parcel.png', locale.parcel, null),
+      Category('assets/category/catg_hanydman.png', locale.service, null),
+      Category('assets/category/catg_ecommerce.png', locale.shop, null),
     ];
     return SafeArea(
       child: Scaffold(
@@ -112,26 +118,29 @@ class HomeScreen extends StatelessWidget {
                 crossAxisSpacing: 12,
                 childAspectRatio: 0.7,
               ),
-              itemBuilder: (context, index) => Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        categories[index].image,
-                        fit: BoxFit.cover,
-                      )),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Text(
-                      categories[index].title,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(fontSize: 10),
-                    ),
-                  )
-                ],
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: categories[index].onTap,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          categories[index].image,
+                          fit: BoxFit.cover,
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Text(
+                        categories[index].title,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(fontSize: 10),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             const SizedBox(
