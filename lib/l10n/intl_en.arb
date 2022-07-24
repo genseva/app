@@ -35,5 +35,21 @@
   "medicine": "MEDICINE",
   "parcel": "PARCEL",
   "service": "SERVICE",
-  "shop": "SHOP"
+  "shop": "SHOP",
+  "fastFoods": "Fast Foods",
+  "chinese": "Chinese",
+  "seaFood": "Sea Food",
+  "dessert": "Dessert",
+  "nearMe": "Near me",
+  "favorite": "Favorite",
+  "bestRated": "Best Rated",
+  "fastDelivery": "Fast Delivery",
+  "vegOnly": "Veg Only",
+  "fastFoodBeverages": "Fast Food, Beverages",
+  "chineseFoodsItalianFoods": "Chinese Foods, Italian Foods",
+  "orderFoods": "Order Foods",
+  "foodNearMe": "Food Near me",
+  "restaurantsFound": "Restaurants found",
+  "deliveryInMins": "Delivery in 20 mins",
+  "km": "km"
 }

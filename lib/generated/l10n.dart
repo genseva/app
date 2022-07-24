@@ -409,6 +409,166 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Fast Foods`
+  String get fastFoods {
+    return Intl.message(
+      'Fast Foods',
+      name: 'fastFoods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chinese`
+  String get chinese {
+    return Intl.message(
+      'Chinese',
+      name: 'chinese',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sea Food`
+  String get seaFood {
+    return Intl.message(
+      'Sea Food',
+      name: 'seaFood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dessert`
+  String get dessert {
+    return Intl.message(
+      'Dessert',
+      name: 'dessert',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Near me`
+  String get nearMe {
+    return Intl.message(
+      'Near me',
+      name: 'nearMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorite`
+  String get favorite {
+    return Intl.message(
+      'Favorite',
+      name: 'favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best Rated`
+  String get bestRated {
+    return Intl.message(
+      'Best Rated',
+      name: 'bestRated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fast Delivery`
+  String get fastDelivery {
+    return Intl.message(
+      'Fast Delivery',
+      name: 'fastDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Veg Only`
+  String get vegOnly {
+    return Intl.message(
+      'Veg Only',
+      name: 'vegOnly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fast Food, Beverages`
+  String get fastFoodBeverages {
+    return Intl.message(
+      'Fast Food, Beverages',
+      name: 'fastFoodBeverages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chinese Foods, Italian Foods`
+  String get chineseFoodsItalianFoods {
+    return Intl.message(
+      'Chinese Foods, Italian Foods',
+      name: 'chineseFoodsItalianFoods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Foods`
+  String get orderFoods {
+    return Intl.message(
+      'Order Foods',
+      name: 'orderFoods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Food Near me`
+  String get foodNearMe {
+    return Intl.message(
+      'Food Near me',
+      name: 'foodNearMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restaurants found`
+  String get restaurantsFound {
+    return Intl.message(
+      'Restaurants found',
+      name: 'restaurantsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery in 20 mins`
+  String get deliveryInMins {
+    return Intl.message(
+      'Delivery in 20 mins',
+      name: 'deliveryInMins',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `km`
+  String get km {
+    return Intl.message(
+      'km',
+      name: 'km',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

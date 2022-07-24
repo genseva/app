@@ -14,6 +14,15 @@ class Filter {
   Filter(this.icon, this.title, this.isSelected, this.onTap);
 }
 
+class Restaurant {
+  final String image;
+  final String name;
+  final String location;
+  final String foodType;
+
+  Restaurant(this.image, this.name, this.location, this.foodType);
+}
+
 class OrderFoodScreen extends StatelessWidget {
   const OrderFoodScreen({Key? key}) : super(key: key);
 
@@ -21,24 +30,42 @@ class OrderFoodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final List<Category> categories = [
-      Category('assets/food/foodcategory_fastfood.png', 'Fast Foods', null),
-      Category('assets/food/foodcategory_chinese.png', 'Chinese', null),
-      Category('assets/food/foodcategory_seafood.png', 'Sea Food', null),
-      Category('assets/food/foodcategory_dessert.png', 'Dessert', null),
+      Category('assets/food/foodcategory_fastfood.png', locale.fastFoods, null),
+      Category('assets/food/foodcategory_chinese.png', locale.chinese, null),
+      Category('assets/food/foodcategory_seafood.png', locale.seaFood, null),
+      Category('assets/food/foodcategory_dessert.png', locale.dessert, null),
     ];
     final List<Filter> filters = [
-      Filter(Icons.star, 'Near me', true, (p0) => null),
-      Filter(Icons.favorite, 'Favorite', false, (p0) => null),
-      Filter(Icons.star, 'Best Rated', false, (p0) => null),
-      Filter(Icons.directions_bike, 'Near me', false, (p0) => null),
-      Filter(Icons.restaurant_menu, 'Veg Only', false, (p0) => null),
+      Filter(Icons.star, locale.nearMe, true, (p0) => null),
+      Filter(Icons.favorite, locale.favorite, false, (p0) => null),
+      Filter(Icons.star, locale.bestRated, false, (p0) => null),
+      Filter(Icons.directions_bike, locale.fastDelivery, false, (p0) => null),
+      Filter(Icons.restaurant_menu, locale.vegOnly, false, (p0) => null),
+    ];
+    final List<Restaurant> restaurantList = [
+      Restaurant('assets/food/restaurant_food1.png', 'Monte Carlo Restaurant',
+          'CentralPark', locale.fastFoodBeverages),
+      Restaurant('assets/food/restaurant_food2.png', 'Hotel China Town',
+          'Food Park', locale.chineseFoodsItalianFoods),
+      Restaurant('assets/food/restaurant_food3.png', 'Auli Restaurant',
+          'CentralPark', locale.fastFoodBeverages),
+      Restaurant('assets/food/restaurant_food1.png', 'Monte Carlo Restaurant',
+          'CentralPark', locale.fastFoodBeverages),
+      Restaurant('assets/food/restaurant_food2.png', 'Hotel China Town',
+          'Food Park', locale.chineseFoodsItalianFoods),
+      Restaurant('assets/food/restaurant_food3.png', 'Auli Restaurant',
+          'CentralPark', locale.fastFoodBeverages),
     ];
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
         child: Stack(
           children: [
-            Image.asset('assets/header/header_food.png'),
+            Image.asset(
+              'assets/header/header_food.png',
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             SafeArea(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +80,7 @@ class OrderFoodScreen extends StatelessWidget {
                       vertical: 12,
                     ),
                     child: Text(
-                      'Order Foods',
+                      locale.orderFoods,
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -149,14 +176,14 @@ class OrderFoodScreen extends StatelessWidget {
           const Divider(),
           ListTile(
             title: Text(
-              'Food Near me',
+              locale.foodNearMe,
               style: Theme.of(context).textTheme.headline5!.copyWith(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
             ),
             subtitle: Text(
-              '24 Restaurants found',
+              '24 ${locale.restaurantsFound}',
               style: Theme.of(context).textTheme.caption!.copyWith(
                     fontSize: 13,
                     color: greyTextColor,
@@ -180,7 +207,7 @@ class OrderFoodScreen extends StatelessWidget {
           ),
           ListView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            itemCount: 5,
+            itemCount: restaurantList.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => Padding(
@@ -188,7 +215,7 @@ class OrderFoodScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Image.asset(
-                    'assets/food/restaurant_food1.png',
+                    restaurantList[index].image,
                     height: 100,
                     width: 100,
                   ),
@@ -200,7 +227,7 @@ class OrderFoodScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Monte Carlo Restaurant',
+                          restaurantList[index].name,
                           style:
                               Theme.of(context).textTheme.headline5!.copyWith(
                                     fontSize: 16,
@@ -208,7 +235,7 @@ class OrderFoodScreen extends StatelessWidget {
                                   ),
                         ),
                         Text(
-                          'Central Park',
+                          restaurantList[index].location,
                           style: Theme.of(context)
                               .textTheme
                               .caption!
@@ -220,7 +247,7 @@ class OrderFoodScreen extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'Delivery in 20 mins',
+                              locale.deliveryInMins,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText1!
@@ -231,7 +258,7 @@ class OrderFoodScreen extends StatelessWidget {
                               width: 20,
                             ),
                             Text(
-                              '1.5 km',
+                              '1.5 ${locale.km}',
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText1!
@@ -250,7 +277,7 @@ class OrderFoodScreen extends StatelessWidget {
                               width: 10,
                             ),
                             Text(
-                              'Fast Food, Beverages',
+                              restaurantList[index].foodType,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText1!

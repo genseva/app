@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Telefon Numarasını Girin"),
         "fullName": MessageLookupByLibrary.simpleMessage("Ad Soyad"),
+        "km": MessageLookupByLibrary.simpleMessage("km"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefon numarası"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Dil Seçin"),
         "submit": MessageLookupByLibrary.simpleMessage("Göndermek"),

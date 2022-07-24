@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Weka Nambari ya Simu"),
         "fullName": MessageLookupByLibrary.simpleMessage("Jina kamili"),
+        "km": MessageLookupByLibrary.simpleMessage("km"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nambari ya simu"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chagua Lugha"),
         "submit": MessageLookupByLibrary.simpleMessage("Wasilisha"),
