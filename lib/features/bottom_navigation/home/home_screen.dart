@@ -33,7 +33,11 @@ class HomeScreen extends StatelessWidget {
         locale.food,
         () => Navigator.pushNamed(context, PageRoutes.orderFoodScreen),
       ),
-      Category('assets/category/catg_grocery.png', locale.grocery, null),
+      Category(
+        'assets/category/catg_grocery.png',
+        locale.grocery,
+        () => Navigator.pushNamed(context, PageRoutes.orderGroceryScreen),
+      ),
       Category('assets/category/catg_medicine.png', locale.medicine, null),
       Category('assets/category/catg_parcel.png', locale.parcel, null),
       Category('assets/category/catg_hanydman.png', locale.service, null),

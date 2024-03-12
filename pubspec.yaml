@@ -24,6 +24,9 @@ dependencies:
   animation_wrappers: ^3.0.0
 
 
+dependency_overrides:
+  intl: any
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -54,6 +57,7 @@ flutter:
     - assets/banner/
     - assets/header/
     - assets/food/
+    - assets/grocery/
 
   fonts:
     - family: ProductSans

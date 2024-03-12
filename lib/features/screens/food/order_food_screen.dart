@@ -173,7 +173,9 @@ class OrderFoodScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(),
+          const Divider(
+            thickness: 0.4,
+          ),
           ListTile(
             title: Text(
               locale.foodNearMe,
