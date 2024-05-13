@@ -93,7 +93,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                       locale.orderGrocery,
                       style: Theme.of(context)
                           .textTheme
-                          .headline6!
+                          .titleLarge!
                           .copyWith(fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -129,7 +129,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                               categories[index].title,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1!
+                                  .bodyLarge!
                                   .copyWith(fontSize: 10),
                             ),
                           )
@@ -171,7 +171,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                   side: BorderSide(color: greyTextColor.withOpacity(0.1)),
                   label: Text(
                     filters[index].title,
-                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       color: filters[index].isSelected
                           ? Theme.of(context).scaffoldBackgroundColor
                           : null,
@@ -189,14 +189,14 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
           ListTile(
             title: Text(
               locale.groceryNearMe,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
             ),
             subtitle: Text(
               '24 ${locale.storesFound}',
-              style: Theme.of(context).textTheme.caption!.copyWith(
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 fontSize: 13,
                 color: greyTextColor,
               ),
@@ -241,7 +241,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                         Text(
                           restaurantList[index].name,
                           style:
-                          Theme.of(context).textTheme.headline5!.copyWith(
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
@@ -250,7 +250,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                           restaurantList[index].location,
                           style: Theme.of(context)
                               .textTheme
-                              .caption!
+                              .bodySmall!
                               .copyWith(fontSize: 12, color: greyTextColor),
                         ),
                         const SizedBox(
@@ -262,14 +262,14 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                               "Delivery in ${restaurantList[index].deliveryTime} mins",
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1!
+                                  .bodyLarge!
                                   .copyWith(
                                   fontSize: 12, color: greyTextColor2),
                             ), Text(
                               "  •  ",
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1!
+                                  .bodyLarge!
                                   .copyWith(
                                   fontSize: 12, color: greyTextColor2),
                             ),
@@ -278,7 +278,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                               '${restaurantList[index].distance} ${locale.km}',
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1!
+                                  .bodyLarge!
                                   .copyWith(
                                   fontSize: 12, color: greyTextColor2),
                             )
@@ -294,7 +294,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                               restaurantList[index].timing,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1!
+                                  .bodyLarge!
                                   .copyWith(
                                 color: greyTextColor3,
                                 fontSize: 12,

@@ -23,6 +23,9 @@ class Assets {
   static const String categoryCatgRide = 'assets/category/catg_ride.png';
   static const String fontsProductSansBold = 'assets/fonts/ProductSans-Bold.ttf';
   static const String fontsProductSansRegular = 'assets/fonts/ProductSans-Regular.ttf';
+  static const String foodFood1 = 'assets/food/food1.png';
+  static const String foodFood2 = 'assets/food/food2.png';
+  static const String foodFood3 = 'assets/food/food3.png';
   static const String foodFoodNonveg = 'assets/food/food_nonveg.png';
   static const String foodFoodVeg = 'assets/food/food_veg.png';
   static const String foodFoodcategoryChinese = 'assets/food/foodcategory_chinese.png';
