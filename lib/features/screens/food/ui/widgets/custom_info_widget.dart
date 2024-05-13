@@ -37,7 +37,7 @@ class CustomInfoWidget extends StatelessWidget {
                       text: r"$$",
                     ),
                     TextSpan(
-                        text: r"$$$",
+                        text: r"$$",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium

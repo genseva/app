@@ -7,9 +7,8 @@ class RestaurantProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RestaurantDomain data =
-        ModalRoute.of(context)?.settings.arguments as RestaurantDomain? ??
-            RestaurantDomain.restaurantList.first;
+    RestaurantDomain data = ModalRoute.of(context)?.settings.arguments as RestaurantDomain? ??
+        RestaurantDomain.restaurantList.first;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -31,54 +30,63 @@ class RestaurantProfilePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(
-              data.name,
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Row(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  "${data.location} • ",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(color: Colors.grey),
+                  data.name,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                Text(
-                  "1.5 km",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(color: Colors.black54),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Text(
+                      "${data.location} • ",
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
+                    ),
+                    Text(
+                      "1.5 km",
+                      style:
+                          Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.black54),
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
           const SizedBox(height: 10),
           const Divider(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
+                CustomInfoWidget(Icons.directions_bike_outlined, "Delivery in", "20 min"),
+                CustomInfoWidget(Icons.restaurant_menu, "Price Range", r"$$$$"),
+              ],
+            ),
+          ),
           Container(
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(boxShadow: []),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
-                  CustomInfoWidget(
-                      Icons.directions_bike_outlined, "Delivery in", "20 min"),
-                  CustomInfoWidget(
-                      Icons.restaurant_menu, "Price Range", r"$$$$$"),
+            height: 30,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Theme.of(context).primaryColorDark.withOpacity(0.1),
+                  Theme.of(context).primaryColorDark.withOpacity(0.05),
+                  Colors.transparent,
+                  Colors.transparent,
                 ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
           ),
-          Divider(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Container(),
+          ),
         ],
       ),
     );
