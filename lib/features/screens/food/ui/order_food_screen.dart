@@ -1,6 +1,7 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
+import 'package:deligo/features/screens/food/model/restaurant_domain.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
@@ -42,20 +43,8 @@ class OrderFoodScreen extends StatelessWidget {
       Filter(Icons.directions_bike, locale.fastDelivery, false, (p0) => null),
       Filter(Icons.restaurant_menu, locale.vegOnly, false, (p0) => null),
     ];
-    final List<Restaurant> restaurantList = [
-      Restaurant('assets/food/restaurant_food1.png', 'Monte Carlo Restaurant',
-          'CentralPark', locale.fastFoodBeverages),
-      Restaurant('assets/food/restaurant_food2.png', 'Hotel China Town',
-          'Food Park', locale.chineseFoodsItalianFoods),
-      Restaurant('assets/food/restaurant_food3.png', 'Auli Restaurant',
-          'CentralPark', locale.fastFoodBeverages),
-      Restaurant('assets/food/restaurant_food1.png', 'Monte Carlo Restaurant',
-          'CentralPark', locale.fastFoodBeverages),
-      Restaurant('assets/food/restaurant_food2.png', 'Hotel China Town',
-          'Food Park', locale.chineseFoodsItalianFoods),
-      Restaurant('assets/food/restaurant_food3.png', 'Auli Restaurant',
-          'CentralPark', locale.fastFoodBeverages),
-    ];
+    final List<RestaurantDomain> restaurantList =
+        RestaurantDomain.restaurantList;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
@@ -71,7 +60,9 @@ class OrderFoodScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: const Icon(Icons.arrow_back_ios),
                   ),
                   Padding(
@@ -83,7 +74,7 @@ class OrderFoodScreen extends StatelessWidget {
                       locale.orderFoods,
                       style: Theme.of(context)
                           .textTheme
-                          .headline6!
+                          .titleLarge!
                           .copyWith(fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -119,7 +110,7 @@ class OrderFoodScreen extends StatelessWidget {
                               categories[index].title,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1!
+                                  .bodyLarge!
                                   .copyWith(fontSize: 10),
                             ),
                           )
@@ -161,7 +152,7 @@ class OrderFoodScreen extends StatelessWidget {
                   side: BorderSide(color: greyTextColor.withOpacity(0.1)),
                   label: Text(
                     filters[index].title,
-                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           color: filters[index].isSelected
                               ? Theme.of(context).scaffoldBackgroundColor
                               : null,
@@ -179,14 +170,14 @@ class OrderFoodScreen extends StatelessWidget {
           ListTile(
             title: Text(
               locale.foodNearMe,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
             ),
             subtitle: Text(
               '24 ${locale.restaurantsFound}',
-              style: Theme.of(context).textTheme.caption!.copyWith(
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     fontSize: 13,
                     color: greyTextColor,
                   ),
@@ -214,86 +205,91 @@ class OrderFoodScreen extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
-              child: Row(
-                children: [
-                  Image.asset(
-                    restaurantList[index].image,
-                    height: 100,
-                    width: 100,
-                  ),
-                  const SizedBox(
-                    width: 18,
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          restaurantList[index].name,
-                          style:
-                              Theme.of(context).textTheme.headline5!.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                        ),
-                        Text(
-                          restaurantList[index].location,
-                          style: Theme.of(context)
-                              .textTheme
-                              .caption!
-                              .copyWith(fontSize: 12, color: greyTextColor),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              locale.deliveryInMins,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1!
-                                  .copyWith(
-                                      fontSize: 12, color: greyTextColor2),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Text(
-                              '1.5 ${locale.km}',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1!
-                                  .copyWith(
-                                      fontSize: 12, color: greyTextColor2),
-                            )
-                          ],
-                        ),
-                        const Divider(
-                          endIndent: 16,
-                        ),
-                        Row(
-                          children: [
-                            const RatingCard(),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              restaurantList[index].foodType,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1!
-                                  .copyWith(
-                                    color: greyTextColor3,
-                                    fontSize: 12,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ],
+              child: GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                    context, PageRoutes.restaurantPage,
+                    arguments: restaurantList[index]),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      restaurantList[index].image,
+                      height: 100,
+                      width: 100,
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            restaurantList[index].name,
+                            style:
+                                Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                          ),
+                          Text(
+                            restaurantList[index].location,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall!
+                                .copyWith(fontSize: 12, color: greyTextColor),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                locale.deliveryInMins,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                        fontSize: 12, color: greyTextColor2),
+                              ),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Text(
+                                '1.5 ${locale.km}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                        fontSize: 12, color: greyTextColor2),
+                              )
+                            ],
+                          ),
+                          const Divider(
+                            endIndent: 16,
+                          ),
+                          Row(
+                            children: [
+                              const RatingCard(),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                restaurantList[index].foodType,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                      color: greyTextColor3,
+                                      fontSize: 12,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )
