@@ -1,4 +1,5 @@
 import 'package:deligo/features/screens/food/model/restaurant_domain.dart';
+import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart';
 import 'package:flutter/material.dart';
 
 class RestaurantProfilePage extends StatelessWidget {
@@ -62,43 +63,22 @@ class RestaurantProfilePage extends StatelessWidget {
           const Divider(),
           Container(
             padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(boxShadow: [
-
-            ]),
-            child: Row(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "60+ ratings",
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelSmall
-                          ?.copyWith(color: Colors.grey),
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.star,
-                          color: Colors.green.shade700,
-                          size: 15,
-                        ),
-                        const SizedBox(width: 5),
-                        Text(
-                          "4.2",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium
-                              ?.copyWith(fontWeight: FontWeight.w600),
-                        )
-                      ],
-                    )
-                  ],
-                )
-              ],
+            decoration: const BoxDecoration(boxShadow: []),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
+                  CustomInfoWidget(
+                      Icons.directions_bike_outlined, "Delivery in", "20 min"),
+                  CustomInfoWidget(
+                      Icons.restaurant_menu, "Price Range", r"$$$$$"),
+                ],
+              ),
             ),
-          )
+          ),
+          Divider(),
         ],
       ),
     );

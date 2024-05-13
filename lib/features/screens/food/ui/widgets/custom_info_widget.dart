@@ -28,13 +28,26 @@ class CustomInfoWidget extends StatelessWidget {
               size: 15,
             ),
             const SizedBox(width: 5),
-            Text(
-              subTitle,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(fontWeight: FontWeight.w600),
-            )
+            if (subTitle.contains(r"$$"))
+              RichText(
+                  text: TextSpan(
+                      style: Theme.of(context).textTheme.titleMedium,
+                      children: [
+                    const TextSpan(
+                      text: r"$$",
+                    ),
+                    TextSpan(
+                        text: r"$$$",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(color: Colors.grey)),
+                  ]))
+            else
+              Text(
+                subTitle,
+                style: Theme.of(context).textTheme.titleMedium,
+              )
           ],
         )
       ],
