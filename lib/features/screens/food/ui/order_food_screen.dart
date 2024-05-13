@@ -9,10 +9,8 @@ import 'package:flutter/material.dart';
 class Filter {
   IconData icon;
   String title;
-  bool isSelected;
-  Function(bool)? onTap;
 
-  Filter(this.icon, this.title, this.isSelected, this.onTap);
+  Filter(this.icon, this.title);
 }
 
 class Restaurant {
@@ -24,8 +22,15 @@ class Restaurant {
   Restaurant(this.image, this.name, this.location, this.foodType);
 }
 
-class OrderFoodScreen extends StatelessWidget {
+class OrderFoodScreen extends StatefulWidget {
   const OrderFoodScreen({Key? key}) : super(key: key);
+
+  @override
+  State<OrderFoodScreen> createState() => _OrderFoodScreenState();
+}
+
+class _OrderFoodScreenState extends State<OrderFoodScreen> {
+  final List<String> _selectedFilters = [];
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +42,13 @@ class OrderFoodScreen extends StatelessWidget {
       Category('assets/food/foodcategory_dessert.png', locale.dessert, null),
     ];
     final List<Filter> filters = [
-      Filter(Icons.star, locale.nearMe, true, (p0) => null),
-      Filter(Icons.favorite, locale.favorite, false, (p0) => null),
-      Filter(Icons.star, locale.bestRated, false, (p0) => null),
-      Filter(Icons.directions_bike, locale.fastDelivery, false, (p0) => null),
-      Filter(Icons.restaurant_menu, locale.vegOnly, false, (p0) => null),
+      Filter(Icons.star, locale.nearMe),
+      Filter(Icons.favorite, locale.favorite),
+      Filter(Icons.star, locale.bestRated),
+      Filter(Icons.directions_bike, locale.fastDelivery),
+      Filter(Icons.restaurant_menu, locale.vegOnly),
     ];
-    final List<RestaurantDomain> restaurantList =
-        RestaurantDomain.restaurantList;
+    final List<RestaurantDomain> restaurantList = RestaurantDomain.restaurantList;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
@@ -108,10 +112,7 @@ class OrderFoodScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(bottom: 8.0),
                             child: Text(
                               categories[index].title,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(fontSize: 10),
+                              style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 10),
                             ),
                           )
                         ],
@@ -136,31 +137,40 @@ class OrderFoodScreen extends StatelessWidget {
               runSpacing: -4,
               children: List.generate(
                 filters.length,
-                (index) => FilterChip(
-                  selected: filters[index].isSelected,
-                  backgroundColor: Colors.white,
-                  selectedColor: blackColor,
-                  disabledColor: Colors.white,
-                  avatar: Icon(
-                    filters[index].icon,
-                    color: blackColor,
-                    size: 20,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  side: BorderSide(color: greyTextColor.withOpacity(0.1)),
-                  label: Text(
-                    filters[index].title,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          color: filters[index].isSelected
-                              ? Theme.of(context).scaffoldBackgroundColor
-                              : null,
-                          fontSize: 12,
-                        ),
-                  ),
-                  onSelected: filters[index].onTap,
-                ),
+                (index) {
+                  var isSelected = _selectedFilters.contains(filters[index].title);
+                  return FilterChip(
+                    selected: isSelected,
+                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                    selectedColor: blackColor,
+                    disabledColor: Theme.of(context).scaffoldBackgroundColor,
+                    showCheckmark: false,
+                    avatar: Icon(
+                      filters[index].icon,
+                      color: isSelected ? Theme.of(context).scaffoldBackgroundColor : blackColor,
+                      size: 20,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    side: BorderSide(color: greyTextColor.withOpacity(0.1)),
+                    label: Text(
+                      filters[index].title,
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            color: isSelected ? Theme.of(context).scaffoldBackgroundColor : null,
+                            fontSize: 12,
+                          ),
+                    ),
+                    onSelected: (value) {
+                      if (isSelected) {
+                        _selectedFilters.remove(filters[index].title);
+                      } else {
+                        _selectedFilters.add(filters[index].title);
+                      }
+                      setState(() {});
+                    },
+                  );
+                },
               ),
             ),
           ),
@@ -206,8 +216,7 @@ class OrderFoodScreen extends StatelessWidget {
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
               child: GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, PageRoutes.restaurantPage,
+                onTap: () => Navigator.pushNamed(context, PageRoutes.restaurantPage,
                     arguments: restaurantList[index]),
                 child: Row(
                   children: [
@@ -225,11 +234,10 @@ class OrderFoodScreen extends StatelessWidget {
                         children: [
                           Text(
                             restaurantList[index].name,
-                            style:
-                                Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
                           ),
                           Text(
                             restaurantList[index].location,
@@ -248,8 +256,7 @@ class OrderFoodScreen extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 12, color: greyTextColor2),
+                                    .copyWith(fontSize: 12, color: greyTextColor2),
                               ),
                               const SizedBox(
                                 width: 20,
@@ -259,8 +266,7 @@ class OrderFoodScreen extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 12, color: greyTextColor2),
+                                    .copyWith(fontSize: 12, color: greyTextColor2),
                               )
                             ],
                           ),
@@ -275,10 +281,7 @@ class OrderFoodScreen extends StatelessWidget {
                               ),
                               Text(
                                 restaurantList[index].foodType,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
+                                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       color: greyTextColor3,
                                       fontSize: 12,
                                     ),
