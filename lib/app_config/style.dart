@@ -30,13 +30,8 @@ ThemeData appTheme = ThemeData(
 
   ///text theme
   textTheme: const TextTheme(
-          bodyText1: TextStyle(),
-          bodyText2: TextStyle(),
-          headline6: TextStyle(),
-          headline5: TextStyle(),
-          caption: TextStyle(fontSize: 15),
-          button: TextStyle())
-      .apply(bodyColor: Colors.black),
+    headlineSmall: TextStyle(fontWeight: FontWeight.bold),
+  ).apply(bodyColor: Colors.black),
 );
 
 /// NAME         SIZE  WEIGHT  SPACING

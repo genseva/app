@@ -1,6 +1,10 @@
+import 'package:deligo/components/custom_divider.dart';
+import 'package:deligo/features/screens/food/model/food_category_domain.dart';
 import 'package:deligo/features/screens/food/model/restaurant_domain.dart';
 import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart';
+import 'package:deligo/features/screens/food/ui/widgets/food_card.dart';
 import 'package:flutter/material.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class RestaurantProfilePage extends StatelessWidget {
   const RestaurantProfilePage({super.key});
@@ -12,7 +16,7 @@ class RestaurantProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back_ios),
         ),
         actions: [
@@ -83,11 +87,71 @@ class RestaurantProfilePage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Container(),
+          Expanded(
+            child: ScrollablePositionedList.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              itemCount: CategoryDomain.list.length,
+              itemBuilder: (context, index) {
+                var category = CategoryDomain.list[index];
+                return ExpansionTile(
+                  tilePadding: EdgeInsets.zero,
+                  initiallyExpanded: index == 0,
+                  childrenPadding: const EdgeInsets.only(top: 16),
+                  dense: true,
+                  shape: InputBorder.none,
+                  title: Text(
+                    category.title,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  children: List.generate(
+                    category.foodList.length,
+                    (index) => FoodCard(category.foodList[index]),
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => const CustomDivider(color: Colors.grey),
+            ),
           ),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        icon: const Icon(Icons.restaurant_menu, size: 20),
+        label: const Text("Menu"),
+        shape: const StadiumBorder(),
+        backgroundColor: Theme.of(context).primaryColorDark,
+        foregroundColor: Theme.of(context).scaffoldBackgroundColor,
+        extendedIconLabelSpacing: 16,
+        onPressed: () {
+          showMenu(
+            context: context,
+            position: RelativeRect.fromLTRB(
+              MediaQuery.of(context).size.width * 0.36,
+              MediaQuery.of(context).size.height - 200,
+              MediaQuery.of(context).size.width * 0.367,
+              0,
+            ),
+            color: Theme.of(context).primaryColorDark,
+            items: List.generate(
+              CategoryDomain.list.length,
+              (index) {
+                var category = CategoryDomain.list[index];
+                return PopupMenuItem(
+                  child: Text(
+                    category.title,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: Theme.of(context).scaffoldBackgroundColor),
+                  ),
+                );
+              },
+            ),
+          );
+        },
       ),
     );
   }

@@ -13,15 +13,6 @@ class Filter {
   Filter(this.icon, this.title);
 }
 
-class Restaurant {
-  final String image;
-  final String name;
-  final String location;
-  final String foodType;
-
-  Restaurant(this.image, this.name, this.location, this.foodType);
-}
-
 class OrderFoodScreen extends StatefulWidget {
   const OrderFoodScreen({Key? key}) : super(key: key);
 

@@ -22,6 +22,7 @@ dependencies:
   intl: ^0.17.0
   shared_preferences: ^2.0.5
   animation_wrappers: ^3.0.0
+  scrollable_positioned_list: ^0.3.8
 
 
 dependency_overrides:
@@ -33,7 +34,7 @@ dev_dependencies:
 #  flutter_launcher_icons: "^0.9.0"
 #  flutter_launcher_name: "^0.0.1"
   #  flutter_native_splash: ^2.2.5
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
 
 #flutter_native_splash:
 #  color: "#ffffff"
