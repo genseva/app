@@ -6,8 +6,17 @@ import 'package:deligo/features/screens/food/ui/widgets/food_card.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class RestaurantProfilePage extends StatelessWidget {
+class RestaurantProfilePage extends StatefulWidget {
   const RestaurantProfilePage({super.key});
+
+  @override
+  State<RestaurantProfilePage> createState() => _RestaurantProfilePageState();
+}
+
+class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
+  final GlobalKey _globalKey = GlobalKey();
+  final ItemScrollController _itemScrollController = ItemScrollController();
+  late var _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +98,7 @@ class RestaurantProfilePage extends StatelessWidget {
           ),
           Expanded(
             child: ScrollablePositionedList.separated(
+              itemScrollController: _itemScrollController,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: CategoryDomain.list.length,
               itemBuilder: (context, index) {
@@ -118,40 +128,53 @@ class RestaurantProfilePage extends StatelessWidget {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton.extended(
-        icon: const Icon(Icons.restaurant_menu, size: 20),
-        label: const Text("Menu"),
-        shape: const StadiumBorder(),
-        backgroundColor: Theme.of(context).primaryColorDark,
-        foregroundColor: Theme.of(context).scaffoldBackgroundColor,
-        extendedIconLabelSpacing: 16,
-        onPressed: () {
-          showMenu(
-            context: context,
-            position: RelativeRect.fromLTRB(
-              MediaQuery.of(context).size.width * 0.36,
-              MediaQuery.of(context).size.height - 200,
-              MediaQuery.of(context).size.width * 0.367,
-              0,
-            ),
-            color: Theme.of(context).primaryColorDark,
-            items: List.generate(
-              CategoryDomain.list.length,
-              (index) {
-                var category = CategoryDomain.list[index];
-                return PopupMenuItem(
-                  child: Text(
-                    category.title,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(color: Theme.of(context).scaffoldBackgroundColor),
-                  ),
-                );
-              },
-            ),
+      floatingActionButton: MenuAnchor(
+        alignmentOffset: const Offset(4, 4),
+        style: MenuStyle(
+          backgroundColor: MaterialStatePropertyAll(Theme.of(context).primaryColorDark),
+          padding: const MaterialStatePropertyAll(EdgeInsets.all(16)),
+        ),
+        builder: (context, menuController, child) {
+          _controller = menuController;
+          return FloatingActionButton.extended(
+            key: _globalKey,
+            icon: const Icon(Icons.restaurant_menu, size: 20),
+            label: const Text("Menu"),
+            shape: const StadiumBorder(),
+            backgroundColor: Theme.of(context).primaryColorDark,
+            foregroundColor: Theme.of(context).scaffoldBackgroundColor,
+            extendedIconLabelSpacing: 16,
+            onPressed: () {
+              menuController.isOpen ? menuController.close() : menuController.open();
+            },
           );
         },
+        menuChildren: List.generate(
+          CategoryDomain.list.length,
+          (index) {
+            var category = CategoryDomain.list[index];
+            return GestureDetector(
+              onTap: () {
+                _itemScrollController.scrollTo(
+                  index: index,
+                  duration: const Duration(milliseconds: 500),
+                );
+                _controller.close();
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  category.title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(color: Theme.of(context).scaffoldBackgroundColor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
