@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "StoresFound": MessageLookupByLibrary.simpleMessage("Stores Found"),
         "bestRated": MessageLookupByLibrary.simpleMessage("Best Rated"),
         "cabs": MessageLookupByLibrary.simpleMessage("CABS"),
         "changeLanguage":
@@ -29,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "chinese": MessageLookupByLibrary.simpleMessage("Chinese"),
         "chineseFoodsItalianFoods": MessageLookupByLibrary.simpleMessage(
             "Chinese Foods, Italian Foods"),
+        "dairy": MessageLookupByLibrary.simpleMessage("Dairy"),
         "deliveryInMins":
             MessageLookupByLibrary.simpleMessage("Delivery in 20 mins"),
         "dessert": MessageLookupByLibrary.simpleMessage("Dessert"),
@@ -50,9 +52,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "food": MessageLookupByLibrary.simpleMessage("FOOD"),
         "foodNearMe": MessageLookupByLibrary.simpleMessage("Food Near me"),
+        "fruits": MessageLookupByLibrary.simpleMessage("Fruits"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "grocery": MessageLookupByLibrary.simpleMessage("GROCERY"),
+        "groceryNearMe":
+            MessageLookupByLibrary.simpleMessage("Grocery Near Me"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
@@ -63,8 +68,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "orderFoods": MessageLookupByLibrary.simpleMessage("Order Foods"),
+        "orderGrocery": MessageLookupByLibrary.simpleMessage("Order Grocery"),
         "orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "parcel": MessageLookupByLibrary.simpleMessage("PARCEL"),
+        "personalCare": MessageLookupByLibrary.simpleMessage("Personal Care"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "resend": MessageLookupByLibrary.simpleMessage("RESEND"),
         "restaurantsFound":
@@ -84,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "vegOnly": MessageLookupByLibrary.simpleMessage("Veg Only"),
+        "vegetable": MessageLookupByLibrary.simpleMessage("Vegetable"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "whatAreYouLookingFor": MessageLookupByLibrary.simpleMessage(
             "What are you looking for today?"),

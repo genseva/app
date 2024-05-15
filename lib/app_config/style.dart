@@ -6,10 +6,12 @@ ThemeData appTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   primaryColor: mainColor,
   primaryColorDark: blackColor,
+  cardColor: cardColor,
 
   ///bottom bar theme
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     selectedItemColor: mainColor,
+    backgroundColor: Colors.transparent,
     selectedLabelStyle: TextStyle(
       color: blackColor,
       fontSize: 10,

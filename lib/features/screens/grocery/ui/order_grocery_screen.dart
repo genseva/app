@@ -20,7 +20,8 @@ class Store {
   final String distance;
   final String timing;
 
-  Store(this.image, this.name, this.location, this.deliveryTime, this.distance, this.timing);
+  Store(this.image, this.name, this.location, this.deliveryTime, this.distance,
+      this.timing);
 }
 
 class OrderGroceryScreen extends StatefulWidget {
@@ -35,14 +36,11 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final List<Category> categories = [
+      Category('assets/grocery/grocery_dairy.png', locale.dairy, null),
+      Category('assets/grocery/grocery_fruits.png', locale.fruits, null),
       Category(
-          'assets/grocery/grocery_dairy.png', locale.dairy, null),
-      Category(
-          'assets/grocery/grocery_fruits.png', locale.fruits, null),
-      Category('assets/grocery/grocery_personalcare.png',
-          locale.personalCare, null),
-      Category('assets/grocery/grocery_vegetable.png', locale.vegetable,
-          null),
+          'assets/grocery/grocery_personalcare.png', locale.personalCare, null),
+      Category('assets/grocery/grocery_vegetable.png', locale.vegetable, null),
     ];
     final List<Filter> filters = [
       Filter(Icons.star, locale.nearMe, false, (p0) => null),
@@ -50,18 +48,18 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
       Filter(Icons.directions_bike, locale.fastDelivery, false, (p0) => null),
     ];
     final List<Store> restaurantList = [
-      Store('assets/grocery/store_1.png', 'Megamart 24x7',
-          'CentralPark', '20', '1.5 km', '24x7 Open'),
-      Store('assets/grocery/store_2.png', 'Citylime Store',
-          'Food Park', '30', '4.5 km', '08:00 am to 10:00 pm'),
+      Store('assets/grocery/store_1.png', 'Megamart 24x7', 'CentralPark', '20',
+          '1.5 km', '24x7 Open'),
+      Store('assets/grocery/store_2.png', 'Citylime Store', 'Food Park', '30',
+          '4.5 km', '08:00 am to 10:00 pm'),
       Store('assets/grocery/store_3.png', 'Delight Grocery Store',
-          'CentralPark','25', '2.5 km', '09:00 am to 09:00 pm'),
-      Store('assets/grocery/store_1.png', 'Monte Carlo Store',
-          'CentralPark','10', '0.5 km', '24x7 Open'),
-      Store('assets/grocery/store_2.png', 'Hotel China Town',
-          'Food Park', '20', '1.5 km', '08:30 am to 11:00 pm'),
-      Store('assets/grocery/store_3.png', 'Auli Store',
-          'CentralPark', '23', '4.5 km', '08:00 am to 10:00 pm'),
+          'CentralPark', '25', '2.5 km', '09:00 am to 09:00 pm'),
+      Store('assets/grocery/store_1.png', 'Monte Carlo Store', 'CentralPark',
+          '10', '0.5 km', '24x7 Open'),
+      Store('assets/grocery/store_2.png', 'Hotel China Town', 'Food Park', '20',
+          '1.5 km', '08:30 am to 11:00 pm'),
+      Store('assets/grocery/store_3.png', 'Auli Store', 'CentralPark', '23',
+          '4.5 km', '08:00 am to 10:00 pm'),
     ];
 
     return Scaffold(
@@ -155,7 +153,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
               runSpacing: -4,
               children: List.generate(
                 filters.length,
-                    (index) => FilterChip(
+                (index) => FilterChip(
                   selected: filters[index].isSelected,
                   backgroundColor: Colors.white,
                   selectedColor: blackColor,
@@ -172,11 +170,11 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                   label: Text(
                     filters[index].title,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: filters[index].isSelected
-                          ? Theme.of(context).scaffoldBackgroundColor
-                          : null,
-                      fontSize: 12,
-                    ),
+                          color: filters[index].isSelected
+                              ? Theme.of(context).scaffoldBackgroundColor
+                              : null,
+                          fontSize: 12,
+                        ),
                   ),
                   onSelected: filters[index].onTap,
                 ),
@@ -190,16 +188,16 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
             title: Text(
               locale.groceryNearMe,
               style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
             subtitle: Text(
-              '24 ${locale.storesFound}',
+              "24 ${locale.StoresFound}",
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                fontSize: 13,
-                color: greyTextColor,
-              ),
+                    fontSize: 13,
+                    color: greyTextColor,
+                  ),
             ),
             trailing: Container(
               decoration: BoxDecoration(
@@ -240,11 +238,13 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                       children: [
                         Text(
                           restaurantList[index].name,
-                          style:
-                          Theme.of(context).textTheme.headlineSmall!.copyWith(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                         Text(
                           restaurantList[index].location,
@@ -264,23 +264,23 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                                   .textTheme
                                   .bodyLarge!
                                   .copyWith(
-                                  fontSize: 12, color: greyTextColor2),
-                            ), Text(
+                                      fontSize: 12, color: greyTextColor2),
+                            ),
+                            Text(
                               "  •  ",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
                                   .copyWith(
-                                  fontSize: 12, color: greyTextColor2),
+                                      fontSize: 12, color: greyTextColor2),
                             ),
-
                             Text(
                               '${restaurantList[index].distance} ${locale.km}',
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
                                   .copyWith(
-                                  fontSize: 12, color: greyTextColor2),
+                                      fontSize: 12, color: greyTextColor2),
                             )
                           ],
                         ),
@@ -296,9 +296,9 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                                   .textTheme
                                   .bodyLarge!
                                   .copyWith(
-                                color: greyTextColor3,
-                                fontSize: 12,
-                              ),
+                                    color: greyTextColor3,
+                                    fontSize: 12,
+                                  ),
                             ),
                           ],
                         ),
@@ -311,7 +311,6 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
           )
         ],
       ),
-
     );
   }
 }

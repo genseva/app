@@ -51,5 +51,12 @@
   "foodNearMe": "Food Near me",
   "restaurantsFound": "Restaurants found",
   "deliveryInMins": "Delivery in 20 mins",
-  "km": "km"
+  "km": "km",
+  "orderGrocery": "Order Grocery",
+  "dairy": "Dairy",
+  "fruits": "Fruits",
+  "personalCare": "Personal Care",
+  "vegetable": "Vegetable",
+  "StoresFound": "Stores Found",
+  "groceryNearMe": "Grocery Near Me"
 }

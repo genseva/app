@@ -54,7 +54,10 @@ class _FoodCardState extends State<FoodCard> {
                     Text(
                       food.isCustomizable ? "Customize" : "",
                       textAlign: TextAlign.end,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(color: Colors.grey),
                     )
                   ],
                 ),
@@ -74,6 +77,7 @@ class _FoodCardState extends State<FoodCard> {
               onTap: () {
                 if (food.quantity == 0) {
                   food.quantity++;
+                  food.cartTotal = food.cartTotal + food.price;
                 }
                 setState(() {});
               },
@@ -83,35 +87,49 @@ class _FoodCardState extends State<FoodCard> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                   border: Border.all(color: Theme.of(context).primaryColor),
-                  color: Theme.of(context).scaffoldBackgroundColor,
+                  color: food.quantity == 0
+                      ? Theme.of(context).scaffoldBackgroundColor
+                      : Theme.of(context).primaryColor,
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     if (food.quantity > 0) ...[
                       GestureDetector(
                         onTap: () {
+                          food.cartTotal = food.cartTotal - food.price;
                           food.quantity--;
                           setState(() {});
                         },
-                        child: const Icon(Icons.remove, size: 16),
+                        child: const Icon(
+                          Icons.remove,
+                          size: 16,
+                          color: Colors.white,
+                        ),
                       ),
                       Expanded(
                         child: Text(
                           food.quantity.toString(),
+                          style: const TextStyle(color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
+                          food.cartTotal = food.cartTotal + food.price;
                           food.quantity++;
                           setState(() {});
                         },
-                        child: const Icon(Icons.add, size: 16),
+                        child: const Icon(Icons.add,
+                            size: 16, color: Colors.white),
                       ),
                     ] else
-                      const Text("Add"),
+                      Text(
+                        "Add",
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                      ),
                   ],
                 ),
               ),

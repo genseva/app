@@ -449,39 +449,6 @@ class AppLocalizations {
       args: [],
     );
   }
-  /// `Dairy`
-  String get dairy {
-    return Intl.message(
-      'Dairy',
-      name: 'dairy',
-      desc: '',
-      args: [],
-    );
-  }/// `Fruits`
-  String get fruits {
-    return Intl.message(
-      'Fruits',
-      name: 'fruits',
-      desc: '',
-      args: [],
-    );
-  }/// `PersonalCare`
-  String get personalCare {
-    return Intl.message(
-      'Personal Care',
-      name: 'personalCare',
-      desc: '',
-      args: [],
-    );
-  }/// `Vegetable`
-  String get vegetable {
-    return Intl.message(
-      'Vegetable',
-      name: 'vegetable',
-      desc: '',
-      args: [],
-    );
-  }
 
   /// `Near me`
   String get nearMe {
@@ -561,14 +528,6 @@ class AppLocalizations {
       desc: '',
       args: [],
     );
-  } /// `Order Grocery`
-  String get orderGrocery {
-    return Intl.message(
-      'Order Grocery',
-      name: 'orderGrocery',
-      desc: '',
-      args: [],
-    );
   }
 
   /// `Food Near me`
@@ -580,29 +539,12 @@ class AppLocalizations {
       args: [],
     );
   }
- /// `Grocery Near me`
-  String get groceryNearMe {
-    return Intl.message(
-      'Grocery Near me',
-      name: 'groceryNearMe',
-      desc: '',
-      args: [],
-    );
-  }
 
   /// `Restaurants found`
   String get restaurantsFound {
     return Intl.message(
       'Restaurants found',
       name: 'restaurantsFound',
-      desc: '',
-      args: [],
-    );
-  }  /// `Stores found`
-  String get storesFound {
-    return Intl.message(
-      'Stores found',
-      name: 'storesFound',
       desc: '',
       args: [],
     );
@@ -623,6 +565,76 @@ class AppLocalizations {
     return Intl.message(
       'km',
       name: 'km',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Grocery`
+  String get orderGrocery {
+    return Intl.message(
+      'Order Grocery',
+      name: 'orderGrocery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dairy`
+  String get dairy {
+    return Intl.message(
+      'Dairy',
+      name: 'dairy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fruits`
+  String get fruits {
+    return Intl.message(
+      'Fruits',
+      name: 'fruits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Care`
+  String get personalCare {
+    return Intl.message(
+      'Personal Care',
+      name: 'personalCare',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vegetable`
+  String get vegetable {
+    return Intl.message(
+      'Vegetable',
+      name: 'vegetable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stores Found`
+  String get StoresFound {
+    return Intl.message(
+      'Stores Found',
+      name: 'StoresFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Grocery Near Me`
+  String get groceryNearMe {
+    return Intl.message(
+      'Grocery Near Me',
+      name: 'groceryNearMe',
       desc: '',
       args: [],
     );
