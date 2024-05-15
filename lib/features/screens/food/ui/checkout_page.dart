@@ -1,4 +1,5 @@
 import 'package:deligo/app_config/colors.dart';
+import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
       backgroundColor: cardColor,
       body: Column(
         children: [
-          const Divider(thickness: 0.4),
+          const CustomDivider(),
           Container(
             color: Colors.white,
             child: ListTile(

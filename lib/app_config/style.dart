@@ -27,7 +27,12 @@ ThemeData appTheme = ThemeData(
     backgroundColor: Colors.transparent,
     elevation: 0,
     iconTheme: IconThemeData(color: Colors.black),
-    titleTextStyle: TextStyle(fontFamily: 'ProductSans', color: Colors.black),
+    titleTextStyle: TextStyle(
+      fontFamily: 'ProductSans',
+      color: Colors.black,
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+    ),
   ),
 
   ///text theme

@@ -22,9 +22,8 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    RestaurantDomain data =
-        ModalRoute.of(context)?.settings.arguments as RestaurantDomain? ??
-            RestaurantDomain.restaurantList.first;
+    RestaurantDomain data = ModalRoute.of(context)?.settings.arguments as RestaurantDomain? ??
+        RestaurantDomain.restaurantList.first;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -59,17 +58,12 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                   children: [
                     Text(
                       "${data.location} • ",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleSmall
-                          ?.copyWith(color: Colors.grey),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
                     ),
                     Text(
                       "1.5 km",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleSmall
-                          ?.copyWith(color: Colors.black54),
+                      style:
+                          Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.black54),
                     ),
                   ],
                 ),
@@ -84,8 +78,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
-                CustomInfoWidget(
-                    Icons.directions_bike_outlined, "Delivery in", "20 min"),
+                CustomInfoWidget(Icons.directions_bike_outlined, "Delivery in", "20 min"),
                 CustomInfoWidget(Icons.restaurant_menu, "Price Range", r"$$$$"),
               ],
             ),
@@ -131,8 +124,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                   ),
                 );
               },
-              separatorBuilder: (context, index) =>
-                  const CustomDivider(color: Colors.grey),
+              separatorBuilder: (context, index) => const CustomDivider(),
             ),
           ),
         ],
@@ -141,8 +133,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
       floatingActionButton: MenuAnchor(
         alignmentOffset: const Offset(4, 4),
         style: MenuStyle(
-          backgroundColor:
-              MaterialStatePropertyAll(Theme.of(context).primaryColorDark),
+          backgroundColor: MaterialStatePropertyAll(Theme.of(context).primaryColorDark),
           padding: const MaterialStatePropertyAll(EdgeInsets.all(16)),
         ),
         builder: (context, menuController, child) {
@@ -156,9 +147,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
             foregroundColor: Theme.of(context).scaffoldBackgroundColor,
             extendedIconLabelSpacing: 16,
             onPressed: () {
-              menuController.isOpen
-                  ? menuController.close()
-                  : menuController.open();
+              menuController.isOpen ? menuController.close() : menuController.open();
             },
           );
         },
@@ -178,8 +167,10 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   category.title,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).scaffoldBackgroundColor),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(color: Theme.of(context).scaffoldBackgroundColor),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -196,11 +187,9 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
           child: Container(
               height: 60,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).primaryColor),
+                  borderRadius: BorderRadius.circular(10), color: Theme.of(context).primaryColor),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Row(
                   children: [
                     Column(
@@ -208,11 +197,10 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                       children: [
                         Text(
                           r"1 Item • $ 5.00",
-                          style:
-                              Theme.of(context).textTheme.titleSmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                         ),
                         const SizedBox(height: 3),
                         Text(
@@ -225,13 +213,14 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                       ],
                     ),
                     const Spacer(),
-                    const Icon(Icons.shopping_basket_outlined,
-                        color: Colors.white),
+                    const Icon(Icons.shopping_basket_outlined, color: Colors.white),
                     const SizedBox(width: 10),
                     Text(
                       "View Cart",
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

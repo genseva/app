@@ -59,12 +59,13 @@ flutter:
     - assets/header/
     - assets/food/
     - assets/grocery/
+    - fonts/
 
   fonts:
     - family: ProductSans
       fonts:
-        - asset: assets/fonts/ProductSans-Bold.ttf
-        - asset: assets/fonts/ProductSans-Regular.ttf
+        - asset: fonts/ProductSans-Bold.ttf
+        - asset: fonts/ProductSans-Regular.ttf
 
 flutter_intl:
   enabled: true

@@ -4,8 +4,8 @@ class CustomDivider extends StatelessWidget {
   const CustomDivider({
     super.key,
     this.height = 1,
-    this.color = Colors.black,
-    this.dashWidth = 6.0,
+    this.color = Colors.grey,
+    this.dashWidth = 4.0,
   });
 
   final double dashWidth;
