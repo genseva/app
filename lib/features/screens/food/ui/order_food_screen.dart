@@ -1,28 +1,21 @@
 import 'package:deligo/app_config/colors.dart';
+import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
 import 'package:deligo/features/screens/food/model/restaurant_domain.dart';
+import 'package:deligo/features/screens/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
-class Filter {
-  IconData icon;
-  String title;
-
-  Filter(this.icon, this.title);
-}
-
 class OrderFoodScreen extends StatefulWidget {
-  const OrderFoodScreen({Key? key}) : super(key: key);
+  const OrderFoodScreen({super.key});
 
   @override
   State<OrderFoodScreen> createState() => _OrderFoodScreenState();
 }
 
 class _OrderFoodScreenState extends State<OrderFoodScreen> {
-  final List<String> _selectedFilters = [];
-
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
@@ -39,7 +32,8 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
       Filter(Icons.directions_bike, locale.fastDelivery),
       Filter(Icons.restaurant_menu, locale.vegOnly),
     ];
-    final List<RestaurantDomain> restaurantList = RestaurantDomain.restaurantList;
+    final List<RestaurantDomain> restaurantList =
+        RestaurantDomain.restaurantList;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
@@ -103,7 +97,10 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                             padding: const EdgeInsets.only(bottom: 8.0),
                             child: Text(
                               categories[index].title,
-                              style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 10),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(fontSize: 10),
                             ),
                           )
                         ],
@@ -121,53 +118,8 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
           const SizedBox(
             height: 8,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Wrap(
-              spacing: 8,
-              runSpacing: -4,
-              children: List.generate(
-                filters.length,
-                (index) {
-                  var isSelected = _selectedFilters.contains(filters[index].title);
-                  return FilterChip(
-                    selected: isSelected,
-                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                    selectedColor: blackColor,
-                    disabledColor: Theme.of(context).scaffoldBackgroundColor,
-                    showCheckmark: false,
-                    avatar: Icon(
-                      filters[index].icon,
-                      color: isSelected ? Theme.of(context).scaffoldBackgroundColor : blackColor,
-                      size: 20,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    side: BorderSide(color: greyTextColor.withOpacity(0.1)),
-                    label: Text(
-                      filters[index].title,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: isSelected ? Theme.of(context).scaffoldBackgroundColor : null,
-                            fontSize: 12,
-                          ),
-                    ),
-                    onSelected: (value) {
-                      if (isSelected) {
-                        _selectedFilters.remove(filters[index].title);
-                      } else {
-                        _selectedFilters.add(filters[index].title);
-                      }
-                      setState(() {});
-                    },
-                  );
-                },
-              ),
-            ),
-          ),
-          const Divider(
-            thickness: 0.4,
-          ),
+          CustomFilters(filters: filters),
+          const CustomDivider(),
           ListTile(
             title: Text(
               locale.foodNearMe,
@@ -207,7 +159,8 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
               child: GestureDetector(
-                onTap: () => Navigator.pushNamed(context, PageRoutes.restaurantPage,
+                onTap: () => Navigator.pushNamed(
+                    context, PageRoutes.restaurantPage,
                     arguments: restaurantList[index]),
                 child: Row(
                   children: [
@@ -222,10 +175,13 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: <Widget>[
                           Text(
                             restaurantList[index].name,
-                            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -247,7 +203,8 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(fontSize: 12, color: greyTextColor2),
+                                    .copyWith(
+                                        fontSize: 12, color: greyTextColor2),
                               ),
                               const SizedBox(
                                 width: 20,
@@ -257,13 +214,12 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(fontSize: 12, color: greyTextColor2),
+                                    .copyWith(
+                                        fontSize: 12, color: greyTextColor2),
                               )
                             ],
                           ),
-                          const Divider(
-                            endIndent: 16,
-                          ),
+                          const CustomDivider(),
                           Row(
                             children: [
                               const RatingCard(),
@@ -272,7 +228,10 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                               ),
                               Text(
                                 restaurantList[index].foodType,
-                                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
                                       color: greyTextColor3,
                                       fontSize: 12,
                                     ),

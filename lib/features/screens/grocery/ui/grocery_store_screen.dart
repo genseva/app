@@ -57,7 +57,7 @@ class GroceryStoreScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Divider(),
+          const Divider(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             child: Row(

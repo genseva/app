@@ -1,16 +1,11 @@
 import 'package:deligo/app_config/colors.dart';
+import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
+import 'package:deligo/features/screens/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-class Filter {
-  IconData icon;
-  String title;
-  bool isSelected;
-  Function(bool)? onTap;
 
-  Filter(this.icon, this.title, this.isSelected, this.onTap);
-}
 
 class Store {
   final String image;
@@ -32,6 +27,7 @@ class OrderGroceryScreen extends StatefulWidget {
 }
 
 class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
+
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
@@ -43,9 +39,9 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
       Category('assets/grocery/grocery_vegetable.png', locale.vegetable, null),
     ];
     final List<Filter> filters = [
-      Filter(Icons.star, locale.nearMe, false, (p0) => null),
-      Filter(Icons.favorite, locale.favorite, false, (p0) => null),
-      Filter(Icons.directions_bike, locale.fastDelivery, false, (p0) => null),
+      Filter(Icons.star, locale.nearMe),
+      Filter(Icons.favorite, locale.favorite),
+      Filter(Icons.directions_bike, locale.fastDelivery),
     ];
     final List<Store> restaurantList = [
       Store('assets/grocery/store_1.png', 'Megamart 24x7', 'CentralPark', '20',
@@ -146,44 +142,8 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
           const SizedBox(
             height: 8,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Wrap(
-              spacing: 8,
-              runSpacing: -4,
-              children: List.generate(
-                filters.length,
-                (index) => FilterChip(
-                  selected: filters[index].isSelected,
-                  backgroundColor: Colors.white,
-                  selectedColor: blackColor,
-                  disabledColor: Colors.white,
-                  avatar: Icon(
-                    filters[index].icon,
-                    color: blackColor,
-                    size: 20,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  side: BorderSide(color: greyTextColor.withOpacity(0.1)),
-                  label: Text(
-                    filters[index].title,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          color: filters[index].isSelected
-                              ? Theme.of(context).scaffoldBackgroundColor
-                              : null,
-                          fontSize: 12,
-                        ),
-                  ),
-                  onSelected: filters[index].onTap,
-                ),
-              ),
-            ),
-          ),
-          const Divider(
-            thickness: 0.4,
-          ),
+          CustomFilters(filters: filters),
+          const CustomDivider(),
           ListTile(
             title: Text(
               locale.groceryNearMe,
@@ -284,10 +244,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                             )
                           ],
                         ),
-                        const Divider(
-                          endIndent: 16,
-                          thickness: 0.4,
-                        ),
+                     const  CustomDivider(),
                         Row(
                           children: [
                             Text(
