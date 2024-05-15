@@ -199,25 +199,45 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                   borderRadius: BorderRadius.circular(10),
                   color: Theme.of(context).primaryColor),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
                   children: [
-                    Row(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Icon(Icons.shopping_cart, color: Colors.white),
                         Text(
-                          "View Cart",
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                          r"1 Item • $ 5.00",
+                          style:
+                              Theme.of(context).textTheme.titleSmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                         ),
+                        const SizedBox(height: 3),
+                        Text(
+                          "Extra Charges may apply",
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelSmall
+                              ?.copyWith(color: Colors.grey.shade300),
+                        )
                       ],
-                    )
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.shopping_basket_outlined,
+                        color: Colors.white),
+                    const SizedBox(width: 10),
+                    Text(
+                      "View Cart",
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               )),
         ),
       ),
-
     );
   }
 }
