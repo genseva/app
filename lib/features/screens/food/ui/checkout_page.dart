@@ -1,3 +1,4 @@
+import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -99,8 +100,42 @@ class _CheckoutPageState extends State<CheckoutPage> {
               ),
             ),
           ),
-          Divider(thickness: 0.4),
-
+          Container(height: 2, color: Theme.of(context).cardColor),
+          ListTile(
+            leading: Icon(
+              Icons.integration_instructions_rounded,
+              color: greyTextColor,
+            ),
+            title: Text("Add instruction to restaurant",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(color: greyTextColor)),
+          ),
+          Container(height: 10, color: Theme.of(context).cardColor),
+          ListTile(
+            minVerticalPadding: 10,
+            leading: Icon(
+              Icons.discount_sharp,
+              color: greyTextColor,
+            ),
+            title: Text(
+              "Apply Coupon",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            subtitle: Text(
+              "Save up to 20% off",
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall
+                  ?.copyWith(color: greyTextColor),
+            ),
+            trailing: Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: greyTextColor,
+            ),
+          ),
+          Container(height: 8, color: Theme.of(context).cardColor),
         ],
       ),
     );
