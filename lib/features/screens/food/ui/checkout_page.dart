@@ -177,7 +177,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 "Proceed to Pay",
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .bodySmall!
                     .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
                 textAlign: TextAlign.center,
               ),
