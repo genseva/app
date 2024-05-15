@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: AppLocalizations.delegate.supportedLocales,
           locale: locale,
           theme: appTheme,
-          home: const PaymentPage(),
+          home: const LoginNavigator(),
           routes: PageRoutes().routes(),
           debugShowCheckedModeBanner: false,
         );
