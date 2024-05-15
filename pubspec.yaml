@@ -60,6 +60,7 @@ flutter:
     - assets/food/
     - assets/grocery/
     - fonts/
+    - assets/payment/
 
   fonts:
     - family: ProductSans

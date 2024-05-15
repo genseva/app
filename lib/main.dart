@@ -1,5 +1,4 @@
 import 'package:deligo/features/language/bloc/language_cubit.dart';
-import 'package:deligo/features/screens/food/ui/checkout_page.dart';
 import 'package:deligo/features/screens/payment/ui/payment_page.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +24,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: AppLocalizations.delegate.supportedLocales,
           locale: locale,
           theme: appTheme,
-          home: const LoginNavigator(),
+          home: const PaymentPage(),
           routes: PageRoutes().routes(),
           debugShowCheckedModeBanner: false,
         );
