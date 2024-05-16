@@ -1,11 +1,10 @@
+import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
 import 'package:deligo/features/screens/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
-
-
 
 class Store {
   final String image;
@@ -27,7 +26,6 @@ class OrderGroceryScreen extends StatefulWidget {
 }
 
 class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
-
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
@@ -182,87 +180,91 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
-              child: Row(
-                children: [
-                  Image.asset(
-                    restaurantList[index].image,
-                    height: 100,
-                    width: 100,
-                  ),
-                  const SizedBox(
-                    width: 18,
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          restaurantList[index].name,
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .copyWith(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                        ),
-                        Text(
-                          restaurantList[index].location,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall!
-                              .copyWith(fontSize: 12, color: greyTextColor),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "Delivery in ${restaurantList[index].deliveryTime} mins",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                      fontSize: 12, color: greyTextColor2),
-                            ),
-                            Text(
-                              "  •  ",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                      fontSize: 12, color: greyTextColor2),
-                            ),
-                            Text(
-                              '${restaurantList[index].distance} ${locale.km}',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                      fontSize: 12, color: greyTextColor2),
-                            )
-                          ],
-                        ),
-                     const  CustomDivider(),
-                        Row(
-                          children: [
-                            Text(
-                              restaurantList[index].timing,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                    color: greyTextColor3,
-                                    fontSize: 12,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ],
+              child: GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                    context, PageRoutes.orderGroceryScreen),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      restaurantList[index].image,
+                      height: 100,
+                      width: 100,
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            restaurantList[index].name,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                          Text(
+                            restaurantList[index].location,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall!
+                                .copyWith(fontSize: 12, color: greyTextColor),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "Delivery in ${restaurantList[index].deliveryTime} mins",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                        fontSize: 12, color: greyTextColor2),
+                              ),
+                              Text(
+                                "  •  ",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                        fontSize: 12, color: greyTextColor2),
+                              ),
+                              Text(
+                                '${restaurantList[index].distance} ${locale.km}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                        fontSize: 12, color: greyTextColor2),
+                              )
+                            ],
+                          ),
+                          const CustomDivider(),
+                          Row(
+                            children: [
+                              Text(
+                                restaurantList[index].timing,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                      color: greyTextColor3,
+                                      fontSize: 12,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )
