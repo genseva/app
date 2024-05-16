@@ -1,6 +1,8 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_divider.dart';
+import 'package:deligo/features/screens/food/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutPage extends StatefulWidget {
@@ -17,16 +19,21 @@ class _CheckoutPageState extends State<CheckoutPage> {
       appBar: AppBar(
         title: const Text("Monte Carlo Restaurant"),
         centerTitle: false,
+        backgroundColor: Colors.white,
       ),
       backgroundColor: cardColor,
       body: Column(
         children: [
-          const CustomDivider(),
+          Container(color: Colors.white, child: const CustomDivider()),
           Container(
             color: Colors.white,
             child: ListTile(
               minVerticalPadding: 10,
-              leading: Icon(Icons.home, color: Theme.of(context).primaryColor),
+              leading: Icon(
+                Icons.home,
+                color: Theme.of(context).primaryColor,
+                size: 18,
+              ),
               title: Text(
                 "Delivery to Home | 20 min",
                 style: Theme.of(context)
@@ -113,6 +120,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               leading: Icon(
                 Icons.integration_instructions_rounded,
                 color: greyTextColor,
+                size: 18,
               ),
               title: Text("Add instruction to restaurant",
                   style: Theme.of(context)
@@ -129,6 +137,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               leading: Icon(
                 Icons.discount_sharp,
                 color: greyTextColor,
+                size: 18,
               ),
               title: Text(
                 "Apply Coupon",
@@ -148,6 +157,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
           ),
           Container(height: 8, color: Theme.of(context).cardColor),
+          Container(color: Colors.white, child: const PayTotalCard())
         ],
       ),
       bottomNavigationBar: Container(
@@ -165,7 +175,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       color: Theme.of(context).primaryColor,
                     )),
             trailing: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, PageRoutes.paymentPage);
+              },
               style: ButtonStyle(
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       side: const BorderSide(color: Color(0xffebebeb)),
