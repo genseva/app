@@ -3,7 +3,7 @@ import 'package:deligo/features/screens/cart/model/food_domain.dart';
 import 'package:flutter/material.dart';
 
 class GroceryItemCard extends StatelessWidget {
-  GroceryItemCard(this.item, {super.key});
+  const GroceryItemCard(this.item, {super.key});
 
   final FoodDomain item;
 
@@ -14,10 +14,7 @@ class GroceryItemCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            item.image,
-            height: 90,
-          ),
+          Image.asset(item.image, height: 90),
           Text(
             item.name,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(

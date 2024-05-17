@@ -6,20 +6,9 @@ import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart'
 import 'package:deligo/features/screens/grocery/ui/grocery_item_card.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class GroceryStoreScreen extends StatefulWidget {
+class GroceryStoreScreen extends StatelessWidget {
   const GroceryStoreScreen({super.key});
-
-  @override
-  State<GroceryStoreScreen> createState() => _GroceryStoreScreenState();
-}
-
-class _GroceryStoreScreenState extends State<GroceryStoreScreen> {
-  // final GlobalKey _globalKey = GlobalKey();
-  final ItemScrollController _itemScrollController = ItemScrollController();
-
-  // late var _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -53,17 +42,12 @@ class _GroceryStoreScreenState extends State<GroceryStoreScreen> {
                   children: [
                     Text(
                       "Center Park • ",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleSmall
-                          ?.copyWith(color: Colors.grey),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
                     ),
                     Text(
                       "1.5 km",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleSmall
-                          ?.copyWith(color: Colors.black54),
+                      style:
+                          Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.black54),
                     ),
                   ],
                 ),
@@ -77,10 +61,9 @@ class _GroceryStoreScreenState extends State<GroceryStoreScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                CustomInfoWidget(Icons.directions_bike_outlined, "Delivery in", "20 min"),
                 CustomInfoWidget(
-                    Icons.directions_bike_outlined, "Delivery in", "20 min"),
-                CustomInfoWidget(Icons.watch_later_outlined, "Opening Timing",
-                    "08:00 am to 10:00 pm"),
+                    Icons.watch_later_outlined, "Opening Timing", "08:00 am to 10:00 pm"),
               ],
             ),
           ),
@@ -111,40 +94,38 @@ class _GroceryStoreScreenState extends State<GroceryStoreScreen> {
           const SizedBox(height: 10),
           const CustomShadow(),
           Expanded(
-            child: ScrollablePositionedList.separated(
-              itemScrollController: _itemScrollController,
+            child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: CategoryDomain.groceryList.length,
               itemBuilder: (context, index) {
                 var category = CategoryDomain.groceryList[index];
                 return ExpansionTile(
-                    tilePadding: EdgeInsets.zero,
-                    initiallyExpanded: index == 0,
-                    childrenPadding: const EdgeInsets.only(top: 16),
-                    dense: true,
-                    shape: InputBorder.none,
-                    title: Text(
-                      category.title,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                    children: [
-                      SizedBox(
-                        height: 200,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: category.items.length,
-                          itemBuilder: (context, index) {
-                            return GroceryItemCard(
-                              category.items[index],
-                            );
-                          },
+                  tilePadding: EdgeInsets.zero,
+                  initiallyExpanded: index == 0,
+                  childrenPadding: const EdgeInsets.only(top: 16),
+                  dense: true,
+                  shape: InputBorder.none,
+                  title: Text(
+                    category.title,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
+                  ),
+                  children: [
+                    SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: category.items.length,
+                        itemBuilder: (context, index) {
+                          return GroceryItemCard(category.items[index]);
+                        },
                       ),
-                    ]);
+                    ),
+                  ],
+                );
               },
               separatorBuilder: (context, index) => const CustomDivider(),
             ),
