@@ -1,8 +1,8 @@
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_field.dart';
 import 'package:deligo/components/custom_shadow.dart';
+import 'package:deligo/features/screens/cart/model/category_domain.dart';
 import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart';
-import 'package:deligo/features/screens/grocery/models/grocery_category_domain.dart';
 import 'package:deligo/features/screens/grocery/ui/grocery_item_card.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -114,9 +114,9 @@ class _GroceryStoreScreenState extends State<GroceryStoreScreen> {
             child: ScrollablePositionedList.separated(
               itemScrollController: _itemScrollController,
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: GroceryCategoryDomain.groceryList.length,
+              itemCount: CategoryDomain.groceryList.length,
               itemBuilder: (context, index) {
-                var category = GroceryCategoryDomain.groceryList[index];
+                var category = CategoryDomain.groceryList[index];
                 return ExpansionTile(
                     tilePadding: EdgeInsets.zero,
                     initiallyExpanded: index == 0,

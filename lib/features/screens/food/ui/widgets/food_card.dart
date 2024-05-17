@@ -1,5 +1,5 @@
 import 'package:deligo/components/add_button.dart';
-import 'package:deligo/features/screens/food/model/food_domain.dart';
+import 'package:deligo/features/screens/cart/model/food_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +34,7 @@ class _FoodCardState extends State<FoodCard> {
                     Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: Image.asset(
-                        food.isVeg ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
+                        food.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
                         height: 16,
                       ),
                     ),

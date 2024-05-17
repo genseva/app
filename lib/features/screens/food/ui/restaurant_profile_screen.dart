@@ -1,7 +1,7 @@
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_shadow.dart';
-import 'package:deligo/features/screens/food/model/food_category_domain.dart';
-import 'package:deligo/features/screens/food/model/restaurant_domain.dart';
+import 'package:deligo/features/screens/cart/model/category_domain.dart';
+import 'package:deligo/features/screens/cart/model/restaurant_domain.dart';
 import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/screens/food/ui/widgets/food_card.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
   Widget build(BuildContext context) {
     RestaurantDomain data =
         ModalRoute.of(context)?.settings.arguments as RestaurantDomain? ??
-            RestaurantDomain.restaurantList.first;
+            RestaurantDomain.list.first;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -96,9 +96,9 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
             child: ScrollablePositionedList.separated(
               itemScrollController: _itemScrollController,
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: CategoryDomain.list.length,
+              itemCount: CategoryDomain.foodList.length,
               itemBuilder: (context, index) {
-                var category = CategoryDomain.list[index];
+                var category = CategoryDomain.foodList[index];
                 return ExpansionTile(
                   tilePadding: EdgeInsets.zero,
                   initiallyExpanded: index == 0,
@@ -113,8 +113,8 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                         ),
                   ),
                   children: List.generate(
-                    category.foodList.length,
-                    (index) => FoodCard(category.foodList[index]),
+                    category.items.length,
+                    (index) => FoodCard(category.items[index]),
                   ),
                 );
               },
@@ -149,9 +149,9 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
           );
         },
         menuChildren: List.generate(
-          CategoryDomain.list.length,
+          CategoryDomain.foodList.length,
           (index) {
-            var category = CategoryDomain.list[index];
+            var category = CategoryDomain.foodList[index];
             return GestureDetector(
               onTap: () {
                 _itemScrollController.scrollTo(

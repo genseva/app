@@ -44,10 +44,10 @@ class Assets {
   static const String groceryStore3 = 'assets/grocery/store_3.png';
   static const String headerHeaderFood = 'assets/header/header_food.png';
   static const String headerHeaderGrocery = 'assets/header/header_grocery.png';
+  static const String itemsBrush = 'assets/grocery/items/brush.png';
+  static const String itemsLotion = 'assets/grocery/items/lotion.png';
   static const String itemsPersonalcareBox = 'assets/grocery/items/personalcare_box.png';
-  static const String itemsPersonalcareBrush = 'assets/grocery/items/personalcare_brush.png';
   static const String itemsPersonalcareLiquid = 'assets/grocery/items/personalcare_liquid.png';
-  static const String itemsPersonalcareLotiona = 'assets/grocery/items/personalcare_lotiona.png';
   static const String itemsVegBringle = 'assets/grocery/items/veg_bringle.png';
   static const String itemsVegCapsicum = 'assets/grocery/items/veg_capsicum.png';
   static const String itemsVegColiflower = 'assets/grocery/items/veg_coliflower.png';

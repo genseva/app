@@ -4,15 +4,15 @@ import 'package:deligo/app_config/app_config.dart';
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/features/auth/login_navigator.dart';
+import 'package:deligo/features/language/bloc/language_cubit.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:deligo/features/language/bloc/language_cubit.dart';
 
 class LanguagePage extends StatefulWidget {
   final bool fromRoot;
 
-  const LanguagePage({Key? key, this.fromRoot = false}) : super(key: key);
+  const LanguagePage({super.key, this.fromRoot = false});
 
   @override
   State<LanguagePage> createState() => _LanguagePageState();
@@ -34,7 +34,6 @@ class _LanguagePageState extends State<LanguagePage> {
     var locale = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: Theme.of(context).cardColor,
-      // drawer: widget.fromRoot ? null : const AppDrawer(),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -54,7 +53,7 @@ class _LanguagePageState extends State<LanguagePage> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   locale.selectLanguage,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
             ),
@@ -71,8 +70,7 @@ class _LanguagePageState extends State<LanguagePage> {
                     physics: const BouncingScrollPhysics(),
                     itemCount: AppConfig.languagesSupported.length,
                     itemBuilder: (context, index) {
-                      var langCode =
-                          AppConfig.languagesSupported.keys.elementAt(index);
+                      var langCode = AppConfig.languagesSupported.keys.elementAt(index);
                       return GestureDetector(
                         onTap: () {
                           setState(() {
@@ -83,31 +81,25 @@ class _LanguagePageState extends State<LanguagePage> {
                           alignment: Alignment.centerLeft,
                           height: 48,
                           padding: const EdgeInsets.symmetric(horizontal: 16),
-                          margin: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
+                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: _selectedLocale == langCode
-                                    ? Theme.of(context)
-                                        .primaryColor
-                                        .withOpacity(0.4)
-                                    : greyTextColor.withOpacity(0.2)),
+                              color: _selectedLocale == langCode
+                                  ? Theme.of(context).primaryColor.withOpacity(0.4)
+                                  : greyTextColor.withOpacity(0.2),
+                            ),
                             borderRadius: BorderRadius.circular(10),
                             color: _selectedLocale == langCode
-                                ? Theme.of(context)
-                                    .primaryColor
-                                    .withOpacity(0.2)
+                                ? Theme.of(context).primaryColor.withOpacity(0.2)
                                 : Theme.of(context).scaffoldBackgroundColor,
                           ),
                           child: Text(
                             AppConfig.languagesSupported[langCode]!,
-                            style: Theme.of(context)
-                                .textTheme
-                                .caption!
-                                .copyWith(
-                                    color: _selectedLocale == langCode
-                                        ? Theme.of(context).primaryColor
-                                        : blackColor),
+                            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                  color: _selectedLocale == langCode
+                                      ? Theme.of(context).primaryColor
+                                      : blackColor,
+                                ),
                           ),
                         ),
                       );
@@ -120,8 +112,7 @@ class _LanguagePageState extends State<LanguagePage> {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding:
-            const EdgeInsets.only(bottom: 28.0, left: 16, right: 16, top: 8),
+        padding: const EdgeInsets.only(bottom: 28.0, left: 16, right: 16, top: 8),
         child: CustomButton(
             text: 'Update Language',
             onTap: () {
@@ -130,7 +121,9 @@ class _LanguagePageState extends State<LanguagePage> {
                 Navigator.pushNamed(context, LoginRoutes.loginPage);
               } else {
                 Navigator.pushReplacementNamed(
-                    context, PageRoutes.bottomNavigation);
+                  context,
+                  PageRoutes.bottomNavigation,
+                );
               }
             }),
       ),

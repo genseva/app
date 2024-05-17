@@ -2,7 +2,7 @@ import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
-import 'package:deligo/features/screens/food/model/restaurant_domain.dart';
+import 'package:deligo/features/screens/cart/model/restaurant_domain.dart';
 import 'package:deligo/features/screens/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
@@ -33,7 +33,7 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
       Filter(Icons.restaurant_menu, locale.vegOnly),
     ];
     final List<RestaurantDomain> restaurantList =
-        RestaurantDomain.restaurantList;
+        RestaurantDomain.list;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
