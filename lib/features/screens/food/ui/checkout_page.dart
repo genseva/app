@@ -1,4 +1,5 @@
 import 'package:deligo/app_config/colors.dart';
+import 'package:deligo/components/add_button.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/screens/food/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
@@ -69,48 +70,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 r"$ 5.00",
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(),
               ),
-              trailing: Container(
-                height: 32,
-                width: MediaQuery.of(context).size.width * 0.22,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.0),
-                  border: Border.all(color: Theme.of(context).primaryColor),
-                  color: Theme.of(context).primaryColor,
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ...[
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {});
-                        },
-                        child: const Icon(
-                          Icons.remove,
-                          size: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const Expanded(
-                        child: Text(
-                          "1",
-                          style: TextStyle(color: Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {});
-                        },
-                        child: const Icon(Icons.add,
-                            size: 16, color: Colors.white),
-                      ),
-                    ]
-                  ],
-                ),
-              ),
+              trailing: AddItemButton(quantity: 1),
             ),
           ),
           const SizedBox(height: 2),
@@ -118,7 +78,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             color: Colors.white,
             child: ListTile(
               leading: Icon(
-                Icons.integration_instructions_rounded,
+                Icons.assignment,
                 color: greyTextColor,
                 size: 18,
               ),

@@ -1,3 +1,4 @@
+import 'package:deligo/components/add_button.dart';
 import 'package:deligo/features/screens/food/model/food_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
@@ -73,67 +74,7 @@ class _FoodCardState extends State<FoodCard> {
           PositionedDirectional(
             end: 4,
             bottom: -16,
-            child: GestureDetector(
-              onTap: () {
-                if (food.quantity == 0) {
-                  food.quantity++;
-                  food.cartTotal = food.cartTotal + food.price;
-                }
-                setState(() {});
-              },
-              child: Container(
-                height: 32,
-                width: MediaQuery.of(context).size.width * 0.22,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.0),
-                  border: Border.all(color: Theme.of(context).primaryColor),
-                  color: food.quantity == 0
-                      ? Theme.of(context).scaffoldBackgroundColor
-                      : Theme.of(context).primaryColor,
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (food.quantity > 0) ...[
-                      GestureDetector(
-                        onTap: () {
-                          food.cartTotal = food.cartTotal - food.price;
-                          food.quantity--;
-                          setState(() {});
-                        },
-                        child: const Icon(
-                          Icons.remove,
-                          size: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          food.quantity.toString(),
-                          style: const TextStyle(color: Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          food.cartTotal = food.cartTotal + food.price;
-                          food.quantity++;
-                          setState(() {});
-                        },
-                        child: const Icon(Icons.add,
-                            size: 16, color: Colors.white),
-                      ),
-                    ] else
-                      Text(
-                        "Add",
-                        style: TextStyle(color: Theme.of(context).primaryColor),
-                      ),
-                  ],
-                ),
-              ),
-            ),
+            child: AddItemButton(quantity: 0),
           )
         ],
       ),

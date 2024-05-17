@@ -1,10 +1,11 @@
-import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
 import 'package:deligo/features/screens/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../routes/page_routes.dart';
 
 class Store {
   final String image;
@@ -182,7 +183,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
               padding: const EdgeInsets.only(bottom: 24.0),
               child: GestureDetector(
                 onTap: () => Navigator.pushNamed(
-                    context, PageRoutes.orderGroceryScreen),
+                    context, PageRoutes.groceryStoreScreen),
                 child: Row(
                   children: [
                     Image.asset(
