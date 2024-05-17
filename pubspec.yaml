@@ -59,6 +59,7 @@ flutter:
     - assets/header/
     - assets/food/
     - assets/grocery/
+    - assets/grocery/items/
     - fonts/
     - assets/payment/
 

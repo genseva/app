@@ -1,11 +1,25 @@
+import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_field.dart';
 import 'package:deligo/components/custom_shadow.dart';
 import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart';
+import 'package:deligo/features/screens/grocery/models/grocery_category_domain.dart';
+import 'package:deligo/features/screens/grocery/ui/grocery_item_card.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class GroceryStoreScreen extends StatelessWidget {
+class GroceryStoreScreen extends StatefulWidget {
   const GroceryStoreScreen({super.key});
+
+  @override
+  State<GroceryStoreScreen> createState() => _GroceryStoreScreenState();
+}
+
+class _GroceryStoreScreenState extends State<GroceryStoreScreen> {
+  // final GlobalKey _globalKey = GlobalKey();
+  final ItemScrollController _itemScrollController = ItemScrollController();
+
+  // late var _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -96,6 +110,45 @@ class GroceryStoreScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           const CustomShadow(),
+          Expanded(
+            child: ScrollablePositionedList.separated(
+              itemScrollController: _itemScrollController,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              itemCount: GroceryCategoryDomain.groceryList.length,
+              itemBuilder: (context, index) {
+                var category = GroceryCategoryDomain.groceryList[index];
+                return ExpansionTile(
+                    tilePadding: EdgeInsets.zero,
+                    initiallyExpanded: index == 0,
+                    childrenPadding: const EdgeInsets.only(top: 16),
+                    dense: true,
+                    shape: InputBorder.none,
+                    title: Text(
+                      category.title,
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                    children: [
+                      SizedBox(
+                        height: 200,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: category.items.length,
+                          itemBuilder: (context, index) {
+                            return GroceryItemCard(
+                              category.items[index],
+                            );
+                          },
+                        ),
+                      ),
+                    ]);
+              },
+              separatorBuilder: (context, index) => const CustomDivider(),
+            ),
+          ),
         ],
       ),
     );
