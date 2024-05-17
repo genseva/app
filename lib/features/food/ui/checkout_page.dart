@@ -1,7 +1,7 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/add_button.dart';
 import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/features/screens/food/ui/widgets/pay_total_card.dart';
+import 'package:deligo/features/food/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';

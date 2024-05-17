@@ -1,4 +1,4 @@
-import 'package:deligo/features/screens/payment/models/payment_method.dart';
+import 'package:deligo/features/payment/models/payment_method.dart';
 import 'package:deligo/generated/assets.dart';
 
 class PaymentCategory {

@@ -1,13 +1,13 @@
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_shadow.dart';
-import 'package:deligo/features/screens/cart/model/category_domain.dart';
-import 'package:deligo/features/screens/cart/model/restaurant_domain.dart';
-import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart';
-import 'package:deligo/features/screens/food/ui/widgets/food_card.dart';
+import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/cart/model/restaurant_domain.dart';
+import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
+import 'package:deligo/features/food/ui/widgets/food_card.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-import '../../../../routes/page_routes.dart';
 
 class RestaurantProfilePage extends StatefulWidget {
   const RestaurantProfilePage({super.key});

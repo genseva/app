@@ -1,69 +1,45 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_divider.dart';
+import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
-import 'package:deligo/features/screens/food/ui/widgets/custom_filters.dart';
+import 'package:deligo/features/cart/model/restaurant_domain.dart';
+import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/l10n.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../routes/page_routes.dart';
-
-class Store {
-  final String image;
-  final String name;
-  final String location;
-  final String deliveryTime;
-  final String distance;
-  final String timing;
-
-  Store(this.image, this.name, this.location, this.deliveryTime, this.distance,
-      this.timing);
-}
-
-class OrderGroceryScreen extends StatefulWidget {
-  const OrderGroceryScreen({super.key});
+class OrderFoodScreen extends StatefulWidget {
+  const OrderFoodScreen({super.key});
 
   @override
-  State<OrderGroceryScreen> createState() => _OrderGroceryScreenState();
+  State<OrderFoodScreen> createState() => _OrderFoodScreenState();
 }
 
-class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
+class _OrderFoodScreenState extends State<OrderFoodScreen> {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final List<Category> categories = [
-      Category('assets/grocery/grocery_dairy.png', locale.dairy, null),
-      Category('assets/grocery/grocery_fruits.png', locale.fruits, null),
-      Category(
-          'assets/grocery/grocery_personalcare.png', locale.personalCare, null),
-      Category('assets/grocery/grocery_vegetable.png', locale.vegetable, null),
+      Category('assets/food/foodcategory_fastfood.png', locale.fastFoods, null),
+      Category('assets/food/foodcategory_chinese.png', locale.chinese, null),
+      Category('assets/food/foodcategory_seafood.png', locale.seaFood, null),
+      Category('assets/food/foodcategory_dessert.png', locale.dessert, null),
     ];
     final List<Filter> filters = [
       Filter(Icons.star, locale.nearMe),
       Filter(Icons.favorite, locale.favorite),
+      Filter(Icons.star, locale.bestRated),
       Filter(Icons.directions_bike, locale.fastDelivery),
+      Filter(Icons.restaurant_menu, locale.vegOnly),
     ];
-    final List<Store> restaurantList = [
-      Store('assets/grocery/store_1.png', 'Megamart 24x7', 'CentralPark', '20',
-          '1.5 km', '24x7 Open'),
-      Store('assets/grocery/store_2.png', 'Citylime Store', 'Food Park', '30',
-          '4.5 km', '08:00 am to 10:00 pm'),
-      Store('assets/grocery/store_3.png', 'Delight Grocery Store',
-          'CentralPark', '25', '2.5 km', '09:00 am to 09:00 pm'),
-      Store('assets/grocery/store_1.png', 'Monte Carlo Store', 'CentralPark',
-          '10', '0.5 km', '24x7 Open'),
-      Store('assets/grocery/store_2.png', 'Hotel China Town', 'Food Park', '20',
-          '1.5 km', '08:30 am to 11:00 pm'),
-      Store('assets/grocery/store_3.png', 'Auli Store', 'CentralPark', '23',
-          '4.5 km', '08:00 am to 10:00 pm'),
-    ];
-
+    final List<RestaurantDomain> restaurantList = RestaurantDomain.list;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
         child: Stack(
           children: [
             Image.asset(
-              'assets/header/header_grocery.png',
+              'assets/header/header_food.png',
               width: double.infinity,
               fit: BoxFit.fill,
             ),
@@ -83,7 +59,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                       vertical: 12,
                     ),
                     child: Text(
-                      locale.orderGrocery,
+                      locale.orderFoods,
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!
@@ -120,10 +96,7 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                             padding: const EdgeInsets.only(bottom: 8.0),
                             child: Text(
                               categories[index].title,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(fontSize: 10),
+                              style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 10),
                             ),
                           )
                         ],
@@ -145,14 +118,14 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
           const CustomDivider(),
           ListTile(
             title: Text(
-              locale.groceryNearMe,
+              locale.foodNearMe,
               style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
             ),
             subtitle: Text(
-              "24 ${locale.StoresFound}",
+              '24 ${locale.restaurantsFound}',
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     fontSize: 13,
                     color: greyTextColor,
@@ -182,8 +155,8 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
               child: GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, PageRoutes.groceryStoreScreen),
+                onTap: () => Navigator.pushNamed(context, PageRoutes.restaurantPage,
+                    arguments: restaurantList[index]),
                 child: Row(
                   children: [
                     Image.asset(
@@ -197,13 +170,10 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: <Widget>[
                           Text(
                             restaurantList[index].name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(
+                            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -221,40 +191,34 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                           Row(
                             children: [
                               Text(
-                                "Delivery in ${restaurantList[index].deliveryTime} mins",
+                                locale.deliveryInMins,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 12, color: greyTextColor2),
+                                    .copyWith(fontSize: 12, color: greyTextColor2),
+                              ),
+                              const SizedBox(
+                                width: 20,
                               ),
                               Text(
-                                "  •  ",
+                                '1.5 ${locale.km}',
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 12, color: greyTextColor2),
-                              ),
-                              Text(
-                                '${restaurantList[index].distance} ${locale.km}',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 12, color: greyTextColor2),
+                                    .copyWith(fontSize: 12, color: greyTextColor2),
                               )
                             ],
                           ),
                           const CustomDivider(),
                           Row(
                             children: [
+                              const RatingCard(),
+                              const SizedBox(
+                                width: 10,
+                              ),
                               Text(
-                                restaurantList[index].timing,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
+                                restaurantList[index].foodType,
+                                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       color: greyTextColor3,
                                       fontSize: 12,
                                     ),

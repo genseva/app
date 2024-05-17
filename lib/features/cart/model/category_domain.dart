@@ -1,4 +1,4 @@
-import 'package:deligo/features/screens/cart/model/food_domain.dart';
+import 'package:deligo/features/cart/model/food_domain.dart';
 import 'package:deligo/generated/assets.dart';
 
 class CategoryDomain {

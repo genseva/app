@@ -1,5 +1,5 @@
 import 'package:deligo/components/add_button.dart';
-import 'package:deligo/features/screens/cart/model/food_domain.dart';
+import 'package:deligo/features/cart/model/food_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -55,10 +55,7 @@ class _FoodCardState extends State<FoodCard> {
                     Text(
                       food.isCustomizable ? "Customize" : "",
                       textAlign: TextAlign.end,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall
-                          ?.copyWith(color: Colors.grey),
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey),
                     )
                   ],
                 ),

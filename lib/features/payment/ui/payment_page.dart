@@ -1,5 +1,5 @@
-import 'package:deligo/features/screens/payment/models/payment_category.dart';
-import 'package:deligo/features/screens/payment/models/payment_page_data.dart';
+import 'package:deligo/features/payment/models/payment_category.dart';
+import 'package:deligo/features/payment/models/payment_page_data.dart';
 import 'package:flutter/material.dart';
 
 class PaymentPage extends StatelessWidget {

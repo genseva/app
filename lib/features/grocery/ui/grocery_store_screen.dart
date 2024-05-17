@@ -1,9 +1,9 @@
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_field.dart';
 import 'package:deligo/components/custom_shadow.dart';
-import 'package:deligo/features/screens/cart/model/category_domain.dart';
-import 'package:deligo/features/screens/food/ui/widgets/custom_info_widget.dart';
-import 'package:deligo/features/screens/grocery/ui/grocery_item_card.dart';
+import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
+import 'package:deligo/features/grocery/ui/grocery_item_card.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
