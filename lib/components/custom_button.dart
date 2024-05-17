@@ -6,9 +6,7 @@ class CustomButton extends StatelessWidget {
   final String? prefixIcon;
   final Function()? onTap;
 
-  const CustomButton(
-      {Key? key, this.text, this.buttonColor, this.prefixIcon, this.onTap})
-      : super(key: key);
+  const CustomButton({super.key, this.text, this.buttonColor, this.prefixIcon, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +16,10 @@ class CustomButton extends StatelessWidget {
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               side: const BorderSide(color: Color(0xffebebeb)),
               borderRadius: BorderRadius.circular(10))),
-          padding: MaterialStateProperty.all(
-              const EdgeInsets.symmetric(vertical: 20)),
+          padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 20)),
           elevation: MaterialStateProperty.all(0),
-          backgroundColor: MaterialStateProperty.all(
-              buttonColor ?? Theme.of(context).primaryColor)),
+          backgroundColor:
+              MaterialStateProperty.all(buttonColor ?? Theme.of(context).primaryColor)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -40,10 +37,9 @@ class CustomButton extends StatelessWidget {
               text ?? 'Continue',
               style: Theme.of(context).textTheme.caption!.copyWith(
                   fontWeight: FontWeight.w600,
-                  color:
-                      buttonColor == Theme.of(context).scaffoldBackgroundColor
-                          ? Colors.black
-                          : Colors.white),
+                  color: buttonColor == Theme.of(context).scaffoldBackgroundColor
+                      ? Colors.black
+                      : Colors.white),
               textAlign: TextAlign.center,
             ),
           ),

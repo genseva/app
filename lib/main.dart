@@ -1,17 +1,19 @@
+import 'package:deligo/features/account/ui/account_page.dart';
 import 'package:deligo/features/language/bloc/language_cubit.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 import 'Routes/page_routes.dart';
 import 'app_config/style.dart';
-import 'features/auth/login_navigator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
   runApp(
     BlocProvider<LanguageCubit>(
       create: (context) => LanguageCubit()..getCurrentLanguage(),
@@ -28,8 +30,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
     return BlocBuilder<LanguageCubit, Locale>(
       builder: (context, locale) {
         return MaterialApp(
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: AppLocalizations.delegate.supportedLocales,
           locale: locale,
           theme: appTheme,
-          home: const LoginNavigator(),
+          home: const AccountPage(),
           routes: PageRoutes().routes(),
           debugShowCheckedModeBanner: false,
         );

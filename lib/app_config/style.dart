@@ -7,6 +7,7 @@ ThemeData appTheme = ThemeData(
   primaryColor: mainColor,
   primaryColorDark: blackColor,
   cardColor: cardColor,
+  hintColor: greyTextColor,
 
   ///bottom bar theme
   bottomNavigationBarTheme: BottomNavigationBarThemeData(

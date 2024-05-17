@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Telefonnummer eingeben"),
         "fullName": MessageLookupByLibrary.simpleMessage("Vollständiger Name"),
+        "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefonnummer"),
         "selectLanguage":

@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "foodNearMe": MessageLookupByLibrary.simpleMessage("Food Near me"),
         "fruits": MessageLookupByLibrary.simpleMessage("Fruits"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "grocery": MessageLookupByLibrary.simpleMessage("GROCERY"),
         "groceryNearMe":

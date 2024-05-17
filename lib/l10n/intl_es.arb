@@ -105,5 +105,6 @@
   "busBreakdown": "Avería del autobús",
   "inCaseOfIssueWithBus": "En caso de problema con el autobús",
   "callForHelp": "Llamar por ayuda",
-  "quickCallingForHelp": "llamando rapido a hel"
+  "quickCallingForHelp": "llamando rapido a hel",
+  "getSupport": "Get Support"
 }

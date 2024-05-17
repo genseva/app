@@ -105,5 +105,6 @@
   "busBreakdown": "Buspanne",
   "inCaseOfIssueWithBus": "Bei Problemen mit dem Bus",
   "callForHelp": "Hilferuf",
-  "quickCallingForHelp": "Schnell Hilfe holen"
+  "quickCallingForHelp": "Schnell Hilfe holen",
+  "getSupport": "Get Support"
 }

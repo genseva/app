@@ -1,3 +1,4 @@
+import 'package:deligo/components/option_tile.dart';
 import 'package:deligo/features/payment/models/payment_category.dart';
 import 'package:deligo/features/payment/models/payment_page_data.dart';
 import 'package:flutter/material.dart';
@@ -74,33 +75,10 @@ class PaymentPage extends StatelessWidget {
                   ...category.paymentMethods.map(
                     (paymentMethod) {
                       bool isCard = paymentMethod.title.contains("Card");
-                      return Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        margin: const EdgeInsets.only(top: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: Colors.grey.shade200,
-                          ),
-                        ),
-                        height: 54,
-                        child: Row(
-                          children: [
-                            Align(
-                              alignment: isCard ? Alignment.bottomCenter : Alignment.center,
-                              child: Image.asset(
-                                paymentMethod.icon,
-                                width: isCard ? 40 : 32,
-                              ),
-                            ),
-                            const SizedBox(width: 24),
-                            Text(
-                              paymentMethod.title,
-                              style:
-                                  theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
+                      return OptionTile(
+                        image: paymentMethod.icon,
+                        title: paymentMethod.title,
+                        isCard: isCard,
                       );
                     },
                   ),

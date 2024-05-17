@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
+        "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey arabic"),
         "orContinueWith":

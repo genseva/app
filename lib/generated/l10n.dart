@@ -639,6 +639,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Get Support`
+  String get getSupport {
+    return Intl.message(
+      'Get Support',
+      name: 'getSupport',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -45,16 +45,13 @@ class _LanguagePageState extends State<LanguagePage> {
         endOffset: const Offset(0, 0),
         slideCurve: Curves.linearToEaseOut,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              height: 58.0,
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  locale.selectLanguage,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 20.0),
+              child: Text(
+                locale.selectLanguage,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
             Expanded(
