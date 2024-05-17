@@ -1,3 +1,4 @@
+import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/components/option_tile.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
@@ -78,38 +79,43 @@ class AccountPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Image.asset(Assets.assetsWalletBg),
-                ListTile(
-                  titleAlignment: ListTileTitleAlignment.top,
-                  leading: Icon(
-                    Icons.wallet,
-                    color: theme.scaffoldBackgroundColor,
-                    size: 36,
-                  ),
-                  title: Text(
-                    "GoWallet",
-                    style: theme.textTheme.titleLarge?.copyWith(
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, PageRoutes.walletPage);
+              },
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Image.asset(Assets.assetsWalletBg),
+                  ListTile(
+                    titleAlignment: ListTileTitleAlignment.top,
+                    leading: Icon(
+                      Icons.wallet,
                       color: theme.scaffoldBackgroundColor,
-                      fontWeight: FontWeight.bold,
+                      size: 36,
                     ),
-                  ),
-                  subtitle: Text(
-                    r"$" " 150.50",
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: theme.scaffoldBackgroundColor.withOpacity(0.8),
+                    title: Text(
+                      "GoWallet",
+                      style: theme.textTheme.titleLarge?.copyWith(
+                        color: theme.scaffoldBackgroundColor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                    subtitle: Text(
+                      r"$" " 150.50",
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: theme.scaffoldBackgroundColor.withOpacity(0.8),
+                      ),
+                    ),
+                    trailing: Icon(
+                      Icons.chevron_right,
+                      color: theme.scaffoldBackgroundColor,
+                      size: 32,
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 12),
                   ),
-                  trailing: Icon(
-                    Icons.chevron_right,
-                    color: theme.scaffoldBackgroundColor,
-                    size: 32,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 12),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(height: 24),
             Text(

@@ -17,9 +17,8 @@ class RestaurantProfilePage extends StatefulWidget {
 }
 
 class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
-  final GlobalKey _globalKey = GlobalKey();
   final ItemScrollController _itemScrollController = ItemScrollController();
-  late var _controller;
+  late MenuController _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +133,6 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
         builder: (context, menuController, child) {
           _controller = menuController;
           return FloatingActionButton.extended(
-            key: _globalKey,
             icon: const Icon(Icons.restaurant_menu, size: 20),
             label: const Text("Menu"),
             shape: const StadiumBorder(),

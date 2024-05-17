@@ -11,6 +11,7 @@ class Assets {
   static const String assetsSplash = 'assets/splash.png';
   static const String assetsUser = 'assets/user.png';
   static const String assetsWalletBg = 'assets/wallet_bg.png';
+  static const String assetsWalletBgBig = 'assets/wallet_bg_big.png';
   static const String bannerFood1 = 'assets/banner/food1.png';
   static const String bannerFood2 = 'assets/banner/food2.png';
   static const String bannerGrocery1 = 'assets/banner/grocery1.png';
