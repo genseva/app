@@ -8,6 +8,7 @@ ThemeData appTheme = ThemeData(
   primaryColorDark: blackColor,
   cardColor: cardColor,
   hintColor: greyTextColor,
+  disabledColor: const Color(0xffF4F7F9),
 
   ///bottom bar theme
   bottomNavigationBarTheme: BottomNavigationBarThemeData(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color mainColor = const Color(0xff32b141);
+Color mainColor = const Color(0xff00A302);
 Color ratingCardColor = const Color(0xff7ac81e);
 Color greyTextColor = const Color(0xff979ca7);
 Color greyTextColor2 = const Color(0xff50555c);

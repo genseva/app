@@ -78,7 +78,7 @@ class _LoginUIState extends State<LoginUI> {
                   children: [
                     Expanded(
                         child: CustomButton(
-                      prefixIcon: 'assets/fb.png',
+                      prefix: 'assets/fb.png',
                       text: locale.facebook,
                       buttonColor: Theme.of(context).scaffoldBackgroundColor,
                     )),
@@ -87,7 +87,7 @@ class _LoginUIState extends State<LoginUI> {
                     ),
                     Expanded(
                         child: CustomButton(
-                      prefixIcon: 'assets/google.png',
+                      prefix: 'assets/google.png',
                       text: locale.google,
                       buttonColor: Theme.of(context).scaffoldBackgroundColor,
                     )),

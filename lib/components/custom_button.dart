@@ -3,13 +3,24 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String? text;
   final Color? buttonColor;
-  final String? prefixIcon;
+  final String? prefix;
+  final IconData? prefixIcon;
+  final Color? prefixIconColor;
   final Function()? onTap;
 
-  const CustomButton({super.key, this.text, this.buttonColor, this.prefixIcon, this.onTap});
+  const CustomButton({
+    super.key,
+    this.text,
+    this.buttonColor,
+    this.prefix,
+    this.prefixIcon,
+    this.onTap,
+    this.prefixIconColor,
+  });
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return ElevatedButton(
       onPressed: onTap,
       style: ButtonStyle(
@@ -18,16 +29,20 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(10))),
           padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 20)),
           elevation: MaterialStateProperty.all(0),
-          backgroundColor:
-              MaterialStateProperty.all(buttonColor ?? Theme.of(context).primaryColor)),
+          backgroundColor: MaterialStateProperty.all(buttonColor ?? theme.primaryColor)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (prefixIcon != null)
             Padding(
               padding: const EdgeInsetsDirectional.only(start: 18.0),
+              child: Icon(prefixIcon!, color: prefixIconColor),
+            ),
+          if (prefix != null)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(start: 18.0),
               child: Image.asset(
-                prefixIcon!,
+                prefix!,
                 height: 16,
                 width: 16,
               ),
@@ -35,11 +50,12 @@ class CustomButton extends StatelessWidget {
           Expanded(
             child: Text(
               text ?? 'Continue',
-              style: Theme.of(context).textTheme.caption!.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: buttonColor == Theme.of(context).scaffoldBackgroundColor
-                      ? Colors.black
-                      : Colors.white),
+              style: theme.textTheme.bodyMedium!.copyWith(
+                fontWeight: FontWeight.w600,
+                color: buttonColor == theme.scaffoldBackgroundColor
+                    ? theme.primaryColor
+                    : theme.scaffoldBackgroundColor,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
