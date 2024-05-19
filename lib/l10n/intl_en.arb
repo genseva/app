@@ -62,5 +62,6 @@
   "getSupport": "Get Support",
   "whereToGo": "Where to go?",
   "bookService": "Book Service",
-  "whereToDeliver": "Where to deliver?"
+  "whereToDeliver": "Where to deliver?",
+  "orderMedicine": "Order Medicine"
 }

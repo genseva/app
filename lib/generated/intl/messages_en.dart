@@ -71,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "orderFoods": MessageLookupByLibrary.simpleMessage("Order Foods"),
         "orderGrocery": MessageLookupByLibrary.simpleMessage("Order Grocery"),
+        "orderMedicine": MessageLookupByLibrary.simpleMessage("Order Medicine"),
         "orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "parcel": MessageLookupByLibrary.simpleMessage("PARCEL"),
         "personalCare": MessageLookupByLibrary.simpleMessage("Personal Care"),

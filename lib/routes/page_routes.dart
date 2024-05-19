@@ -6,6 +6,7 @@ import 'package:deligo/features/food/ui/order_food_screen.dart';
 import 'package:deligo/features/food/ui/restaurant_profile_screen.dart';
 import 'package:deligo/features/grocery/ui/grocery_store_screen.dart';
 import 'package:deligo/features/grocery/ui/order_grocery_screen.dart';
+import 'package:deligo/features/medicine/ui/order_medicine_screen.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
 import 'package:deligo/features/ride/ui/book_ride_screen.dart';
@@ -27,6 +28,7 @@ class PageRoutes {
   static const String bookCabScreen = 'book_cab_screen';
   static const String bookServiceScreen = 'book_service_screen';
   static const String bookParcelScreen = 'book_parcel_screen';
+  static const String orderMedicineScreen = 'order_medicine_screen';
 
   Map<String, WidgetBuilder> routes() {
     return {
@@ -43,6 +45,7 @@ class PageRoutes {
       bookCabScreen: (context) => const BookCabScreen(),
       bookServiceScreen: (context) => const BookServiceScreen(),
      bookParcelScreen: (context) => const BookParcelScreen(),
+     orderMedicineScreen: (context) => const OrderMedicineScreen(),
     };
   }
 }
