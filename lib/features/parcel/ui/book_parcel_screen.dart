@@ -14,7 +14,7 @@ class BookParcelScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
         child: CustomAppBar(
-          title: "Where to deliver?",
+          title: locale.whereToDeliver,
           image: Assets.headerHeaderPackage,
           appbarBottom: Positioned(
             bottom: 0,

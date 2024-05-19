@@ -61,5 +61,6 @@
   "groceryNearMe": "Grocery Near Me",
   "getSupport": "Get Support",
   "whereToGo": "Where to go?",
-  "bookService": "Book Service"
+  "bookService": "Book Service",
+  "whereToDeliver": "Where to deliver?"
 }
