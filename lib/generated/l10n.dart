@@ -689,6 +689,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Start Shopping`
+  String get startShopping {
+    return Intl.message(
+      'Start Shopping',
+      name: 'startShopping',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

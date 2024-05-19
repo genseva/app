@@ -10,6 +10,7 @@ import 'package:deligo/features/medicine/ui/order_medicine_screen.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
 import 'package:deligo/features/ride/ui/book_ride_screen.dart';
+import 'package:deligo/features/shopping/ui/shopping_screen.dart';
 import 'package:deligo/features/wallet/ui/wallet_page.dart';
 import 'package:deligo/service/ui/book_service_screen.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class PageRoutes {
   static const String bookServiceScreen = 'book_service_screen';
   static const String bookParcelScreen = 'book_parcel_screen';
   static const String orderMedicineScreen = 'order_medicine_screen';
+  static const String shoppingScreen = 'shopping_screen';
 
   Map<String, WidgetBuilder> routes() {
     return {
@@ -44,8 +46,9 @@ class PageRoutes {
       bookRideScreen: (context) => const BookRideScreen(),
       bookCabScreen: (context) => const BookCabScreen(),
       bookServiceScreen: (context) => const BookServiceScreen(),
-     bookParcelScreen: (context) => const BookParcelScreen(),
-     orderMedicineScreen: (context) => const OrderMedicineScreen(),
+      bookParcelScreen: (context) => const BookParcelScreen(),
+      orderMedicineScreen: (context) => const OrderMedicineScreen(),
+      shoppingScreen: (context) => const ShoppingScreen(),
     };
   }
 }

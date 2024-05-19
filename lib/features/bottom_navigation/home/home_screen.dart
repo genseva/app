@@ -40,12 +40,14 @@ class HomeScreen extends StatelessWidget {
         locale.grocery,
         () => Navigator.pushNamed(context, PageRoutes.orderGroceryScreen),
       ),
-      Category('assets/category/catg_medicine.png', locale.medicine, ()=> Navigator.pushNamed(context, PageRoutes.orderMedicineScreen)),
+      Category('assets/category/catg_medicine.png', locale.medicine,
+          () => Navigator.pushNamed(context, PageRoutes.orderMedicineScreen)),
       Category('assets/category/catg_parcel.png', locale.parcel,
           () => Navigator.pushNamed(context, PageRoutes.bookParcelScreen)),
       Category('assets/category/catg_hanydman.png', locale.service,
           () => Navigator.pushNamed(context, PageRoutes.bookServiceScreen)),
-      Category('assets/category/catg_ecommerce.png', locale.shop, null),
+      Category('assets/category/catg_ecommerce.png', locale.shop,
+          () => Navigator.pushNamed(context, PageRoutes.shoppingScreen)),
     ];
     return SafeArea(
       child: Scaffold(

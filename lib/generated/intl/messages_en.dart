@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shop": MessageLookupByLibrary.simpleMessage("SHOP"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now"),
         "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
+        "startShopping": MessageLookupByLibrary.simpleMessage("Start Shopping"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "vegOnly": MessageLookupByLibrary.simpleMessage("Veg Only"),
         "vegetable": MessageLookupByLibrary.simpleMessage("Vegetable"),
