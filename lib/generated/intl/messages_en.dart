@@ -96,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "whatAreYouLookingFor": MessageLookupByLibrary.simpleMessage(
             "What are you looking for today?"),
+        "whereToGo": MessageLookupByLibrary.simpleMessage("Where to go?"),
         "youAreNotRegistered":
             MessageLookupByLibrary.simpleMessage("You\'re not registered yet")
       };

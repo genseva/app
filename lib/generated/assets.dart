@@ -45,8 +45,16 @@ class Assets {
   static const String groceryStore1 = 'assets/grocery/store_1.png';
   static const String groceryStore2 = 'assets/grocery/store_2.png';
   static const String groceryStore3 = 'assets/grocery/store_3.png';
+  static const String headerHeaderCab = 'assets/header/header_cab.png';
+  static const String headerHeaderEcomApparel = 'assets/header/header_ecom_apparel.png';
+  static const String headerHeaderEcommerce = 'assets/header/header_ecommerce.png';
   static const String headerHeaderFood = 'assets/header/header_food.png';
   static const String headerHeaderGrocery = 'assets/header/header_grocery.png';
+  static const String headerHeaderHandyman = 'assets/header/header_handyman.png';
+  static const String headerHeaderMedicine = 'assets/header/header_medicine.png';
+  static const String headerHeaderPackage = 'assets/header/header_package.png';
+  static const String headerHeaderPainreleaf = 'assets/header/header_painreleaf.png';
+  static const String headerHeaderRide = 'assets/header/header_ride.png';
   static const String itemsBrush = 'assets/grocery/items/brush.png';
   static const String itemsLotion = 'assets/grocery/items/lotion.png';
   static const String itemsPersonalcareBox = 'assets/grocery/items/personalcare_box.png';

@@ -13,7 +13,7 @@ class Category {
 }
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({super.key});
 
   final List<String> banners = [
     "assets/banner/food1.png",
@@ -26,7 +26,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final List<Category> categories = [
-      Category('assets/category/catg_ride.png', locale.ride, null),
+      Category('assets/category/catg_ride.png', locale.ride,
+          () => Navigator.pushNamed(context, PageRoutes.bookRidePage)),
       Category('assets/category/catg_cab.png', locale.cabs, null),
       Category(
         'assets/category/catg_food.png',
@@ -62,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                   locale.home,
                   style: Theme.of(context)
                       .textTheme
-                      .headline5!
+                      .headlineSmall!
                       .copyWith(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
@@ -78,13 +79,16 @@ class HomeScreen extends StatelessWidget {
               ' B 101, Nirvana Point, Hemilton',
               // style: Theme.of(context).textTheme.caption,
             ),
-            trailing: CircleAvatar(
-                radius: 18,
-                backgroundColor: Theme.of(context).primaryColor,
-                child: Icon(
-                  Icons.person,
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                )),
+            trailing: GestureDetector(
+              onTap: () => Navigator.pushNamed(context, PageRoutes.accountPage),
+              child: CircleAvatar(
+                  radius: 18,
+                  backgroundColor: Theme.of(context).primaryColor,
+                  child: Icon(
+                    Icons.person,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                  )),
+            ),
           ),
         ),
         body: ListView(
@@ -98,7 +102,7 @@ class HomeScreen extends StatelessWidget {
               locale.whatAreYouLookingFor,
               style: Theme.of(context)
                   .textTheme
-                  .headline5!
+                  .headlineSmall!
                   .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             const SizedBox(
@@ -139,7 +143,7 @@ class HomeScreen extends StatelessWidget {
                         categories[index].title,
                         style: Theme.of(context)
                             .textTheme
-                            .bodyText1!
+                            .bodyLarge!
                             .copyWith(fontSize: 10),
                       ),
                     )
@@ -157,12 +161,12 @@ class HomeScreen extends StatelessWidget {
                   locale.saveExtraWhileOrdering,
                   style: Theme.of(context)
                       .textTheme
-                      .headline5!
+                      .headlineSmall!
                       .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
                 ),
                 Text(
                   locale.seeAll,
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).primaryColor),

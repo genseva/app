@@ -1,7 +1,9 @@
 import 'package:deligo/app_config/colors.dart';
+import 'package:deligo/components/custom_app_bar.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
 import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
+import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -60,80 +62,49 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
-        child: Stack(
-          children: [
-            Image.asset(
-              'assets/header/header_grocery.png',
-              width: double.infinity,
-              fit: BoxFit.fill,
-            ),
-            SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back_ios),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 12,
-                    ),
-                    child: Text(
-                      locale.orderGrocery,
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleLarge!
-                          .copyWith(fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 8,
-              right: 0,
-              child: SizedBox(
-                height: 100,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: categories.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsetsDirectional.only(start: 10.0),
-                    child: GestureDetector(
-                      onTap: categories[index].onTap,
-                      child: Stack(
-                        alignment: Alignment.bottomCenter,
-                        children: [
-                          ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                categories[index].image,
-                                fit: BoxFit.cover,
-                              )),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: Text(
-                              categories[index].title,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(fontSize: 10),
-                            ),
-                          )
-                        ],
-                      ),
+        child: CustomAppBar(
+          title: locale.orderGrocery,
+          image: Assets.headerHeaderGrocery,
+          appbarBottom: Positioned(
+            bottom: 0,
+            left: 8,
+            right: 0,
+            child: SizedBox(
+              height: 100,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsetsDirectional.only(start: 10.0),
+                  child: GestureDetector(
+                    onTap: categories[index].onTap,
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(
+                              categories[index].image,
+                              fit: BoxFit.cover,
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Text(
+                            categories[index].title,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(fontSize: 10),
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ),
               ),
             ),
-          ],
+          ),
         ),
       ),
       body: ListView(
@@ -182,8 +153,8 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
               child: GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, PageRoutes.groceryStoreScreen),
+                onTap: () =>
+                    Navigator.pushNamed(context, PageRoutes.groceryStoreScreen),
                 child: Row(
                   children: [
                     Image.asset(

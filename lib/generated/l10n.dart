@@ -649,6 +649,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Where to go?`
+  String get whereToGo {
+    return Intl.message(
+      'Where to go?',
+      name: 'whereToGo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
