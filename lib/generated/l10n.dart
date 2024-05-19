@@ -659,6 +659,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Book Service`
+  String get bookService {
+    return Intl.message(
+      'Book Service',
+      name: 'bookService',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

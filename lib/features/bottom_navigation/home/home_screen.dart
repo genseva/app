@@ -27,8 +27,9 @@ class HomeScreen extends StatelessWidget {
     final locale = AppLocalizations.of(context);
     final List<Category> categories = [
       Category('assets/category/catg_ride.png', locale.ride,
-          () => Navigator.pushNamed(context, PageRoutes.bookRidePage)),
-      Category('assets/category/catg_cab.png', locale.cabs, null),
+          () => Navigator.pushNamed(context, PageRoutes.bookRideScreen)),
+      Category('assets/category/catg_cab.png', locale.cabs,
+          () => Navigator.pushNamed(context, PageRoutes.bookCabScreen)),
       Category(
         'assets/category/catg_food.png',
         locale.food,
@@ -41,7 +42,8 @@ class HomeScreen extends StatelessWidget {
       ),
       Category('assets/category/catg_medicine.png', locale.medicine, null),
       Category('assets/category/catg_parcel.png', locale.parcel, null),
-      Category('assets/category/catg_hanydman.png', locale.service, null),
+      Category('assets/category/catg_hanydman.png', locale.service,
+          () => Navigator.pushNamed(context, PageRoutes.bookServiceScreen)),
       Category('assets/category/catg_ecommerce.png', locale.shop, null),
     ];
     return SafeArea(
