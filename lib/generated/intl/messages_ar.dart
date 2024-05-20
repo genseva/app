@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "orContinueWith":
             MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Sign in arabicc")

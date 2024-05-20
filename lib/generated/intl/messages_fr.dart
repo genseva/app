@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "km": MessageLookupByLibrary.simpleMessage("kilomètres"),
         "phoneNumber":
             MessageLookupByLibrary.simpleMessage("Numéro de téléphone"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Choisir la langue"),
         "submit": MessageLookupByLibrary.simpleMessage("Soumettre"),

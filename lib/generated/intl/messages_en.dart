@@ -85,6 +85,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "seaFood": MessageLookupByLibrary.simpleMessage("Sea Food"),
         "searchItemOrStore":
             MessageLookupByLibrary.simpleMessage("Search item or store"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
         "seeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),

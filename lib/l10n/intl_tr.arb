@@ -106,5 +106,6 @@
   "inCaseOfIssueWithBus": "Otobüsle ilgili bir sorun olması durumunda",
   "callForHelp": "Yardım için ara",
   "quickCallingForHelp": "hel için hızlı arama",
-  "getSupport": "Get Support"
+  "getSupport": "Get Support",
+  "searchProducts": "Search Products"
 }

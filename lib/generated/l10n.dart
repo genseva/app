@@ -699,6 +699,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Search Products`
+  String get searchProducts {
+    return Intl.message(
+      'Search Products',
+      name: 'searchProducts',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

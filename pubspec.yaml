@@ -62,6 +62,9 @@ flutter:
     - assets/grocery/items/
     - fonts/
     - assets/payment/
+    - assets/ecommerce/
+    - assets/ecommerce/products/
+    - assets/ecommerce/categories/
 
   fonts:
     - family: ProductSans

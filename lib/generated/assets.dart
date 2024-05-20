@@ -16,6 +16,15 @@ class Assets {
   static const String bannerFood2 = 'assets/banner/food2.png';
   static const String bannerGrocery1 = 'assets/banner/grocery1.png';
   static const String bannerGrocery2 = 'assets/banner/grocery2.png';
+  static const String categoriesEcomAppliances = 'assets/ecommerce/categories/ecom_appliances.png';
+  static const String categoriesEcomBeauty = 'assets/ecommerce/categories/ecom_beauty.png';
+  static const String categoriesEcomHealth = 'assets/ecommerce/categories/ecom_health.png';
+  static const String categoriesEcomHerfasion = 'assets/ecommerce/categories/ecom_herfasion.png';
+  static const String categoriesEcomHisfashion = 'assets/ecommerce/categories/ecom_hisfashion.png';
+  static const String categoriesEcomKidfashion = 'assets/ecommerce/categories/ecom_kidfashion.png';
+  static const String categoriesEcomPet = 'assets/ecommerce/categories/ecom_pet.png';
+  static const String categoriesEcomPhone = 'assets/ecommerce/categories/ecom_phone.png';
+  static const String categoriesEcomToys = 'assets/ecommerce/categories/ecom_toys.png';
   static const String categoryCatgCab = 'assets/category/catg_cab.png';
   static const String categoryCatgEcommerce = 'assets/category/catg_ecommerce.png';
   static const String categoryCatgFood = 'assets/category/catg_food.png';

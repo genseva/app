@@ -1,4 +1,4 @@
-class FoodDomain {
+class ProductDomain {
   final String name;
   final String image;
   final double price;
@@ -8,7 +8,7 @@ class FoodDomain {
   final String? unit;
   int quantity = 0;
 
-  FoodDomain(
+  ProductDomain(
     this.name,
     this.image,
     this.price, {

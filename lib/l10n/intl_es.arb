@@ -106,5 +106,6 @@
   "inCaseOfIssueWithBus": "En caso de problema con el autobús",
   "callForHelp": "Llamar por ayuda",
   "quickCallingForHelp": "llamando rapido a hel",
-  "getSupport": "Get Support"
+  "getSupport": "Get Support",
+  "searchProducts": "Search Products"
 }

@@ -64,5 +64,6 @@
   "bookService": "Book Service",
   "whereToDeliver": "Where to deliver?",
   "orderMedicine": "Order Medicine",
-  "startShopping": "Start Shopping"
+  "startShopping": "Start Shopping",
+  "searchProducts": "Search Products"
 }

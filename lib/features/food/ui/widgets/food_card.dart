@@ -1,19 +1,19 @@
 import 'package:deligo/components/add_button.dart';
-import 'package:deligo/features/cart/model/food_domain.dart';
+import 'package:deligo/features/cart/model/product_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class FoodCard extends StatefulWidget {
   const FoodCard(this.food, {super.key});
 
-  final FoodDomain food;
+  final ProductDomain food;
 
   @override
   State<FoodCard> createState() => _FoodCardState();
 }
 
 class _FoodCardState extends State<FoodCard> {
-  FoodDomain get food => widget.food;
+  ProductDomain get food => widget.food;
 
   @override
   Widget build(BuildContext context) {

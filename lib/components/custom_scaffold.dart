@@ -1,6 +1,4 @@
-import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/components/widget_size.dart';
-import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomScaffold extends StatefulWidget {
@@ -56,6 +54,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
           ),
           Positioned(
             top: (headerSize?.height ?? 0) - 20,
+            height: MediaQuery.of(context).size.height - (headerSize?.height ?? 0) + 20,
             width: MediaQuery.of(context).size.width,
             child: widget.child,
           ),

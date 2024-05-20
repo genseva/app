@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:deligo/features/cart/model/food_domain.dart';
+import 'package:deligo/features/cart/model/product_domain.dart';
 
-class CartCubit extends Cubit<List<FoodDomain>> {
+class CartCubit extends Cubit<List<ProductDomain>> {
   CartCubit() : super([]);
 
-  void updateFood(FoodDomain foodDomain) {
+  void updateFood(ProductDomain foodDomain) {
     if (state.any((element) => element.name == foodDomain.name)) {
       if (foodDomain.quantity > 0) {
         _updateFood(foodDomain);
@@ -16,7 +16,7 @@ class CartCubit extends Cubit<List<FoodDomain>> {
     }
   }
 
-  void removeFood(FoodDomain foodDomain) {
+  void removeFood(ProductDomain foodDomain) {
     emit(state.where((element) => element.name != foodDomain.name).toList());
   }
 
@@ -24,11 +24,11 @@ class CartCubit extends Cubit<List<FoodDomain>> {
     emit([]);
   }
 
-  void updateCart(List<FoodDomain> foodDomainList) {
+  void updateCart(List<ProductDomain> foodDomainList) {
     emit(foodDomainList);
   }
 
-  void _updateFood(FoodDomain foodDomain) {
+  void _updateFood(ProductDomain foodDomain) {
     emit(state.map((e) => e.name == foodDomain.name ? foodDomain : e).toList());
   }
 }
