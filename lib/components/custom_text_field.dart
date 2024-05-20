@@ -8,6 +8,8 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? textEditingController;
   final TextInputType? textInputType;
   final Icon? prefixIcon;
+  final Icon? suffixIcon;
+  final int? maxLines;
 
   const CustomTextField({
     super.key,
@@ -17,6 +19,8 @@ class CustomTextField extends StatelessWidget {
     this.textEditingController,
     this.textInputType,
     this.prefixIcon,
+    this.suffixIcon,
+    this.maxLines,
   });
 
   @override
@@ -36,28 +40,28 @@ class CustomTextField extends StatelessWidget {
           controller: textEditingController,
           initialValue: initialValue,
           style: theme.textTheme.bodyLarge,
+          maxLines: maxLines,
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
             filled: true,
             fillColor: const Color(0xfff5f7f9),
             isDense: true,
-            hintStyle: theme.textTheme.labelLarge!.copyWith(color: const Color(0x99babec6)),
-            border: OutlineInputBorder(
-              borderSide: BorderSide(color: theme.hintColor, width: 0.5),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            enabledBorder:  OutlineInputBorder(
-              borderSide: BorderSide(color: theme.hintColor, width: 0.5),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: theme.primaryColor, width: 0.5),
-              borderRadius: BorderRadius.circular(10),
-            ),
+            border: _getBorder(theme.hintColor),
+            enabledBorder: _getBorder(theme.hintColor),
+            focusedBorder: _getBorder(theme.primaryColor),
             hintText: hintText,
+            hintStyle: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
           ),
         ),
       ],
+    );
+  }
+
+  OutlineInputBorder _getBorder(Color color) {
+    return OutlineInputBorder(
+      borderSide: BorderSide(color: color, width: 0.5),
+      borderRadius: BorderRadius.circular(10),
     );
   }
 }

@@ -60,7 +60,7 @@ class PageRoutes {
       profilePage: (context) => const ProfilePage(),
       languagePage: (context) => const LanguagePage(),
       savedAddressesPage: (context) => const SavedAddressesPage(),
-      supportPage: (context) => const SupportPage(),
+      supportPage: (context) => SupportPage(),
     };
   }
 }

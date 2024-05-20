@@ -53,7 +53,7 @@ class CustomButton extends StatelessWidget {
           SizedBox(width: prefix != null || prefixIcon != null ? 10 : 0),
           Text(
             text ?? 'Continue',
-            style: theme.textTheme.bodyMedium!.copyWith(
+            style: theme.textTheme.bodyLarge!.copyWith(
               fontWeight: FontWeight.w600,
               color: textColor ?? theme.scaffoldBackgroundColor,
             ),
