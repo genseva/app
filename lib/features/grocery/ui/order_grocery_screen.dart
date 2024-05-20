@@ -2,7 +2,7 @@ import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_app_bar.dart';
 import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/store_list.dart';
+import 'package:deligo/features/common/store_list.dart';
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
 import 'package:deligo/features/cart/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_filters.dart';

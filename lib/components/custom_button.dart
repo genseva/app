@@ -8,6 +8,7 @@ class CustomButton extends StatelessWidget {
   final IconData? prefixIcon;
   final Color? prefixIconColor;
   final Function()? onTap;
+  final TextStyle? textStyle;
 
   const CustomButton({
     super.key,
@@ -18,6 +19,7 @@ class CustomButton extends StatelessWidget {
     this.onTap,
     this.prefixIconColor,
     this.textColor,
+    this.textStyle,
   });
 
   @override
@@ -26,10 +28,13 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ButtonStyle(
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-            side: const BorderSide(color: Color(0xffebebeb)),
-            borderRadius: BorderRadius.circular(10))),
-        padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 20)),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            side: BorderSide(color: theme.hintColor.withOpacity(0.4)),
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 16)),
         elevation: MaterialStateProperty.all(0),
         backgroundColor: MaterialStateProperty.all(buttonColor ?? theme.primaryColor),
       ),
@@ -53,7 +58,7 @@ class CustomButton extends StatelessWidget {
           SizedBox(width: prefix != null || prefixIcon != null ? 10 : 0),
           Text(
             text ?? 'Continue',
-            style: theme.textTheme.bodyLarge!.copyWith(
+            style: (textStyle ?? theme.textTheme.bodyLarge)?.copyWith(
               fontWeight: FontWeight.w600,
               color: textColor ?? theme.scaffoldBackgroundColor,
             ),

@@ -7,11 +7,13 @@ class CustomScaffold extends StatefulWidget {
     required this.image,
     required this.title,
     required this.child,
+    this.bgColor,
   });
 
   final String image;
   final String title;
   final Widget child;
+  final Color? bgColor;
 
   @override
   State<CustomScaffold> createState() => _CustomScaffoldState();
@@ -24,6 +26,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
+      backgroundColor: widget.bgColor,
       body: Stack(
         children: [
           WidgetSize(
@@ -53,8 +56,8 @@ class _CustomScaffoldState extends State<CustomScaffold> {
             ),
           ),
           Positioned(
-            top: (headerSize?.height ?? 0) - 20,
-            height: MediaQuery.of(context).size.height - (headerSize?.height ?? 0) + 20,
+            top: (headerSize?.height ?? 0) - 28,
+            height: MediaQuery.of(context).size.height - (headerSize?.height ?? 0) + 28,
             width: MediaQuery.of(context).size.width,
             child: widget.child,
           ),

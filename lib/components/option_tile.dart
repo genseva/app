@@ -13,6 +13,7 @@ class OptionTile extends StatelessWidget {
     this.subtitle,
     this.height,
     this.crossAxisAlignment,
+    this.showBorder = true,
   });
 
   final IconData? icon;
@@ -25,6 +26,7 @@ class OptionTile extends StatelessWidget {
   final String? subtitle;
   final double? height;
   final CrossAxisAlignment? crossAxisAlignment;
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +36,10 @@ class OptionTile extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         margin: const EdgeInsets.only(top: 10),
-        decoration: BoxDecoration(
+        decoration: showBorder ? BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.shade200),
-        ),
+        ) : null,
         height: height ?? 54,
         alignment: Alignment.center,
         child: Row(

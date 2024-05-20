@@ -1,4 +1,3 @@
-import 'package:deligo/components/category_grid_tile.dart';
 import 'package:deligo/features/cart/model/category_domain.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +20,13 @@ class CategoryGrid extends StatelessWidget {
       itemCount: list.length,
       itemBuilder: (context, index) {
         var category = list[index];
-        return CategoryGridTile(category);
+        return GridTile(
+          header: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(category.title),
+          ),
+          child: Image.asset(category.image!),
+        );
       },
     );
   }

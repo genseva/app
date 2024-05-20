@@ -1,4 +1,3 @@
-import 'package:deligo/components/category_grid_tile.dart';
 import 'package:deligo/components/custom_scaffold.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/cart/model/category_domain.dart';

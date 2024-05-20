@@ -7,10 +7,11 @@ class CustomTextField extends StatelessWidget {
   final String? initialValue;
   final TextEditingController? textEditingController;
   final TextInputType? textInputType;
-  final Icon? prefixIcon;
+  final Widget? prefixIcon;
   final Icon? suffixIcon;
   final int? maxLines;
   final Color? bgColor;
+  final bool showBorder;
 
   const CustomTextField({
     super.key,
@@ -23,6 +24,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.maxLines,
     this.bgColor,
+    this.showBorder = true,
   });
 
   @override
@@ -61,10 +63,14 @@ class CustomTextField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder _getBorder(Color color) {
-    return OutlineInputBorder(
-      borderSide: BorderSide(color: color.withOpacity(0.5), width: 0.5),
-      borderRadius: BorderRadius.circular(10),
-    );
+  InputBorder _getBorder(Color color) {
+    if (showBorder) {
+      return OutlineInputBorder(
+        borderSide: BorderSide(color: color.withOpacity(0.3), width: 0.5),
+        borderRadius: BorderRadius.circular(10),
+      );
+    } else {
+      return InputBorder.none;
+    }
   }
 }

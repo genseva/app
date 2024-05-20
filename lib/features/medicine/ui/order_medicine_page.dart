@@ -1,7 +1,7 @@
-import 'package:deligo/components/category_grid.dart';
+import 'package:deligo/features/common/category_grid.dart';
 import 'package:deligo/components/custom_scaffold.dart';
 import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/components/store_list.dart';
+import 'package:deligo/features/common/store_list.dart';
 import 'package:deligo/features/cart/model/category_domain.dart';
 import 'package:deligo/features/cart/model/store_domain.dart';
 import 'package:deligo/features/category/ui/category_list.dart';

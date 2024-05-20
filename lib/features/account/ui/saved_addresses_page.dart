@@ -1,5 +1,6 @@
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/components/option_tile.dart';
+import 'package:deligo/features/account/model/address.dart';
 import 'package:flutter/material.dart';
 
 class SavedAddressesPage extends StatelessWidget {
@@ -8,11 +9,6 @@ class SavedAddressesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final List<(IconData, String, String)> addresses = [
-      (Icons.home, "Home", "656 East Depot Lane Bronx,\nNew York 10460"),
-      (Icons.apartment, "Work", "9922 West Linda Rd. Rochester,\nNew York 14609"),
-      (Icons.location_on, "Other", "8659 New Dr. Jamestown,\nNew York 14701"),
-    ];
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -29,11 +25,11 @@ class SavedAddressesPage extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) {
-                    var address = addresses[index];
+                    var address = AddressDomain.list[index];
                     return OptionTile(
-                      icon: address.$1,
-                      title: address.$2,
-                      subtitle: address.$3,
+                      icon: address.icon,
+                      title: address.name,
+                      subtitle: address.address,
                       onTap: () {},
                       bgColor: theme.scaffoldBackgroundColor,
                       iconColor: theme.primaryColor,
@@ -41,7 +37,7 @@ class SavedAddressesPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                     );
                   },
-                  itemCount: addresses.length,
+                  itemCount: AddressDomain.list.length,
                 ),
               ),
               CustomButton(
