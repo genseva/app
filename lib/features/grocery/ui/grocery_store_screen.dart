@@ -4,6 +4,8 @@ import 'package:deligo/features/cart/model/category_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/grocery/ui/grocery_item_card.dart';
 import 'package:deligo/generated/l10n.dart';
+import 'package:deligo/routes/page_routes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class GroceryStoreScreen extends StatelessWidget {
@@ -88,13 +90,16 @@ class GroceryStoreScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 15),
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(5),
+                    GestureDetector(
+                      onTap: ()=> Navigator.pushNamed(context, PageRoutes.groceryCategoryScreen),
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: const Icon(Icons.assignment, color: Colors.white),
                       ),
-                      child: const Icon(Icons.assignment, color: Colors.white),
                     ),
                   ],
                 ),
