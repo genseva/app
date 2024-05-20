@@ -33,11 +33,11 @@ class BottomNavigationState extends State<BottomNavigation> {
       ),
       BottomNavigationBarItem(
         label: locale.offers,
-        icon: const Icon(Icons.home),
+        icon: const Icon(Icons.discount_rounded),
       ),
       BottomNavigationBarItem(
         label: locale.orders,
-        icon: const Icon(Icons.home),
+        icon: const Icon(Icons.assignment_outlined),
       ),
     ];
 
