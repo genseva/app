@@ -10,6 +10,7 @@ class CustomTextField extends StatelessWidget {
   final Icon? prefixIcon;
   final Icon? suffixIcon;
   final int? maxLines;
+  final Color? bgColor;
 
   const CustomTextField({
     super.key,
@@ -21,6 +22,7 @@ class CustomTextField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.maxLines,
+    this.bgColor,
   });
 
   @override
@@ -29,12 +31,13 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (title != null)
+        if (title != null) ...[
           Text(
             title!,
             style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
           ),
-        const SizedBox(height: 12),
+          const SizedBox(height: 12),
+        ],
         TextFormField(
           keyboardType: textInputType,
           controller: textEditingController,
@@ -45,7 +48,7 @@ class CustomTextField extends StatelessWidget {
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             filled: true,
-            fillColor: const Color(0xfff5f7f9),
+            fillColor: bgColor ?? theme.cardColor,
             isDense: true,
             border: _getBorder(theme.hintColor),
             enabledBorder: _getBorder(theme.hintColor),
@@ -60,7 +63,7 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder _getBorder(Color color) {
     return OutlineInputBorder(
-      borderSide: BorderSide(color: color, width: 0.5),
+      borderSide: BorderSide(color: color.withOpacity(0.5), width: 0.5),
       borderRadius: BorderRadius.circular(10),
     );
   }

@@ -1,6 +1,6 @@
 class AppConfig {
-  static const String appName = "BusTapp Driver";
-  static const String packageName = "com.flutter.bustapp_driver";
+  static const String appName = "Deligo";
+  static const String packageName = "com.flutter.deligo";
   static const String defaultLanguage = "en";
   static const Map<String, String> languagesSupported = {
     'en': "English",
