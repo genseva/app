@@ -1,4 +1,4 @@
-import 'package:deligo/features/account/ui/account_page.dart';
+import 'package:deligo/features/auth/login_navigator.dart';
 import 'package:deligo/features/language/bloc/language_cubit.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,10 @@ void main() async {
     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
   );
   SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
+    const SystemUiOverlayStyle(
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarContrastEnforced: true
+    ),
   );
   runApp(
     BlocProvider<LanguageCubit>(
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: AppLocalizations.delegate.supportedLocales,
           locale: locale,
           theme: appTheme,
-          home: const AccountPage(),
+          home: const LoginNavigator(),
           routes: PageRoutes().routes(),
           debugShowCheckedModeBanner: false,
         );

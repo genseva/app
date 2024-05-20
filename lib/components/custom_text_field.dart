@@ -43,7 +43,15 @@ class CustomTextField extends StatelessWidget {
             isDense: true,
             hintStyle: theme.textTheme.labelLarge!.copyWith(color: const Color(0x99babec6)),
             border: OutlineInputBorder(
-              borderSide: BorderSide.none,
+              borderSide: BorderSide(color: theme.hintColor, width: 0.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            enabledBorder:  OutlineInputBorder(
+              borderSide: BorderSide(color: theme.hintColor, width: 0.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: theme.primaryColor, width: 0.5),
               borderRadius: BorderRadius.circular(10),
             ),
             hintText: hintText,

@@ -41,18 +41,15 @@ class _LoginUIState extends State<LoginUI> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(
-                    child: Image.asset('assets/logo_main.png', scale: 3.2)),
+                Expanded(child: Image.asset('assets/logo_main.png', scale: 3.2)),
                 Text(
                   "${locale.heyMate},",
-                  style: theme.textTheme.caption!
-                      .copyWith(fontSize: 14, color: greyTextColor),
+                  style: theme.textTheme.caption!.copyWith(fontSize: 14, color: greyTextColor),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   locale.signInNow,
-                  style: theme.textTheme.headline5!
-                      .copyWith(fontSize: 22, fontWeight: FontWeight.w600),
+                  style: theme.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 60),
                 CustomTextField(
@@ -64,8 +61,7 @@ class _LoginUIState extends State<LoginUI> {
                 const SizedBox(height: 32),
                 CustomButton(
                   onTap: () {
-                    widget.loginInteractor
-                        .loginWithPhone('', _numberController.text);
+                    widget.loginInteractor.loginWithPhone('', _numberController.text);
                   },
                 ),
                 const SizedBox(height: 42),
@@ -77,20 +73,24 @@ class _LoginUIState extends State<LoginUI> {
                 Row(
                   children: [
                     Expanded(
-                        child: CustomButton(
-                      prefix: 'assets/fb.png',
-                      text: locale.facebook,
-                      buttonColor: Theme.of(context).scaffoldBackgroundColor,
-                    )),
+                      child: CustomButton(
+                        prefix: 'assets/fb.png',
+                        text: locale.facebook,
+                        buttonColor: theme.scaffoldBackgroundColor,
+                        textColor: theme.primaryColorDark,
+                      ),
+                    ),
                     const SizedBox(
                       width: 12,
                     ),
                     Expanded(
-                        child: CustomButton(
-                      prefix: 'assets/google.png',
-                      text: locale.google,
-                      buttonColor: Theme.of(context).scaffoldBackgroundColor,
-                    )),
+                      child: CustomButton(
+                        prefix: 'assets/google.png',
+                        text: locale.google,
+                        buttonColor: theme.scaffoldBackgroundColor,
+                        textColor: theme.primaryColorDark,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 42),

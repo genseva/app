@@ -69,6 +69,7 @@ class WalletPage extends StatelessWidget {
                                 prefixIcon: Icons.add,
                                 buttonColor: theme.scaffoldBackgroundColor,
                                 prefixIconColor: theme.primaryColor,
+                                textColor: theme.primaryColor,
                               ),
                             ),
                           ],

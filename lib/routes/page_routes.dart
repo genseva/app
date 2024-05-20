@@ -1,5 +1,6 @@
 import 'package:deligo/features/account/ui/account_page.dart';
 import 'package:deligo/features/account/ui/profile_page.dart';
+import 'package:deligo/features/account/ui/saved_addresses_page.dart';
 import 'package:deligo/features/bottom_navigation/bottom_navigation.dart';
 import 'package:deligo/features/cab/ui/book_cab_page.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
@@ -13,6 +14,7 @@ import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
 import 'package:deligo/features/ride/ui/book_ride_screen.dart';
 import 'package:deligo/features/shopping/ui/shopping_screen.dart';
+import 'package:deligo/features/support/ui/support_page.dart';
 import 'package:deligo/features/wallet/ui/wallet_page.dart';
 import 'package:deligo/service/ui/book_service_screen.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +37,8 @@ class PageRoutes {
   static const String shoppingScreen = 'shopping_screen';
   static const String profilePage = 'profile_page';
   static const String languagePage = 'language_page';
+  static const String savedAddressesPage = 'saved_addresses_page';
+  static const String supportPage = 'support_page';
 
   Map<String, WidgetBuilder> routes() {
     return {
@@ -55,6 +59,8 @@ class PageRoutes {
       shoppingScreen: (context) => const ShoppingScreen(),
       profilePage: (context) => const ProfilePage(),
       languagePage: (context) => const LanguagePage(),
+      savedAddressesPage: (context) => const SavedAddressesPage(),
+      supportPage: (context) => const SupportPage(),
     };
   }
 }

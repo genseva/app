@@ -10,8 +10,16 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final List<(IconData, String, VoidCallback?)> options = [
-      (Icons.location_on, "Saved Addresses", () {}),
-      (Icons.mail, "Support & FAQs", () {}),
+      (
+        Icons.location_on,
+        "Saved Addresses",
+        () => Navigator.pushNamed(context, PageRoutes.savedAddressesPage),
+      ),
+      (
+        Icons.mail,
+        "Support & FAQs",
+          () => Navigator.pushNamed(context, PageRoutes.supportPage),
+      ),
       (
         Icons.language,
         "Change Language",

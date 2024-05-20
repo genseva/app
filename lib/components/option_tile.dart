@@ -8,6 +8,11 @@ class OptionTile extends StatelessWidget {
     this.isCard = false,
     this.icon,
     this.onTap,
+    this.bgColor,
+    this.iconColor,
+    this.subtitle,
+    this.height,
+    this.crossAxisAlignment,
   });
 
   final IconData? icon;
@@ -15,6 +20,11 @@ class OptionTile extends StatelessWidget {
   final bool isCard;
   final String title;
   final VoidCallback? onTap;
+  final Color? bgColor;
+  final Color? iconColor;
+  final String? subtitle;
+  final double? height;
+  final CrossAxisAlignment? crossAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +36,12 @@ class OptionTile extends StatelessWidget {
         margin: const EdgeInsets.only(top: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: Colors.grey.shade200,
-          ),
+          border: Border.all(color: Colors.grey.shade200),
         ),
-        height: 54,
+        height: height ?? 54,
+        alignment: Alignment.center,
         child: Row(
+          crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
           children: [
             if (icon != null)
               Container(
@@ -39,10 +49,12 @@ class OptionTile extends StatelessWidget {
                 height: 32,
                 width: 32,
                 decoration: BoxDecoration(
-                    color: theme.primaryColor, borderRadius: BorderRadius.circular(8)),
+                  color: bgColor ?? theme.primaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
                 child: Icon(
                   icon!,
-                  color: theme.scaffoldBackgroundColor,
+                  color: iconColor ?? theme.scaffoldBackgroundColor,
                   size: 20,
                 ),
               ),
@@ -54,10 +66,25 @@ class OptionTile extends StatelessWidget {
                   width: isCard ? 40 : 32,
                 ),
               ),
-            const SizedBox(width: 24),
-            Text(
-              title,
-              style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    title,
+                    style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  if (subtitle != null)
+                    Text(
+                      subtitle!,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: theme.unselectedWidgetColor,
+                      ),
+                    ),
+                ],
+              ),
             ),
           ],
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String? text;
   final Color? buttonColor;
+  final Color? textColor;
   final String? prefix;
   final IconData? prefixIcon;
   final Color? prefixIconColor;
@@ -16,6 +17,7 @@ class CustomButton extends StatelessWidget {
     this.prefixIcon,
     this.onTap,
     this.prefixIconColor,
+    this.textColor,
   });
 
   @override
@@ -24,12 +26,13 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ButtonStyle(
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              side: const BorderSide(color: Color(0xffebebeb)),
-              borderRadius: BorderRadius.circular(10))),
-          padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 20)),
-          elevation: MaterialStateProperty.all(0),
-          backgroundColor: MaterialStateProperty.all(buttonColor ?? theme.primaryColor)),
+        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            side: const BorderSide(color: Color(0xffebebeb)),
+            borderRadius: BorderRadius.circular(10))),
+        padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 20)),
+        elevation: MaterialStateProperty.all(0),
+        backgroundColor: MaterialStateProperty.all(buttonColor ?? theme.primaryColor),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -47,18 +50,16 @@ class CustomButton extends StatelessWidget {
                 width: 16,
               ),
             ),
-          Expanded(
-            child: Text(
-              text ?? 'Continue',
-              style: theme.textTheme.bodyMedium!.copyWith(
-                fontWeight: FontWeight.w600,
-                color: buttonColor == theme.scaffoldBackgroundColor
-                    ? theme.primaryColor
-                    : theme.scaffoldBackgroundColor,
-              ),
-              textAlign: TextAlign.center,
+          SizedBox(width: prefix != null || prefixIcon != null ? 10 : 0),
+          Text(
+            text ?? 'Continue',
+            style: theme.textTheme.bodyMedium!.copyWith(
+              fontWeight: FontWeight.w600,
+              color: textColor ?? theme.scaffoldBackgroundColor,
             ),
+            textAlign: TextAlign.center,
           ),
+          SizedBox(width: prefix != null || prefixIcon != null ? 10 : 0),
         ],
       ),
     );
