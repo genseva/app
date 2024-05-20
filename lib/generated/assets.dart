@@ -16,6 +16,8 @@ class Assets {
   static const String bannerFood2 = 'assets/banner/food2.png';
   static const String bannerGrocery1 = 'assets/banner/grocery1.png';
   static const String bannerGrocery2 = 'assets/banner/grocery2.png';
+  static const String categoriesChestPain = 'assets/medicine/categories/chestPain.png';
+  static const String categoriesCough = 'assets/medicine/categories/cough.png';
   static const String categoriesEcomAppliances = 'assets/ecommerce/categories/ecom_appliances.png';
   static const String categoriesEcomBeauty = 'assets/ecommerce/categories/ecom_beauty.png';
   static const String categoriesEcomHealth = 'assets/ecommerce/categories/ecom_health.png';
@@ -25,6 +27,10 @@ class Assets {
   static const String categoriesEcomPet = 'assets/ecommerce/categories/ecom_pet.png';
   static const String categoriesEcomPhone = 'assets/ecommerce/categories/ecom_phone.png';
   static const String categoriesEcomToys = 'assets/ecommerce/categories/ecom_toys.png';
+  static const String categoriesFever = 'assets/medicine/categories/fever.png';
+  static const String categoriesHeadache = 'assets/medicine/categories/headache.png';
+  static const String categoriesSkinRash = 'assets/medicine/categories/skinRash.png';
+  static const String categoriesWeakness = 'assets/medicine/categories/weakness.png';
   static const String categoryCatgCab = 'assets/category/catg_cab.png';
   static const String categoryCatgEcommerce = 'assets/category/catg_ecommerce.png';
   static const String categoryCatgFood = 'assets/category/catg_food.png';
@@ -76,6 +82,11 @@ class Assets {
   static const String itemsVegLadiesfinger = 'assets/grocery/items/veg_ladiesfinger.png';
   static const String itemsVegOnion = 'assets/grocery/items/veg_onion.png';
   static const String itemsVegPotatoes = 'assets/grocery/items/veg_potatoes.png';
+  static const String medicinesTablet1 = 'assets/medicine/medicines/tablet1.png';
+  static const String medicinesTablet2 = 'assets/medicine/medicines/tablet2.png';
+  static const String medicinesTablet3 = 'assets/medicine/medicines/tablet3.png';
+  static const String medicinesTablet4 = 'assets/medicine/medicines/tablet4.png';
+  static const String medicinesTablet5 = 'assets/medicine/medicines/tablet5.png';
   static const String paymentCreditCard = 'assets/payment/credit_card.png';
   static const String paymentDebitCard = 'assets/payment/debit_card.png';
   static const String paymentOnlineBanking = 'assets/payment/online_banking.png';
@@ -83,5 +94,7 @@ class Assets {
   static const String paymentPayu = 'assets/payment/payu.png';
   static const String paymentVecMoney = 'assets/payment/vec_money.png';
   static const String paymentVecWallet = 'assets/payment/vec_wallet.png';
+  static const String storeStore1 = 'assets/medicine/store/store1.png';
+  static const String storeStpre2 = 'assets/medicine/store/stpre2.png';
 
 }

@@ -65,5 +65,6 @@
   "whereToDeliver": "Where to deliver?",
   "orderMedicine": "Order Medicine",
   "startShopping": "Start Shopping",
-  "searchProducts": "Search Products"
+  "searchProducts": "Search Products",
+  "searchMedicineOrPharmaStore": "Search Medicine or pharma store"
 }

@@ -159,4 +159,37 @@ class CategoryDomain {
       image: Assets.categoriesEcomPet,
     ),
   ];
+
+  static final List<CategoryDomain> medicineList = [
+    CategoryDomain(
+      "Cough",
+      [],
+      image: Assets.categoriesCough,
+    ),
+    CategoryDomain(
+      "Pain Relief",
+      [],
+      image: Assets.categoriesChestPain,
+    ),
+    CategoryDomain(
+      "Skin Care",
+      [],
+      image: Assets.categoriesSkinRash,
+    ),
+    CategoryDomain(
+      "Headache",
+      [],
+      image: Assets.categoriesHeadache,
+    ),
+    CategoryDomain(
+      "Fever",
+      [],
+      image: Assets.categoriesFever,
+    ),
+    CategoryDomain(
+      "Weakness",
+      [],
+      image: Assets.categoriesWeakness,
+    ),
+  ];
 }

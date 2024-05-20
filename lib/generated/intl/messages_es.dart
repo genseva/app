@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "km": MessageLookupByLibrary.simpleMessage("kilómetros"),
         "phoneNumber":
             MessageLookupByLibrary.simpleMessage("Número de teléfono"),
+        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
+            "Search Medicine or pharma store"),
         "searchProducts":
             MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage":

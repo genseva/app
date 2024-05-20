@@ -107,5 +107,6 @@
   "callForHelp": "Yardım için ara",
   "quickCallingForHelp": "hel için hızlı arama",
   "getSupport": "Get Support",
-  "searchProducts": "Search Products"
+  "searchProducts": "Search Products",
+  "searchMedicineOrPharmaStore": "Search Medicine or pharma store"
 }

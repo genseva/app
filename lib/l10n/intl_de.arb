@@ -107,5 +107,6 @@
   "callForHelp": "Hilferuf",
   "quickCallingForHelp": "Schnell Hilfe holen",
   "getSupport": "Get Support",
-  "searchProducts": "Search Products"
+  "searchProducts": "Search Products",
+  "searchMedicineOrPharmaStore": "Search Medicine or pharma store"
 }

@@ -65,6 +65,10 @@ flutter:
     - assets/ecommerce/
     - assets/ecommerce/products/
     - assets/ecommerce/categories/
+    - assets/medicine/
+    - assets/medicine/store/
+    - assets/medicine/medicines/
+    - assets/medicine/categories/
 
   fonts:
     - family: ProductSans

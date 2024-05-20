@@ -63,7 +63,7 @@ class AccountPage extends StatelessWidget {
                     Text(
                       "+1 987 654 3210",
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.unselectedWidgetColor,
+                        color: theme.hintColor,
                       ),
                     ),
                   ],

@@ -709,6 +709,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Search Medicine or pharma store`
+  String get searchMedicineOrPharmaStore {
+    return Intl.message(
+      'Search Medicine or pharma store',
+      name: 'searchMedicineOrPharmaStore',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

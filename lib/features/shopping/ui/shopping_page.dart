@@ -1,3 +1,4 @@
+import 'package:deligo/components/category_grid_tile.dart';
 import 'package:deligo/components/custom_scaffold.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/cart/model/category_domain.dart';
@@ -34,14 +35,9 @@ class ShoppingPage extends StatelessWidget {
                 ),
                 itemCount: CategoryDomain.ecommerceList.length * 2,
                 itemBuilder: (context, index) {
-                  var category = CategoryDomain.ecommerceList[index % CategoryDomain.ecommerceList.length];
-                  return GridTile(
-                    header: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(category.title),
-                    ),
-                    child: Image.asset(category.image!),
-                  );
+                  var category =
+                      CategoryDomain.ecommerceList[index % CategoryDomain.ecommerceList.length];
+                  return CategoryGridTile(category);
                 },
               ),
             )

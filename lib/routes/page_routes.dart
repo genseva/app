@@ -11,7 +11,7 @@ import 'package:deligo/features/grocery/ui/grocery_category_screen.dart';
 import 'package:deligo/features/grocery/ui/grocery_store_screen.dart';
 import 'package:deligo/features/grocery/ui/order_grocery_screen.dart';
 import 'package:deligo/features/language/ui/language_page.dart';
-import 'package:deligo/features/medicine/ui/order_medicine_screen.dart';
+import 'package:deligo/features/medicine/ui/order_medicine_page.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
 import 'package:deligo/features/ride/ui/book_ride_screen.dart';
@@ -60,7 +60,7 @@ class PageRoutes {
       bookCabScreen: (context) => const BookCabScreen(),
       bookServiceScreen: (context) => const BookServiceScreen(),
       bookParcelScreen: (context) => const BookParcelScreen(),
-      orderMedicineScreen: (context) => const OrderMedicineScreen(),
+      orderMedicineScreen: (context) => const OrderMedicinePage(),
       shoppingScreen: (context) => const ShoppingPage(),
       profilePage: (context) => const ProfilePage(),
       languagePage: (context) => const LanguagePage(),
