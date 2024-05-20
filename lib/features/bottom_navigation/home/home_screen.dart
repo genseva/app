@@ -49,6 +49,7 @@ class HomeScreen extends StatelessWidget {
       Category('assets/category/catg_ecommerce.png', locale.shop,
           () => Navigator.pushNamed(context, PageRoutes.shoppingScreen)),
     ];
+    var theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
@@ -57,42 +58,31 @@ class HomeScreen extends StatelessWidget {
             // contentPadding: const EdgeInsetsDirectional.only(start: 6),
             title: Row(
               children: [
-                Icon(
-                  Icons.home,
-                  color: Theme.of(context).primaryColor,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
+                Icon(Icons.home, color: theme.primaryColor),
+                const SizedBox(width: 10),
                 Text(
                   locale.home,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: theme.textTheme.headlineSmall?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
                   width: 12,
                 ),
-                Icon(
-                  Icons.keyboard_arrow_down,
-                  color: blackColor,
-                ),
+                Icon(Icons.keyboard_arrow_down, color: blackColor),
               ],
             ),
-            subtitle: const Text(
-              ' B 101, Nirvana Point, Hemilton',
-              // style: Theme.of(context).textTheme.caption,
-            ),
+            subtitle: const Text(' B 101, Nirvana Point, Hemilton'),
             trailing: GestureDetector(
-              onTap: () => Navigator.pushNamed(context, PageRoutes.accountPage),
+              onTap: () {
+                Navigator.pushNamed(context, PageRoutes.accountPage);
+              },
               child: CircleAvatar(
-                  radius: 18,
-                  backgroundColor: Theme.of(context).primaryColor,
-                  child: Icon(
-                    Icons.person,
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                  )),
+                radius: 18,
+                backgroundColor: theme.primaryColor,
+                child: Icon(
+                  Icons.person,
+                  color: theme.scaffoldBackgroundColor,
+                ),
+              ),
             ),
           ),
         ),
@@ -105,10 +95,8 @@ class HomeScreen extends StatelessWidget {
             ),
             Text(
               locale.whatAreYouLookingFor,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineSmall!
-                  .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
+              style: theme.textTheme.headlineSmall
+                  ?.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             const SizedBox(
               height: 8,
@@ -146,10 +134,7 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: Text(
                         categories[index].title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyLarge!
-                            .copyWith(fontSize: 10),
+                        style: theme.textTheme.bodyLarge!.copyWith(fontSize: 10),
                       ),
                     )
                   ],
@@ -164,14 +149,12 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Text(
                   locale.saveExtraWhileOrdering,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
+                  style: theme.textTheme.headlineSmall!
                       .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
                 ),
                 Text(
                   locale.seeAll,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                  style: theme.textTheme.headlineSmall!.copyWith(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).primaryColor),

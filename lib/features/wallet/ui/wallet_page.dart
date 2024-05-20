@@ -1,5 +1,6 @@
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/features/wallet/model/transaction_domain.dart';
+import 'package:deligo/features/wallet/ui/transaction_list.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -138,20 +139,12 @@ class WalletPage extends StatelessWidget {
                       ],
                     ),
                     Expanded(
-                      child: Container(
+                      child: ColoredBox(
                         color: theme.disabledColor,
                         child: TabBarView(
                           children: [
-                            ListView.separated(
-                              itemBuilder: (context, index) => const SizedBox(),
-                              separatorBuilder: (context, index) => const SizedBox(),
-                              itemCount: TransactionDomain.list.length,
-                            ),
-                            ListView.separated(
-                              itemBuilder: (context, index) => const SizedBox(),
-                              separatorBuilder: (context, index) => const SizedBox(),
-                              itemCount: 2,
-                            ),
+                            TransactionList(list: TransactionDomain.list),
+                            TransactionList(list: TransactionDomain.topUps),
                           ],
                         ),
                       ),

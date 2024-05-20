@@ -1,18 +1,11 @@
-import 'package:deligo/features/account/ui/account_page.dart';
 import 'package:deligo/features/bottom_navigation/bottom_navigation.dart';
-import 'package:deligo/features/cab/ui/book_cab_page.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
 import 'package:deligo/features/food/ui/order_food_screen.dart';
 import 'package:deligo/features/food/ui/restaurant_profile_screen.dart';
 import 'package:deligo/features/grocery/ui/grocery_store_screen.dart';
 import 'package:deligo/features/grocery/ui/order_grocery_screen.dart';
-import 'package:deligo/features/medicine/ui/order_medicine_screen.dart';
-import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
-import 'package:deligo/features/ride/ui/book_ride_screen.dart';
-import 'package:deligo/features/shopping/ui/shopping_screen.dart';
 import 'package:deligo/features/wallet/ui/wallet_page.dart';
-import 'package:deligo/service/ui/book_service_screen.dart';
 import 'package:flutter/material.dart';
 
 class PageRoutes {
@@ -41,8 +34,8 @@ class PageRoutes {
       restaurantPage: (context) => const RestaurantProfilePage(),
       checkoutPage: (context) => const CheckoutPage(),
       paymentPage: (context) => const PaymentPage(),
-      walletPage: (context) => const WalletPage(),
       accountPage: (context) => const AccountPage(),
+      walletPage: (context) => const WalletPage(),
       bookRideScreen: (context) => const BookRideScreen(),
       bookCabScreen: (context) => const BookCabScreen(),
       bookServiceScreen: (context) => const BookServiceScreen(),
