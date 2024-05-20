@@ -67,4 +67,23 @@ class StoreDomain {
       '08:00 am to 10:00 pm',
     ),
   ];
+
+  static final List<StoreDomain> medicineList = [
+    StoreDomain(
+      Assets.storeStore1,
+      'Healthcure Pharma',
+      'CentralPark',
+      '20',
+      1.5,
+      'Open 24 hours',
+    ),
+    StoreDomain(
+      Assets.storeStpre2,
+      'Medicare Store',
+      'Jamestown, New York',
+      '22',
+      3.8,
+      '08:00 am to 10:00 pm',
+    ),
+  ];
 }

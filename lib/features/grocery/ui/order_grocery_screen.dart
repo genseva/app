@@ -114,9 +114,12 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
               ),
             ),
           ),
-          StoreList(
-            StoreDomain.groceryList,
-            onTap: (store) {},
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: StoreList(
+              StoreDomain.groceryList,
+              onTap: (store) {},
+            ),
           ),
         ],
       ),

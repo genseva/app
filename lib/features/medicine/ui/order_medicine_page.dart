@@ -1,7 +1,9 @@
 import 'package:deligo/components/category_grid_tile.dart';
 import 'package:deligo/components/custom_scaffold.dart';
 import 'package:deligo/components/custom_text_field.dart';
+import 'package:deligo/components/store_list.dart';
 import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/cart/model/store_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -55,27 +57,13 @@ class OrderMedicinePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    " stores found",
+                    "${StoreDomain.medicineList.length} stores found",
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: theme.hintColor,
                     ),
                   ),
                   const SizedBox(height: 16),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                    ),
-                    itemCount: CategoryDomain.medicineList.length,
-                    itemBuilder: (context, index) {
-                      var category = CategoryDomain.medicineList[index];
-                      return CategoryGridTile(category);
-                    },
-                  ),
+                  StoreList(StoreDomain.medicineList),
                 ],
               ),
             ),
