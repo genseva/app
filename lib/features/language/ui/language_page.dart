@@ -117,10 +117,7 @@ class _LanguagePageState extends State<LanguagePage> {
               if (widget.fromRoot) {
                 Navigator.pushNamed(context, LoginRoutes.loginPage);
               } else {
-                Navigator.pushReplacementNamed(
-                  context,
-                  PageRoutes.bottomNavigation,
-                );
+                Navigator.pop(context);
               }
             }),
       ),

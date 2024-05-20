@@ -9,12 +9,16 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final List<(IconData, String)> options = [
-      (Icons.location_on, "Saved Addresses"),
-      (Icons.mail, "Support & FAQs"),
-      (Icons.language, "Change Language"),
-      (Icons.assignment, "Terms & Conditions"),
-      (Icons.logout, "Logout"),
+    final List<(IconData, String, VoidCallback?)> options = [
+      (Icons.location_on, "Saved Addresses", () {}),
+      (Icons.mail, "Support & FAQs", () {}),
+      (
+        Icons.language,
+        "Change Language",
+        () => Navigator.pushNamed(context, PageRoutes.languagePage),
+      ),
+      (Icons.assignment, "Terms & Conditions", () {}),
+      (Icons.logout, "Logout", () {}),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -133,7 +137,7 @@ class AccountPage extends StatelessWidget {
               child: ListView.separated(
                 itemBuilder: (context, index) {
                   var option = options[index];
-                  return OptionTile(title: option.$2, icon: option.$1);
+                  return OptionTile(title: option.$2, icon: option.$1, onTap: option.$3);
                 },
                 separatorBuilder: (context, index) => const SizedBox(),
                 itemCount: options.length,

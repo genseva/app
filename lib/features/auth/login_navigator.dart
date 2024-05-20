@@ -35,9 +35,7 @@ class LoginNavigator extends StatelessWidget {
           late WidgetBuilder builder;
           switch (settings.name) {
             case LoginRoutes.loginRoot:
-              builder = (BuildContext _) => const LanguagePage(
-                    fromRoot: true,
-                  );
+              builder = (BuildContext _) => const LanguagePage(fromRoot: true);
               break;
             case LoginRoutes.loginPage:
               builder = (BuildContext _) => const LoginPage();
