@@ -1,3 +1,4 @@
+import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_app_bar.dart';
 import 'package:deligo/components/custom_divider.dart';
@@ -118,7 +119,9 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: StoreList(
               StoreDomain.groceryList,
-              onTap: (store) {},
+              onTap: (store) {
+                Navigator.pushNamed(context, PageRoutes.groceryStoreScreen, arguments: store);
+              },
             ),
           ),
         ],

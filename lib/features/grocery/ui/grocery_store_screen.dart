@@ -1,11 +1,11 @@
 import 'package:deligo/components/custom_shadow.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/cart/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/grocery/ui/grocery_item_card.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class GroceryStoreScreen extends StatelessWidget {
@@ -13,7 +13,9 @@ class GroceryStoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final StoreDomain store = ModalRoute.of(context)?.settings.arguments as StoreDomain;
     final locale = AppLocalizations.of(context);
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -39,23 +41,19 @@ class GroceryStoreScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      "Grocery Store",
-                      style: Theme.of(context).textTheme.headlineSmall,
+                      store.name,
+                      style: theme.textTheme.headlineSmall,
                     ),
                     const SizedBox(height: 8),
                     Row(
                       children: [
                         Text(
-                          "Center Park • ",
-                          style:
-                              Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
+                          "${store.location} • ",
+                          style: theme.textTheme.titleSmall?.copyWith(color: Colors.grey),
                         ),
                         Text(
-                          "1.5 km",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleSmall
-                              ?.copyWith(color: Colors.black54),
+                          "${store.distance} km",
+                          style: theme.textTheme.titleSmall?.copyWith(color: Colors.black54),
                         ),
                       ],
                     ),
@@ -71,9 +69,16 @@ class GroceryStoreScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomInfoWidget(Icons.directions_bike_outlined, "Delivery in", "20 min"),
                     CustomInfoWidget(
-                        Icons.watch_later_outlined, "Opening Timing", "08:00 am to 10:00 pm"),
+                      Icons.directions_bike_outlined,
+                      "Delivery in",
+                      "${store.deliveryTime} min",
+                    ),
+                    CustomInfoWidget(
+                      Icons.watch_later_outlined,
+                      "Opening Timing",
+                      store.timing,
+                    ),
                   ],
                 ),
               ),
@@ -91,7 +96,7 @@ class GroceryStoreScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 15),
                     GestureDetector(
-                      onTap: ()=> Navigator.pushNamed(context, PageRoutes.groceryCategoryScreen),
+                      onTap: () => Navigator.pushNamed(context, PageRoutes.groceryCategoryScreen),
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
@@ -120,15 +125,15 @@ class GroceryStoreScreen extends StatelessWidget {
                           children: [
                             Text(
                               category.title,
-                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             const Spacer(),
                             Icon(
                               Icons.chevron_right,
-                              color: Theme.of(context).primaryColor,
+                              color: theme.primaryColor,
                             ),
                           ],
                         ),
