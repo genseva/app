@@ -2,6 +2,7 @@ import 'package:deligo/components/option_tile.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -18,15 +19,23 @@ class AccountPage extends StatelessWidget {
       (
         Icons.mail,
         "Support & FAQs",
-          () => Navigator.pushNamed(context, PageRoutes.supportPage),
+        () => Navigator.pushNamed(context, PageRoutes.supportPage),
       ),
       (
         Icons.language,
         "Change Language",
         () => Navigator.pushNamed(context, PageRoutes.languagePage),
       ),
-      (Icons.assignment, "Terms & Conditions", () {}),
-      (Icons.logout, "Logout", () {}),
+      (
+        Icons.assignment,
+        "Terms & Conditions",
+        () => Navigator.pushNamed(context, PageRoutes.tncPage),
+      ),
+      (
+        Icons.logout,
+        "Logout",
+        () => Phoenix.rebirth(context),
+      ),
     ];
     return Scaffold(
       appBar: AppBar(
