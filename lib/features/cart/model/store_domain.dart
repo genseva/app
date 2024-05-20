@@ -86,4 +86,47 @@ class StoreDomain {
       '08:00 am to 10:00 pm',
     ),
   ];
+
+  static final List<StoreDomain> serviceList = [
+    StoreDomain(
+      Assets.profilesPlumber1,
+      'Plumber 1',
+      'CentralPark',
+      '20',
+      1.5,
+      'Open 24 hours',
+    ),
+    StoreDomain(
+      Assets.profilesPlumber2,
+      'Plumber 2',
+      'Jamestown, New York',
+      '22',
+      3.8,
+      '08:00 am to 10:00 pm',
+    ),
+    StoreDomain(
+      Assets.profilesPlumber3,
+      'Plumber 3',
+      'CentralPark',
+      '20',
+      1.5,
+      'Open 24 hours',
+    ),
+    StoreDomain(
+      Assets.profilesPlumber4,
+      'Plumber 4',
+      'Jamestown, New York',
+      '22',
+      3.8,
+      '08:00 am to 10:00 pm',
+    ),
+    StoreDomain(
+      Assets.profilesPlumber5,
+      'Plumber 5',
+      'Jamestown, New York',
+      '22',
+      3.8,
+      '08:00 am to 10:00 pm',
+    ),
+  ];
 }

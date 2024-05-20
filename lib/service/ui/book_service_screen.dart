@@ -1,4 +1,9 @@
 import 'package:deligo/components/custom_app_bar.dart';
+import 'package:deligo/components/custom_scaffold.dart';
+import 'package:deligo/components/custom_text_field.dart';
+import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/cart/model/store_domain.dart';
+import 'package:deligo/features/category/ui/category_list.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -9,21 +14,28 @@ class BookServiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
-
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(250),
-        child: CustomAppBar(
-          title: locale.bookService,
-          image: Assets.headerHeaderHandyman,
-          appbarBottom: Positioned(
-            bottom: 0,
-            left: 8,
-            right: 0,
-            child: SizedBox(
-              height: 100,
+    final theme = Theme.of(context);
+    return CustomScaffold(
+      image: Assets.headerHeaderHandyman,
+      title: locale.bookService,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomTextField(
+              bgColor: theme.scaffoldBackgroundColor,
+              hintText: locale.searchMedicineOrPharmaStore,
+              prefixIcon: Icon(Icons.search, color: theme.primaryColorDark, size: 24),
             ),
-          ),
+            Flexible(
+              child: CategoryList(
+                storeListTitle: "Providers near me",
+                stores: StoreDomain.serviceList,
+                categories: CategoryDomain.serviceList,
+              ),
+            ),
+          ],
         ),
       ),
     );

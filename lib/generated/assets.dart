@@ -28,6 +28,15 @@ class Assets {
   static const String categoriesEcomPhone = 'assets/ecommerce/categories/ecom_phone.png';
   static const String categoriesEcomToys = 'assets/ecommerce/categories/ecom_toys.png';
   static const String categoriesFever = 'assets/medicine/categories/fever.png';
+  static const String categoriesHandyCarpainter = 'assets/service/categories/handy_carpainter.png';
+  static const String categoriesHandyCleaner = 'assets/service/categories/handy_cleaner.png';
+  static const String categoriesHandyElec = 'assets/service/categories/handy_elec.png';
+  static const String categoriesHandyGardener = 'assets/service/categories/handy_gardener.png';
+  static const String categoriesHandyMover = 'assets/service/categories/handy_mover.png';
+  static const String categoriesHandyPainter = 'assets/service/categories/handy_painter.png';
+  static const String categoriesHandyPlumber = 'assets/service/categories/handy_plumber.png';
+  static const String categoriesHandySalon = 'assets/service/categories/handy_salon.png';
+  static const String categoriesHandySanitize = 'assets/service/categories/handy_sanitize.png';
   static const String categoriesHeadache = 'assets/medicine/categories/headache.png';
   static const String categoriesSkinRash = 'assets/medicine/categories/skinRash.png';
   static const String categoriesWeakness = 'assets/medicine/categories/weakness.png';
@@ -94,6 +103,11 @@ class Assets {
   static const String paymentPayu = 'assets/payment/payu.png';
   static const String paymentVecMoney = 'assets/payment/vec_money.png';
   static const String paymentVecWallet = 'assets/payment/vec_wallet.png';
+  static const String profilesPlumber1 = 'assets/service/profiles/plumber1.png';
+  static const String profilesPlumber2 = 'assets/service/profiles/plumber2.png';
+  static const String profilesPlumber3 = 'assets/service/profiles/plumber3.png';
+  static const String profilesPlumber4 = 'assets/service/profiles/plumber4.png';
+  static const String profilesPlumber5 = 'assets/service/profiles/plumber5.png';
   static const String storeStore1 = 'assets/medicine/store/store1.png';
   static const String storeStpre2 = 'assets/medicine/store/stpre2.png';
 

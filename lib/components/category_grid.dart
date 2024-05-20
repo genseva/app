@@ -1,0 +1,28 @@
+import 'package:deligo/components/category_grid_tile.dart';
+import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:flutter/material.dart';
+
+class CategoryGrid extends StatelessWidget {
+  const CategoryGrid(this.list, {super.key});
+
+  final List<CategoryDomain> list;
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      padding: EdgeInsets.zero,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+      ),
+      itemCount: list.length,
+      itemBuilder: (context, index) {
+        var category = list[index];
+        return CategoryGridTile(category);
+      },
+    );
+  }
+}

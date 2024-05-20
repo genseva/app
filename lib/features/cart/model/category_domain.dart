@@ -192,4 +192,52 @@ class CategoryDomain {
       image: Assets.categoriesWeakness,
     ),
   ];
+
+  static final List<CategoryDomain> serviceList = [
+    CategoryDomain(
+      "Home Clean",
+      [],
+      image: Assets.categoriesHandyCleaner,
+    ),
+    CategoryDomain(
+      "Electrician",
+      [],
+      image: Assets.categoriesHandyElec,
+    ),
+    CategoryDomain(
+      "Plumber",
+      [],
+      image: Assets.categoriesHandyPlumber,
+    ),
+    CategoryDomain(
+      "Carpainter",
+      [],
+      image: Assets.categoriesHandyCarpainter,
+    ),
+    CategoryDomain(
+      "Painter",
+      [],
+      image: Assets.categoriesHandyPainter,
+    ),
+    CategoryDomain(
+      "Gardening",
+      [],
+      image: Assets.categoriesHandyGardener,
+    ),
+    CategoryDomain(
+      "Mover",
+      [],
+      image: Assets.categoriesHandyMover,
+    ),
+    CategoryDomain(
+      "Beauty Salon",
+      [],
+      image: Assets.categoriesHandySalon,
+    ),
+    CategoryDomain(
+      "Sanitize",
+      [],
+      image: Assets.categoriesHandySanitize,
+    ),
+  ];
 }
