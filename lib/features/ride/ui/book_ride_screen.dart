@@ -1,6 +1,6 @@
 import 'package:deligo/components/custom_app_bar.dart';
 import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/custom_field.dart';
+import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';

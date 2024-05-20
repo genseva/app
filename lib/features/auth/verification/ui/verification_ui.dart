@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_field.dart';
+import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/auth/verification/ui/verification_interactor.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';

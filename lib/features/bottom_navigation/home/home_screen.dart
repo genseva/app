@@ -1,5 +1,5 @@
 import 'package:deligo/app_config/colors.dart';
-import 'package:deligo/components/custom_field.dart';
+import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
 import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/custom_field.dart';
+import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/components/custom_shadow.dart';
 import 'package:deligo/features/cart/model/category_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';

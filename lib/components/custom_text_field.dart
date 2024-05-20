@@ -1,55 +1,47 @@
-import 'package:deligo/app_config/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   /// pass title only if required to display
   final String? title;
-  final String hintText;
+  final String? hintText;
   final String? initialValue;
   final TextEditingController? textEditingController;
   final TextInputType? textInputType;
   final Icon? prefixIcon;
 
-  const CustomTextField(
-      {Key? key,
-      this.title,
-      required this.hintText,
-      this.initialValue,
-      this.textEditingController,
-      this.textInputType,
-      this.prefixIcon})
-      : super(key: key);
+  const CustomTextField({
+    super.key,
+    this.title,
+    this.hintText,
+    this.initialValue,
+    this.textEditingController,
+    this.textInputType,
+    this.prefixIcon,
+  });
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (title != null)
           Text(
             title!,
-            style: Theme.of(context)
-                .textTheme
-                .caption!
-                .copyWith(fontSize: 14, color: greyTextColor),
+            style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
           ),
-        const SizedBox(
-          height: 14,
-        ),
+        const SizedBox(height: 12),
         TextFormField(
           keyboardType: textInputType,
           controller: textEditingController,
           initialValue: initialValue,
-          style: Theme.of(context).textTheme.headline5!.copyWith(fontSize: 15),
+          style: theme.textTheme.bodyLarge,
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
             filled: true,
             fillColor: const Color(0xfff5f7f9),
-            // isDense: true,
-            hintStyle: Theme.of(context)
-                .textTheme
-                .caption!
-                .copyWith(color: const Color(0x99babec6)),
+            isDense: true,
+            hintStyle: theme.textTheme.labelLarge!.copyWith(color: const Color(0x99babec6)),
             border: OutlineInputBorder(
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(10),

@@ -1,4 +1,4 @@
-import 'package:deligo/features/auth/login_navigator.dart';
+import 'package:deligo/features/account/ui/account_page.dart';
 import 'package:deligo/features/language/bloc/language_cubit.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,11 @@ import 'app_config/style.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
+    [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
+  );
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
+  );
   runApp(
     BlocProvider<LanguageCubit>(
       create: (context) => LanguageCubit()..getCurrentLanguage(),
@@ -42,7 +46,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: AppLocalizations.delegate.supportedLocales,
           locale: locale,
           theme: appTheme,
-          home: const LoginNavigator(),
+          home: const AccountPage(),
           routes: PageRoutes().routes(),
           debugShowCheckedModeBanner: false,
         );
