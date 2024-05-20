@@ -98,7 +98,11 @@ class CategoryDomain {
         FoodDomain("Night Cream", Assets.itemsLotion, 10.00, cartQuantity: 200, unit: "g"),
       ],
     ),
-    CategoryDomain("Dairy", []),
-    CategoryDomain("Fruits", []),
+    CategoryDomain("Dairy", [
+      FoodDomain("Milk", Assets.itemsPersonalcareLiquid, 13.00, cartQuantity: 350, unit: "ml"),
+    ]),
+    CategoryDomain("Fruits", [
+      FoodDomain("Fresh Capsicum", Assets.itemsVegCapsicum, 6.00, cartQuantity: 500, unit: "g"),
+    ]),
   ];
 }

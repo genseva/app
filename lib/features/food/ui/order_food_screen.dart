@@ -67,10 +67,7 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                           padding: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             categories[index].title,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(fontSize: 10),
+                            style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 10),
                           ),
                         )
                       ],
@@ -127,9 +124,9 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
-              child: GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, PageRoutes.restaurantPage,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                onTap: () => Navigator.pushNamed(context, PageRoutes.restaurantPage,
                     arguments: restaurantList[index]),
                 child: Row(
                   children: [
@@ -147,10 +144,7 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                         children: <Widget>[
                           Text(
                             restaurantList[index].name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(
+                            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -172,8 +166,7 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 12, color: greyTextColor2),
+                                    .copyWith(fontSize: 12, color: greyTextColor2),
                               ),
                               const SizedBox(
                                 width: 20,
@@ -183,8 +176,7 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 12, color: greyTextColor2),
+                                    .copyWith(fontSize: 12, color: greyTextColor2),
                               )
                             ],
                           ),
@@ -197,10 +189,7 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                               ),
                               Text(
                                 restaurantList[index].foodType,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
+                                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       color: greyTextColor3,
                                       fontSize: 12,
                                     ),

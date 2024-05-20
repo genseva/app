@@ -7,6 +7,7 @@ import 'package:deligo/features/cab/ui/book_cab_page.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
 import 'package:deligo/features/food/ui/order_food_screen.dart';
 import 'package:deligo/features/food/ui/restaurant_profile_screen.dart';
+import 'package:deligo/features/grocery/ui/grocery_category_screen.dart';
 import 'package:deligo/features/grocery/ui/grocery_store_screen.dart';
 import 'package:deligo/features/grocery/ui/order_grocery_screen.dart';
 import 'package:deligo/features/language/ui/language_page.dart';
@@ -25,6 +26,7 @@ class PageRoutes {
   static const String orderFoodScreen = 'order_food';
   static const String orderGroceryScreen = 'grocery_food';
   static const String groceryStoreScreen = 'grocery_store_screen';
+  static const String groceryCategoryScreen = 'grocery_category_screen';
   static const String restaurantPage = 'restaurant_page';
   static const String checkoutPage = 'checkout_page';
   static const String paymentPage = 'payment_page';
@@ -48,6 +50,7 @@ class PageRoutes {
       orderFoodScreen: (context) => const OrderFoodScreen(),
       orderGroceryScreen: (context) => const OrderGroceryScreen(),
       groceryStoreScreen: (context) => const GroceryStoreScreen(),
+      groceryCategoryScreen: (context) => const GroceryCategoryScreen(),
       restaurantPage: (context) => const RestaurantProfilePage(),
       checkoutPage: (context) => const CheckoutPage(),
       paymentPage: (context) => const PaymentPage(),

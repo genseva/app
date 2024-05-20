@@ -152,7 +152,8 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
-              child: GestureDetector(
+              child: InkWell(
+                splashColor: Colors.transparent,
                 onTap: () =>
                     Navigator.pushNamed(context, PageRoutes.groceryStoreScreen),
                 child: Row(
