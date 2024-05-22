@@ -41,7 +41,7 @@ class _RegistrationUIState extends State<RegistrationUI> {
                   locale.signUpNow,
                   style: Theme.of(context)
                       .textTheme
-                      .headline5!
+                      .headlineSmall!
                       .copyWith(fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
@@ -49,7 +49,7 @@ class _RegistrationUIState extends State<RegistrationUI> {
                 ),
                 Text(
                   locale.youAreNotRegistered,
-                  style: Theme.of(context).textTheme.caption!,
+                  style: Theme.of(context).textTheme.labelLarge!,
                 ),
                 const SizedBox(
                   height: 28,

@@ -69,7 +69,7 @@ class _VerificationUIState extends State<VerificationUI> {
                 locale.verification,
                 style: Theme.of(context)
                     .textTheme
-                    .headline5!
+                    .headlineSmall!
                     .copyWith(fontWeight: FontWeight.w600),
               ),
               const SizedBox(
@@ -79,7 +79,7 @@ class _VerificationUIState extends State<VerificationUI> {
                 locale.enterVerificationCodeSent,
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .labelLarge!
                     .copyWith(color: greyTextColor),
               ),
               const SizedBox(
@@ -89,7 +89,7 @@ class _VerificationUIState extends State<VerificationUI> {
                 locale.enterOtp,
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .labelLarge!
                     .copyWith(color: greyTextColor),
               ),
               Row(
@@ -144,7 +144,7 @@ class _VerificationUIState extends State<VerificationUI> {
                     '0:$_start ${locale.minLeft}',
                     style: Theme.of(context)
                         .textTheme
-                        .caption!
+                        .labelLarge!
                         .copyWith(color: greyTextColor),
                   ),
                   GestureDetector(
@@ -159,7 +159,7 @@ class _VerificationUIState extends State<VerificationUI> {
                       locale.resend,
                       style: Theme.of(context)
                           .textTheme
-                          .bodyText1!
+                          .bodyLarge!
                           .copyWith(fontSize: 12, fontWeight: FontWeight.w600),
                     ),
                   )

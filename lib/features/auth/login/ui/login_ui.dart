@@ -44,7 +44,7 @@ class _LoginUIState extends State<LoginUI> {
                 Expanded(child: Image.asset('assets/logo_main.png', scale: 3.2)),
                 Text(
                   "${locale.heyMate},",
-                  style: theme.textTheme.caption!.copyWith(fontSize: 14, color: greyTextColor),
+                  style: theme.textTheme.labelLarge!.copyWith(fontSize: 14, color: greyTextColor),
                 ),
                 const SizedBox(height: 8),
                 Text(

@@ -5,7 +5,9 @@ import 'package:deligo/features/account/model/address.dart';
 import 'package:flutter/material.dart';
 
 class CabChild extends StatelessWidget {
-  const CabChild({super.key});
+  const CabChild({super.key, this.isCab = true});
+
+  final bool isCab;
 
   @override
   Widget build(BuildContext context) {
@@ -25,28 +27,30 @@ class CabChild extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: theme.primaryColor,
-                          radius: 16,
-                          foregroundColor: theme.scaffoldBackgroundColor,
-                          child: const Icon(Icons.location_on, size: 16),
-                        ),
-                        const SizedBox(width: 8),
-                        const Expanded(
-                          child: CustomTextField(
-                            bgColor: Colors.transparent,
-                            showBorder: false,
-                            hintText: "Your location",
+                    if (isCab) ...[
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: theme.primaryColor,
+                            radius: 16,
+                            foregroundColor: theme.scaffoldBackgroundColor,
+                            child: const Icon(Icons.location_on, size: 16),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Padding(
-                      padding: EdgeInsetsDirectional.only(start: 54.0),
-                      child: CustomDivider(),
-                    ),
+                          const SizedBox(width: 8),
+                          const Expanded(
+                            child: CustomTextField(
+                              bgColor: Colors.transparent,
+                              showBorder: false,
+                              hintText: "Your location",
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Padding(
+                        padding: EdgeInsetsDirectional.only(start: 54.0),
+                        child: CustomDivider(),
+                      ),
+                    ],
                     Row(
                       children: [
                         CircleAvatar(
@@ -56,11 +60,12 @@ class CabChild extends StatelessWidget {
                           child: const Icon(Icons.navigation, size: 16),
                         ),
                         const SizedBox(width: 8),
-                        const Expanded(
+                        Expanded(
                           child: CustomTextField(
                             bgColor: Colors.transparent,
                             showBorder: false,
-                            hintText: "Search for a destination",
+                            hintText:
+                                isCab ? "Search for a destination" : "Search delivery location",
                           ),
                         ),
                       ],
@@ -81,17 +86,21 @@ class CabChild extends StatelessWidget {
                       textStyle: theme.textTheme.bodyMedium,
                     ),
                   ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: CustomButton(
-                      buttonColor: theme.scaffoldBackgroundColor,
-                      prefixIcon: Icons.add_circle,
-                      prefixIconColor: Colors.yellow.shade700,
-                      text: "Add a destination",
-                      textColor: theme.hintColor,
-                      textStyle: theme.textTheme.bodyMedium,
+                  if (isCab) ...[
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: CustomButton(
+                        buttonColor: theme.scaffoldBackgroundColor,
+                        prefixIcon: Icons.add_circle,
+                        prefixIconColor: Colors.yellow.shade700,
+                        text: "Add a destination",
+                        textColor: theme.hintColor,
+                        textStyle: theme.textTheme.bodyMedium,
+                      ),
                     ),
-                  ),
+                  ]
+                  else
+                    Expanded(child: SizedBox())
                 ],
               ),
             ],

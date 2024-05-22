@@ -28,23 +28,23 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ButtonStyle(
-        shape: MaterialStateProperty.all(
+        shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             side: BorderSide(color: theme.hintColor.withOpacity(0.4)),
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 16)),
-        elevation: MaterialStateProperty.all(0),
-        backgroundColor: MaterialStateProperty.all(buttonColor ?? theme.primaryColor),
+        padding: WidgetStateProperty.all(const EdgeInsets.symmetric(vertical: 16)),
+        elevation: WidgetStateProperty.all(0),
+        backgroundColor: WidgetStateProperty.all(buttonColor ?? theme.primaryColor),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (prefixIcon != null)
             Padding(
-              padding: const EdgeInsetsDirectional.only(start: 18.0),
-              child: Icon(prefixIcon!, color: prefixIconColor),
+              padding: const EdgeInsetsDirectional.only(start: 14.0),
+              child: Icon(prefixIcon!, color: prefixIconColor , size: 16),
             ),
           if (prefix != null)
             Padding(

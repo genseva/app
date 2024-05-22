@@ -25,7 +25,7 @@ class RatingCard extends StatelessWidget {
           ),
           Text(
             '4.2',
-            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 fontSize: 10, color: Theme.of(context).scaffoldBackgroundColor),
           )
         ],
