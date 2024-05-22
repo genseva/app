@@ -1,10 +1,5 @@
-import 'package:deligo/app_config/colors.dart';
-import 'package:deligo/components/custom_app_bar.dart';
-import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_scaffold.dart';
-import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/restaurant_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/common/ui/store_heading_tile.dart';
 import 'package:deligo/features/common/ui/store_list.dart';
@@ -48,7 +43,12 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
                   title: locale.foodNearMe,
                   subtitle: '${StoreDomain.foodList.length} ${locale.restaurantsFound}',
                 ),
-                StoreList(StoreDomain.foodList)
+                StoreList(
+                  StoreDomain.foodList,
+                  onTap: (store) {
+                    Navigator.pushNamed(context, PageRoutes.restaurantPage, arguments: store);
+                  },
+                )
               ],
             ),
           )

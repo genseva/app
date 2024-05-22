@@ -1,5 +1,4 @@
 import 'package:deligo/components/custom_scaffold.dart';
-import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/common/ui/store_heading_tile.dart';
@@ -8,6 +7,7 @@ import 'package:deligo/features/common/ui/top_category_list.dart';
 import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class OrderGroceryScreen extends StatefulWidget {
@@ -41,7 +41,12 @@ class _OrderGroceryScreenState extends State<OrderGroceryScreen> {
                   title: locale.groceryNearMe,
                   subtitle: '${StoreDomain.groceryList.length} ${locale.StoresFound}',
                 ),
-                StoreList(StoreDomain.groceryList)
+                StoreList(
+                  StoreDomain.groceryList,
+                  onTap: (store) {
+                    Navigator.pushNamed(context, PageRoutes.groceryStoreScreen, arguments: store);
+                  },
+                )
               ],
             ),
           )
