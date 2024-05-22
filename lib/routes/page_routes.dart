@@ -13,6 +13,7 @@ import 'package:deligo/features/grocery/ui/grocery_store_screen.dart';
 import 'package:deligo/features/grocery/ui/order_grocery_screen.dart';
 import 'package:deligo/features/language/ui/language_page.dart';
 import 'package:deligo/features/medicine/ui/order_medicine_page.dart';
+import 'package:deligo/features/order/ui/order_info_page.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
 import 'package:deligo/features/ride/ui/book_ride_screen.dart';
@@ -45,6 +46,7 @@ class PageRoutes {
   static const String supportPage = 'support_page';
   static const String tncPage = 'tnc_page';
   static const String subCategoryPage = 'sub_category_page';
+  static const String orderInfoPage = 'order_info_page';
 
   Map<String, WidgetBuilder> routes() {
     return {
@@ -70,6 +72,7 @@ class PageRoutes {
       supportPage: (context) => SupportPage(),
       tncPage: (context) => TncPage(),
       subCategoryPage: (context) => const SubCategoryList(),
+      orderInfoPage: (context) => const OrderInfoPage(),
     };
   }
 }

@@ -4,9 +4,11 @@ class Assets {
 
   static const String assetsAppIcon = 'assets/app_icon.png';
   static const String assetsBannerHome = 'assets/banner_home.png';
+  static const String assetsDelivery = 'assets/delivery.png';
   static const String assetsFb = 'assets/fb.png';
   static const String assetsGoogle = 'assets/google.png';
   static const String assetsLogoMain = 'assets/logo_main.png';
+  static const String assetsMap = 'assets/map.png';
   static const String assetsPlaceholderProfile = 'assets/placeholder_profile.png';
   static const String assetsSplash = 'assets/splash.png';
   static const String assetsUser = 'assets/user.png';
