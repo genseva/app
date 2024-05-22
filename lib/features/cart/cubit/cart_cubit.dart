@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
+import 'package:deligo/features/cart/model/coupon_domain.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 
@@ -8,6 +11,7 @@ class CartCubit extends Cubit<List<ProductDomain>> {
   StoreDomain? store;
   final double deliveryCharges = 2.50;
   final double taxes = 1.50;
+  CouponDomain? coupon;
 
   void updateFood(ProductDomain foodDomain) {
     if (state.any((element) => element.name == foodDomain.name)) {
@@ -47,6 +51,31 @@ class CartCubit extends Cubit<List<ProductDomain>> {
   }
 
   double getCartTotalWithCharges() {
-    return getCartTotal() + deliveryCharges + taxes;
+    var total = getCartTotal() + deliveryCharges + taxes;
+    double discount = 0;
+    if (coupon != null) {
+      discount = min(coupon!.discountPercentage * total / 100, coupon!.maxDiscount);
+    }
+    return total - discount;
+  }
+
+  void updateCoupon(CouponDomain couponDomain) {
+    coupon = couponDomain;
+    _refresh();
+  }
+
+  void removeCoupon() {
+    coupon = null;
+    _refresh();
+  }
+
+  void _refresh() {
+    List<ProductDomain> products = state;
+    emit([]);
+    emit(products);
+  }
+
+  double getDiscount() {
+    return min(coupon!.discountPercentage * getCartTotalWithCharges() / 100, coupon!.maxDiscount);
   }
 }

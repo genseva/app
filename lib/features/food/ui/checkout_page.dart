@@ -3,6 +3,7 @@ import 'package:deligo/components/add_button.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/account/model/address.dart';
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
+import 'package:deligo/features/cart/model/coupon_domain.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/features/food/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
@@ -108,13 +109,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
-                color: Colors.white,
-                child: ListTile(
+              if (_cubit.coupon == null)
+                ListTile(
+                  tileColor: theme.scaffoldBackgroundColor,
                   minVerticalPadding: 10,
                   leading: Icon(
                     Icons.discount_sharp,
-                    color: greyTextColor,
+                    color: theme.hintColor,
                     size: 18,
                   ),
                   title: Text(
@@ -127,12 +128,35 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   ),
                   trailing: Icon(
                     Icons.arrow_forward_ios_rounded,
-                    color: greyTextColor,
+                    color: theme.hintColor,
                   ),
+                  onTap: () => _cubit.updateCoupon(CouponDomain.list.first),
+                )
+              else
+                ListTile(
+                  tileColor: theme.scaffoldBackgroundColor,
+                  minVerticalPadding: 10,
+                  leading: Icon(
+                    Icons.discount_sharp,
+                    color: theme.primaryColor,
+                    size: 18,
+                  ),
+                  title: Text(
+                    "${_cubit.coupon!.id} Applied",
+                    style: theme.textTheme.bodyLarge,
+                  ),
+                  subtitle: Text(
+                    _cubit.coupon!.description,
+                    style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+                  ),
+                  trailing: const Icon(
+                    Icons.close,
+                    color: Colors.red,
+                  ),
+                  onTap: () => _cubit.removeCoupon(),
                 ),
-              ),
-              Container(height: 8, color: theme.cardColor),
-              Container(color: Colors.white, child: PayTotalCard(_cubit)),
+              const SizedBox(height: 8),
+              PayTotalCard(_cubit),
             ],
           ),
           bottomNavigationBar: Container(
