@@ -1,7 +1,6 @@
 import 'package:deligo/components/option_tile.dart';
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/payment/models/payment_category.dart';
-import 'package:deligo/features/payment/models/payment_page_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

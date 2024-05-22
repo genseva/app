@@ -1,5 +1,6 @@
 import 'package:deligo/components/custom_shadow.dart';
 import 'package:deligo/components/custom_text_field.dart';
+import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
@@ -159,6 +160,7 @@ class GroceryStoreScreen extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: CartBottomBar(store),
     );
   }
 }
