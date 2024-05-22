@@ -5,8 +5,9 @@ class CategoryDomain {
   final String title;
   final String? image;
   final List<ProductDomain> items;
+  final List<String>? subCategories;
 
-  CategoryDomain(this.title, this.items, {this.image});
+  CategoryDomain(this.title, this.items, {this.image, this.subCategories});
 
   static final List<CategoryDomain> foodList = [
     CategoryDomain(
@@ -121,41 +122,58 @@ class CategoryDomain {
     CategoryDomain(
       "Her Fashion",
       [],
+      subCategories: [
+        "Clothing",
+        "Shoes",
+        "Jewellery",
+        "Watches",
+        "Handbags",
+        "Accessories",
+        "Googles",
+        "Earings"
+      ],
       image: Assets.categoriesEcomHerfasion,
     ),
     CategoryDomain(
       "Kid's Fashion",
       [],
+      subCategories: ["Clothing", "Shoes", "Watches", "Handbags", "Accessories"],
       image: Assets.categoriesEcomKidfashion,
     ),
     CategoryDomain(
       "Appliances",
       [],
+      subCategories: ["Washing Machine", "Television", "Refrigerator"],
       image: Assets.categoriesEcomAppliances,
     ),
     CategoryDomain(
       "Phones",
       [],
+      subCategories: ["Mobile", "Tablet", "Laptop", "Smart Watch"],
       image: Assets.categoriesEcomPhone,
     ),
     CategoryDomain(
       "Beauty Care",
       [],
+      subCategories: ["Hair Care", "Skin Care", "Body Care", "Make Up"],
       image: Assets.categoriesEcomBeauty,
     ),
     CategoryDomain(
       "Toys",
       [],
+      subCategories: ["Board Games", "Games", "Dolls", "Puzzles"],
       image: Assets.categoriesEcomToys,
     ),
     CategoryDomain(
       "Health Care",
       [],
+      subCategories: ["Health Care", "Health Care", "Health Care", "Health Care"],
       image: Assets.categoriesEcomHealth,
     ),
     CategoryDomain(
       "Pet Supplies",
       [],
+      subCategories: ["Pet Supplies", "Pet Supplies", "Pet Supplies", "Pet Supplies"],
       image: Assets.categoriesEcomPet,
     ),
   ];
@@ -164,31 +182,64 @@ class CategoryDomain {
     CategoryDomain(
       "Cough",
       [],
+      subCategories: ["Chest Pain", "Cold"],
       image: Assets.categoriesCough,
     ),
     CategoryDomain(
       "Pain Relief",
       [],
+      subCategories: [
+        "Body Pain with Fever",
+        "Headache",
+        "Back Pain",
+        "Chest Pain",
+        "Leg & Thigh Pain",
+        "Stomach Pain"
+      ],
       image: Assets.categoriesChestPain,
     ),
     CategoryDomain(
       "Skin Care",
       [],
+      subCategories: [
+        "Body Pain with Fever",
+      ],
       image: Assets.categoriesSkinRash,
     ),
     CategoryDomain(
       "Headache",
       [],
+      subCategories: [
+        "Body Pain with Fever",
+        "Headache",
+        "Back Pain",
+      ],
       image: Assets.categoriesHeadache,
     ),
     CategoryDomain(
       "Fever",
       [],
+      subCategories: [
+        "Body Pain with Fever",
+        "Headache",
+        "Back Pain",
+        "Chest Pain",
+        "Leg & Thigh Pain",
+        "Stomach Pain"
+      ],
       image: Assets.categoriesFever,
     ),
     CategoryDomain(
       "Weakness",
       [],
+      subCategories: [
+        "Body Pain with Fever",
+        "Headache",
+        "Back Pain",
+        "Chest Pain",
+        "Leg & Thigh Pain",
+        "Stomach Pain"
+      ],
       image: Assets.categoriesWeakness,
     ),
   ];
@@ -197,46 +248,64 @@ class CategoryDomain {
     CategoryDomain(
       "Home Clean",
       [],
+      subCategories: ["Floor Clean, Carpet Clean", "Carpet Clean", "Garden Clean"],
       image: Assets.categoriesHandyCleaner,
     ),
     CategoryDomain(
       "Electrician",
       [],
+      subCategories: ["Fan Fitting", "TV Installation", "AC Installation", "CCTV Installation"],
       image: Assets.categoriesHandyElec,
     ),
     CategoryDomain(
       "Plumber",
       [],
+      subCategories: [
+        "Tap, Basin & Sink Problem",
+        "Bathroom Water Filter",
+        "Bathroom Fittings",
+        "Blocks & Leakages",
+        "Water Tank Problem",
+        "Pipeline & pumps",
+        "Water Tap Change & Installation",
+        "Pipeline Installation"
+      ],
       image: Assets.categoriesHandyPlumber,
     ),
     CategoryDomain(
       "Carpainter",
       [],
+      subCategories: ["Painting", "Wall Painting", "Floor Painting", "Curtain Painting"],
       image: Assets.categoriesHandyCarpainter,
     ),
     CategoryDomain(
       "Painter",
       [],
+      subCategories: ["Painting", "Wall Painting", "Floor Painting", "Curtain Painting"],
       image: Assets.categoriesHandyPainter,
     ),
     CategoryDomain(
       "Gardening",
       [],
+      subCategories: ["Gardening", "Gardening", "Gardening", "Gardening"],
       image: Assets.categoriesHandyGardener,
     ),
     CategoryDomain(
       "Mover",
       [],
+      subCategories: ["Mover", "Mover", "Mover", "Mover"],
       image: Assets.categoriesHandyMover,
     ),
     CategoryDomain(
       "Beauty Salon",
       [],
+      subCategories: ["Haircut", "Makeup", "Manicure", "Haircut"],
       image: Assets.categoriesHandySalon,
     ),
     CategoryDomain(
       "Sanitize",
       [],
+      subCategories: ["Sanitize", "Sanitize", "Sanitize", "Sanitize"],
       image: Assets.categoriesHandySanitize,
     ),
   ];

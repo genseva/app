@@ -4,6 +4,7 @@ import 'package:deligo/features/account/ui/saved_addresses_page.dart';
 import 'package:deligo/features/account/ui/tnc_page.dart';
 import 'package:deligo/features/bottom_navigation/bottom_navigation.dart';
 import 'package:deligo/features/cab/ui/book_cab_page.dart';
+import 'package:deligo/features/category/ui/sub_category_list.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
 import 'package:deligo/features/food/ui/order_food_screen.dart';
 import 'package:deligo/features/food/ui/restaurant_profile_screen.dart';
@@ -43,6 +44,7 @@ class PageRoutes {
   static const String savedAddressesPage = 'saved_addresses_page';
   static const String supportPage = 'support_page';
   static const String tncPage = 'tnc_page';
+  static const String subCategoryPage = 'sub_category_page';
 
   Map<String, WidgetBuilder> routes() {
     return {
@@ -67,6 +69,7 @@ class PageRoutes {
       savedAddressesPage: (context) => const SavedAddressesPage(),
       supportPage: (context) => SupportPage(),
       tncPage: (context) => TncPage(),
+      subCategoryPage: (context) => const SubCategoryList(),
     };
   }
 }

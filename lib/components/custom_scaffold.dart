@@ -30,10 +30,10 @@ class _CustomScaffoldState extends State<CustomScaffold> {
       body: Stack(
         children: [
           WidgetSize(
-            child: Image.asset(widget.image),
+            child: Image.asset(widget.image, width: double.infinity, fit: BoxFit.fitWidth,),
             onChange: (size) {
               setState(() {
-                headerSize = size;
+                headerSize = Size(double.infinity, size.height);
               });
             },
           ),
