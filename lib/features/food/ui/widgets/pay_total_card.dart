@@ -1,14 +1,12 @@
 import 'package:deligo/components/custom_divider.dart';
+import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 
-class PayTotalCard extends StatefulWidget {
-  const PayTotalCard({super.key});
+class PayTotalCard extends StatelessWidget {
+  const PayTotalCard(this.cubit, {super.key});
 
-  @override
-  State<PayTotalCard> createState() => _PayTotalCardState();
-}
+  final CartCubit cubit;
 
-class _PayTotalCardState extends State<PayTotalCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +21,7 @@ class _PayTotalCardState extends State<PayTotalCard> {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
-              Text(r"$ 13.00",
+              Text(r"$" " ${cubit.getCartTotal().toStringAsFixed(2)}",
                   style: Theme.of(context).textTheme.bodyMedium)
             ],
           ),
@@ -36,7 +34,7 @@ class _PayTotalCardState extends State<PayTotalCard> {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
-              Text(r"$ 2.50", style: Theme.of(context).textTheme.bodyMedium)
+              Text(r"$"" ${cubit.deliveryCharges.toStringAsFixed(2)}", style: Theme.of(context).textTheme.bodyMedium)
             ],
           ),
           const CustomDivider(),
@@ -48,7 +46,7 @@ class _PayTotalCardState extends State<PayTotalCard> {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
-              Text(r"$ 1.50", style: Theme.of(context).textTheme.bodyMedium)
+              Text(r"$"" ${cubit.taxes.toStringAsFixed(2)}", style: Theme.of(context).textTheme.bodyMedium)
             ],
           ),
           const CustomDivider(),
@@ -62,11 +60,9 @@ class _PayTotalCardState extends State<PayTotalCard> {
                 ),
               ),
               Text(
-                r"$ 17.00",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontWeight: FontWeight.w400),
+                r"$"" ${cubit.getCartTotalWithCharges().toStringAsFixed(2)}",
+                style:
+                    Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w400),
               ),
             ],
           ),

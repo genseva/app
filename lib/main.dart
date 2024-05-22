@@ -1,4 +1,5 @@
 import 'package:deligo/features/auth/login_navigator.dart';
+import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/language/bloc/language_cubit.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,15 @@ void main() async {
     ),
   );
   runApp(
-    BlocProvider<LanguageCubit>(
-      create: (context) => LanguageCubit()..getCurrentLanguage(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<LanguageCubit>(
+          create: (context) => LanguageCubit()..getCurrentLanguage(),
+        ),
+        BlocProvider(
+          create: (context) => CartCubit(),
+        ),
+      ],
       child: Phoenix(
         child: const MyApp(),
       ),

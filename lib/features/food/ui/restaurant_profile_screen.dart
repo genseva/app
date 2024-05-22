@@ -1,10 +1,10 @@
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_shadow.dart';
+import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/food/ui/widgets/food_card.dart';
-import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -21,7 +21,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    StoreDomain data =
+    StoreDomain store =
         ModalRoute.of(context)?.settings.arguments as StoreDomain? ?? StoreDomain.foodList.first;
     return Scaffold(
       appBar: AppBar(
@@ -49,14 +49,14 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  data.name,
+                  store.name,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const SizedBox(height: 8),
                 Row(
                   children: [
                     Text(
-                      "${data.location} • ",
+                      "${store.location} • ",
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
                     ),
                     Text(
@@ -162,55 +162,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
           },
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, PageRoutes.checkoutPage);
-          },
-          child: Container(
-              height: 60,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10), color: Theme.of(context).primaryColor),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          r"1 Item • $ 5.00",
-                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                        ),
-                        const SizedBox(height: 3),
-                        Text(
-                          "Extra Charges may apply",
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelSmall
-                              ?.copyWith(color: Colors.grey.shade300),
-                        )
-                      ],
-                    ),
-                    const Spacer(),
-                    const Icon(Icons.shopping_basket_outlined, color: Colors.white),
-                    const SizedBox(width: 10),
-                    Text(
-                      "View Cart",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyLarge
-                          ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              )),
-        ),
-      ),
+      bottomNavigationBar: CartBottomBar(store),
     );
   }
 }

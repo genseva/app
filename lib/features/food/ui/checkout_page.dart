@@ -1,10 +1,14 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/add_button.dart';
 import 'package:deligo/components/custom_divider.dart';
+import 'package:deligo/features/account/model/address.dart';
+import 'package:deligo/features/cart/cubit/cart_cubit.dart';
+import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/features/food/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({super.key});
@@ -14,148 +18,159 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
+  late final CartCubit _cubit;
+
+  @override
+  void initState() {
+    _cubit = context.read<CartCubit>();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Monte Carlo Restaurant"),
-        centerTitle: false,
-        backgroundColor: Colors.white,
-      ),
-      backgroundColor: cardColor,
-      body: Column(
-        children: [
-          Container(color: Colors.white, child: const CustomDivider()),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-              minVerticalPadding: 10,
-              leading: Icon(
-                Icons.home,
-                color: Theme.of(context).primaryColor,
-                size: 18,
-              ),
-              title: Text(
-                "Delivery to Home | 20 min",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                "B 101, Nirvana Point, Hemilton",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(color: Colors.grey),
-              ),
-            ),
+    final theme = Theme.of(context);
+    final AddressDomain address = AddressDomain.list.first;
+    return BlocBuilder<CartCubit, List<ProductDomain>>(
+      builder: (context, products) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(_cubit.store?.name ?? ""),
+            centerTitle: false,
+            backgroundColor: Colors.white,
           ),
-          const SizedBox(height: 10),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-              minVerticalPadding: 10,
-              leading: Image.asset(
-                Assets.foodFoodVeg,
-                height: 16,
+          backgroundColor: cardColor,
+          body: ListView(
+            children: [
+              Container(color: theme.scaffoldBackgroundColor, child: const CustomDivider()),
+              ListTile(
+                tileColor: theme.scaffoldBackgroundColor,
+                minVerticalPadding: 10,
+                leading: Icon(
+                  address.icon,
+                  color: Theme.of(context).primaryColor,
+                  size: 18,
+                ),
+                title: Text(
+                  "Delivery to ${address.name} | ${_cubit.store?.deliveryTime ?? ""} min",
+                  style:
+                      Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(
+                  address.address,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey),
+                ),
               ),
-              title: Text(
-                "Veg Cheese Sandwich",
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+              const SizedBox(height: 10),
+              Container(
+                color: Colors.white,
+                child: ListView.separated(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final product = products[index];
+                    return ListTile(
+                      minVerticalPadding: 10,
+                      leading: Image.asset(
+                        product.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
+                        height: 16,
+                      ),
+                      title: Text(
+                        product.name,
+                        style: theme.textTheme.titleSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Text(
+                        r"$" " ${product.price.toStringAsFixed(2)}",
+                        style: theme.textTheme.titleSmall?.copyWith(),
+                      ),
+                      trailing: AddItemButton(product: product),
+                    );
+                  },
+                  separatorBuilder: (context, index) => const SizedBox(),
+                  itemCount: products.length,
+                ),
               ),
-              subtitle: Text(
-                r"$ 5.00",
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(),
-              ),
-              trailing: AddItemButton(quantity: 1),
-            ),
-          ),
-          const SizedBox(height: 2),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-              leading: Icon(
-                Icons.assignment,
-                color: greyTextColor,
-                size: 18,
-              ),
-              title: Text("Add instruction to restaurant",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(color: greyTextColor)),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-              minVerticalPadding: 10,
-              leading: Icon(
-                Icons.discount_sharp,
-                color: greyTextColor,
-                size: 18,
-              ),
-              title: Text(
-                "Apply Coupon",
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              subtitle: Text(
-                "Save up to 20% off",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(color: greyTextColor),
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: greyTextColor,
-              ),
-            ),
-          ),
-          Container(height: 8, color: Theme.of(context).cardColor),
-          Container(color: Colors.white, child: const PayTotalCard())
-        ],
-      ),
-      bottomNavigationBar: Container(
-          color: Colors.white,
-          height: 70,
-          child: ListTile(
-            title: Text(
-              r"$ 17.00",
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
+              const SizedBox(height: 2),
+              Container(
+                color: Colors.white,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.assignment,
+                    color: greyTextColor,
+                    size: 18,
                   ),
-            ),
-            subtitle: Text("View detailed bill",
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Theme.of(context).primaryColor,
-                    )),
-            trailing: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, PageRoutes.paymentPage);
-              },
-              style: ButtonStyle(
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      side: const BorderSide(color: Color(0xffebebeb)),
-                      borderRadius: BorderRadius.circular(10))),
-                  padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-                  elevation: MaterialStateProperty.all(0),
-                  backgroundColor: MaterialStateProperty.all(
-                      Theme.of(context).primaryColor)),
-              child: Text(
-                "Proceed to Pay",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
-                textAlign: TextAlign.center,
+                  title: Text(
+                    "Add instruction to restaurant",
+                    style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Container(
+                color: Colors.white,
+                child: ListTile(
+                  minVerticalPadding: 10,
+                  leading: Icon(
+                    Icons.discount_sharp,
+                    color: greyTextColor,
+                    size: 18,
+                  ),
+                  title: Text(
+                    "Apply Coupon",
+                    style: theme.textTheme.bodyLarge,
+                  ),
+                  subtitle: Text(
+                    "Save up to 20% off",
+                    style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: greyTextColor,
+                  ),
+                ),
+              ),
+              Container(height: 8, color: theme.cardColor),
+              Container(color: Colors.white, child: PayTotalCard(_cubit)),
+            ],
+          ),
+          bottomNavigationBar: Container(
+            color: Colors.white,
+            height: 70,
+            child: ListTile(
+              title: Text(
+                r"$" " ${_cubit.getCartTotalWithCharges().toStringAsFixed(2)}",
+                style: theme.textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              subtitle: Text("View detailed bill",
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    color: theme.primaryColor,
+                  )),
+              trailing: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, PageRoutes.paymentPage);
+                },
+                style: ButtonStyle(
+                    shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                        side: const BorderSide(color: Color(0xffebebeb)),
+                        borderRadius: BorderRadius.circular(10))),
+                    padding: WidgetStateProperty.all(const EdgeInsets.all(20)),
+                    elevation: WidgetStateProperty.all(0),
+                    backgroundColor: WidgetStateProperty.all(theme.primaryColor)),
+                child: Text(
+                  "Proceed to Pay",
+                  style: theme.textTheme.bodySmall!
+                      .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
-          )),
+          ),
+        );
+      },
     );
   }
 }

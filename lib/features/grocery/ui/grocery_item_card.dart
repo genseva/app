@@ -36,7 +36,7 @@ class GroceryItemCard extends StatelessWidget {
                 ),
           ),
           const SizedBox(height: 5),
-          AddItemButton(quantity: 0),
+          AddItemButton(product: item),
         ],
       ),
     );

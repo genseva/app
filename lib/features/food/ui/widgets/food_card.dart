@@ -71,7 +71,7 @@ class _FoodCardState extends State<FoodCard> {
           PositionedDirectional(
             end: 4,
             bottom: -16,
-            child: AddItemButton(quantity: 0),
+            child: AddItemButton(product: food),
           )
         ],
       ),
