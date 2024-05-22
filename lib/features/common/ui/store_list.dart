@@ -1,4 +1,5 @@
 import 'package:deligo/components/custom_divider.dart';
+import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -52,33 +53,71 @@ class StoreList extends StatelessWidget {
                     const SizedBox(
                       height: 8,
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          "Delivery in ${store.deliveryTime} mins",
-                          style: theme.textTheme.bodyLarge!
-                              .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
-                        ),
-                        Text(
-                          "  •  ",
-                          style: theme.textTheme.bodyLarge!
-                              .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
-                        ),
-                        Text(
-                          '${store.distance} ${locale.km}',
-                          style: theme.textTheme.bodyLarge!
-                              .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
-                        )
-                      ],
-                    ),
-                    const CustomDivider(),
-                    Text(
-                      store.timing,
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                        color: theme.hintColor,
-                        fontSize: 12,
+                    if (store.serviceCharge != null) ...[
+                      Text(
+                        "Electrician",
+                        style: theme.textTheme.bodyLarge!
+                            .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
                       ),
-                    ),
+                      const CustomDivider(),
+                      Row(
+                        children: <Widget>[
+                          RatingCard(
+                            rating: "${store.distance}",
+                          ),
+                          const SizedBox(width: 10),
+                          Text(
+                            store.timing,
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                              color: theme.unselectedWidgetColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            r"$" "${store.serviceCharge}",
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                              fontSize: 12,
+                            ),
+                          ),
+                          Text(
+                            " /hr",
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                              color: theme.hintColor,
+                              fontSize: 11,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ] else ...[
+                      Row(
+                        children: [
+                          Text(
+                            "Delivery in ${store.deliveryTime} mins",
+                            style: theme.textTheme.bodyLarge!
+                                .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
+                          ),
+                          Text(
+                            "  •  ",
+                            style: theme.textTheme.bodyLarge!
+                                .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
+                          ),
+                          Text(
+                            '${store.distance} ${locale.km}',
+                            style: theme.textTheme.bodyLarge!
+                                .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
+                          )
+                        ],
+                      ),
+                      const CustomDivider(),
+                      Text(
+                        store.timing,
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                          color: theme.hintColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ]
                   ],
                 ),
               ),

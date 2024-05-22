@@ -7,15 +7,10 @@ class StoreDomain {
   final String deliveryTime;
   final double distance;
   final String timing;
+  final double? serviceCharge;
 
-  StoreDomain(
-    this.image,
-    this.name,
-    this.location,
-    this.deliveryTime,
-    this.distance,
-    this.timing,
-  );
+  StoreDomain(this.image, this.name, this.location, this.deliveryTime, this.distance, this.timing,
+      {this.serviceCharge});
 
   static final List<StoreDomain> foodList = [
     StoreDomain(
@@ -145,7 +140,8 @@ class StoreDomain {
       'CentralPark',
       '20',
       1.5,
-      'Open 24 hours',
+      '148 Jobs',serviceCharge: 20.00
+
     ),
     StoreDomain(
       Assets.profilesPlumber2,
@@ -153,7 +149,7 @@ class StoreDomain {
       'Jamestown, New York',
       '22',
       3.8,
-      '08:00 am to 10:00 pm',
+      '108 Jobs',serviceCharge: 20.00
     ),
     StoreDomain(
       Assets.profilesPlumber3,
@@ -161,7 +157,7 @@ class StoreDomain {
       'CentralPark',
       '20',
       1.5,
-      'Open 24 hours',
+      '278 Jobs',serviceCharge: 24.00
     ),
     StoreDomain(
       Assets.profilesPlumber4,
@@ -169,7 +165,7 @@ class StoreDomain {
       'Jamestown, New York',
       '22',
       3.8,
-      '08:00 am to 10:00 pm',
+      '58 Jobs',serviceCharge: 10.00
     ),
     StoreDomain(
       Assets.profilesPlumber5,
@@ -177,7 +173,7 @@ class StoreDomain {
       'Jamestown, New York',
       '22',
       3.8,
-      '08:00 am to 10:00 pm',
+      '143 Jobs',serviceCharge: 18.00
     ),
   ];
 }
