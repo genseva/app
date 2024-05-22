@@ -1,16 +1,17 @@
 import 'package:deligo/components/option_tile.dart';
+import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/payment/models/payment_category.dart';
 import 'package:deligo/features/payment/models/payment_page_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    PaymentPageData data = PaymentPageData(2, 17.00, "OFF20");
-    // ModalRoute.of(context)?.settings.arguments as PaymentPageData;
     final ThemeData theme = Theme.of(context);
+    final cubit = context.read<CartCubit>();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Payment Options"),
@@ -29,7 +30,7 @@ class PaymentPage extends StatelessWidget {
                   style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  r"$" " ${data.amount}",
+                  r"$" " ${cubit.getCartTotalWithCharges().toStringAsFixed(2)}",
                   style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
@@ -38,7 +39,7 @@ class PaymentPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
-              "${data.numberOfItems} items",
+              "${cubit.state.length} items",
               style: theme.textTheme.bodyMedium?.copyWith(color: theme.unselectedWidgetColor),
             ),
           ),
@@ -51,7 +52,7 @@ class PaymentPage extends StatelessWidget {
                 Icon(Icons.local_offer, color: theme.primaryColor, size: 20),
                 const SizedBox(width: 20),
                 Text(
-                  "${data.coupon} offer applied on the bill",
+                  "OFF20 offer applied on the bill",
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.primaryColor,
                     fontWeight: FontWeight.bold,
