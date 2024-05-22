@@ -17,6 +17,57 @@ class StoreDomain {
     this.timing,
   );
 
+  static final List<StoreDomain> foodList = [
+    StoreDomain(
+      Assets.foodRestaurantFood1,
+      'Monte Carlo Restaurant',
+      'CentralPark',
+      '20',
+      1.5,
+      'fastFoodBeverages',
+    ),
+    StoreDomain(
+      Assets.foodRestaurantFood2,
+      'Hotel China Town',
+      'Food Park',
+      '30',
+      4.5,
+      'chineseFoodsItalianFoods',
+    ),
+    StoreDomain(
+      Assets.foodRestaurantFood3,
+      'Auli Restaurant',
+      'CentralPark',
+      '25',
+      2.5,
+      'fastFoodBeverages',
+    ),
+    StoreDomain(
+      Assets.foodRestaurantFood1,
+      'Monte Carlo Store',
+      'CentralPark',
+      '10',
+      0.5,
+      'fastFoodBeverages',
+    ),
+    StoreDomain(
+      Assets.foodRestaurantFood2,
+      'Hotel China Town',
+      'Food Park',
+      '20',
+      1.5,
+      'chineseFoodsItalianFoods',
+    ),
+    StoreDomain(
+      Assets.foodRestaurantFood3,
+      'Auli Store',
+      'CentralPark',
+      '23',
+      4.5,
+      'fastFoodBeverages',
+    ),
+  ];
+
   static final List<StoreDomain> groceryList = [
     StoreDomain(
       Assets.groceryStore1,

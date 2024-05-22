@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:deligo/features/cart/model/product_domain.dart';
+import 'package:deligo/features/common/model/product_domain.dart';
 
 class CartCubit extends Cubit<List<ProductDomain>> {
   CartCubit() : super([]);

@@ -1,4 +1,4 @@
-import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 

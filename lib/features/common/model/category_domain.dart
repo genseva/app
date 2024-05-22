@@ -1,4 +1,4 @@
-import 'package:deligo/features/cart/model/product_domain.dart';
+import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/generated/assets.dart';
 
 class CategoryDomain {
@@ -8,6 +8,52 @@ class CategoryDomain {
   final List<String>? subCategories;
 
   CategoryDomain(this.title, this.items, {this.image, this.subCategories});
+
+  static final List<CategoryDomain> topFoodList = [
+    CategoryDomain(
+      "Fast Foods",
+      [],
+      image: Assets.foodFoodcategoryFastfood,
+    ),
+    CategoryDomain(
+      "Chinese",
+      [],
+      image: Assets.foodFoodcategoryChinese,
+    ),
+    CategoryDomain(
+      "Sea Food",
+      [],
+      image: Assets.foodFoodcategorySeafood,
+    ),
+    CategoryDomain(
+      "Dessert",
+      [],
+      image: Assets.foodFoodcategoryDessert,
+    ),
+  ];
+
+  static final List<CategoryDomain> topGroceryList = [
+    CategoryDomain(
+      "Diary",
+      [],
+      image: Assets.groceryGroceryDairy,
+    ),
+    CategoryDomain(
+      "Fruits",
+      [],
+      image: Assets.groceryGroceryFruits,
+    ),
+    CategoryDomain(
+      "Personal Care",
+      [],
+      image: Assets.groceryGroceryPersonalcare,
+    ),
+    CategoryDomain(
+      "Vegetable",
+      [],
+      image: Assets.groceryGroceryVegetable,
+    ),
+  ];
 
   static final List<CategoryDomain> foodList = [
     CategoryDomain(

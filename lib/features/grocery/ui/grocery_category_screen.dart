@@ -1,5 +1,5 @@
 import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/grocery/ui/grocery_item_card.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';

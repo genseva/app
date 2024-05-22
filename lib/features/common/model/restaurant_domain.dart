@@ -13,37 +13,37 @@ class RestaurantDomain {
       Assets.foodRestaurantFood1,
       'Monte Carlo Restaurant',
       'CentralPark',
-      "fastFoodBeverages",
+      "Fast Food, Beverages",
     ),
     RestaurantDomain(
       Assets.foodRestaurantFood2,
       'Hotel China Town',
       'Food Park',
-      "chineseFoodsItalianFoods",
+      "Chinese Foods, Italian Foods",
     ),
     RestaurantDomain(
       Assets.foodRestaurantFood3,
       'Auli Restaurant',
       'CentralPark',
-      "fastFoodBeverages",
+      "Fast Food, Beverages",
     ),
     RestaurantDomain(
       Assets.foodRestaurantFood1,
       'Monte Carlo Restaurant',
       'CentralPark',
-      "fastFoodBeverages",
+      "Fast Food, Beverages",
     ),
     RestaurantDomain(
       Assets.foodRestaurantFood2,
       'Hotel China Town',
       'Food Park',
-      "chineseFoodsItalianFoods",
+      "Chinese Foods, Italian Foods",
     ),
     RestaurantDomain(
       Assets.foodRestaurantFood3,
       'Auli Restaurant',
       'CentralPark',
-      "fastFoodBeverages",
+      "Fast Food, Beverages",
     ),
   ];
 }

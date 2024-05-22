@@ -1,5 +1,5 @@
 import 'package:deligo/components/custom_scaffold.dart';
-import 'package:deligo/features/common/cab_child.dart';
+import 'package:deligo/features/common/ui/cab_child.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';

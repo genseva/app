@@ -1,6 +1,6 @@
 import 'package:deligo/components/custom_scaffold.dart';
 import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/cart/model/category_domain.dart';
+import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
