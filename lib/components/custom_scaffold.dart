@@ -20,7 +20,7 @@ class CustomScaffold extends StatefulWidget {
 }
 
 class _CustomScaffoldState extends State<CustomScaffold> {
-  Size? headerSize;
+  Size? _headerSize;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,14 @@ class _CustomScaffoldState extends State<CustomScaffold> {
       body: Stack(
         children: [
           WidgetSize(
-            child: Image.asset(widget.image, width: double.infinity, fit: BoxFit.fitWidth,),
+            child: Image.asset(
+              widget.image,
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
             onChange: (size) {
               setState(() {
-                headerSize = Size(double.infinity, size.height);
+                _headerSize = Size(double.infinity, size.height);
               });
             },
           ),
@@ -55,9 +59,11 @@ class _CustomScaffoldState extends State<CustomScaffold> {
               ],
             ),
           ),
-          Positioned(
-            top: (headerSize?.height ?? 0) - 28,
-            height: MediaQuery.of(context).size.height - (headerSize?.height ?? 0) + 28,
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeInOut,
+            top: (_headerSize?.height ?? 0) - 28,
+            height: MediaQuery.of(context).size.height - (_headerSize?.height ?? 0) + 28,
             width: MediaQuery.of(context).size.width,
             child: widget.child,
           ),
