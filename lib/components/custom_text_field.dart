@@ -12,6 +12,8 @@ class CustomTextField extends StatelessWidget {
   final int? maxLines;
   final Color? bgColor;
   final bool showBorder;
+  final bool readOnly;
+  final VoidCallback? onTap;
 
   const CustomTextField({
     super.key,
@@ -24,7 +26,9 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.maxLines,
     this.bgColor,
+    this.onTap,
     this.showBorder = true,
+    this.readOnly = false,
   });
 
   @override
@@ -46,6 +50,8 @@ class CustomTextField extends StatelessWidget {
           initialValue: initialValue,
           style: theme.textTheme.bodyLarge,
           maxLines: maxLines,
+          onTap: onTap,
+          readOnly: readOnly,
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,

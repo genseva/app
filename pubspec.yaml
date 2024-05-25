@@ -22,6 +22,7 @@ dependencies:
   shared_preferences: ^2.2.3
   animation_wrappers: ^3.0.0
   scrollable_positioned_list: ^0.3.8
+  flutter_google_places_hoc081098: ^1.2.0
 
 
 dev_dependencies:
@@ -67,6 +68,7 @@ flutter:
     - assets/service/
     - assets/service/profiles/
     - assets/service/categories/
+    - assets/pins/
 
   fonts:
     - family: ProductSans

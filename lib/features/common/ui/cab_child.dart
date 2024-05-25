@@ -2,12 +2,14 @@ import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/account/model/address.dart';
+import 'package:deligo/features/common/model/delivery_type.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class CabChild extends StatelessWidget {
-  const CabChild({super.key, this.isCab = true});
+  const CabChild({super.key, required this.type});
 
-  final bool isCab;
+  final DeliveryType type;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class CabChild extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
-                    if (isCab) ...[
+                    if (type != DeliveryType.delivery) ...[
                       Row(
                         children: [
                           CircleAvatar(
@@ -64,8 +66,9 @@ class CabChild extends StatelessWidget {
                           child: CustomTextField(
                             bgColor: Colors.transparent,
                             showBorder: false,
-                            hintText:
-                                isCab ? "Search for a destination" : "Search delivery location",
+                            hintText: type != DeliveryType.delivery
+                                ? "Search for a destination"
+                                : "Search delivery location",
                           ),
                         ),
                       ],
@@ -78,6 +81,9 @@ class CabChild extends StatelessWidget {
                 children: [
                   Expanded(
                     child: CustomButton(
+                      onTap: () {
+                        Navigator.pushNamed(context, PageRoutes.whereToPage, arguments: type);
+                      },
                       buttonColor: theme.scaffoldBackgroundColor,
                       prefixIcon: Icons.pin_drop,
                       prefixIconColor: theme.primaryColor,
@@ -86,10 +92,13 @@ class CabChild extends StatelessWidget {
                       textStyle: theme.textTheme.bodyMedium,
                     ),
                   ),
-                  if (isCab) ...[
+                  if (type != DeliveryType.delivery) ...[
                     const SizedBox(width: 12),
                     Expanded(
                       child: CustomButton(
+                        onTap: () {
+                          Navigator.pushNamed(context, PageRoutes.whereToPage, arguments: type);
+                        },
                         buttonColor: theme.scaffoldBackgroundColor,
                         prefixIcon: Icons.add_circle,
                         prefixIconColor: Colors.yellow.shade700,
@@ -98,9 +107,8 @@ class CabChild extends StatelessWidget {
                         textStyle: theme.textTheme.bodyMedium,
                       ),
                     ),
-                  ]
-                  else
-                    Expanded(child: SizedBox())
+                  ] else
+                    const Expanded(child: SizedBox())
                 ],
               ),
             ],
@@ -109,7 +117,7 @@ class CabChild extends StatelessWidget {
         Expanded(
           child: Container(
             color: theme.scaffoldBackgroundColor,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: ListView(
               padding: EdgeInsets.zero,
               children: [

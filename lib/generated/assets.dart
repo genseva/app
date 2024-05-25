@@ -8,7 +8,6 @@ class Assets {
   static const String assetsFb = 'assets/fb.png';
   static const String assetsGoogle = 'assets/google.png';
   static const String assetsLogoMain = 'assets/logo_main.png';
-  static const String assetsMap = 'assets/map.png';
   static const String assetsPlaceholderProfile = 'assets/placeholder_profile.png';
   static const String assetsSplash = 'assets/splash.png';
   static const String assetsUser = 'assets/user.png';
@@ -105,6 +104,13 @@ class Assets {
   static const String paymentPayu = 'assets/payment/payu.png';
   static const String paymentVecMoney = 'assets/payment/vec_money.png';
   static const String paymentVecWallet = 'assets/payment/vec_wallet.png';
+  static const String pinsIcBike = 'assets/pins/ic_bike.png';
+  static const String pinsIcCar = 'assets/pins/ic_car.png';
+  static const String pinsIcLocation = 'assets/pins/ic_location.png';
+  static const String pinsIcLocation1 = 'assets/pins/ic_location-1.png';
+  static const String pinsPinFood = 'assets/pins/pin_food.png';
+  static const String pinsPinGrocery = 'assets/pins/pin_grocery.png';
+  static const String pinsPinStore = 'assets/pins/pin_Store.png';
   static const String profilesPlumber1 = 'assets/service/profiles/plumber1.png';
   static const String profilesPlumber2 = 'assets/service/profiles/plumber2.png';
   static const String profilesPlumber3 = 'assets/service/profiles/plumber3.png';

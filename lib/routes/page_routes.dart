@@ -5,6 +5,7 @@ import 'package:deligo/features/account/ui/tnc_page.dart';
 import 'package:deligo/features/bottom_navigation/bottom_navigation.dart';
 import 'package:deligo/features/cab/ui/book_cab_page.dart';
 import 'package:deligo/features/category/ui/sub_category_list.dart';
+import 'package:deligo/features/common/ui/where_to_page.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
 import 'package:deligo/features/food/ui/order_food_screen.dart';
 import 'package:deligo/features/food/ui/restaurant_profile_screen.dart';
@@ -47,6 +48,7 @@ class PageRoutes {
   static const String tncPage = 'tnc_page';
   static const String subCategoryPage = 'sub_category_page';
   static const String orderInfoPage = 'order_info_page';
+  static const String whereToPage = 'where_to_page';
 
   Map<String, WidgetBuilder> routes() {
     return {
@@ -73,6 +75,7 @@ class PageRoutes {
       tncPage: (context) => TncPage(),
       subCategoryPage: (context) => const SubCategoryList(),
       orderInfoPage: (context) => const OrderInfoPage(),
+      whereToPage: (context) => const WhereToPage(),
     };
   }
 }
