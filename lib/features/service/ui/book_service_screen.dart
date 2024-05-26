@@ -1,4 +1,3 @@
-import 'package:deligo/components/custom_app_bar.dart';
 import 'package:deligo/components/custom_scaffold.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
