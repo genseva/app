@@ -3,13 +3,13 @@ import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SubCategoryList extends StatelessWidget {
   const SubCategoryList({
     super.key,
   });
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class SubCategoryList extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-              "Select Category",
+                "Select Category",
                 style: theme.textTheme.labelLarge?.copyWith(color: theme.hintColor),
               ),
               const SizedBox(height: 20),
@@ -43,17 +43,27 @@ class SubCategoryList extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   itemBuilder: (context, index) {
                     var item = category.subCategories?[index];
-                    return Container(
-                      padding: const EdgeInsets.all(18),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: theme.hintColor.withOpacity(0.3), width: 0.5),
-                      ),
-                      child: Row(
-                        children: [
-                          Expanded(child: Text("$item")),
-                           Icon(Icons.chevron_right_outlined, color: theme.hintColor,size: 28,),
-                        ],
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, PageRoutes.serviceProviderScreen,
+                            arguments: item);
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(18),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: theme.hintColor.withOpacity(0.3), width: 0.5),
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(child: Text("$item")),
+                            Icon(
+                              Icons.chevron_right_outlined,
+                              color: theme.hintColor,
+                              size: 28,
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
