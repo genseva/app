@@ -2,6 +2,7 @@ import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
+import 'package:deligo/features/order/ui/widgets/address_card.dart';
 import 'package:deligo/features/order/ui/widgets/deliveryman_card.dart';
 import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
 import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
@@ -31,7 +32,7 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
     return BlocBuilder<CartCubit, List<ProductDomain>>(
       builder: (context, state) {
         return CustomMapScaffold(
-          bottomSheetBuilder:  (context, controller) => ListView(
+          bottomSheetBuilder: (context, controller) => ListView(
             controller: controller,
             shrinkWrap: true,
             children: [
@@ -58,6 +59,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const DeliverymanCard(),
+                    const SizedBox(height: 10),
+                    const AddressCard(),
                     const SizedBox(height: 10),
                     const OrderInfoCard(),
                     Padding(
