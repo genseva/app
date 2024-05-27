@@ -33,7 +33,6 @@ class _LoginUIState extends State<LoginUI> {
       body: FadedSlideAnimation(
         beginOffset: const Offset(0, 0.3),
         endOffset: const Offset(0, 0),
-        slideCurve: Curves.linearToEaseOut,
         child: SingleChildScrollView(
           child: Container(
             height: MediaQuery.of(context).size.height,
