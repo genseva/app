@@ -18,6 +18,7 @@ import 'package:deligo/features/order/ui/order_info_page.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
 import 'package:deligo/features/ride/ui/book_ride_screen.dart';
+import 'package:deligo/features/service/ui/provider_detail_screen.dart';
 import 'package:deligo/features/service/ui/service_providers_screen.dart';
 import 'package:deligo/features/shopping/ui/shopping_page.dart';
 import 'package:deligo/features/support/ui/support_page.dart';
@@ -50,7 +51,8 @@ class PageRoutes {
   static const String subCategoryPage = 'sub_category_page';
   static const String orderInfoPage = 'order_info_page';
   static const String whereToPage = 'where_to_page';
-  static const String serviceProviderScreen = 'serviceProviderScreen';
+  static const String serviceProviderScreen = 'service_provider_screen';
+  static const String providerDetailsScreen = 'provider_details_Screen';
 
   Map<String, WidgetBuilder> routes() {
     return {
@@ -79,6 +81,7 @@ class PageRoutes {
       orderInfoPage: (context) => const OrderInfoPage(),
       whereToPage: (context) => const WhereToPage(),
       serviceProviderScreen: (context) => const ServiceProvidersScreen(),
+      providerDetailsScreen: (context) => const ProviderDetailScreen(),
     };
   }
 }
