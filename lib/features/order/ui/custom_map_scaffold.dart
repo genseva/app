@@ -3,33 +3,41 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CustomMapScaffold extends StatelessWidget {
- const CustomMapScaffold({super.key, this.bottomChild});
+  const CustomMapScaffold({super.key, this.bottomChild, this.bottomSheetBuilder});
 
- final Widget? bottomChild;
+  final Widget? bottomChild;
+  final ScrollableWidgetBuilder? bottomSheetBuilder;
 
   @override
   Widget build(BuildContext context) {
+    const position = LatLng(37.42796133580664, -122.085749655962);
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          GoogleMap(
-            initialCameraPosition: const CameraPosition(
-                target: LatLng(37.42796133580664, -122.085749655962), zoom: 16.0),
-            mapType: MapType.normal,
-            myLocationEnabled: false,
-            myLocationButtonEnabled: false,
-            zoomControlsEnabled: false,
-            onMapCreated: (GoogleMapController controller) async {},
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 36.0),
-              child: Image.asset(
-                Assets.pinsIcLocation,
-                height: 40,
-              ),
-            ),
+          FutureBuilder<BitmapDescriptor>(
+            future:
+                BitmapDescriptor.fromAssetImage(ImageConfiguration.empty, Assets.pinsIcLocation),
+            builder: (context, snapshot) {
+              return GoogleMap(
+                initialCameraPosition: const CameraPosition(
+                  target: position,
+                  zoom: 16.0,
+                ),
+                mapType: MapType.normal,
+                myLocationEnabled: false,
+                myLocationButtonEnabled: false,
+                zoomControlsEnabled: false,
+                onMapCreated: (GoogleMapController controller) async {},
+                markers: {
+                  if (snapshot.hasData)
+                    Marker(
+                      markerId: const MarkerId("location"),
+                      position: position,
+                      icon: snapshot.data as BitmapDescriptor,
+                    ),
+                },
+              );
+            },
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -39,9 +47,7 @@ class CustomMapScaffold extends StatelessWidget {
                 Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
+                      onTap: () => Navigator.pop(context),
                       child: Container(
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
@@ -55,9 +61,9 @@ class CustomMapScaffold extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       child: Container(
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.white,
+                          color: Theme.of(context).scaffoldBackgroundColor,
                         ),
                         margin: const EdgeInsets.all(16),
                         padding: const EdgeInsets.all(8),
@@ -70,9 +76,18 @@ class CustomMapScaffold extends StatelessWidget {
               ],
             ),
           ),
-
         ],
       ),
+      bottomSheet: bottomSheetBuilder != null
+          ? DraggableScrollableSheet(
+              expand: false,
+              initialChildSize: 0.08,
+              minChildSize: 0.08,
+              maxChildSize: 0.8,
+              snap: true,
+              builder: bottomSheetBuilder!,
+            )
+          : null,
     );
   }
 }
