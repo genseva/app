@@ -1,6 +1,7 @@
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/service/ui/widgets/select_service_date.dart';
+import 'package:deligo/features/service/ui/widgets/services_tab.dart';
 import 'package:flutter/material.dart';
 
 class ProviderDetailScreen extends StatelessWidget {
@@ -94,7 +95,7 @@ class ProviderDetailScreen extends StatelessWidget {
                         color: theme.disabledColor,
                         child: TabBarView(
                           children: [
-                            Container(),
+                            ServicesTab(provider),
                             Container(),
                             Container(),
                           ],
