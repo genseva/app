@@ -1,6 +1,7 @@
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/service/ui/widgets/portfolio_tab.dart';
+import 'package:deligo/features/service/ui/widgets/reviews_tab.dart';
 import 'package:deligo/features/service/ui/widgets/select_service_date.dart';
 import 'package:deligo/features/service/ui/widgets/services_tab.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +99,7 @@ class ProviderDetailScreen extends StatelessWidget {
                           children: [
                             ServicesTab(provider),
                             const PortfolioTab(),
-                            Container(),
+                            const ReviewsTab(),
                           ],
                         ),
                       ),
