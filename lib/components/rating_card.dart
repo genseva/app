@@ -21,9 +21,7 @@ class RatingCard extends StatelessWidget {
             color: Theme.of(context).scaffoldBackgroundColor,
             size: 12,
           ),
-          const SizedBox(
-            width: 4,
-          ),
+          const SizedBox(width: 4),
           Text(
             rating ?? '4.2',
             style: Theme.of(context)

@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CustomMapScaffold extends StatelessWidget {
-  const CustomMapScaffold({super.key, this.bottomChild, this.bottomSheetBuilder});
+  const CustomMapScaffold({
+    super.key,
+    this.bottomChild,
+    this.bottomSheetBuilder,
+    this.bottomSheetInitialSize,
+  });
 
   final Widget? bottomChild;
   final ScrollableWidgetBuilder? bottomSheetBuilder;
+  final double? bottomSheetInitialSize;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +44,10 @@ class CustomMapScaffold extends StatelessWidget {
                 },
               );
             },
+          ),
+          const Positioned(
+            top: 52,
+            child: BackButton(),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -81,8 +91,8 @@ class CustomMapScaffold extends StatelessWidget {
       bottomSheet: bottomSheetBuilder != null
           ? DraggableScrollableSheet(
               expand: false,
-              initialChildSize: 0.08,
-              minChildSize: 0.08,
+              initialChildSize: bottomSheetInitialSize ?? 0.08,
+              minChildSize: bottomSheetInitialSize ?? 0.08,
               maxChildSize: 0.8,
               snap: true,
               builder: bottomSheetBuilder!,

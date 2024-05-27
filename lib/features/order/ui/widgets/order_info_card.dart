@@ -15,7 +15,10 @@ class OrderInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Order ID", style: theme.textTheme.bodyMedium),
-              Text("FD148HF667", style: theme.textTheme.bodyLarge),
+              Text(
+                "FD148HF667",
+                style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+              ),
             ],
           ),
           const SizedBox(height: 10),
@@ -23,7 +26,10 @@ class OrderInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Ordered on", style: theme.textTheme.bodyMedium),
-              Text("Today, 12:35 PM", style: theme.textTheme.bodyLarge),
+              Text(
+                "Today, 12:35 PM",
+                style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+              ),
             ],
           )
         ],

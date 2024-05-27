@@ -3,7 +3,9 @@ import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class DeliverymanCard extends StatelessWidget {
-  const DeliverymanCard({super.key});
+  const DeliverymanCard(this.isDelivered, {super.key});
+
+  final bool isDelivered;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +19,13 @@ class DeliverymanCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Deliveryman Assigned",
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: theme.hintColor,
+              if (!isDelivered)
+                Text(
+                  "Deliveryman Assigned",
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.hintColor,
+                  ),
                 ),
-              ),
               const SizedBox(height: 6),
               Text(
                 "George Anderson",
@@ -40,38 +43,29 @@ class DeliverymanCard extends StatelessWidget {
               ),
             ],
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, PageRoutes.profilePage);
-            },
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Image.asset(
-                  Assets.assetsUser,
-                  height: MediaQuery.of(context).size.width * 0.2,
-                  width: MediaQuery.of(context).size.width * 0.2,
-                ),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Image.asset(
+                Assets.assetsUser,
+                height: MediaQuery.of(context).size.width * 0.2,
+                width: MediaQuery.of(context).size.width * 0.2,
+              ),
+              if (!isDelivered)
                 PositionedDirectional(
                   start: -36,
-                  height: MediaQuery.of(context).size.width * 0.2,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: theme.scaffoldBackgroundColor,
-                          border: Border.all(color: theme.hintColor),
-                        ),
-                        child: Icon(Icons.call, color: theme.primaryColor),
-                      ),
-                    ],
+                  bottom: 8,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: theme.scaffoldBackgroundColor,
+                      border: Border.all(color: theme.hintColor),
+                    ),
+                    child: Icon(Icons.call, color: theme.primaryColor),
                   ),
                 ),
-              ],
-            ),
+            ],
           ),
         ],
       ),

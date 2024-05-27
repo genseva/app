@@ -17,7 +17,7 @@ class WhereToPage extends StatelessWidget {
       bottomChild: Stack(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
             child: Image.asset(
               type.image,
               width: double.infinity,

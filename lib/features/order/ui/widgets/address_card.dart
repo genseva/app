@@ -3,7 +3,9 @@ import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class AddressCard extends StatelessWidget {
-  const AddressCard({super.key});
+  const AddressCard(this.isDelivered, {super.key});
+
+  final bool isDelivered;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +54,7 @@ class AddressCard extends StatelessWidget {
               ],
             ),
           ),
+          if(!isDelivered)
           Container(
             margin: const EdgeInsets.only(top: 10),
             padding: const EdgeInsets.all(8),
