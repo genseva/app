@@ -13,6 +13,7 @@ import 'package:deligo/features/grocery/ui/grocery_category_screen.dart';
 import 'package:deligo/features/grocery/ui/grocery_store_screen.dart';
 import 'package:deligo/features/grocery/ui/order_grocery_screen.dart';
 import 'package:deligo/features/language/ui/language_page.dart';
+import 'package:deligo/features/medicine/ui/medicine_list.dart';
 import 'package:deligo/features/medicine/ui/order_medicine_page.dart';
 import 'package:deligo/features/order/ui/order_info_page.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
@@ -42,6 +43,7 @@ class PageRoutes {
   static const String bookServiceScreen = 'book_service_screen';
   static const String bookParcelScreen = 'book_parcel_screen';
   static const String orderMedicineScreen = 'order_medicine_screen';
+  static const String medicineList = 'medicine_list';
   static const String shoppingScreen = 'shopping_screen';
   static const String profilePage = 'profile_page';
   static const String languagePage = 'language_page';
@@ -82,6 +84,7 @@ class PageRoutes {
       whereToPage: (context) => const WhereToPage(),
       serviceProviderScreen: (context) => const ServiceProvidersScreen(),
       providerDetailsScreen: (context) => const ProviderDetailScreen(),
+     medicineList: (context) => const MedicineList(),
     };
   }
 }

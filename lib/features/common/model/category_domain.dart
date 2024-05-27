@@ -227,13 +227,33 @@ class CategoryDomain {
   static final List<CategoryDomain> medicineList = [
     CategoryDomain(
       "Cough",
-      [],
+      [
+        ProductDomain("Salospir 100mg Tablet", Assets.medicinesTablet1, 5.00,
+            cartQuantity: 10, unit: "Tablets"),
+        ProductDomain("Xenical 120mg Tablet", Assets.medicinesTablet2, 5.00,
+            cartQuantity: 10, unit: "Tablets"),
+        ProductDomain("Allergy Relief Tablet", Assets.medicinesTablet3, 5.00,
+            cartQuantity: 90, unit: "Tablets"),
+        ProductDomain("Non Dry Tablet", Assets.medicinesTablet4, 5.00,
+            cartQuantity: 30, unit: "Tablets"),
+        ProductDomain("NDA Tablet", Assets.medicinesTablet5, 5.00,
+            cartQuantity: 5, unit: "Tablets"),
+      ],
       subCategories: ["Chest Pain", "Cold"],
       image: Assets.categoriesCough,
     ),
     CategoryDomain(
       "Pain Relief",
-      [],
+      [
+        ProductDomain("Salospir 100mg Tablet", Assets.medicinesTablet1, 5.00,
+            cartQuantity: 10, unit: "Tablets"),
+        ProductDomain("Xenical 120mg Tablet", Assets.medicinesTablet2, 5.00,
+            cartQuantity: 10, unit: "Tablets"),
+        ProductDomain("Allergy Relief Tablet", Assets.medicinesTablet3, 5.00,
+            cartQuantity: 90, unit: "Tablets"),
+        ProductDomain("Non Dry Tablet", Assets.medicinesTablet4, 5.00,
+            cartQuantity: 30, unit: "Tablets"),
+      ],
       subCategories: [
         "Body Pain with Fever",
         "Headache",
@@ -246,7 +266,12 @@ class CategoryDomain {
     ),
     CategoryDomain(
       "Skin Care",
-      [],
+      [
+        ProductDomain("Allergy Relief Tablet", Assets.medicinesTablet3, 5.00,
+            cartQuantity: 90, unit: "Tablets"),
+        ProductDomain("Non Dry Tablet", Assets.medicinesTablet4, 5.00,
+            cartQuantity: 30, unit: "Tablets"),
+      ],
       subCategories: [
         "Body Pain with Fever",
       ],
@@ -254,7 +279,12 @@ class CategoryDomain {
     ),
     CategoryDomain(
       "Headache",
-      [],
+      [
+        ProductDomain("Salospir 100mg Tablet", Assets.medicinesTablet1, 5.00,
+            cartQuantity: 10, unit: "Tablets"),
+        ProductDomain("Non Dry Tablet", Assets.medicinesTablet4, 5.00,
+            cartQuantity: 30, unit: "Tablets"),
+      ],
       subCategories: [
         "Body Pain with Fever",
         "Headache",
@@ -264,7 +294,12 @@ class CategoryDomain {
     ),
     CategoryDomain(
       "Fever",
-      [],
+      [
+        ProductDomain("Allergy Relief Tablet", Assets.medicinesTablet3, 5.00,
+            cartQuantity: 90, unit: "Tablets"),
+        ProductDomain("Non Dry Tablet", Assets.medicinesTablet4, 5.00,
+            cartQuantity: 30, unit: "Tablets"),
+      ],
       subCategories: [
         "Body Pain with Fever",
         "Headache",
@@ -277,7 +312,10 @@ class CategoryDomain {
     ),
     CategoryDomain(
       "Weakness",
-      [],
+      [
+        ProductDomain("Non Dry Tablet", Assets.medicinesTablet4, 5.00,
+            cartQuantity: 30, unit: "Tablets"),
+      ],
       subCategories: [
         "Body Pain with Fever",
         "Headache",
