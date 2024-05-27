@@ -3,15 +3,17 @@ import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 
 class PayTotalCard extends StatelessWidget {
-  const PayTotalCard(this.cubit, {super.key});
+  const PayTotalCard(this.cubit, {super.key, this.isPaid = false});
 
   final CartCubit cubit;
+  final bool isPaid;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       padding: const EdgeInsets.all(20.0),
-      color: Theme.of(context).scaffoldBackgroundColor,
+      color: theme.scaffoldBackgroundColor,
       child: Column(
         children: [
           Row(
@@ -19,12 +21,12 @@ class PayTotalCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   "Item Total",
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: theme.textTheme.bodySmall,
                 ),
               ),
               Text(
                 r"$" " ${cubit.getCartTotal().toStringAsFixed(2)}",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: theme.textTheme.bodyMedium,
               )
             ],
           ),
@@ -34,12 +36,12 @@ class PayTotalCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   "Delivery Fee",
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: theme.textTheme.bodySmall,
                 ),
               ),
               Text(
                 "+ "r"$" " ${cubit.deliveryCharges.toStringAsFixed(2)}",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: theme.textTheme.bodyMedium,
               )
             ],
           ),
@@ -49,12 +51,12 @@ class PayTotalCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   "Taxes & Charges",
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: theme.textTheme.bodySmall,
                 ),
               ),
               Text(
                 "+ "r"$" " ${cubit.taxes.toStringAsFixed(2)}",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: theme.textTheme.bodyMedium,
               )
             ],
           ),
@@ -65,12 +67,12 @@ class PayTotalCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     "Discount",
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: theme.textTheme.bodySmall,
                   ),
                 ),
                 Text(
                   "- "r"$" " ${cubit.getDiscount().toStringAsFixed(2)}",
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: theme.textTheme.bodyMedium,
                 ),
               ],
             ),
@@ -81,8 +83,8 @@ class PayTotalCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  "To Pay",
-                  style: Theme.of(context).textTheme.bodyLarge,
+                isPaid ? "Paid via GoWallet" :  "To Pay",
+                  style: theme.textTheme.bodyLarge?.copyWith(color: isPaid? theme.primaryColor: Colors.black),
                 ),
               ),
               Text(

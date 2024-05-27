@@ -1,4 +1,3 @@
-import 'package:deligo/routes/page_routes.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
@@ -24,7 +23,7 @@ class StoreList extends StatelessWidget {
         var store = list[index];
         return InkWell(
           splashColor: Colors.transparent,
-          onTap: () => onTap?.call(store) ?? Navigator.pushNamed(context, PageRoutes.providerDetailsScreen, arguments: store),
+          onTap: () => onTap?.call(store),
           child: Row(
             children: [
               Image.asset(

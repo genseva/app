@@ -1,7 +1,10 @@
-import 'package:deligo/components/custom_scaffold.dart';
 import 'package:deligo/features/account/model/address.dart';
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
+import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
+import 'package:deligo/features/order/ui/widgets/deliveryman_card.dart';
+import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
+import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -27,16 +30,14 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final theme = Theme.of(context);
-
     final AddressDomain address = AddressDomain.list.first;
     return BlocBuilder<CartCubit, List<ProductDomain>>(
       builder: (context, state) {
-        return CustomScaffold(
-            image: Assets.headerHeaderFood,
-            title: '',
-            child: Column(
+        return CustomMapScaffold(
+            bottomChild: Column(
               children: [
-                Column(
+                ListView(
+                  shrinkWrap: true,
                   children: [
                     Container(
                       padding: const EdgeInsets.only(top: 6),
@@ -54,9 +55,22 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                           )
                         ],
                       ),
+                    ),
+                    Container(
+                      color: theme.disabledColor,
+                      child: Column(
+                        children: [
+                          const DeliverymanCard(),
+                          const SizedBox(height: 10),
+                          PayTotalCard(_cubit, isPaid: true),
+                          const SizedBox(height: 10),
+                          const OrderInfoCard(),
+                          const SizedBox(height: 10),
+                        ],
+                      ),
                     )
                   ],
-                )
+                ),
               ],
             ));
       },

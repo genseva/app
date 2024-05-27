@@ -5,7 +5,7 @@ import 'package:deligo/features/account/model/address.dart';
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/cart/model/coupon_domain.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/food/ui/widgets/pay_total_card.dart';
+import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';

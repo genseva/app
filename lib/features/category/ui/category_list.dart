@@ -1,3 +1,4 @@
+import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/features/common/ui/category_grid.dart';
 import 'package:deligo/features/common/ui/store_list.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
@@ -10,11 +11,13 @@ class CategoryList extends StatelessWidget {
     this.storeListTitle,
     required this.categories,
     required this.stores,
+    this.routesName = PageRoutes.accountPage,
   });
 
   final String? storeListTitle;
   final List<CategoryDomain> categories;
   final List<StoreDomain> stores;
+  final String routesName;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +44,9 @@ class CategoryList extends StatelessWidget {
           ),
           const SizedBox(height: 16),
         ],
-        StoreList(stores),
+        StoreList(stores, onTap: (stores){
+        Navigator.pushNamed(context, routesName, arguments: stores);
+        }),
       ],
     );
   }
