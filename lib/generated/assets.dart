@@ -111,11 +111,23 @@ class Assets {
   static const String pinsPinFood = 'assets/pins/pin_food.png';
   static const String pinsPinGrocery = 'assets/pins/pin_grocery.png';
   static const String pinsPinStore = 'assets/pins/pin_Store.png';
+  static const String portfoliosP1 = 'assets/service/portfolios/p1.png';
+  static const String portfoliosP2 = 'assets/service/portfolios/p2.png';
+  static const String portfoliosP3 = 'assets/service/portfolios/p3.png';
+  static const String portfoliosP4 = 'assets/service/portfolios/p4.png';
+  static const String portfoliosP5 = 'assets/service/portfolios/p5.png';
+  static const String portfoliosP6 = 'assets/service/portfolios/p6.png';
   static const String profilesPlumber1 = 'assets/service/profiles/plumber1.png';
   static const String profilesPlumber2 = 'assets/service/profiles/plumber2.png';
   static const String profilesPlumber3 = 'assets/service/profiles/plumber3.png';
   static const String profilesPlumber4 = 'assets/service/profiles/plumber4.png';
   static const String profilesPlumber5 = 'assets/service/profiles/plumber5.png';
+  static const String reviewerReviewer1 = 'assets/reviewer/reviewer1.png';
+  static const String reviewerReviewer2 = 'assets/reviewer/reviewer2.png';
+  static const String reviewerReviewer3 = 'assets/reviewer/reviewer3.png';
+  static const String reviewerReviewer4 = 'assets/reviewer/reviewer4.png';
+  static const String reviewerReviewer5 = 'assets/reviewer/reviewer5.png';
+  static const String reviewerReviewer6 = 'assets/reviewer/reviewer6.png';
   static const String storeStore1 = 'assets/medicine/store/store1.png';
   static const String storeStpre2 = 'assets/medicine/store/stpre2.png';
 
