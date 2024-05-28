@@ -5,6 +5,7 @@ import 'package:deligo/features/account/ui/tnc_page.dart';
 import 'package:deligo/features/bottom_navigation/bottom_navigation.dart';
 import 'package:deligo/features/cab/ui/book_cab_page.dart';
 import 'package:deligo/features/category/ui/sub_category_list.dart';
+import 'package:deligo/features/common/ui/set_destination_page.dart';
 import 'package:deligo/features/common/ui/where_to_page.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
 import 'package:deligo/features/food/ui/order_food_screen.dart';
@@ -19,12 +20,12 @@ import 'package:deligo/features/order/ui/order_info_page.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
 import 'package:deligo/features/payment/ui/payment_page.dart';
 import 'package:deligo/features/ride/ui/book_ride_screen.dart';
+import 'package:deligo/features/service/ui/book_service_screen.dart';
 import 'package:deligo/features/service/ui/provider_detail_screen.dart';
 import 'package:deligo/features/service/ui/service_providers_screen.dart';
 import 'package:deligo/features/shopping/ui/shopping_page.dart';
 import 'package:deligo/features/support/ui/support_page.dart';
 import 'package:deligo/features/wallet/ui/wallet_page.dart';
-import 'package:deligo/features/service/ui/book_service_screen.dart';
 import 'package:flutter/material.dart';
 
 class PageRoutes {
@@ -53,6 +54,7 @@ class PageRoutes {
   static const String subCategoryPage = 'sub_category_page';
   static const String orderInfoPage = 'order_info_page';
   static const String whereToPage = 'where_to_page';
+  static const String setDestinationPage = 'set_destination_page';
   static const String serviceProviderScreen = 'service_provider_screen';
   static const String providerDetailsScreen = 'provider_details_Screen';
 
@@ -82,9 +84,10 @@ class PageRoutes {
       subCategoryPage: (context) => const SubCategoryList(),
       orderInfoPage: (context) => const OrderInfoPage(),
       whereToPage: (context) => const WhereToPage(),
+      setDestinationPage: (context) => const SetDestinationPage(),
       serviceProviderScreen: (context) => const ServiceProvidersScreen(),
       providerDetailsScreen: (context) => const ProviderDetailScreen(),
-     medicineList: (context) => const MedicineList(),
+      medicineList: (context) => const MedicineList(),
     };
   }
 }

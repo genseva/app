@@ -39,8 +39,11 @@ class CabChild extends StatelessWidget {
                             child: const Icon(Icons.location_on, size: 16),
                           ),
                           const SizedBox(width: 8),
-                          const Expanded(
+                          Expanded(
                             child: CustomTextField(
+                              readOnly: true,
+                              onTap: () => Navigator.pushNamed(context, PageRoutes.whereToPage,
+                                  arguments: type),
                               bgColor: Colors.transparent,
                               showBorder: false,
                               hintText: "Your location",
@@ -64,6 +67,9 @@ class CabChild extends StatelessWidget {
                         const SizedBox(width: 8),
                         Expanded(
                           child: CustomTextField(
+                            readOnly: true,
+                            onTap: () =>
+                                Navigator.pushNamed(context, PageRoutes.setDestinationPage),
                             bgColor: Colors.transparent,
                             showBorder: false,
                             hintText: type != DeliveryType.delivery
@@ -97,7 +103,7 @@ class CabChild extends StatelessWidget {
                     Expanded(
                       child: CustomButton(
                         onTap: () {
-                          Navigator.pushNamed(context, PageRoutes.whereToPage, arguments: type);
+                          Navigator.pushNamed(context, PageRoutes.setDestinationPage);
                         },
                         buttonColor: theme.scaffoldBackgroundColor,
                         prefixIcon: Icons.add_circle,

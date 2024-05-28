@@ -193,7 +193,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                       ),
                       const SizedBox(height: 10),
                       PayTotalCard(_cubit, isPaid: true),
-                      Padding(
+                      if (!_isDelivered)
+                        Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
                         child: CustomButton(
                           onTap: () {

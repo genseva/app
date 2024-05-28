@@ -8,11 +8,13 @@ class CustomMapScaffold extends StatelessWidget {
     this.bottomChild,
     this.bottomSheetBuilder,
     this.bottomSheetInitialSize,
+    this.pin
   });
 
   final Widget? bottomChild;
   final ScrollableWidgetBuilder? bottomSheetBuilder;
   final double? bottomSheetInitialSize;
+  final String? pin;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class CustomMapScaffold extends StatelessWidget {
         children: <Widget>[
           FutureBuilder<BitmapDescriptor>(
             future:
-                BitmapDescriptor.fromAssetImage(ImageConfiguration.empty, Assets.pinsIcLocation),
+                BitmapDescriptor.fromAssetImage(ImageConfiguration.empty, pin ?? Assets.pinsIcLocation),
             builder: (context, snapshot) {
               return GoogleMap(
                 initialCameraPosition: const CameraPosition(
