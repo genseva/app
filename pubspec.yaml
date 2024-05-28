@@ -63,6 +63,7 @@ flutter:
     - assets/payment/
     - assets/ecommerce/
     - assets/ecommerce/categories/
+    - assets/ecommerce/products/
     - assets/medicine/
     - assets/medicine/store/
     - assets/medicine/medicines/
@@ -73,6 +74,7 @@ flutter:
     - assets/service/portfolios/
     - assets/pins/
     - assets/reviewer/
+    - assets/ride/
 
   fonts:
     - family: ProductSans

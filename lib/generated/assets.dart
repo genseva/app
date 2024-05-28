@@ -117,6 +117,11 @@ class Assets {
   static const String portfoliosP4 = 'assets/service/portfolios/p4.png';
   static const String portfoliosP5 = 'assets/service/portfolios/p5.png';
   static const String portfoliosP6 = 'assets/service/portfolios/p6.png';
+  static const String productsItem1 = 'assets/ecommerce/products/item1.png';
+  static const String productsItem2 = 'assets/ecommerce/products/item2.png';
+  static const String productsItem3 = 'assets/ecommerce/products/item3.png';
+  static const String productsItem4 = 'assets/ecommerce/products/item4.png';
+  static const String productsStore = 'assets/ecommerce/products/store.png';
   static const String profilesPlumber1 = 'assets/service/profiles/plumber1.png';
   static const String profilesPlumber2 = 'assets/service/profiles/plumber2.png';
   static const String profilesPlumber3 = 'assets/service/profiles/plumber3.png';
@@ -128,6 +133,13 @@ class Assets {
   static const String reviewerReviewer4 = 'assets/reviewer/reviewer4.png';
   static const String reviewerReviewer5 = 'assets/reviewer/reviewer5.png';
   static const String reviewerReviewer6 = 'assets/reviewer/reviewer6.png';
+  static const String rideElectRide = 'assets/ride/ElectRide.png';
+  static const String rideInstDelivry = 'assets/ride/InstDelivry.png';
+  static const String rideInstaMega = 'assets/ride/InstaMega.png';
+  static const String rideInstaMini = 'assets/ride/InstaMini.png';
+  static const String rideInstaQuid = 'assets/ride/InstaQuid.png';
+  static const String rideInstaRide = 'assets/ride/InstaRide.png';
+  static const String rideSameDayDelivery = 'assets/ride/SameDayDelivery.png';
   static const String storeStore1 = 'assets/medicine/store/store1.png';
   static const String storeStpre2 = 'assets/medicine/store/stpre2.png';
 
