@@ -1,3 +1,4 @@
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SelectServiceDate extends StatelessWidget {
@@ -9,20 +10,19 @@ class SelectServiceDate extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-
         border: Border(top: BorderSide(color: theme.dividerColor, width: 0.2)),
       ),
       child: ListTile(
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, PageRoutes.serviceRequestScreen),
           title: Row(
             children: [
-              Icon(Icons.calendar_month_outlined, color: theme.primaryColor,size: 15),
+              Icon(Icons.calendar_month_outlined, color: theme.primaryColor, size: 15),
               const SizedBox(width: 8),
-              Text("Select Date",
-                  style: theme.textTheme.titleSmall?.copyWith(color: Colors.grey)),
+              Text("Select Date", style: theme.textTheme.titleSmall?.copyWith(color: Colors.grey)),
             ],
           ),
-          subtitle: Text("23 June, 10:00 Am", style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600)),
+          subtitle: Text("23 June, 10:00 Am",
+              style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600)),
           trailing: Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(

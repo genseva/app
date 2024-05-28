@@ -1,5 +1,4 @@
 import 'package:deligo/generated/assets.dart';
-import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class DeliverymanCard extends StatelessWidget {

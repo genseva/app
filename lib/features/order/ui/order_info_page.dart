@@ -5,6 +5,7 @@ import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
 import 'package:deligo/features/order/ui/widgets/address_card.dart';
 import 'package:deligo/features/order/ui/widgets/deliveryman_card.dart';
 import 'package:deligo/features/order/ui/widgets/get_rating_card.dart';
+import 'package:deligo/features/order/ui/widgets/order_header_card.dart';
 import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
 import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
@@ -44,7 +45,6 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final screenSize = MediaQuery.of(context).size;
     return BlocBuilder<CartCubit, List<ProductDomain>>(
       builder: (context, state) {
         return CustomMapScaffold(
@@ -55,50 +55,7 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
               shrinkWrap: true,
               children: [
                 if (_isDelivered)
-                  Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-                        child: Image.asset(
-                          Assets.headerHeaderFood,
-                          height: screenSize.height * 0.16,
-                          width: double.infinity,
-                          fit: BoxFit.fitWidth,
-                        ),
-                      ),
-                      PositionedDirectional(
-                        start: 16,
-                        height: screenSize.height * 0.16,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Food",
-                              style:
-                                  theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
-                            ),
-                            Text(
-                              "Food Delivered",
-                              style: theme.textTheme.titleMedium,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          width: 70.0,
-                          height: 3.0,
-                          margin: const EdgeInsets.only(top: 8),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: theme.hintColor.withOpacity(0.3),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
+                  const OrderHeaderCard(image: Assets.headerHeaderFood, title: "Food", subTitle: "Food Delivered")
                 else
                   Container(
                     padding: const EdgeInsets.only(top: 6),
