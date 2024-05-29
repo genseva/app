@@ -8,12 +8,13 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? textEditingController;
   final TextInputType? textInputType;
   final Widget? prefixIcon;
-  final Icon? suffixIcon;
+  final Widget? suffixIcon;
   final int? maxLines;
   final Color? bgColor;
   final bool showBorder;
   final bool readOnly;
   final VoidCallback? onTap;
+  final EdgeInsetsGeometry margin;
 
   const CustomTextField({
     super.key,
@@ -29,43 +30,47 @@ class CustomTextField extends StatelessWidget {
     this.onTap,
     this.showBorder = true,
     this.readOnly = false,
+    this.margin = EdgeInsets.zero,
   });
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (title != null) ...[
-          Text(
-            title!,
-            style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+    return Padding(
+      padding: margin,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (title != null) ...[
+            Text(
+              title!,
+              style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+            ),
+            const SizedBox(height: 12),
+          ],
+          TextFormField(
+            keyboardType: textInputType,
+            controller: textEditingController,
+            initialValue: initialValue,
+            style: theme.textTheme.bodyLarge,
+            maxLines: maxLines,
+            onTap: onTap,
+            readOnly: readOnly,
+            decoration: InputDecoration(
+              prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
+              filled: true,
+              fillColor: bgColor ?? theme.cardColor,
+              isDense: true,
+              border: _getBorder(theme.hintColor),
+              enabledBorder: _getBorder(theme.hintColor),
+              focusedBorder: _getBorder(theme.primaryColor),
+              hintText: hintText,
+              hintStyle: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+            ),
           ),
-          const SizedBox(height: 12),
         ],
-        TextFormField(
-          keyboardType: textInputType,
-          controller: textEditingController,
-          initialValue: initialValue,
-          style: theme.textTheme.bodyLarge,
-          maxLines: maxLines,
-          onTap: onTap,
-          readOnly: readOnly,
-          decoration: InputDecoration(
-            prefixIcon: prefixIcon,
-            suffixIcon: suffixIcon,
-            filled: true,
-            fillColor: bgColor ?? theme.cardColor,
-            isDense: true,
-            border: _getBorder(theme.hintColor),
-            enabledBorder: _getBorder(theme.hintColor),
-            focusedBorder: _getBorder(theme.primaryColor),
-            hintText: hintText,
-            hintStyle: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
-          ),
-        ),
-      ],
+      ),
     );
   }
 

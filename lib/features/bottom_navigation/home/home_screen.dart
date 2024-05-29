@@ -62,7 +62,8 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(width: 10),
                 Text(
                   locale.home,
-                  style: theme.textTheme.headlineSmall?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: theme.textTheme.headlineSmall
+                      ?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
                   width: 12,
@@ -161,9 +162,7 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             SizedBox(
               height: 130,
               child: ListView.builder(

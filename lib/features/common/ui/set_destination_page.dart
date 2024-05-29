@@ -2,6 +2,7 @@ import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/features/account/model/address.dart';
 import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SetDestinationPage extends StatefulWidget {
@@ -68,8 +69,12 @@ class _SetDestinationPageState extends State<SetDestinationPage> {
             const SizedBox(height: 16),
             CustomButton(
               text: "Next",
-              onTap: () => Navigator.pop(context),
-            )
+              onTap: () => Navigator.pushNamed(
+                context,
+                PageRoutes.deliveryDetailsPage,
+                arguments: address,
+              ),
+            ),
           ],
         ),
       ),

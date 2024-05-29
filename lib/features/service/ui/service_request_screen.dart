@@ -91,8 +91,9 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                         ),
                         Container(
                           decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                              color: Colors.white),
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                            color: Colors.white,
+                          ),
                           height: 20,
                         ),
                       ],
