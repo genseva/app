@@ -12,6 +12,8 @@ class SelectRidePage extends StatefulWidget {
 }
 
 class _SelectRidePageState extends State<SelectRidePage> {
+  final bool _isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     (DeliveryType, String) args =
@@ -86,10 +88,71 @@ class _SelectRidePageState extends State<SelectRidePage> {
           ),
         ),
       ),
-      bottomChild: Stack(
-        children: [
-
-        ],
+      bottomChild: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
+          color: theme.scaffoldBackgroundColor,
+        ),
+        child: Column(
+          children: [
+            Container(
+              width: 70.0,
+              height: 3.0,
+              margin: const EdgeInsets.only(top: 8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: theme.hintColor.withOpacity(0.3),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(args.$2, style: theme.textTheme.labelMedium?.copyWith(color: theme.hintColor)),
+            ListView.builder(
+              shrinkWrap: true,
+              padding: const EdgeInsets.all(16),
+              itemCount: type.rideList.length,
+              itemBuilder: (context, index) {
+                var ride = type.rideList[index];
+                return Container(
+                  height: 70,
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  width: double.infinity - 32,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: _isSelected ? const Color(0xffF1FFF2) : theme.scaffoldBackgroundColor,
+                    border: Border.all(color: theme.hintColor.withOpacity(0.3)),
+                  ),
+                  child: ListTile(
+                    onTap: () {
+                      setState(() {});
+                    },
+                    leading: Image.asset(ride.image, height: 30),
+                    title: Text(
+                      ride.name,
+                      style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+                    ),
+                    subtitle: Row(
+                      children: [
+                        Text(
+                          "${ride.time}   •   ",
+                          style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                        ),
+                        Text(
+                          ride.quantity,
+                          style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                        ),
+                      ],
+                    ),
+                    trailing: Text(
+                      r"$" + ride.price,
+                      style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                );
+              },
+            )
+          ],
+        ),
       ),
     );
   }

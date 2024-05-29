@@ -179,7 +179,7 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
       ),
       bottomNavigationBar: CustomButton(
         onTap: () => Navigator.pushNamed(context, PageRoutes.selectRidePage,
-            arguments: (DeliveryType.delivery, "Search for destination")),
+            arguments: (DeliveryType.delivery, "Choose Delivery Type")),
         text: "Next",
         margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       ),
