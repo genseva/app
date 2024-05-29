@@ -1,5 +1,6 @@
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/features/account/model/address.dart';
+import 'package:deligo/features/common/model/delivery_type.dart';
 import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/routes/page_routes.dart';
@@ -17,6 +18,7 @@ class _SetDestinationPageState extends State<SetDestinationPage> {
 
   @override
   Widget build(BuildContext context) {
+    DeliveryType type = ModalRoute.of(context)?.settings.arguments as DeliveryType;
     final theme = Theme.of(context);
     return CustomMapScaffold(
       pin: Assets.pinsIcLocation1,
@@ -69,11 +71,18 @@ class _SetDestinationPageState extends State<SetDestinationPage> {
             const SizedBox(height: 16),
             CustomButton(
               text: "Next",
-              onTap: () => Navigator.pushNamed(
-                context,
-                PageRoutes.deliveryDetailsPage,
-                arguments: address,
-              ),
+              onTap: () {
+                if (type == DeliveryType.delivery) {
+                  Navigator.pushNamed(
+                    context,
+                    PageRoutes.deliveryDetailsPage,
+                    arguments: address,
+                  );
+                } else {
+                  Navigator.pushNamed(context, PageRoutes.selectRidePage,
+                      arguments: (type, "Choose Ride"));
+                }
+              },
             ),
           ],
         ),

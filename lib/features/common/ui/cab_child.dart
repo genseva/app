@@ -99,7 +99,7 @@ class CabChild extends StatelessWidget {
                   Expanded(
                     child: CustomButton(
                       onTap: () {
-                        Navigator.pushNamed(context, PageRoutes.setDestinationPage);
+                        Navigator.pushNamed(context, PageRoutes.setDestinationPage, arguments: type);
                       },
                       buttonColor: theme.scaffoldBackgroundColor,
                       prefixIcon: Icons.pin_drop,
