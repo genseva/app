@@ -161,11 +161,6 @@ class CategoryDomain {
 
   static final List<CategoryDomain> ecommerceList = [
     CategoryDomain(
-      "His Fashion",
-      [],
-      image: Assets.categoriesEcomHisfashion,
-    ),
-    CategoryDomain(
       "Her Fashion",
       [
         ProductDomain("Women White Skirt", Assets.productsItem1, 10.00, cartQuantity: 0),
@@ -185,6 +180,17 @@ class CategoryDomain {
         "Earings"
       ],
       image: Assets.categoriesEcomHerfasion,
+    ),
+
+    CategoryDomain(
+      "His Fashion",
+      [
+        ProductDomain("Women White Skirt", Assets.productsItem1, 10.00, cartQuantity: 0),
+        ProductDomain("Women Pink Dress", Assets.productsItem2, 8.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Yellow Dress", Assets.productsItem4, 12.00, cartQuantity: 0),
+        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00, cartQuantity: 0),],
+      image: Assets.categoriesEcomHisfashion,
     ),
     CategoryDomain(
       "Kid's Fashion",

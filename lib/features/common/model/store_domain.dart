@@ -133,7 +133,7 @@ class StoreDomain {
     ),
   ];
   static final List<StoreDomain> ecommerce = [
-    StoreDomain(Assets.productsStore, "WStore", "1141 Central Park, Hemilton", "5 days", 0, "Open"),
+    StoreDomain(Assets.productsStore, "WStore", "1141 Central Park, Hemilton", "5 days 30", 0, "Open"),
   ];
   static final List<StoreDomain> serviceList = [
     StoreDomain(Assets.profilesPlumber1, 'Plumber 1', 'CentralPark', '20', 1.5, '148 Jobs',

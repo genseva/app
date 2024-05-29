@@ -25,6 +25,7 @@ import 'package:deligo/features/service/ui/provider_detail_screen.dart';
 import 'package:deligo/features/service/ui/service_providers_screen.dart';
 import 'package:deligo/features/service/ui/service_request_screen.dart';
 import 'package:deligo/features/shopping/ui/shopping_page.dart';
+import 'package:deligo/features/shopping/ui/shopping_products_screen.dart';
 import 'package:deligo/features/support/ui/support_page.dart';
 import 'package:deligo/features/wallet/ui/wallet_page.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +48,7 @@ class PageRoutes {
   static const String orderMedicineScreen = 'order_medicine_screen';
   static const String medicineList = 'medicine_list';
   static const String shoppingScreen = 'shopping_screen';
+  static const String shoppingProductScreen = 'shopping_product_screen';
   static const String profilePage = 'profile_page';
   static const String languagePage = 'language_page';
   static const String savedAddressesPage = 'saved_addresses_page';
@@ -78,6 +80,7 @@ class PageRoutes {
       bookParcelScreen: (context) => const BookParcelScreen(),
       orderMedicineScreen: (context) => const OrderMedicinePage(),
       shoppingScreen: (context) => const ShoppingPage(),
+      shoppingProductScreen: (context) => const ShoppingProducts(),
       profilePage: (context) => const ProfilePage(),
       languagePage: (context) => const LanguagePage(),
       savedAddressesPage: (context) => const SavedAddressesPage(),
