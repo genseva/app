@@ -167,7 +167,13 @@ class CategoryDomain {
     ),
     CategoryDomain(
       "Her Fashion",
-      [],
+      [
+        ProductDomain("Women White Skirt", Assets.productsItem1, 10.00, cartQuantity: 0),
+        ProductDomain("Women Pink Dress", Assets.productsItem2, 8.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Yellow Dress", Assets.productsItem4, 12.00, cartQuantity: 0),
+        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00, cartQuantity: 0),
+      ],
       subCategories: [
         "Clothing",
         "Shoes",
@@ -182,43 +188,57 @@ class CategoryDomain {
     ),
     CategoryDomain(
       "Kid's Fashion",
-      [],
+      [
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+      ],
       subCategories: ["Clothing", "Shoes", "Watches", "Handbags", "Accessories"],
       image: Assets.categoriesEcomKidfashion,
     ),
     CategoryDomain(
       "Appliances",
-      [],
+      [
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+      ],
       subCategories: ["Washing Machine", "Television", "Refrigerator"],
       image: Assets.categoriesEcomAppliances,
     ),
     CategoryDomain(
       "Phones",
-      [],
+      [
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+      ],
       subCategories: ["Mobile", "Tablet", "Laptop", "Smart Watch"],
       image: Assets.categoriesEcomPhone,
     ),
     CategoryDomain(
       "Beauty Care",
-      [],
+      [
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+      ],
       subCategories: ["Hair Care", "Skin Care", "Body Care", "Make Up"],
       image: Assets.categoriesEcomBeauty,
     ),
     CategoryDomain(
       "Toys",
-      [],
+      [
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+      ],
       subCategories: ["Board Games", "Games", "Dolls", "Puzzles"],
       image: Assets.categoriesEcomToys,
     ),
     CategoryDomain(
       "Health Care",
-      [],
+      [
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+      ],
       subCategories: ["Health Care", "Health Care", "Health Care", "Health Care"],
       image: Assets.categoriesEcomHealth,
     ),
     CategoryDomain(
       "Pet Supplies",
-      [],
+      [
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+      ],
       subCategories: ["Pet Supplies", "Pet Supplies", "Pet Supplies", "Pet Supplies"],
       image: Assets.categoriesEcomPet,
     ),

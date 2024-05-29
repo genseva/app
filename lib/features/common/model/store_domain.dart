@@ -132,48 +132,19 @@ class StoreDomain {
       '08:00 am to 10:00 pm',
     ),
   ];
-
+  static final List<StoreDomain> ecommerce = [
+    StoreDomain(Assets.productsStore, "WStore", "1141 Central Park, Hemilton", "5 days", 0, "Open"),
+  ];
   static final List<StoreDomain> serviceList = [
-    StoreDomain(
-      Assets.profilesPlumber1,
-      'Plumber 1',
-      'CentralPark',
-      '20',
-      1.5,
-      '148 Jobs',serviceCharge: 20.00
-
-    ),
-    StoreDomain(
-      Assets.profilesPlumber2,
-      'Plumber 2',
-      'Jamestown, New York',
-      '22',
-      3.8,
-      '108 Jobs',serviceCharge: 20.00
-    ),
-    StoreDomain(
-      Assets.profilesPlumber3,
-      'Plumber 3',
-      'CentralPark',
-      '20',
-      1.5,
-      '278 Jobs',serviceCharge: 24.00
-    ),
-    StoreDomain(
-      Assets.profilesPlumber4,
-      'Plumber 4',
-      'Jamestown, New York',
-      '22',
-      3.8,
-      '58 Jobs',serviceCharge: 10.00
-    ),
-    StoreDomain(
-      Assets.profilesPlumber5,
-      'Plumber 5',
-      'Jamestown, New York',
-      '22',
-      3.8,
-      '143 Jobs',serviceCharge: 18.00
-    ),
+    StoreDomain(Assets.profilesPlumber1, 'Plumber 1', 'CentralPark', '20', 1.5, '148 Jobs',
+        serviceCharge: 20.00),
+    StoreDomain(Assets.profilesPlumber2, 'Plumber 2', 'Jamestown, New York', '22', 3.8, '108 Jobs',
+        serviceCharge: 20.00),
+    StoreDomain(Assets.profilesPlumber3, 'Plumber 3', 'CentralPark', '20', 1.5, '278 Jobs',
+        serviceCharge: 24.00),
+    StoreDomain(Assets.profilesPlumber4, 'Plumber 4', 'Jamestown, New York', '22', 3.8, '58 Jobs',
+        serviceCharge: 10.00),
+    StoreDomain(Assets.profilesPlumber5, 'Plumber 5', 'Jamestown, New York', '22', 3.8, '143 Jobs',
+        serviceCharge: 18.00),
   ];
 }
