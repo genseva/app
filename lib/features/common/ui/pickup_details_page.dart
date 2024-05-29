@@ -1,6 +1,8 @@
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/account/model/address.dart';
+import 'package:deligo/features/common/model/delivery_type.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class PickupDetailsPage extends StatefulWidget {
@@ -175,9 +177,11 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
           )
         ],
       ),
-      bottomNavigationBar: const CustomButton(
+      bottomNavigationBar: CustomButton(
+        onTap: () => Navigator.pushNamed(context, PageRoutes.selectRidePage,
+            arguments: (DeliveryType.delivery, "Search for destination")),
         text: "Next",
-        margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
+        margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       ),
     );
   }

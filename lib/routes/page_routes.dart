@@ -7,6 +7,7 @@ import 'package:deligo/features/cab/ui/book_cab_page.dart';
 import 'package:deligo/features/category/ui/sub_category_list.dart';
 import 'package:deligo/features/common/ui/delivery_details_page.dart';
 import 'package:deligo/features/common/ui/pickup_details_page.dart';
+import 'package:deligo/features/common/ui/select_ride_page.dart';
 import 'package:deligo/features/common/ui/set_destination_page.dart';
 import 'package:deligo/features/common/ui/where_to_page.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
@@ -59,6 +60,7 @@ class PageRoutes {
   static const String subCategoryPage = 'sub_category_page';
   static const String orderInfoPage = 'order_info_page';
   static const String whereToPage = 'where_to_page';
+  static const String selectRidePage = 'select_ride_page';
   static const String setDestinationPage = 'set_destination_page';
   static const String serviceProviderScreen = 'service_provider_screen';
   static const String providerDetailsScreen = 'provider_details_Screen';
@@ -93,6 +95,7 @@ class PageRoutes {
       subCategoryPage: (context) => const SubCategoryList(),
       orderInfoPage: (context) => const OrderInfoPage(),
       whereToPage: (context) => const WhereToPage(),
+      selectRidePage: (context) => const SelectRidePage(),
       setDestinationPage: (context) => const SetDestinationPage(),
       serviceProviderScreen: (context) => const ServiceProvidersScreen(),
       providerDetailsScreen: (context) => const ProviderDetailScreen(),

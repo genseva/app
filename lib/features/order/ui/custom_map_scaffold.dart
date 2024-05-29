@@ -15,6 +15,7 @@ class CustomMapScaffold extends StatefulWidget {
     this.pin,
     this.showBackButton = false,
     this.showCenterPin = false,
+    this.topChild,
     this.onAddressUpdate,
   });
 
@@ -24,6 +25,7 @@ class CustomMapScaffold extends StatefulWidget {
   final String? pin;
   final bool showBackButton;
   final bool showCenterPin;
+  final Widget? topChild;
   final Function(AddressDomain)? onAddressUpdate;
 
   @override
@@ -101,6 +103,10 @@ class _CustomMapScaffoldState extends State<CustomMapScaffold> {
               top: 52,
               child: BackButton(),
             ),
+          Positioned(
+            top: 52,
+            child: widget.topChild ?? const SizedBox.shrink(),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Column(
