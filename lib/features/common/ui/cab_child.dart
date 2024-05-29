@@ -42,8 +42,11 @@ class CabChild extends StatelessWidget {
                           Expanded(
                             child: CustomTextField(
                               readOnly: true,
-                              onTap: () => Navigator.pushNamed(context, PageRoutes.whereToPage,
-                                  arguments: type),
+                              onTap: () => Navigator.pushNamed(
+                                context,
+                                PageRoutes.whereToPage,
+                                arguments: (type, "Your location"),
+                              ),
                               bgColor: Colors.transparent,
                               showBorder: false,
                               hintText: "Your location",
@@ -68,8 +71,16 @@ class CabChild extends StatelessWidget {
                         Expanded(
                           child: CustomTextField(
                             readOnly: true,
-                            onTap: () =>
-                                Navigator.pushNamed(context, PageRoutes.setDestinationPage),
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              PageRoutes.whereToPage,
+                              arguments: (
+                                type,
+                                type != DeliveryType.delivery
+                                    ? "Search for a destination"
+                                    : "Search delivery location"
+                              ),
+                            ),
                             bgColor: Colors.transparent,
                             showBorder: false,
                             hintText: type != DeliveryType.delivery
@@ -88,7 +99,7 @@ class CabChild extends StatelessWidget {
                   Expanded(
                     child: CustomButton(
                       onTap: () {
-                        Navigator.pushNamed(context, PageRoutes.whereToPage, arguments: type);
+                        Navigator.pushNamed(context, PageRoutes.setDestinationPage);
                       },
                       buttonColor: theme.scaffoldBackgroundColor,
                       prefixIcon: Icons.pin_drop,
@@ -103,7 +114,7 @@ class CabChild extends StatelessWidget {
                     Expanded(
                       child: CustomButton(
                         onTap: () {
-                          Navigator.pushNamed(context, PageRoutes.setDestinationPage);
+                          Navigator.pushNamed(context, PageRoutes.whereToPage, arguments: (type, "Search for destination"));
                         },
                         buttonColor: theme.scaffoldBackgroundColor,
                         prefixIcon: Icons.add_circle,

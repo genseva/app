@@ -11,7 +11,8 @@ class WhereToPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DeliveryType type = ModalRoute.of(context)?.settings.arguments as DeliveryType;
+    (DeliveryType, String) args = ModalRoute.of(context)?.settings.arguments as (DeliveryType, String);
+    DeliveryType type = args.$1;
     final theme = Theme.of(context);
     return CustomMapScaffold(
       bottomChild: Stack(
@@ -51,7 +52,7 @@ class WhereToPage extends StatelessWidget {
                     ),
                     onTap: () => _getPrediction(context),
                     bgColor: theme.scaffoldBackgroundColor,
-                    hintText: "Search for a destination",
+                    hintText: args.$2,
                     readOnly: true,
                   ),
                 ),
