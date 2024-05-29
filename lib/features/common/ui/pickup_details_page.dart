@@ -80,7 +80,7 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
             children: [
               const SizedBox(width: 16),
               Text(
-                "Recipient",
+                "Sender Details",
                 style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
               ),
               const Spacer(),
@@ -97,7 +97,7 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
                 child: CustomTextField(
                   margin: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
                   prefixIcon: Icon(Icons.person_pin_rounded),
-                  hintText: "Enter Recipient's Name",
+                  hintText: "Enter Sender's Name",
                 ),
               ),
               IconButton.filledTonal(
