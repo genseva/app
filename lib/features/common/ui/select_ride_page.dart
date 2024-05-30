@@ -1,7 +1,9 @@
+import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/common/model/delivery_type.dart';
 import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
+import 'package:deligo/features/payment/ui/payment_type_list.dart';
 import 'package:flutter/material.dart';
 
 class SelectRidePage extends StatefulWidget {
@@ -12,7 +14,7 @@ class SelectRidePage extends StatefulWidget {
 }
 
 class _SelectRidePageState extends State<SelectRidePage> {
-  final bool _isSelected = false;
+  int _selectedRide = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -119,11 +121,14 @@ class _SelectRidePageState extends State<SelectRidePage> {
                   width: double.infinity - 32,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: _isSelected ? const Color(0xffF1FFF2) : theme.scaffoldBackgroundColor,
+                    color: index == _selectedRide
+                        ? const Color(0xffF1FFF2)
+                        : theme.scaffoldBackgroundColor,
                     border: Border.all(color: theme.hintColor.withOpacity(0.3)),
                   ),
                   child: ListTile(
                     onTap: () {
+                      _selectedRide = index;
                       setState(() {});
                     },
                     leading: Image.asset(ride.image, height: 30),
@@ -150,7 +155,31 @@ class _SelectRidePageState extends State<SelectRidePage> {
                   ),
                 );
               },
-            )
+            ),
+            CustomButton(
+              margin: const EdgeInsets.all(16),
+              text: "Confirm Ride",
+              onTap: () {
+                showModalBottomSheet(
+                    context: context, builder: (context) {
+                  return ListView(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left:16.0, top: 30),
+                            child: Text("Select Payment Method", style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600)),
+                          ),
+                          PaymentTypeList()
+                        ],
+                      ),
+                    ],
+                  );
+                });
+              },
+            ),
           ],
         ),
       ),
