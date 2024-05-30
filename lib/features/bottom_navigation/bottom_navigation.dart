@@ -1,4 +1,5 @@
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
+import 'package:deligo/features/bottom_navigation/offers/offers_screen.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,7 @@ class BottomNavigationState extends State<BottomNavigation> {
 
     final List<Widget> children = [
       HomeScreen(),
-      const FlutterLogo(),
+      const OffersScreen(),
       const FlutterLogo(),
     ];
     return Scaffold(
