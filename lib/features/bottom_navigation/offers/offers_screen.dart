@@ -1,5 +1,6 @@
 import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
+import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -21,10 +22,21 @@ class OffersScreen extends StatelessWidget {
       Filter(Icons.shopping_bag_outlined, locale.shop),
       Filter(Icons.home_repair_service_outlined, locale.service),
     ];
+
+    final List<String> banners = [
+      Assets.bannerFood1,
+      Assets.bannerFood2,
+      Assets.bannerFood2,
+      Assets.bannerGrocery1,
+      Assets.bannerGrocery1,
+      Assets.bannerGrocery2,
+    ];
     var theme = Theme.of(context);
     return SafeArea(
         child: Scaffold(
+      backgroundColor: theme.disabledColor,
       appBar: AppBar(
+        backgroundColor: theme.scaffoldBackgroundColor,
         leading: null,
         title: Text(
           "Offers",
@@ -44,6 +56,7 @@ class OffersScreen extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(width: 16),
         ],
       ),
       body: Column(
@@ -76,6 +89,25 @@ class OffersScreen extends StatelessWidget {
             ),
           ),
           CustomFilters(filters: filters),
+          const SizedBox(height: 20),
+          SizedBox(
+            height: 250,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 4,
+              shrinkWrap: true,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      banners[index],
+                      fit: BoxFit.cover,
+                      scale: 4,
+                    )),
+              ),
+            ),
+          )
         ],
       ),
     ));
