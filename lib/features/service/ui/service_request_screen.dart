@@ -134,7 +134,8 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                         ),
                         const SizedBox(height: 10),
                       ],
-                      const ServiceManCard(),
+                      ServiceManCard(
+                          "Tap, Basin & Sink Problem", Assets.profilesPlumber1, "Plumber"),
                       const SizedBox(height: 10),
                       Container(
                         color: Colors.white,

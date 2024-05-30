@@ -9,6 +9,7 @@ import 'package:deligo/features/common/ui/delivery_details_page.dart';
 import 'package:deligo/features/common/ui/pickup_details_page.dart';
 import 'package:deligo/features/common/ui/select_ride_page.dart';
 import 'package:deligo/features/common/ui/set_destination_page.dart';
+import 'package:deligo/features/common/ui/track_rider_page.dart';
 import 'package:deligo/features/common/ui/where_to_page.dart';
 import 'package:deligo/features/food/ui/checkout_page.dart';
 import 'package:deligo/features/food/ui/order_food_screen.dart';
@@ -61,6 +62,7 @@ class PageRoutes {
   static const String orderInfoPage = 'order_info_page';
   static const String whereToPage = 'where_to_page';
   static const String selectRidePage = 'select_ride_page';
+  static const String trackRiderPage = 'track_rider_page';
   static const String setDestinationPage = 'set_destination_page';
   static const String serviceProviderScreen = 'service_provider_screen';
   static const String providerDetailsScreen = 'provider_details_Screen';
@@ -96,6 +98,7 @@ class PageRoutes {
       orderInfoPage: (context) => const OrderInfoPage(),
       whereToPage: (context) => const WhereToPage(),
       selectRidePage: (context) => const SelectRidePage(),
+      trackRiderPage: (context) => const TrackRiderPage(),
       setDestinationPage: (context) => const SetDestinationPage(),
       serviceProviderScreen: (context) => const ServiceProvidersScreen(),
       providerDetailsScreen: (context) => const ProviderDetailScreen(),

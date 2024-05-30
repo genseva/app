@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 class PaymentTypeList extends StatelessWidget {
   PaymentTypeList({super.key, this.onTap});
 
-  VoidCallback? onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return ListView.separated(
       shrinkWrap: true,
-      physics: AlwaysScrollableScrollPhysics(),
+      physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.all(20),
       itemBuilder: (context, index) {
         final category = PaymentCategory.list[index];
@@ -32,7 +32,11 @@ class PaymentTypeList extends StatelessWidget {
                   title: paymentMethod.title,
                   isCard: isCard,
                   onTap: () {
-                    onTap ?? Navigator.pushNamed(context, PageRoutes.orderInfoPage);
+                    if (onTap != null) {
+                      onTap!.call();
+                    } else {
+                      Navigator.pushNamed(context, PageRoutes.orderInfoPage);
+                    }
                   },
                 );
               },

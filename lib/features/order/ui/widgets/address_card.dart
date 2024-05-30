@@ -3,9 +3,11 @@ import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class AddressCard extends StatelessWidget {
-  const AddressCard(this.isDelivered, {super.key});
+  const AddressCard(this.isDelivered, {super.key, this.pickupIcon, this.dropIcon});
 
   final bool isDelivered;
+  final String? pickupIcon;
+  final String? dropIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +20,17 @@ class AddressCard extends StatelessWidget {
         children: [
           Column(
             children: [
-              Icon(Icons.restaurant_menu_outlined, color: theme.primaryColor),
+              if (pickupIcon != null)
+                Image.asset(pickupIcon ?? '', scale: 3)
+              else
+                Icon(Icons.restaurant_menu_outlined, color: theme.primaryColor),
               const SizedBox(height: 16),
               Icon(Icons.more_vert, color: theme.hintColor, size: 30),
               const SizedBox(height: 16),
-              Icon(Icons.home, color: theme.primaryColor),
+              if (dropIcon != null)
+                Image.asset(dropIcon ?? '', scale: 3)
+              else
+                Icon(Icons.home, color: theme.primaryColor),
             ],
           ),
           const SizedBox(width: 16),

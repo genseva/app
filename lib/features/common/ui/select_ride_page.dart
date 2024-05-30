@@ -4,6 +4,7 @@ import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/common/model/delivery_type.dart';
 import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
 import 'package:deligo/features/payment/ui/payment_type_list.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SelectRidePage extends StatefulWidget {
@@ -161,23 +162,29 @@ class _SelectRidePageState extends State<SelectRidePage> {
               text: "Confirm Ride",
               onTap: () {
                 showModalBottomSheet(
-                    context: context, builder: (context) {
-                  return ListView(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
+                    context: context,
+                    builder: (context) {
+                      return ListView(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left:16.0, top: 30),
-                            child: Text("Select Payment Method", style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 16.0, top: 30),
+                                child: Text("Select Payment Method",
+                                    style: theme.textTheme.titleLarge
+                                        ?.copyWith(fontWeight: FontWeight.w600)),
+                              ),
+                              PaymentTypeList(
+                                onTap: () => Navigator.pushNamed(context, PageRoutes.trackRiderPage,
+                                    arguments: type),
+                              )
+                            ],
                           ),
-                          PaymentTypeList()
                         ],
-                      ),
-                    ],
-                  );
-                });
+                      );
+                    });
               },
             ),
           ],

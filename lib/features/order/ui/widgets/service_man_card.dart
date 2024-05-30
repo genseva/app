@@ -1,9 +1,12 @@
 import 'package:deligo/components/rating_card.dart';
-import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class ServiceManCard extends StatelessWidget {
-  const ServiceManCard({super.key});
+  ServiceManCard(this.name, this.image, this.title, {super.key});
+
+  final String name;
+  final String image;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +23,14 @@ class ServiceManCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                "Tap, Basin & Sink Problem",
+                name,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.hintColor,
                 ),
               ),
               const SizedBox(height: 6),
               Text(
-                "Plumber",
+                title,
                 style: theme.textTheme.titleLarge?.copyWith(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -52,7 +55,7 @@ class ServiceManCard extends StatelessWidget {
               clipBehavior: Clip.none,
               children: [
                 Image.asset(
-                  Assets.profilesPlumber1,
+                  image,
                   height: MediaQuery.of(context).size.width * 0.2,
                   width: MediaQuery.of(context).size.width * 0.2,
                 ),
