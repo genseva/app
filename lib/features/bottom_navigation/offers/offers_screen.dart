@@ -1,4 +1,5 @@
 import 'package:deligo/Routes/page_routes.dart';
+import 'package:deligo/features/bottom_navigation/widgest/offer_info_popup.dart';
 import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
@@ -62,7 +63,7 @@ class OffersScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            color: const Color(0xffDFF6E0),
+            color: theme.indicatorColor,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             child: Row(
               children: [
@@ -98,13 +99,23 @@ class OffersScreen extends StatelessWidget {
               shrinkWrap: true,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      banners[index],
-                      fit: BoxFit.cover,
-                      scale: 4,
-                    )),
+                child: GestureDetector(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return OfferInfoPopUp(banner: banners[index]);
+                      },
+                    );
+                  },
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        banners[index],
+                        fit: BoxFit.cover,
+                        scale: 4,
+                      )),
+                ),
               ),
             ),
           )

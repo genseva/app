@@ -1,5 +1,6 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_text_field.dart';
+import 'package:deligo/features/bottom_navigation/widgest/offer_info_popup.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
@@ -171,12 +172,22 @@ class HomeScreen extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.only(right: 12.0),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        banners[index],
-                        fit: BoxFit.cover,
-                      )),
+                  child: GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return OfferInfoPopUp(banner: banners[index]);
+                        },
+                      );
+                    },
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          banners[index],
+                          fit: BoxFit.cover,
+                        )),
+                  ),
                 ),
               ),
             )

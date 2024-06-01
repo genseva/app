@@ -9,6 +9,7 @@ ThemeData appTheme = ThemeData(
   cardColor: cardColor,
   hintColor: greyTextColor,
   disabledColor: const Color(0xffF4F7F9),
+  indicatorColor: const Color(0xFFDFF6E0),
 
   textSelectionTheme: TextSelectionThemeData(cursorColor: mainColor),
 

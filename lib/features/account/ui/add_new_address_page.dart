@@ -66,40 +66,39 @@ class _AddNewAddressPageState extends State<AddNewAddressPage> {
                 ),
               ),
             ),
-
             const SizedBox(height: 10),
             SizedBox(
-              height:60 ,
+              height: 60,
               child: ListView.separated(
-                shrinkWrap: true,
+                  shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: AddressDomain.list.length,
                   separatorBuilder: (context, index) => const SizedBox(width: 25),
                   itemBuilder: (context, index) {
-                  var type = AddressDomain.list[index];
-                  return CustomButton(
-                    prefixIcon: type.icon,
-                    text: type.name,
-                    textColor: Colors.black54,
-                    prefixIconColor: theme.primaryColor,
-                    buttonColor: index == _selectedIndex? const Color(0xffE0FEE4) : theme.scaffoldBackgroundColor,
-                    onTap: (){
-                      setState(() {
-                        _selectedIndex = index;
-                      });
-                    },
-                  );
-
-              }),
+                    var type = AddressDomain.list[index];
+                    return CustomButton(
+                      prefixIcon: type.icon,
+                      text: type.name,
+                      textColor: Colors.black54,
+                      prefixIconColor: theme.primaryColor,
+                      buttonColor: index == _selectedIndex
+                          ? theme.indicatorColor
+                          : theme.scaffoldBackgroundColor,
+                      onTap: () {
+                        setState(() {
+                          _selectedIndex = index;
+                        });
+                      },
+                    );
+                  }),
             ),
             const SizedBox(height: 20),
             CustomButton(
               text: "Next",
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             )
-
           ],
         ),
       ),
