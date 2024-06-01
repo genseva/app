@@ -1,6 +1,7 @@
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/components/option_tile.dart';
 import 'package:deligo/features/account/model/address.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SavedAddressesPage extends StatelessWidget {
@@ -44,6 +45,7 @@ class SavedAddressesPage extends StatelessWidget {
                 prefixIcon: Icons.add,
                 prefixIconColor: theme.scaffoldBackgroundColor,
                 text: "Add New Address",
+                onTap: () => Navigator.pushNamed(context, PageRoutes.addNewAddressesPage),
               ),
               const SizedBox(height: 20),
             ],

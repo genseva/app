@@ -1,4 +1,5 @@
 import 'package:deligo/features/account/ui/account_page.dart';
+import 'package:deligo/features/account/ui/add_new_address_page.dart';
 import 'package:deligo/features/account/ui/profile_page.dart';
 import 'package:deligo/features/account/ui/saved_addresses_page.dart';
 import 'package:deligo/features/account/ui/tnc_page.dart';
@@ -56,6 +57,7 @@ class PageRoutes {
   static const String profilePage = 'profile_page';
   static const String languagePage = 'language_page';
   static const String savedAddressesPage = 'saved_addresses_page';
+  static const String addNewAddressesPage = 'add_new_addresses_page';
   static const String supportPage = 'support_page';
   static const String tncPage = 'tnc_page';
   static const String subCategoryPage = 'sub_category_page';
@@ -92,6 +94,7 @@ class PageRoutes {
       profilePage: (context) => const ProfilePage(),
       languagePage: (context) => const LanguagePage(),
       savedAddressesPage: (context) => const SavedAddressesPage(),
+      addNewAddressesPage: (context) => const AddNewAddressPage(),
       supportPage: (context) => SupportPage(),
       tncPage: (context) => TncPage(),
       subCategoryPage: (context) => const SubCategoryList(),

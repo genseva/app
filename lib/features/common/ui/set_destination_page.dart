@@ -31,7 +31,7 @@ class _SetDestinationPageState extends State<SetDestinationPage> {
       bottomChild: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
           color: theme.scaffoldBackgroundColor,
         ),
         child: Column(
@@ -41,20 +41,7 @@ class _SetDestinationPageState extends State<SetDestinationPage> {
             ListTile(
               minVerticalPadding: 10,
               contentPadding: const EdgeInsets.only(top: 10),
-              leading: Container(
-                padding: const EdgeInsets.all(2),
-                height: 32,
-                width: 32,
-                decoration: BoxDecoration(
-                  color: Colors.yellow.shade700,
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  address.icon,
-                  color: theme.scaffoldBackgroundColor,
-                  size: 20,
-                ),
-              ),
+              leading: Image.asset(Assets.pinsIcLocation1, height: 35),
               title: Text(
                 address.name,
                 style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
