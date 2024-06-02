@@ -143,4 +143,5 @@ class Assets {
   static const String rideSameDayDelivery = 'assets/ride/SameDayDelivery.png';
   static const String storeStore1 = 'assets/medicine/store/store1.png';
   static const String storeStpre2 = 'assets/medicine/store/stpre2.png';
+
 }

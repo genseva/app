@@ -3,6 +3,7 @@ import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingProducts extends StatefulWidget {
@@ -98,31 +99,37 @@ class _ShoppingProductsState extends State<ShoppingProducts> with SingleTickerPr
                       itemCount: CategoryDomain.ecommerceList[0].items.length,
                       itemBuilder: (context, index) {
                         var product = CategoryDomain.ecommerceList[0];
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.asset(product.items[index].image)),
-                            const SizedBox(height: 8),
-                            Text(product.items[index].name,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge
-                                    ?.copyWith(color: theme.hintColor)),
-                            const SizedBox(height: 8),
-                            Row(
-                              children: [
-                                Text(r"$" + product.items[index].price.toString(),
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium
-                                        ?.copyWith(fontWeight: FontWeight.w500)),
-                                const Spacer(),
-                                AddItemButton(product: product.items[index]),
-                              ],
-                            )
-                          ],
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, PageRoutes.productInfoPage,
+                                arguments: product.items[index]);
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(16),
+                                  child: Image.asset(product.items[index].image)),
+                              const SizedBox(height: 8),
+                              Text(product.items[index].name,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge
+                                      ?.copyWith(color: theme.hintColor)),
+                              const SizedBox(height: 8),
+                              Row(
+                                children: [
+                                  Text(r"$" + product.items[index].price.toString(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium
+                                          ?.copyWith(fontWeight: FontWeight.w500)),
+                                  const Spacer(),
+                                  AddItemButton(product: product.items[index]),
+                                ],
+                              )
+                            ],
+                          ),
                         );
                       });
                 })
