@@ -1,3 +1,4 @@
+import 'package:deligo/components/add_button.dart';
 import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/generated/assets.dart';
@@ -28,7 +29,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
         children: <Widget>[
           Image.asset(product.image),
           Align(
-            alignment: Alignment.center,
+            alignment: Alignment.bottomCenter,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -153,6 +154,35 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
             ),
           ),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: GestureDetector(
+        onTap: () => Navigator.pop(context),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: theme.hintColor),
+            color: theme.primaryColor,
+          ),
+          padding: const EdgeInsets.all(8),
+          child: const Icon(
+            Icons.shopping_basket,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 40),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              r"$" "${product.price}",
+              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
+            ),
+            AddItemButton(product: product)
+          ],
+        ),
       ),
     );
   }
