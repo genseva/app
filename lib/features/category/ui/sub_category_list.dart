@@ -3,7 +3,6 @@ import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SubCategoryList extends StatelessWidget {
@@ -13,8 +12,8 @@ class SubCategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CategoryDomain category = ModalRoute.of(context)?.settings.arguments as CategoryDomain? ??
-        CategoryDomain.medicineList.first;
+    (CategoryDomain , String ) args = ModalRoute.of(context)?.settings.arguments as( CategoryDomain , String);
+    var category = args.$1;
     final locale = AppLocalizations.of(context);
     final theme = Theme.of(context);
     return CustomScaffold(
@@ -45,8 +44,8 @@ class SubCategoryList extends StatelessWidget {
                     var item = category.subCategories?[index];
                     return GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, PageRoutes.serviceProviderScreen,
-                            arguments: item);
+                        Navigator.pushNamed(context, args.$2,
+                            arguments: (category , item));
                       },
                       child: Container(
                         padding: const EdgeInsets.all(18),

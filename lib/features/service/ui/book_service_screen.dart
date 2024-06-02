@@ -34,6 +34,7 @@ class BookServiceScreen extends StatelessWidget {
                 stores: StoreDomain.serviceList,
                 categories: CategoryDomain.serviceList,
                 routesName: PageRoutes.providerDetailsScreen,
+                categoryRoutes:  PageRoutes.serviceProviderScreen,
               ),
             ),
           ],

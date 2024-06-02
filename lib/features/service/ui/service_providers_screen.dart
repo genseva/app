@@ -1,7 +1,9 @@
+import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/common/ui/store_list.dart';
 import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
 import 'package:deligo/generated/l10n.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class ServiceProvidersScreen extends StatelessWidget {
@@ -10,7 +12,8 @@ class ServiceProvidersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
-    var title = ModalRoute.of(context)?.settings.arguments as String;
+    (CategoryDomain, String) args =
+        ModalRoute.of(context)?.settings.arguments as (CategoryDomain, String);
     final List<Filter> filters = [
       Filter(Icons.star, locale.nearMe),
       Filter(Icons.favorite, locale.favorite),
@@ -25,7 +28,7 @@ class ServiceProvidersScreen extends StatelessWidget {
           },
         ),
         centerTitle: false,
-        title: Text(title),
+        title: Text(args.$2),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -35,7 +38,9 @@ class ServiceProvidersScreen extends StatelessWidget {
             CustomFilters(filters: filters),
             const SizedBox(height: 16),
             Flexible(
-              child: StoreList(StoreDomain.serviceList),
+              child: StoreList(StoreDomain.serviceList, onTap: (store) {
+                Navigator.pushNamed(context, PageRoutes.providerDetailsScreen, arguments: store);
+              }),
             ),
           ],
         ),

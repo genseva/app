@@ -3,9 +3,10 @@ import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class CategoryGrid extends StatelessWidget {
-  const CategoryGrid(this.list, {super.key});
+  const CategoryGrid(this.list, this.routeName, {super.key});
 
   final List<CategoryDomain> list;
+  final String routeName;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,8 @@ class CategoryGrid extends StatelessWidget {
         return GestureDetector(
           onTap: () {
             if (category.subCategories?.isNotEmpty == true) {
-              Navigator.pushNamed(context, PageRoutes.subCategoryPage, arguments: category);
+              Navigator.pushNamed(context, PageRoutes.subCategoryPage,
+                  arguments: (category, routeName));
             }
           },
           child: GridTile(

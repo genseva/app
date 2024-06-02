@@ -3,7 +3,6 @@ import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingProducts extends StatefulWidget {
@@ -35,7 +34,9 @@ class _ShoppingProductsState extends State<ShoppingProducts> with SingleTickerPr
 
   @override
   Widget build(BuildContext context) {
-    final locale = AppLocalizations.of(context);
+    (CategoryDomain, String) args =
+        ModalRoute.of(context)?.settings.arguments as (CategoryDomain, String);
+    var category = args.$1;
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
@@ -43,7 +44,7 @@ class _ShoppingProductsState extends State<ShoppingProducts> with SingleTickerPr
           onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        title: const Text("Her Fashion"),
+        title: Text(category.title),
         actions: [
           IconButton(
             onPressed: () {},

@@ -20,6 +20,7 @@ import 'package:deligo/features/grocery/ui/grocery_store_screen.dart';
 import 'package:deligo/features/grocery/ui/order_grocery_screen.dart';
 import 'package:deligo/features/language/ui/language_page.dart';
 import 'package:deligo/features/medicine/ui/medicine_list.dart';
+import 'package:deligo/features/medicine/ui/medicine_store_page.dart';
 import 'package:deligo/features/medicine/ui/order_medicine_page.dart';
 import 'package:deligo/features/order/ui/order_info_page.dart';
 import 'package:deligo/features/parcel/ui/book_parcel_screen.dart';
@@ -52,6 +53,7 @@ class PageRoutes {
   static const String bookParcelScreen = 'book_parcel_screen';
   static const String orderMedicineScreen = 'order_medicine_screen';
   static const String medicineList = 'medicine_list';
+  static const String medicineStorePage = 'medicine_store_page';
   static const String shoppingScreen = 'shopping_screen';
   static const String shoppingProductScreen = 'shopping_product_screen';
   static const String profilePage = 'profile_page';
@@ -106,6 +108,7 @@ class PageRoutes {
       serviceProviderScreen: (context) => const ServiceProvidersScreen(),
       providerDetailsScreen: (context) => const ProviderDetailScreen(),
       medicineList: (context) => const MedicineList(),
+      medicineStorePage: (context) => const MedicineStorePage(),
       serviceRequestScreen: (context) => const ServiceRequestScreen(),
       deliveryDetailsPage: (context) => const DeliveryDetailsPage(),
       pickupDetailsPage: (context) => const PickupDetailsPage(),

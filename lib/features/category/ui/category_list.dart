@@ -11,13 +11,14 @@ class CategoryList extends StatelessWidget {
     this.storeListTitle,
     required this.categories,
     required this.stores,
-    this.routesName = PageRoutes.accountPage,
+    this.routesName = PageRoutes.accountPage, required this.categoryRoutes,
   });
 
   final String? storeListTitle;
   final List<CategoryDomain> categories;
   final List<StoreDomain> stores;
   final String routesName;
+  final String categoryRoutes;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class CategoryList extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 20),
       children: [
-        CategoryGrid(categories),
+        CategoryGrid(categories, categoryRoutes),
         const SizedBox(height: 24),
         if (storeListTitle != null) ...[
           Text(

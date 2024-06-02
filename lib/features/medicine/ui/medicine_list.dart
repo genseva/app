@@ -13,6 +13,9 @@ class MedicineList extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final store = StoreDomain.medicineList.first;
+    (CategoryDomain, String) args =
+        ModalRoute.of(context)?.settings.arguments as (CategoryDomain, String);
+    var category = args.$1;
     final List<Filter> filters = [
       Filter(Icons.favorite, locale.favorite),
       Filter(Icons.star, locale.nearMe),
@@ -26,7 +29,7 @@ class MedicineList extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        title: const Text("Medicines"),
+        title: Text(args.$2),
         actions: [
           IconButton(
             onPressed: () => Navigator.pop(context),
@@ -41,21 +44,16 @@ class MedicineList extends StatelessWidget {
             child: CustomFilters(filters: filters),
           ),
           const Divider(thickness: 0.4),
-          ...List.generate(
-            CategoryDomain.medicineList.length,
-            (categoryIndex) {
-              return ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                itemCount: CategoryDomain.medicineList[categoryIndex].items.length,
-                itemBuilder: (context, productIndex) {
-                  var product = CategoryDomain.medicineList[categoryIndex].items[productIndex];
-                  return MedicineItemCard(product);
-                },
-              );
+          ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            itemCount: category.items.length,
+            itemBuilder: (context, productIndex) {
+              var product = category.items[productIndex];
+              return MedicineItemCard(product);
             },
-          )
+          ),
         ],
       ),
       bottomNavigationBar: CartBottomBar(store),
