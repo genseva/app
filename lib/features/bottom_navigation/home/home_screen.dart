@@ -49,151 +49,151 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kTextTabBarHeight + 20),
-        child: ListTile(
-          title: Row(
-            children: [
-              Icon(Icons.home, color: theme.primaryColor),
-              const SizedBox(width: 10),
-              Text(
-                locale.home,
-                style: theme.textTheme.headlineSmall
-                    ?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                width: 12,
-              ),
-              Icon(Icons.keyboard_arrow_down, color: blackColor),
-            ],
-          ),
-          subtitle: const Text(' B 101, Nirvana Point, Hemilton'),
-          trailing: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, PageRoutes.accountPage);
-            },
-            child: CircleAvatar(
-              radius: 18,
-              backgroundColor: theme.primaryColor,
-              child: Icon(
-                Icons.person,
-                color: theme.scaffoldBackgroundColor,
+        child: SafeArea(
+          child: ListTile(
+            title: Row(
+              children: [
+                Icon(Icons.home, color: theme.primaryColor),
+                const SizedBox(width: 10),
+                Text(
+                  locale.home,
+                  style: theme.textTheme.headlineSmall
+                      ?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(
+                  width: 12,
+                ),
+                Icon(Icons.keyboard_arrow_down, color: blackColor),
+              ],
+            ),
+            subtitle: const Text(' B 101, Nirvana Point, Hemilton'),
+            trailing: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, PageRoutes.accountPage);
+              },
+              child: CircleAvatar(
+                radius: 18,
+                backgroundColor: theme.primaryColor,
+                child: Icon(
+                  Icons.person,
+                  color: theme.scaffoldBackgroundColor,
+                ),
               ),
             ),
           ),
         ),
       ),
-      body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const SizedBox(height: 16),
-            Padding(
-              padding: horizontalPadding,
-              child: Image.asset('assets/banner_home.png'),
+      body: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const SizedBox(height: 16),
+          Padding(
+            padding: horizontalPadding,
+            child: Image.asset('assets/banner_home.png'),
+          ),
+          const SizedBox(height: 20),
+          Padding(
+            padding: horizontalPadding,
+            child: Text(
+              locale.whatAreYouLookingFor,
+              style: theme.textTheme.headlineSmall
+                  ?.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
             ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: horizontalPadding,
-              child: Text(
-                locale.whatAreYouLookingFor,
-                style: theme.textTheme.headlineSmall
-                    ?.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
-              ),
+          ),
+          const SizedBox(height: 8),
+          CustomTextField(
+            hintText: locale.searchItemOrStore,
+            prefixIcon: const Icon(Icons.search),
+            margin: horizontalPadding,
+          ),
+          const SizedBox(height: 12),
+          GridView.builder(
+            padding: horizontalPadding,
+            itemCount: categories.length,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              mainAxisSpacing: 12,
+              crossAxisSpacing: 12,
+              childAspectRatio: 0.7,
             ),
-            const SizedBox(height: 8),
-            CustomTextField(
-              hintText: locale.searchItemOrStore,
-              prefixIcon: const Icon(Icons.search),
-              margin: horizontalPadding,
-            ),
-            const SizedBox(height: 12),
-            GridView.builder(
-              padding: horizontalPadding,
-              itemCount: categories.length,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
-                childAspectRatio: 0.7,
-              ),
-              itemBuilder: (context, index) => GestureDetector(
-                onTap: categories[index].onTap,
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          categories[index].image,
-                          fit: BoxFit.cover,
-                        )),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: Text(
-                        categories[index].title,
-                        style: theme.textTheme.bodyLarge!.copyWith(fontSize: 10),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 22),
-            Padding(
-              padding: horizontalPadding,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: categories[index].onTap,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
                 children: [
-                  Text(
-                    locale.saveExtraWhileOrdering,
-                    style: theme.textTheme.headlineSmall!
-                        .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    locale.seeAll,
-                    style: theme.textTheme.headlineSmall!.copyWith(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: Theme.of(context).primaryColor),
+                  ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        categories[index].image,
+                        fit: BoxFit.cover,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Text(
+                      categories[index].title,
+                      style: theme.textTheme.bodyLarge!.copyWith(fontSize: 10),
+                    ),
                   )
                 ],
               ),
             ),
-            const SizedBox(height: 20),
-            SizedBox(
-              height: 130,
-              child: ListView.separated(
-                padding: horizontalPadding,
-                scrollDirection: Axis.horizontal,
-                itemCount: OfferDomain.list.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) => GestureDetector(
-                  onTap: () {
-                    showModalBottomSheet(
-                      context: context,
-                      backgroundColor: theme.scaffoldBackgroundColor,
-                      builder: (context) {
-                        return OfferInfoPopUp(offer: OfferDomain.list[index]);
-                      },
-                    );
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(
-                      OfferDomain.list[index].bannerUrl,
-                      height: 130,
-                      width: MediaQuery.of(context).size.width * 0.64,
-                      fit: BoxFit.cover,
-                    ),
+          ),
+          const SizedBox(height: 22),
+          Padding(
+            padding: horizontalPadding,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  locale.saveExtraWhileOrdering,
+                  style: theme.textTheme.headlineSmall!
+                      .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  locale.seeAll,
+                  style: theme.textTheme.headlineSmall!.copyWith(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Theme.of(context).primaryColor),
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            height: 130,
+            child: ListView.separated(
+              padding: horizontalPadding,
+              scrollDirection: Axis.horizontal,
+              itemCount: OfferDomain.list.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    backgroundColor: theme.scaffoldBackgroundColor,
+                    builder: (context) {
+                      return OfferInfoPopUp(offer: OfferDomain.list[index]);
+                    },
+                  );
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.asset(
+                    OfferDomain.list[index].bannerUrl,
+                    height: 130,
+                    width: MediaQuery.of(context).size.width * 0.64,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                separatorBuilder: (context, index) => const SizedBox(width: 8),
               ),
+              separatorBuilder: (context, index) => const SizedBox(width: 8),
             ),
-            const SizedBox(height: 16),
-          ],
-        ),
+          ),
+          const SizedBox(height: 16),
+        ],
       ),
     );
   }

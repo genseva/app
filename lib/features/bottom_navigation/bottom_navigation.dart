@@ -5,7 +5,7 @@ import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  const BottomNavigation({super.key});
 
   @override
   BottomNavigationState createState() => BottomNavigationState();
