@@ -1,5 +1,6 @@
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_text_field.dart';
+import 'package:deligo/features/bottom_navigation/offers/model/offer_domain.dart';
 import 'package:deligo/features/bottom_navigation/widgest/offer_info_popup.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
@@ -14,14 +15,7 @@ class Category {
 }
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
-
-  final List<String> banners = [
-    "assets/banner/food1.png",
-    "assets/banner/food2.png",
-    "assets/banner/grocery1.png",
-    "assets/banner/grocery2.png",
-  ];
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,67 +45,69 @@ class HomeScreen extends StatelessWidget {
           () => Navigator.pushNamed(context, PageRoutes.shoppingScreen)),
     ];
     var theme = Theme.of(context);
-    return SafeArea(
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(300),
-          child: ListTile(
-            // contentPadding: const EdgeInsetsDirectional.only(start: 6),
-            title: Row(
-              children: [
-                Icon(Icons.home, color: theme.primaryColor),
-                const SizedBox(width: 10),
-                Text(
-                  locale.home,
-                  style: theme.textTheme.headlineSmall
-                      ?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
-                ),
-                const SizedBox(
-                  width: 12,
-                ),
-                Icon(Icons.keyboard_arrow_down, color: blackColor),
-              ],
-            ),
-            subtitle: const Text(' B 101, Nirvana Point, Hemilton'),
-            trailing: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, PageRoutes.accountPage);
-              },
-              child: CircleAvatar(
-                radius: 18,
-                backgroundColor: theme.primaryColor,
-                child: Icon(
-                  Icons.person,
-                  color: theme.scaffoldBackgroundColor,
-                ),
+    const horizontalPadding = EdgeInsets.symmetric(horizontal: 16.0);
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kTextTabBarHeight + 20),
+        child: ListTile(
+          title: Row(
+            children: [
+              Icon(Icons.home, color: theme.primaryColor),
+              const SizedBox(width: 10),
+              Text(
+                locale.home,
+                style: theme.textTheme.headlineSmall
+                    ?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(
+                width: 12,
+              ),
+              Icon(Icons.keyboard_arrow_down, color: blackColor),
+            ],
+          ),
+          subtitle: const Text(' B 101, Nirvana Point, Hemilton'),
+          trailing: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, PageRoutes.accountPage);
+            },
+            child: CircleAvatar(
+              radius: 18,
+              backgroundColor: theme.primaryColor,
+              child: Icon(
+                Icons.person,
+                color: theme.scaffoldBackgroundColor,
               ),
             ),
           ),
         ),
-        body: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      ),
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            Image.asset('assets/banner_home.png'),
-            const SizedBox(
-              height: 22,
+            const SizedBox(height: 16),
+            Padding(
+              padding: horizontalPadding,
+              child: Image.asset('assets/banner_home.png'),
             ),
-            Text(
-              locale.whatAreYouLookingFor,
-              style: theme.textTheme.headlineSmall
-                  ?.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
+            const SizedBox(height: 20),
+            Padding(
+              padding: horizontalPadding,
+              child: Text(
+                locale.whatAreYouLookingFor,
+                style: theme.textTheme.headlineSmall
+                    ?.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
+              ),
             ),
-            const SizedBox(
-              height: 8,
-            ),
+            const SizedBox(height: 8),
             CustomTextField(
               hintText: locale.searchItemOrStore,
               prefixIcon: const Icon(Icons.search),
+              margin: horizontalPadding,
             ),
-            const SizedBox(
-              height: 12,
-            ),
+            const SizedBox(height: 12),
             GridView.builder(
-              padding: EdgeInsets.zero,
+              padding: horizontalPadding,
               itemCount: categories.length,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -143,54 +139,59 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 22,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  locale.saveExtraWhileOrdering,
-                  style: theme.textTheme.headlineSmall!
-                      .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  locale.seeAll,
-                  style: theme.textTheme.headlineSmall!.copyWith(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).primaryColor),
-                )
-              ],
+            const SizedBox(height: 22),
+            Padding(
+              padding: horizontalPadding,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    locale.saveExtraWhileOrdering,
+                    style: theme.textTheme.headlineSmall!
+                        .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    locale.seeAll,
+                    style: theme.textTheme.headlineSmall!.copyWith(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(context).primaryColor),
+                  )
+                ],
+              ),
             ),
             const SizedBox(height: 20),
             SizedBox(
               height: 130,
-              child: ListView.builder(
+              child: ListView.separated(
+                padding: horizontalPadding,
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
+                itemCount: OfferDomain.list.length,
                 shrinkWrap: true,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.only(right: 12.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return OfferInfoPopUp(banner: banners[index]);
-                        },
-                      );
-                    },
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          banners[index],
-                          fit: BoxFit.cover,
-                        )),
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      backgroundColor: theme.scaffoldBackgroundColor,
+                      builder: (context) {
+                        return OfferInfoPopUp(offer: OfferDomain.list[index]);
+                      },
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      OfferDomain.list[index].bannerUrl,
+                      height: 130,
+                      width: MediaQuery.of(context).size.width * 0.64,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
+                separatorBuilder: (context, index) => const SizedBox(width: 8),
               ),
-            )
+            ),
+            const SizedBox(height: 16),
           ],
         ),
       ),

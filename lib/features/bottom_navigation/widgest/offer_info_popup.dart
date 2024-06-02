@@ -1,67 +1,74 @@
 import 'package:deligo/components/custom_button.dart';
+import 'package:deligo/features/bottom_navigation/offers/model/offer_domain.dart';
 import 'package:flutter/material.dart';
 
 class OfferInfoPopUp extends StatelessWidget {
-  OfferInfoPopUp({super.key, required this.banner});
+  const OfferInfoPopUp({super.key, required this.offer});
 
-  String banner;
+  final OfferDomain offer;
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return ListView(
+      shrinkWrap: true,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(27)),
-              child: Image.asset(
-                banner,
-                fit: BoxFit.contain,
-                width: MediaQuery.of(context).size.width,
-              ),
+        ClipRRect(
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(27)),
+          child: Hero(
+            tag: offer.offerCode,
+            child: Image.asset(
+              offer.bannerUrl,
+              fit: BoxFit.contain,
+              width: MediaQuery.of(context).size.width,
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                "10% Cash Back",
-                style: theme.textTheme.titleLarge,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                "Get 10% cashback on every purchase, up to 100% on your next purchase. Use code: 10CASHBACK and apply at checkout. T&C Apply. ",
-                style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: RichText(
-                text: TextSpan(
-                  text: '•  ',
-                  style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.primaryColor, fontSize: 18, fontWeight: FontWeight.w900),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: 'T&C Apply. ',
-                      style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            CustomButton(
-              margin: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
-              textColor: theme.primaryColor,
-              text: "CASHBK10",
-              buttonColor: theme.indicatorColor,
-              borderColor: theme.primaryColor,
-            )
-          ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            offer.offer,
+            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            offer.description,
+            style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+          ),
+        ),
+        const SizedBox(height: 20),
+        ...offer.points.map((point) => _bulletPoint(theme, point)),
+        const SizedBox(height: 12),
+        CustomButton(
+          margin: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+          textColor: theme.primaryColor,
+          text: offer.offerCode,
+          buttonColor: theme.indicatorColor,
+          borderColor: theme.primaryColor,
         ),
       ],
+    );
+  }
+
+  Widget _bulletPoint(ThemeData theme, String point) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: RichText(
+        text: TextSpan(
+          text: '•',
+          style: theme.textTheme.bodySmall
+              ?.copyWith(color: theme.primaryColor, fontSize: 18, fontWeight: FontWeight.w900),
+          children: [
+            const WidgetSpan(child: SizedBox(width: 16)),
+            TextSpan(
+              text: point,
+              style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

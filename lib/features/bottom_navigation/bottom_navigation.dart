@@ -1,5 +1,5 @@
 import 'package:deligo/features/bottom_navigation/home/home_screen.dart';
-import 'package:deligo/features/bottom_navigation/offers/offers_screen.dart';
+import 'package:deligo/features/bottom_navigation/offers/ui/offers_screen.dart';
 import 'package:deligo/features/bottom_navigation/orders/orders_screen.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ class BottomNavigationState extends State<BottomNavigation> {
     ];
 
     final List<Widget> children = [
-      HomeScreen(),
+      const HomeScreen(),
       const OffersScreen(),
       const OrdersScreen(),
     ];
@@ -58,7 +58,7 @@ class BottomNavigationState extends State<BottomNavigation> {
           });
         },
         currentIndex: _currentIndex,
-        elevation: 5,
+        elevation: 20,
         items: barItems,
       ),
     );
