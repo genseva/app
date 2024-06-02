@@ -172,7 +172,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.fromLTRB(20, 16, 20, 40),
+        padding: const EdgeInsets.fromLTRB(30, 16, 20, 30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
