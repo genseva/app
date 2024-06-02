@@ -9,7 +9,7 @@ import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class VerificationUI extends StatefulWidget {
-  const VerificationUI(this.interactor, {Key? key}) : super(key: key);
+  const VerificationUI(this.interactor, {super.key});
 
   final VerificationInteractor interactor;
 
@@ -86,8 +86,11 @@ class _VerificationUIState extends State<VerificationUI> {
                 locale.enterOtp,
                 style: Theme.of(context).textTheme.labelLarge!.copyWith(color: greyTextColor),
               ),
-              Row(
-                children: const [
+              const SizedBox(
+                height: 16,
+              ),
+              const Row(
+                children: [
                   Expanded(
                     child: CustomTextField(
                       hintText: '',
