@@ -19,6 +19,10 @@ class TransactionDomain {
     TransactionDomain(Assets.categoryCatgParcel, "Parcel", "20 Jun, 10:20 AM", 23.00),
     TransactionDomain(Assets.categoryCatgRide, "Ride", "20 Jun, 10:20 AM", 149.00),
   ];
+  static final List<TransactionDomain> ongoingOrder = [
+    TransactionDomain(Assets.categoryCatgFood, "Hotel China Town", "20 Jun, 10:20 AM", 17.00),
+    TransactionDomain(Assets.categoryCatgGrocery, "Megamart Shop", "20 Jun, 10:20 AM", 17.00),
+  ];
 
   static final List<TransactionDomain> topUps = [
     TransactionDomain(Assets.paymentCreditCard, "Top Up - Credit Card", "20 Jun, 10:20 AM", 8.30),

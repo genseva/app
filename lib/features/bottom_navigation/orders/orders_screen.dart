@@ -1,6 +1,5 @@
+import 'package:deligo/features/bottom_navigation/orders/ongoing_order_list.dart';
 import 'package:deligo/features/bottom_navigation/orders/order_history_list.dart';
-import 'package:deligo/features/wallet/model/transaction_domain.dart';
-import 'package:deligo/features/wallet/ui/transaction_list.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -45,16 +44,6 @@ class OrdersScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Center(
-                child: Container(
-                  width: 80,
-                  height: 4,
-                  margin: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                      color: theme.hintColor.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(6)),
-                ),
-              ),
               Row(
                 children: [
                   Expanded(
@@ -76,10 +65,10 @@ class OrdersScreen extends StatelessWidget {
               Expanded(
                 child: ColoredBox(
                   color: theme.disabledColor,
-                  child: TabBarView(
+                  child: const TabBarView(
                     children: [
-                      TransactionList(list: TransactionDomain.topUps),
-                      const OrderHistoryList()
+                      OngoingOrderList(),
+                      OrderHistoryList(),
                     ],
                   ),
                 ),
