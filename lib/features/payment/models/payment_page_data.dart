@@ -1,5 +1,3 @@
-
-
 class PaymentPageData {
   final int numberOfItems;
   final double amount;

@@ -15,10 +15,7 @@ class CustomInfoWidget extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context)
-              .textTheme
-              .labelSmall
-              ?.copyWith(color: Colors.grey),
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.grey),
         ),
         Row(
           children: [
@@ -30,19 +27,14 @@ class CustomInfoWidget extends StatelessWidget {
             const SizedBox(width: 5),
             if (subTitle.contains(r"$$"))
               RichText(
-                  text: TextSpan(
-                      style: Theme.of(context).textTheme.titleMedium,
-                      children: [
-                    const TextSpan(
-                      text: r"$$",
-                    ),
-                    TextSpan(
-                        text: r"$$",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(color: Colors.grey)),
-                  ]))
+                  text: TextSpan(style: Theme.of(context).textTheme.titleMedium, children: [
+                const TextSpan(
+                  text: r"$$",
+                ),
+                TextSpan(
+                    text: r"$$",
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey)),
+              ]))
             else
               Text(
                 subTitle,

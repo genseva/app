@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-   CustomAppBar({super.key, required this.title, required this.image, this.appbarBottom = const SizedBox()});
+  CustomAppBar(
+      {super.key, required this.title, required this.image, this.appbarBottom = const SizedBox()});
+
   String title;
   String image;
   Widget appbarBottom;
-
 
   @override
   Widget build(BuildContext context) {

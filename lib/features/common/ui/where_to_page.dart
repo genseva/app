@@ -11,7 +11,8 @@ class WhereToPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    (DeliveryType, String) args = ModalRoute.of(context)?.settings.arguments as (DeliveryType, String);
+    (DeliveryType, String) args =
+        ModalRoute.of(context)?.settings.arguments as (DeliveryType, String);
     DeliveryType type = args.$1;
     final theme = Theme.of(context);
     return CustomMapScaffold(

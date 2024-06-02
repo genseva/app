@@ -77,20 +77,14 @@ class _VerificationUIState extends State<VerificationUI> {
               ),
               Text(
                 locale.enterVerificationCodeSent,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .copyWith(color: greyTextColor),
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: greyTextColor),
               ),
               const SizedBox(
                 height: 28,
               ),
               Text(
                 locale.enterOtp,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .copyWith(color: greyTextColor),
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: greyTextColor),
               ),
               Row(
                 children: const [
@@ -142,10 +136,7 @@ class _VerificationUIState extends State<VerificationUI> {
                 children: [
                   Text(
                     '0:$_start ${locale.minLeft}',
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelLarge!
-                        .copyWith(color: greyTextColor),
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(color: greyTextColor),
                   ),
                   GestureDetector(
                     onTap: () {

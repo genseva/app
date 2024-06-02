@@ -36,10 +36,12 @@ class OptionTile extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         margin: const EdgeInsets.only(top: 10),
-        decoration: showBorder ? BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey.shade200),
-        ) : null,
+        decoration: showBorder
+            ? BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey.shade200),
+              )
+            : null,
         height: height ?? 54,
         alignment: Alignment.center,
         child: Row(

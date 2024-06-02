@@ -34,7 +34,7 @@ class _CustomFiltersState extends State<CustomFilters> {
           axisDirection: AxisDirection.right,
           children: List.generate(
             widget.filters.length,
-                (index) {
+            (index) {
               var isSelected = _selectedFilters.contains(widget.filters[index].title);
               return FilterChip(
                 selected: isSelected,
@@ -55,9 +55,9 @@ class _CustomFiltersState extends State<CustomFilters> {
                 label: Text(
                   widget.filters[index].title,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: isSelected ? Theme.of(context).scaffoldBackgroundColor : null,
-                    fontSize: 12,
-                  ),
+                        color: isSelected ? Theme.of(context).scaffoldBackgroundColor : null,
+                        fontSize: 12,
+                      ),
                 ),
                 onSelected: (value) {
                   if (isSelected) {

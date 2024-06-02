@@ -1,5 +1,4 @@
 import 'package:animation_wrappers/animation_wrappers.dart';
-import 'package:deligo/Routes/page_routes.dart';
 import 'package:deligo/app_config/app_config.dart';
 import 'package:deligo/app_config/colors.dart';
 import 'package:deligo/components/custom_button.dart';

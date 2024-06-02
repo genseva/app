@@ -13,8 +13,7 @@ class RegistrationPage extends StatefulWidget {
   State<RegistrationPage> createState() => _RegistrationPageState();
 }
 
-class _RegistrationPageState extends State<RegistrationPage>
-    implements RegistrationInteractor {
+class _RegistrationPageState extends State<RegistrationPage> implements RegistrationInteractor {
   @override
   Widget build(BuildContext context) {
     return RegistrationUI(this, widget.phoneNumber);

@@ -23,9 +23,9 @@ class TransactionDomain {
   static final List<TransactionDomain> topUps = [
     TransactionDomain(Assets.paymentCreditCard, "Top Up - Credit Card", "20 Jun, 10:20 AM", 8.30),
     TransactionDomain(Assets.paymentDebitCard, "Top Up - Debit Card", "20 Jun, 10:20 AM", 8.30),
-    TransactionDomain(Assets.paymentOnlineBanking, "Top Up - Online Banking", "20 Jun, 10:20 AM", 8.30),
+    TransactionDomain(
+        Assets.paymentOnlineBanking, "Top Up - Online Banking", "20 Jun, 10:20 AM", 8.30),
     TransactionDomain(Assets.paymentPayu, "Top Up - PayU", "20 Jun, 10:20 AM", 8.30),
     TransactionDomain(Assets.paymentPaypal, "Top Up - Paypal", "20 Jun, 10:20 AM", 8.30),
-
   ];
 }

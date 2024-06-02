@@ -21,34 +21,29 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "StoresFound": MessageLookupByLibrary.simpleMessage("Stores Found"),
         "bestRated": MessageLookupByLibrary.simpleMessage("Best Rated"),
         "bookService": MessageLookupByLibrary.simpleMessage("Book Service"),
         "cabs": MessageLookupByLibrary.simpleMessage("CABS"),
-        "changeLanguage":
-            MessageLookupByLibrary.simpleMessage("Change Language"),
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("Change Language"),
         "chinese": MessageLookupByLibrary.simpleMessage("Chinese"),
-        "chineseFoodsItalianFoods": MessageLookupByLibrary.simpleMessage(
-            "Chinese Foods, Italian Foods"),
+        "chineseFoodsItalianFoods":
+            MessageLookupByLibrary.simpleMessage("Chinese Foods, Italian Foods"),
         "dairy": MessageLookupByLibrary.simpleMessage("Dairy"),
-        "deliveryInMins":
-            MessageLookupByLibrary.simpleMessage("Delivery in 20 mins"),
+        "deliveryInMins": MessageLookupByLibrary.simpleMessage("Delivery in 20 mins"),
         "dessert": MessageLookupByLibrary.simpleMessage("Dessert"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
-        "enterEmailAddress":
-            MessageLookupByLibrary.simpleMessage("Enter email address"),
-        "enterFullName":
-            MessageLookupByLibrary.simpleMessage("Enter full name"),
+        "enterEmailAddress": MessageLookupByLibrary.simpleMessage("Enter email address"),
+        "enterFullName": MessageLookupByLibrary.simpleMessage("Enter full name"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Enter 4 digit OTP"),
-        "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
-        "enterVerificationCodeSent": MessageLookupByLibrary.simpleMessage(
-            "Enter verification code sent on given number"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
+        "enterVerificationCodeSent":
+            MessageLookupByLibrary.simpleMessage("Enter verification code sent on given number"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "fastDelivery": MessageLookupByLibrary.simpleMessage("Fast Delivery"),
-        "fastFoodBeverages":
-            MessageLookupByLibrary.simpleMessage("Fast Food, Beverages"),
+        "fastFoodBeverages": MessageLookupByLibrary.simpleMessage("Fast Food, Beverages"),
         "fastFoods": MessageLookupByLibrary.simpleMessage("Fast Foods"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "food": MessageLookupByLibrary.simpleMessage("FOOD"),
@@ -58,8 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "grocery": MessageLookupByLibrary.simpleMessage("GROCERY"),
-        "groceryNearMe":
-            MessageLookupByLibrary.simpleMessage("Grocery Near Me"),
+        "groceryNearMe": MessageLookupByLibrary.simpleMessage("Grocery Near Me"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
@@ -67,8 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "minLeft": MessageLookupByLibrary.simpleMessage("min left"),
         "nearMe": MessageLookupByLibrary.simpleMessage("Near me"),
         "offers": MessageLookupByLibrary.simpleMessage("Offers"),
-        "orContinueWith":
-            MessageLookupByLibrary.simpleMessage("Or Continue with"),
+        "orContinueWith": MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "orderFoods": MessageLookupByLibrary.simpleMessage("Order Foods"),
         "orderGrocery": MessageLookupByLibrary.simpleMessage("Order Grocery"),
         "orderMedicine": MessageLookupByLibrary.simpleMessage("Order Medicine"),
@@ -77,21 +70,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "personalCare": MessageLookupByLibrary.simpleMessage("Personal Care"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "resend": MessageLookupByLibrary.simpleMessage("RESEND"),
-        "restaurantsFound":
-            MessageLookupByLibrary.simpleMessage("Restaurants found"),
+        "restaurantsFound": MessageLookupByLibrary.simpleMessage("Restaurants found"),
         "ride": MessageLookupByLibrary.simpleMessage("RIDE"),
-        "saveExtraWhileOrdering":
-            MessageLookupByLibrary.simpleMessage("Save extra while ordering"),
+        "saveExtraWhileOrdering": MessageLookupByLibrary.simpleMessage("Save extra while ordering"),
         "seaFood": MessageLookupByLibrary.simpleMessage("Sea Food"),
-        "searchItemOrStore":
-            MessageLookupByLibrary.simpleMessage("Search item or store"),
-        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
-            "Search Medicine or pharma store"),
-        "searchProducts":
-            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "searchItemOrStore": MessageLookupByLibrary.simpleMessage("Search item or store"),
+        "searchMedicineOrPharmaStore":
+            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
+        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
         "seeAll": MessageLookupByLibrary.simpleMessage("See all"),
-        "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Select Language"),
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Select Language"),
         "service": MessageLookupByLibrary.simpleMessage("SERVICE"),
         "shop": MessageLookupByLibrary.simpleMessage("SHOP"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now"),
@@ -101,12 +89,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "vegOnly": MessageLookupByLibrary.simpleMessage("Veg Only"),
         "vegetable": MessageLookupByLibrary.simpleMessage("Vegetable"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
-        "whatAreYouLookingFor": MessageLookupByLibrary.simpleMessage(
-            "What are you looking for today?"),
-        "whereToDeliver":
-            MessageLookupByLibrary.simpleMessage("Where to deliver?"),
+        "whatAreYouLookingFor":
+            MessageLookupByLibrary.simpleMessage("What are you looking for today?"),
+        "whereToDeliver": MessageLookupByLibrary.simpleMessage("Where to deliver?"),
         "whereToGo": MessageLookupByLibrary.simpleMessage("Where to go?"),
-        "youAreNotRegistered":
-            MessageLookupByLibrary.simpleMessage("You\'re not registered yet")
+        "youAreNotRegistered": MessageLookupByLibrary.simpleMessage("You\'re not registered yet")
       };
 }

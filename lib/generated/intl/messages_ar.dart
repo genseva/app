@@ -21,24 +21,20 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changeLanguage":
-            MessageLookupByLibrary.simpleMessage("Change Language"),
-        "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("Change Language"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey arabic"),
-        "orContinueWith":
-            MessageLookupByLibrary.simpleMessage("Or Continue with"),
+        "orContinueWith": MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
-        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
-            "Search Medicine or pharma store"),
-        "searchProducts":
-            MessageLookupByLibrary.simpleMessage("Search Products"),
-        "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Select Language"),
+        "searchMedicineOrPharmaStore":
+            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
+        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Select Language"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Sign in arabicc")
       };
 }

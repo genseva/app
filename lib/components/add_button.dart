@@ -13,7 +13,6 @@ class AddItemButton extends StatefulWidget {
 }
 
 class _AddItemButtonState extends State<AddItemButton> {
-
   ProductDomain get product => widget.product;
 
   late final CartCubit _cubit;

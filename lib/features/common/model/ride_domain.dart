@@ -5,5 +5,5 @@ class RideDomain {
   final String quantity;
   final String price;
 
- const RideDomain(this.image, this.name, this.time, this.quantity, this.price);
+  const RideDomain(this.image, this.name, this.time, this.quantity, this.price);
 }

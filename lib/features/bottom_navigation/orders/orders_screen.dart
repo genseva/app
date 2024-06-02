@@ -16,8 +16,7 @@ class OrdersScreen extends StatelessWidget {
         leading: null,
         title: Text(
           "Orders",
-          style:
-              theme.textTheme.headlineLarge?.copyWith(fontSize: 24, fontWeight: FontWeight.w600),
+          style: theme.textTheme.headlineLarge?.copyWith(fontSize: 24, fontWeight: FontWeight.w600),
         ),
         actions: [
           GestureDetector(
@@ -81,7 +80,6 @@ class OrdersScreen extends StatelessWidget {
                     children: [
                       TransactionList(list: TransactionDomain.topUps),
                       const OrderHistoryList()
-
                     ],
                   ),
                 ),

@@ -30,8 +30,7 @@ class OffersScreen extends StatelessWidget {
         toolbarHeight: kTextTabBarHeight + 20,
         title: Text(
           "Offers",
-          style:
-              theme.textTheme.headlineLarge?.copyWith(fontSize: 24, fontWeight: FontWeight.w600),
+          style: theme.textTheme.headlineLarge?.copyWith(fontSize: 24, fontWeight: FontWeight.w600),
         ),
         actions: [
           GestureDetector(

@@ -21,22 +21,20 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'id';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Ganti BAHASA"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Alamat email"),
-        "enterFullName":
-            MessageLookupByLibrary.simpleMessage("Masukkan Nama Lengkap"),
+        "enterFullName": MessageLookupByLibrary.simpleMessage("Masukkan Nama Lengkap"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Masukkan OTP"),
-        "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Masukkan nomor telepon"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Masukkan nomor telepon"),
         "fullName": MessageLookupByLibrary.simpleMessage("Nama lengkap"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nomor telepon"),
-        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
-            "Search Medicine or pharma store"),
-        "searchProducts":
-            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "searchMedicineOrPharmaStore":
+            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
+        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Pilih bahasa"),
         "submit": MessageLookupByLibrary.simpleMessage("Kirim"),
         "verification": MessageLookupByLibrary.simpleMessage("Verifikasi")

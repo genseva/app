@@ -9,7 +9,7 @@ class OrderHistoryList extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return ListView.separated(
-        padding: const EdgeInsets.symmetric(vertical:  10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         itemBuilder: (context, index) {
           var transaction = TransactionDomain.list[index];
           return Material(
@@ -44,7 +44,6 @@ class OrderHistoryList extends StatelessWidget {
                   child: CustomDivider(),
                 ),
                 const SizedBox(height: 8),
-
                 RichText(
                   text: TextSpan(
                     style: theme.textTheme.bodySmall?.copyWith(
@@ -55,11 +54,11 @@ class OrderHistoryList extends StatelessWidget {
                       TextSpan(
                         text: r"$" + transaction.amount.toStringAsFixed(2),
                       ),
-                      TextSpan(text:"   •   ${transaction.dateTime}" ),
+                      TextSpan(text: "   •   ${transaction.dateTime}"),
                     ],
                   ),
                 ),
-                const SizedBox(height:  0),
+                const SizedBox(height: 0),
               ],
             ),
           );

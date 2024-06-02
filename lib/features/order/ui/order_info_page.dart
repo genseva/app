@@ -55,7 +55,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
               shrinkWrap: true,
               children: [
                 if (_isDelivered)
-                  const OrderHeaderCard(image: Assets.headerHeaderFood, title: "Food", subTitle: "Food Delivered")
+                  const OrderHeaderCard(
+                      image: Assets.headerHeaderFood, title: "Food", subTitle: "Food Delivered")
                 else
                   Container(
                     padding: const EdgeInsets.only(top: 6),
@@ -152,17 +153,17 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                       PayTotalCard(_cubit, isPaid: true),
                       if (!_isDelivered)
                         Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
-                        child: CustomButton(
-                          onTap: () {
-                            Navigator.pop(context);
-                            Navigator.pop(context);
-                          },
-                          text: "Cancel Order",
-                          buttonColor: const Color(0xFFF1D7D6),
-                          textColor: Colors.red,
+                          padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+                          child: CustomButton(
+                            onTap: () {
+                              Navigator.pop(context);
+                              Navigator.pop(context);
+                            },
+                            text: "Cancel Order",
+                            buttonColor: const Color(0xFFF1D7D6),
+                            textColor: Colors.red,
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ),

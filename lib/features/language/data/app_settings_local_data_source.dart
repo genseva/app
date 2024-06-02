@@ -5,8 +5,7 @@ class AppSettingsLocalDataSource {
     _initPrefs();
   }
 
-  static final AppSettingsLocalDataSource _instance =
-      AppSettingsLocalDataSource._();
+  static final AppSettingsLocalDataSource _instance = AppSettingsLocalDataSource._();
 
   factory AppSettingsLocalDataSource() => _instance;
 

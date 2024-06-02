@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class OrderHeaderCard extends StatelessWidget {
-  const OrderHeaderCard({super.key, required this.image, required this.title, required this.subTitle});
+  const OrderHeaderCard(
+      {super.key, required this.image, required this.title, required this.subTitle});
+
   final String image;
   final String title;
   final String subTitle;
@@ -11,7 +13,7 @@ class OrderHeaderCard extends StatelessWidget {
     final theme = Theme.of(context);
     final screenSize = MediaQuery.of(context).size;
 
-    return                       Stack(
+    return Stack(
       children: [
         ClipRRect(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
@@ -31,8 +33,7 @@ class OrderHeaderCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style:
-                theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
+                style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
               ),
               Text(
                 subTitle,

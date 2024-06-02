@@ -40,7 +40,7 @@ class PayTotalCard extends StatelessWidget {
                 ),
               ),
               Text(
-                "+ "r"$" " ${cubit.deliveryCharges.toStringAsFixed(2)}",
+                "+ " r"$" " ${cubit.deliveryCharges.toStringAsFixed(2)}",
                 style: theme.textTheme.bodyMedium,
               )
             ],
@@ -55,7 +55,7 @@ class PayTotalCard extends StatelessWidget {
                 ),
               ),
               Text(
-                "+ "r"$" " ${cubit.taxes.toStringAsFixed(2)}",
+                "+ " r"$" " ${cubit.taxes.toStringAsFixed(2)}",
                 style: theme.textTheme.bodyMedium,
               )
             ],
@@ -71,7 +71,7 @@ class PayTotalCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "- "r"$" " ${cubit.getDiscount().toStringAsFixed(2)}",
+                  "- " r"$" " ${cubit.getDiscount().toStringAsFixed(2)}",
                   style: theme.textTheme.bodyMedium,
                 ),
               ],
@@ -83,8 +83,9 @@ class PayTotalCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                isPaid ? "Paid via GoWallet" :  "To Pay",
-                  style: theme.textTheme.bodyLarge?.copyWith(color: isPaid? theme.primaryColor: Colors.black),
+                  isPaid ? "Paid via GoWallet" : "To Pay",
+                  style: theme.textTheme.bodyLarge
+                      ?.copyWith(color: isPaid ? theme.primaryColor : Colors.black),
                 ),
               ),
               Text(

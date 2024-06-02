@@ -21,26 +21,21 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changeLanguage":
-            MessageLookupByLibrary.simpleMessage("Changer de langue"),
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("Changer de langue"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Adresse e-mail"),
-        "enterFullName":
-            MessageLookupByLibrary.simpleMessage("Entrez le nom complet"),
+        "enterFullName": MessageLookupByLibrary.simpleMessage("Entrez le nom complet"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Entrez OTP"),
-        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
-            "Entrez le numéro de téléphone"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Entrez le numéro de téléphone"),
         "fullName": MessageLookupByLibrary.simpleMessage("Nom et prénom"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("kilomètres"),
-        "phoneNumber":
-            MessageLookupByLibrary.simpleMessage("Numéro de téléphone"),
-        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
-            "Search Medicine or pharma store"),
-        "searchProducts":
-            MessageLookupByLibrary.simpleMessage("Search Products"),
-        "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Choisir la langue"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Numéro de téléphone"),
+        "searchMedicineOrPharmaStore":
+            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
+        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Choisir la langue"),
         "submit": MessageLookupByLibrary.simpleMessage("Soumettre"),
         "verification": MessageLookupByLibrary.simpleMessage("Vérification")
       };

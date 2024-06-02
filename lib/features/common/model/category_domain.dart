@@ -181,7 +181,6 @@ class CategoryDomain {
       ],
       image: Assets.categoriesEcomHerfasion,
     ),
-
     CategoryDomain(
       "His Fashion",
       [
@@ -189,7 +188,8 @@ class CategoryDomain {
         ProductDomain("Women Pink Dress", Assets.productsItem2, 8.00, cartQuantity: 0),
         ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
         ProductDomain("Women Yellow Dress", Assets.productsItem4, 12.00, cartQuantity: 0),
-        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00, cartQuantity: 0),],
+        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00, cartQuantity: 0),
+      ],
       image: Assets.categoriesEcomHisfashion,
     ),
     CategoryDomain(

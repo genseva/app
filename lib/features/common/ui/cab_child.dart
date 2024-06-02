@@ -99,7 +99,8 @@ class CabChild extends StatelessWidget {
                   Expanded(
                     child: CustomButton(
                       onTap: () {
-                        Navigator.pushNamed(context, PageRoutes.setDestinationPage, arguments: type);
+                        Navigator.pushNamed(context, PageRoutes.setDestinationPage,
+                            arguments: type);
                       },
                       buttonColor: theme.scaffoldBackgroundColor,
                       prefixIcon: Icons.pin_drop,
@@ -114,7 +115,8 @@ class CabChild extends StatelessWidget {
                     Expanded(
                       child: CustomButton(
                         onTap: () {
-                          Navigator.pushNamed(context, PageRoutes.whereToPage, arguments: (type, "Search for destination"));
+                          Navigator.pushNamed(context, PageRoutes.whereToPage,
+                              arguments: (type, "Search for destination"));
                         },
                         buttonColor: theme.scaffoldBackgroundColor,
                         prefixIcon: Icons.add_circle,
