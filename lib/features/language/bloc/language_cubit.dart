@@ -12,10 +12,11 @@ class LanguageCubit extends Cubit<Locale> {
     emit(Locale(languageCode));
   }
 
-  void getCurrentLanguage() async {
+  Future<String> getCurrentLanguage() async {
     String? languageCode = await _source.getCurrentLanguage();
     languageCode ??= AppConfig.defaultLanguage;
     _selectLanguage(languageCode);
+    return languageCode;
   }
 
   void setCurrentLanguage(String languageCode) async {

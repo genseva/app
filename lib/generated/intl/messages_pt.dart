@@ -1,0 +1,54 @@
+// DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
+// This is a library that provides messages for a pt locale. All the
+// messages from the main program should be duplicated here with the same
+// function name.
+
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
+// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+
+import 'package:intl/intl.dart';
+import 'package:intl/message_lookup_by_library.dart';
+
+final messages = new MessageLookup();
+
+typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
+
+class MessageLookup extends MessageLookupByLibrary {
+  String get localeName => 'pt';
+
+  final messages = _notInlinedMessages(_notInlinedMessages);
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("Mudar idioma"),
+        "emailAddress":
+            MessageLookupByLibrary.simpleMessage("Endereço de email"),
+        "enterFullName":
+            MessageLookupByLibrary.simpleMessage("Digite o nome completo"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Digite OTP"),
+        "enterPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Digite o número de telefone"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Nome completo"),
+        "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
+        "km": MessageLookupByLibrary.simpleMessage("km"),
+        "logout": MessageLookupByLibrary.simpleMessage("Sair"),
+        "paymentMethod":
+            MessageLookupByLibrary.simpleMessage("Forma de pagamento"),
+        "phoneNumber":
+            MessageLookupByLibrary.simpleMessage("Número de telefone"),
+        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
+            "Search Medicine or pharma store"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Selecione o idioma"),
+        "submit": MessageLookupByLibrary.simpleMessage("Enviar"),
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("termos e Condições"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verificação"),
+        "wallet": MessageLookupByLibrary.simpleMessage("Carteira"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Sua localização")
+      };
+}

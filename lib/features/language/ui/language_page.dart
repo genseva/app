@@ -25,7 +25,15 @@ class _LanguagePageState extends State<LanguagePage> {
   @override
   void initState() {
     super.initState();
-    _languageCubit = context.read<LanguageCubit>()..getCurrentLanguage();
+    _languageCubit = context.read<LanguageCubit>();
+    updateLocale();
+  }
+
+  void updateLocale() {
+    WidgetsBinding.instance.addPostFrameCallback((duration) async {
+      _selectedLocale = await _languageCubit.getCurrentLanguage();
+      setState(() {});
+    });
   }
 
   @override
@@ -35,9 +43,7 @@ class _LanguagePageState extends State<LanguagePage> {
       backgroundColor: Theme.of(context).cardColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          locale.changeLanguage,
-        ),
+        title: Text(locale.changeLanguage),
       ),
       body: FadedSlideAnimation(
         beginOffset: const Offset(0, 0.3),
@@ -54,12 +60,7 @@ class _LanguagePageState extends State<LanguagePage> {
               ),
             ),
             Expanded(
-              child: BlocConsumer<LanguageCubit, Locale>(
-                listener: (context, currentLocale) {
-                  setState(() {
-                    _selectedLocale = currentLocale.languageCode;
-                  });
-                },
+              child: BlocBuilder<LanguageCubit, Locale>(
                 builder: (context, currentLocale) {
                   return ListView.builder(
                     physics: const BouncingScrollPhysics(),
