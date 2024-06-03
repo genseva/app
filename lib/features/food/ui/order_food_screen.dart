@@ -22,11 +22,11 @@ class _OrderFoodScreenState extends State<OrderFoodScreen> {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
     final List<Filter> filters = [
-      Filter(Icons.star, locale.nearMe),
-      Filter(Icons.favorite, locale.favorite),
+      Filter(Icons.near_me, locale.nearMe),
       Filter(Icons.star, locale.bestRated),
-      Filter(Icons.directions_bike, locale.fastDelivery),
       Filter(Icons.restaurant_menu, locale.vegOnly),
+      Filter(Icons.favorite, locale.favorite),
+      Filter(Icons.directions_bike, locale.fastDelivery),
     ];
     return CustomScaffold(
       image: Assets.headerHeaderFood,
