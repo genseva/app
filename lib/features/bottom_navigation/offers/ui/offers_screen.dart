@@ -130,20 +130,7 @@ class OffersScreen extends StatelessWidget {
           var offer = offers[index];
           return GestureDetector(
             onTap: () {
-              Navigator.push(
-                context,
-                PageRouteBuilder(
-                  fullscreenDialog: true,
-                  opaque: false,
-                  barrierColor: theme.scaffoldBackgroundColor.withOpacity(0.5),
-                  pageBuilder: (context, _, __) {
-                    return Scaffold(
-                      backgroundColor: Colors.transparent,
-                      bottomSheet: OfferInfoPopUp(offer: offer),
-                    );
-                  },
-                ),
-              );
+              OfferInfoPopUp.showPage(context, offer);
             },
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),

@@ -169,26 +169,26 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: OfferDomain.list.length,
               shrinkWrap: true,
-              itemBuilder: (context, index) => GestureDetector(
+              itemBuilder: (context, index) {
+                var offer = OfferDomain.list[index];
+                return GestureDetector(
                 onTap: () {
-                  showModalBottomSheet(
-                    context: context,
-                    backgroundColor: theme.scaffoldBackgroundColor,
-                    builder: (context) {
-                      return OfferInfoPopUp(offer: OfferDomain.list[index]);
-                    },
-                  );
+                  OfferInfoPopUp.showPage(context, offer);
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(
-                    OfferDomain.list[index].bannerUrl,
-                    height: 130,
-                    width: MediaQuery.of(context).size.width * 0.64,
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: offer.offerCode,
+                    child: Image.asset(
+                      offer.bannerUrl,
+                      height: 130,
+                      width: MediaQuery.of(context).size.width * 0.64,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
+              );
+              },
               separatorBuilder: (context, index) => const SizedBox(width: 8),
             ),
           ),

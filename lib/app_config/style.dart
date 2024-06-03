@@ -40,6 +40,11 @@ ThemeData appTheme = ThemeData(
     ),
   ),
 
+  bottomSheetTheme: const BottomSheetThemeData(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+  ),
+
   ///text theme
   textTheme: const TextTheme(
     headlineSmall: TextStyle(fontWeight: FontWeight.bold),

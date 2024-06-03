@@ -7,12 +7,39 @@ class OfferInfoPopUp extends StatelessWidget {
 
   final OfferDomain offer;
 
+  static void showPage(BuildContext context, OfferDomain offer) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        fullscreenDialog: true,
+        opaque: false,
+        barrierDismissible: true,
+        barrierColor: Theme.of(context).primaryColorDark.withOpacity(0.2),
+        pageBuilder: (context, _, __) {
+          return Scaffold(
+            backgroundColor: Colors.transparent,
+            bottomSheet: OfferInfoPopUp(offer: offer),
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return ListView(
-      shrinkWrap: true,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
+       Padding(
+         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+         child: CircleAvatar(
+           backgroundColor: theme.scaffoldBackgroundColor,
+           child: const CloseButton(),
+         ),
+       ),
+        const SizedBox(height: 12),
         ClipRRect(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(27)),
           child: Hero(
@@ -24,30 +51,38 @@ class OfferInfoPopUp extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            offer.offer,
-            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+        ColoredBox(
+          color: theme.scaffoldBackgroundColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  offer.offer,
+                  style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  offer.description,
+                  style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ...offer.points.map((point) => _bulletPoint(theme, point)),
+              const SizedBox(height: 12),
+              CustomButton(
+                margin: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                textColor: theme.primaryColor,
+                text: offer.offerCode,
+                buttonColor: theme.indicatorColor,
+                borderColor: theme.primaryColor,
+              ),
+            ],
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-            offer.description,
-            style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
-          ),
-        ),
-        const SizedBox(height: 20),
-        ...offer.points.map((point) => _bulletPoint(theme, point)),
-        const SizedBox(height: 12),
-        CustomButton(
-          margin: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
-          textColor: theme.primaryColor,
-          text: offer.offerCode,
-          buttonColor: theme.indicatorColor,
-          borderColor: theme.primaryColor,
-        ),
+        )
       ],
     );
   }

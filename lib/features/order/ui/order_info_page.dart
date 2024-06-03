@@ -57,8 +57,32 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
               shrinkWrap: true,
               children: [
                 if (_isDelivered)
-                  const OrderHeaderCard(
-                      image: Assets.headerHeaderFood, title: "Food", subTitle: "Food Delivered")
+                  if (_cubit.store?.type == "food")
+                    const OrderHeaderCard(
+                      image: Assets.headerHeaderFood,
+                      title: "Food",
+                      subTitle: "Food Delivered",
+                    )
+                  else if (_cubit.store?.type == "grocery")
+                    const OrderHeaderCard(
+                      image: Assets.headerHeaderGrocery,
+                      title: "Grocery",
+                      subTitle: "Grocery Delivered",
+                    )
+                  else if (_cubit.store?.type == "shop")
+                    const OrderHeaderCard(
+                      image: Assets.headerHeaderEcommerce,
+                      title: "Shopping",
+                      subTitle: "Item(s) Delivered",
+                    )
+                  else if (_cubit.store?.type == "medicine")
+                    const OrderHeaderCard(
+                      image: Assets.headerHeaderMedicine,
+                      title: "Medicine",
+                      subTitle: "Medicines Delivered",
+                    )
+                  else
+                    const SizedBox()
                 else
                   Container(
                     padding: const EdgeInsets.only(top: 6),
@@ -122,10 +146,20 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                             final product = state[index];
                             return ListTile(
                               minVerticalPadding: 10,
-                              leading: product.isVeg!= null? Image.asset(
-                                product.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
-                                height: 16,
-                              ) : null,
+                              leading: product.isVeg != null
+                                  ? Image.asset(
+                                      product.isVegetarian
+                                          ? Assets.foodFoodVeg
+                                          : Assets.foodFoodNonveg,
+                                      height: 16,
+                                    )
+                                  : ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        product.image,
+                                        height: 40,
+                                      ),
+                                    ),
                               title: Row(
                                 children: [
                                   Text(

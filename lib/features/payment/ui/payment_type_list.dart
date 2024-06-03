@@ -4,7 +4,7 @@ import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class PaymentTypeList extends StatelessWidget {
-  PaymentTypeList({super.key, this.onTap});
+  const PaymentTypeList({super.key, this.onTap});
 
   final VoidCallback? onTap;
 
@@ -13,7 +13,6 @@ class PaymentTypeList extends StatelessWidget {
     final theme = Theme.of(context);
     return ListView.separated(
       shrinkWrap: true,
-      physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.all(20),
       itemBuilder: (context, index) {
         final category = PaymentCategory.list[index];

@@ -163,25 +163,24 @@ class _SelectRidePageState extends State<SelectRidePage> {
               onTap: () {
                 showModalBottomSheet(
                     context: context,
+                    backgroundColor: theme.scaffoldBackgroundColor,
                     builder: (context) {
-                      return ListView(
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 16.0, top: 30),
-                                child: Text("Select Payment Method",
-                                    style: theme.textTheme.titleLarge
-                                        ?.copyWith(fontWeight: FontWeight.w600)),
-                              ),
-                              PaymentTypeList(
-                                onTap: () => Navigator.pushNamed(context, PageRoutes.trackRiderPage,
-                                    arguments: type),
-                              )
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(left: 16.0, top: 30),
+                            child: Text("Select Payment Method",
+                                style: theme.textTheme.titleLarge
+                                    ?.copyWith(fontWeight: FontWeight.w600)),
                           ),
+                          Expanded(
+                            child: PaymentTypeList(
+                              onTap: () => Navigator.pushNamed(context, PageRoutes.trackRiderPage,
+                                  arguments: type),
+                            ),
+                          )
                         ],
                       );
                     });

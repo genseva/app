@@ -29,6 +29,13 @@ class CartCubit extends Cubit<List<ProductDomain>> {
     emit(state.where((element) => element.name != foodDomain.name).toList());
   }
 
+  void updateStore(StoreDomain storeDomain) {
+    if (store?.type != storeDomain.type) {
+      store = storeDomain;
+    }
+    emit(state);
+  }
+
   void clearCart() {
     store = null;
     emit([]);
