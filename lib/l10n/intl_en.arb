@@ -127,5 +127,8 @@
   "tripCompleted": "Trip Completed",
   "viewCart": "View Cart",
   "extraChargesMayApply": "Extra Charges may apply",
-  "addDestination": "Add Destination"
+  "addDestination": "Add Destination",
+  "askUsOrSuggest": "Ask us or suggest anyway we can improve",
+  "submitMessage": "Submit Message",
+  "yourQuestionGotAnswered": "Your Question got answered"
 }

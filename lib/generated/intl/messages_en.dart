@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("All Transactions"),
         "amountToPay": MessageLookupByLibrary.simpleMessage("Amount to Pay"),
         "applyCoupon": MessageLookupByLibrary.simpleMessage("Apply Coupon"),
+        "askUsOrSuggest": MessageLookupByLibrary.simpleMessage(
+            "Ask us or suggest anyway we can improve"),
         "bestRated": MessageLookupByLibrary.simpleMessage("Best Rated"),
         "bookService": MessageLookupByLibrary.simpleMessage("Book Service"),
         "bookedFor": MessageLookupByLibrary.simpleMessage("Booked For"),
@@ -169,6 +171,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
         "startShopping": MessageLookupByLibrary.simpleMessage("Start Shopping"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "submitMessage": MessageLookupByLibrary.simpleMessage("Submit Message"),
         "supportFaqs": MessageLookupByLibrary.simpleMessage("Support & FAQs"),
         "termsConditions":
             MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
@@ -190,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "whereToGo": MessageLookupByLibrary.simpleMessage("Where to go?"),
         "youAreNotRegistered":
             MessageLookupByLibrary.simpleMessage("You\'re not registered yet"),
-        "yourLocation": MessageLookupByLibrary.simpleMessage("Your location")
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Your location"),
+        "yourQuestionGotAnswered":
+            MessageLookupByLibrary.simpleMessage("Your Question got answered")
       };
 }

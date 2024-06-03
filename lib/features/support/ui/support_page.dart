@@ -66,13 +66,14 @@ class SupportPage extends StatelessWidget {
             locale.getSupport,
             style: theme.textTheme.headlineSmall,
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 10),
           Text(
-            "Ask us or suggest anyway we can improove",
+            locale.askUsOrSuggest,
             style: theme.textTheme.bodyLarge?.copyWith(
               color: theme.hintColor,
             ),
           ),
+          const SizedBox(height: 20),
           const CustomTextField(
             hintText: "Select Topic / issue type",
             suffixIcon: Icon(Icons.arrow_drop_down, size: 32),
@@ -84,7 +85,7 @@ class SupportPage extends StatelessWidget {
             maxLines: 3,
           ),
           const SizedBox(height: 20),
-          const CustomButton(text: "Submit Message"),
+           CustomButton(text: locale.submitMessage),
           const SizedBox(height: 28),
           Text(
             "FAQs",
@@ -92,7 +93,7 @@ class SupportPage extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(
-            "Your Question got answered",
+            locale.yourQuestionGotAnswered,
             style: theme.textTheme.bodyLarge?.copyWith(
               color: theme.hintColor,
             ),

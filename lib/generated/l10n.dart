@@ -1329,6 +1329,36 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Ask us or suggest anyway we can improve`
+  String get askUsOrSuggest {
+    return Intl.message(
+      'Ask us or suggest anyway we can improve',
+      name: 'askUsOrSuggest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Message`
+  String get submitMessage {
+    return Intl.message(
+      'Submit Message',
+      name: 'submitMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Question got answered`
+  String get yourQuestionGotAnswered {
+    return Intl.message(
+      'Your Question got answered',
+      name: 'yourQuestionGotAnswered',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
