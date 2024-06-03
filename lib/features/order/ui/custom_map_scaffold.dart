@@ -17,6 +17,7 @@ class CustomMapScaffold extends StatefulWidget {
     this.showCenterPin = false,
     this.topChild,
     this.onAddressUpdate,
+    this.onBackTap,
   });
 
   final Widget? bottomChild;
@@ -27,6 +28,7 @@ class CustomMapScaffold extends StatefulWidget {
   final bool showCenterPin;
   final Widget? topChild;
   final Function(AddressDomain)? onAddressUpdate;
+  final VoidCallback? onBackTap;
 
   @override
   State<CustomMapScaffold> createState() => _CustomMapScaffoldState();
@@ -102,7 +104,9 @@ class _CustomMapScaffoldState extends State<CustomMapScaffold> {
             Positioned(
               top: 52,
               child: IconButton(
-                  onPressed: () => Navigator.pop(context), icon: Icon(Icons.arrow_back_ios_sharp)),
+                onPressed: widget.onBackTap ?? () => Navigator.pop(context),
+                icon: const Icon(Icons.arrow_back_ios_sharp),
+              ),
             ),
           Positioned(
             top: 52,

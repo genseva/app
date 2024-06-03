@@ -10,6 +10,7 @@ import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
 import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
+import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -51,6 +52,9 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
         return CustomMapScaffold(
           bottomSheetInitialSize: _isDelivered ? 0.16 : null,
           showBackButton: true,
+          onBackTap: (){
+            Navigator.pushNamedAndRemoveUntil(context, PageRoutes.bottomNavigation, (r) => false);
+          },
           bottomSheetBuilder: (context, controller) {
             return ListView(
               controller: controller,
