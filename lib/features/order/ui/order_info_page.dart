@@ -122,10 +122,10 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                             final product = state[index];
                             return ListTile(
                               minVerticalPadding: 10,
-                              leading: Image.asset(
+                              leading: product.isVeg!= null? Image.asset(
                                 product.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
                                 height: 16,
-                              ),
+                              ) : null,
                               title: Row(
                                 children: [
                                   Text(
