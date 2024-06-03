@@ -73,9 +73,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     final product = products[index];
                     return ListTile(
                       minVerticalPadding: 10,
-                      leading: Image.asset(
+                      leading: product.isVeg != null ? Image.asset(
                         product.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
                         height: 16,
+                        width: 30,
+                      ) : Image.asset(
+                        product.image,
+                        height: 30,
                       ),
                       title: Text(
                         product.name,
