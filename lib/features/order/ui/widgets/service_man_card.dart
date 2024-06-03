@@ -12,43 +12,45 @@ class ServiceManCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      color: Colors.white,
+      color: theme.scaffoldBackgroundColor,
       padding: const EdgeInsets.all(16).copyWith(bottom: 26),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                name,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: theme.hintColor,
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                title,
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(child: Divider()),
-              const SizedBox(height: 6),
-              Row(
-                children: [
-                  Text(
-                    "George Anderson",
-                    style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
+          IntrinsicWidth(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  name,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.hintColor,
                   ),
-                  const SizedBox(width: 20),
-                  const RatingCard(rating: "4.5"),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  title,
+                  style: theme.textTheme.titleLarge?.copyWith(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Divider(thickness: 0.4),
+                const SizedBox(height: 6),
+                Row(
+                  children: [
+                    Text(
+                      "George Anderson",
+                      style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(width: 20),
+                    const RatingCard(rating: "4.5"),
+                  ],
+                ),
+              ],
+            ),
           ),
           SizedBox(
             child: Stack(
