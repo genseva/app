@@ -125,7 +125,10 @@ class _ShoppingProductsState extends State<ShoppingProducts> with SingleTickerPr
                                           .bodyMedium
                                           ?.copyWith(fontWeight: FontWeight.w500)),
                                   const Spacer(),
-                                  AddItemButton(product: product.items[index]),
+                                  AddItemButton(
+                                    store: StoreDomain.ecommerce.first,
+                                    product: product.items[index],
+                                  ),
                                 ],
                               )
                             ],

@@ -62,7 +62,7 @@ class MedicineItemCard extends StatelessWidget {
                             color: Colors.grey,
                           ),
                         ),
-                        AddItemButton(product: item),
+                        AddItemButton(store: StoreDomain.medicineList.first, product: item),
                       ],
                     )
                   ],
@@ -176,7 +176,7 @@ class MedicineItemCard extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            AddItemButton(product: item),
+                            AddItemButton(store: store, product: item),
                           ],
                         )
                       ],

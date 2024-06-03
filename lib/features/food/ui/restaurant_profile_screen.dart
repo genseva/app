@@ -106,7 +106,7 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                   ),
                   children: List.generate(
                     category.items.length,
-                    (index) => FoodCard(category.items[index]),
+                    (index) => FoodCard(store, category.items[index]),
                   ),
                 );
               },

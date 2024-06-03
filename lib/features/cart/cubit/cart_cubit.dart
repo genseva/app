@@ -13,7 +13,8 @@ class CartCubit extends Cubit<List<ProductDomain>> {
   final double taxes = 1.50;
   CouponDomain? coupon;
 
-  void updateFood(ProductDomain foodDomain) {
+  void updateFood(StoreDomain storeDomain, ProductDomain foodDomain) {
+    _updateStore(storeDomain);
     if (state.any((element) => element.name == foodDomain.name)) {
       if (foodDomain.quantity > 0) {
         _updateFood(foodDomain);
@@ -29,11 +30,11 @@ class CartCubit extends Cubit<List<ProductDomain>> {
     emit(state.where((element) => element.name != foodDomain.name).toList());
   }
 
-  void updateStore(StoreDomain storeDomain) {
+  void _updateStore(StoreDomain storeDomain) {
     if (store?.type != storeDomain.type) {
       store = storeDomain;
+      emit([]);
     }
-    emit(state);
   }
 
   void clearCart() {

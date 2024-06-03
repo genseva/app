@@ -1,6 +1,7 @@
 import 'package:deligo/components/add_button.dart';
 import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
+import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -185,7 +186,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
               r"$" "${product.price}",
               style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
             ),
-            AddItemButton(product: product)
+            AddItemButton(store: StoreDomain.ecommerce.first, product: product)
           ],
         ),
       ),

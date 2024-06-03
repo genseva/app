@@ -153,7 +153,7 @@ class GroceryStoreScreen extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemCount: category.items.length,
                             itemBuilder: (context, index) {
-                              return GroceryItemCard(category.items[index]);
+                              return GroceryItemCard(store, category.items[index]);
                             },
                           ),
                         ),

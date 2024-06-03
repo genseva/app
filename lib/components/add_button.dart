@@ -1,11 +1,13 @@
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
+import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddItemButton extends StatefulWidget {
-  const AddItemButton({super.key, required this.product});
+  const AddItemButton({super.key,required this.store, required this.product});
 
+  final StoreDomain store;
   final ProductDomain product;
 
   @override
@@ -31,7 +33,7 @@ class _AddItemButtonState extends State<AddItemButton> {
           product.quantity++;
         }
         setState(() {});
-        _cubit.updateFood(product);
+        _cubit.updateFood(widget.store, product);
       },
       child: Container(
         height: 32,
@@ -52,7 +54,7 @@ class _AddItemButtonState extends State<AddItemButton> {
                 onTap: () {
                   product.quantity--;
                   setState(() {});
-                  _cubit.updateFood(product);
+                  _cubit.updateFood(widget.store, product);
                 },
                 child: const Icon(
                   Icons.remove,
@@ -71,7 +73,7 @@ class _AddItemButtonState extends State<AddItemButton> {
                 onTap: () {
                   product.quantity++;
                   setState(() {});
-                  _cubit.updateFood(product);
+                  _cubit.updateFood(widget.store, product);
                 },
                 child: const Icon(Icons.add, size: 16, color: Colors.white),
               ),

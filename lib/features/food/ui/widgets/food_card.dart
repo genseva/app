@@ -1,11 +1,13 @@
 import 'package:deligo/components/add_button.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
+import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class FoodCard extends StatefulWidget {
-  const FoodCard(this.food, {super.key});
+  const FoodCard(this.store, this.food, {super.key});
 
+  final StoreDomain store;
   final ProductDomain food;
 
   @override
@@ -71,7 +73,7 @@ class _FoodCardState extends State<FoodCard> {
           PositionedDirectional(
             end: 4,
             bottom: -16,
-            child: AddItemButton(product: food),
+            child: AddItemButton(store: widget.store, product: food),
           )
         ],
       ),

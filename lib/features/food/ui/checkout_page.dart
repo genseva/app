@@ -76,10 +76,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       leading: product.isVeg != null ? Image.asset(
                         product.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
                         height: 16,
-                        width: 30,
-                      ) : Image.asset(
-                        product.image,
-                        height: 30,
+                        width: 40,
+                      ) : ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          product.image,
+                          height: 40,
+                        ),
                       ),
                       title: Text(
                         product.name,
@@ -91,7 +94,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         r"$" " ${product.price.toStringAsFixed(2)}",
                         style: theme.textTheme.titleSmall?.copyWith(),
                       ),
-                      trailing: AddItemButton(product: product),
+                      trailing: AddItemButton(store: _cubit.store!, product: product),
                     );
                   },
                   separatorBuilder: (context, index) => const SizedBox(),

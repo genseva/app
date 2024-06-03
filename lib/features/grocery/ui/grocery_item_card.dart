@@ -1,10 +1,12 @@
 import 'package:deligo/components/add_button.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
+import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class GroceryItemCard extends StatelessWidget {
-  const GroceryItemCard(this.item, {super.key});
+  const GroceryItemCard(this.store, this.item, {super.key});
 
+  final StoreDomain store;
   final ProductDomain item;
 
   @override
@@ -36,7 +38,7 @@ class GroceryItemCard extends StatelessWidget {
                 ),
           ),
           const SizedBox(height: 5),
-          AddItemButton(product: item),
+          AddItemButton(store: store, product: item),
         ],
       ),
     );

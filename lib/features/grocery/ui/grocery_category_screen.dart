@@ -90,7 +90,7 @@ class _GroceryCategoryScreenState extends State<GroceryCategoryScreen>
                       itemCount: CategoryDomain.groceryList[categoryIndex].items.length,
                       itemBuilder: (context, index) {
                         var category = CategoryDomain.groceryList[categoryIndex];
-                        return GroceryItemCard(category.items[index]);
+                        return GroceryItemCard(store, category.items[index]);
                       });
                 })
               ],

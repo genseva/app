@@ -14,7 +14,7 @@ class CartBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    final cubit = context.read<CartCubit>()..updateStore(store);
+    final cubit = context.read<CartCubit>();
     return BlocBuilder<CartCubit, List<ProductDomain>>(
       builder: (context, products) {
         return GestureDetector(
