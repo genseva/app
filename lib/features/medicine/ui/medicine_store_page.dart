@@ -5,6 +5,7 @@ import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/medicine/ui/medicine_item_card.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -71,7 +72,7 @@ class _MedicineStorePageState extends State<MedicineStorePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
-                CustomInfoWidget(Icons.access_time, "Opening Timing", store.timing),
+                CustomInfoWidget(Icons.access_time, AppLocalizations.of(context).openingTiming, store.timing),
               ],
             ),
           ),

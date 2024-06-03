@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "logout": MessageLookupByLibrary.simpleMessage("Keluar"),
+        "paymentMethod":
+            MessageLookupByLibrary.simpleMessage("Cara Pembayaran"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nomor telepon"),
         "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
             "Search Medicine or pharma store"),
@@ -43,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "termsConditions":
             MessageLookupByLibrary.simpleMessage("Syarat & Ketentuan"),
         "verification": MessageLookupByLibrary.simpleMessage("Verifikasi"),
+        "wallet": MessageLookupByLibrary.simpleMessage("Dompet"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Lokasimu")
       };
 }

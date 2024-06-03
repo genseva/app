@@ -2,6 +2,7 @@ import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/features/wallet/model/transaction_domain.dart';
 import 'package:deligo/features/wallet/ui/transaction_list.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class WalletPage extends StatelessWidget {
@@ -10,6 +11,7 @@ class WalletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final locale = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: theme.primaryColor,
       body: Column(
@@ -131,9 +133,9 @@ class WalletPage extends StatelessWidget {
                             tabAlignment: TabAlignment.start,
                             isScrollable: true,
                             dividerHeight: 0,
-                            tabs: const [
-                              Tab(text: "All Transactions"),
-                              Tab(text: "Top Ups"),
+                            tabs:  [
+                              Tab(text: locale.allTransactions),
+                              Tab(text: locale.topUps),
                             ],
                           ),
                         ),

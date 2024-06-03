@@ -1059,6 +1059,266 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `All Transactions`
+  String get allTransactions {
+    return Intl.message(
+      'All Transactions',
+      name: 'allTransactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Ups`
+  String get topUps {
+    return Intl.message(
+      'Top Ups',
+      name: 'topUps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cost for Service`
+  String get costForService {
+    return Intl.message(
+      'Cost for Service',
+      name: 'costForService',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booked For`
+  String get bookedFor {
+    return Intl.message(
+      'Booked For',
+      name: 'bookedFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Estimate Cost`
+  String get estimateCost {
+    return Intl.message(
+      'Estimate Cost',
+      name: 'estimateCost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Service Address`
+  String get serviceAddress {
+    return Intl.message(
+      'Service Address',
+      name: 'serviceAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel Order`
+  String get cancelOrder {
+    return Intl.message(
+      'Cancel Order',
+      name: 'cancelOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Orders`
+  String get myOrders {
+    return Intl.message(
+      'My Orders',
+      name: 'myOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay Now`
+  String get payNow {
+    return Intl.message(
+      'Pay Now',
+      name: 'payNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Job Completed`
+  String get jobCompleted {
+    return Intl.message(
+      'Job Completed',
+      name: 'jobCompleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Providers near me`
+  String get providersNearMe {
+    return Intl.message(
+      'Providers near me',
+      name: 'providersNearMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Options`
+  String get paymentOptions {
+    return Intl.message(
+      'Payment Options',
+      name: 'paymentOptions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount to Pay`
+  String get amountToPay {
+    return Intl.message(
+      'Amount to Pay',
+      name: 'amountToPay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Opening Timing`
+  String get openingTiming {
+    return Intl.message(
+      'Opening Timing',
+      name: 'openingTiming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery in`
+  String get deliveryIn {
+    return Intl.message(
+      'Delivery in',
+      name: 'deliveryIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add instruction to restaurant`
+  String get addInstructionToRestaurant {
+    return Intl.message(
+      'Add instruction to restaurant',
+      name: 'addInstructionToRestaurant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply Coupon`
+  String get applyCoupon {
+    return Intl.message(
+      'Apply Coupon',
+      name: 'applyCoupon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View detailed bill`
+  String get viewDetailedBill {
+    return Intl.message(
+      'View detailed bill',
+      name: 'viewDetailedBill',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to Pay`
+  String get proceedToPay {
+    return Intl.message(
+      'Proceed to Pay',
+      name: 'proceedToPay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet`
+  String get wallet {
+    return Intl.message(
+      'Wallet',
+      name: 'wallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment Method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ride Cost`
+  String get rideCost {
+    return Intl.message(
+      'Ride Cost',
+      name: 'rideCost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trip Details`
+  String get tripDetails {
+    return Intl.message(
+      'Trip Details',
+      name: 'tripDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trip Completed`
+  String get tripCompleted {
+    return Intl.message(
+      'Trip Completed',
+      name: 'tripCompleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Cart`
+  String get viewCart {
+    return Intl.message(
+      'View Cart',
+      name: 'viewCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Extra Charges may apply`
+  String get extraChargesMayApply {
+    return Intl.message(
+      'Extra Charges may apply',
+      name: 'extraChargesMayApply',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

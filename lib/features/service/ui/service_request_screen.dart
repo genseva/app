@@ -9,6 +9,7 @@ import 'package:deligo/features/order/ui/widgets/order_header_card.dart';
 import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
 import 'package:deligo/features/order/ui/widgets/service_man_card.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,6 +46,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final locale = AppLocalizations.of(context);
     return BlocBuilder<CartCubit, List<ProductDomain>>(
       builder: (context, state) {
         return CustomMapScaffold(
@@ -55,10 +57,10 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
               shrinkWrap: true,
               children: [
                 if (_isDelivered)
-                  const OrderHeaderCard(
+                   OrderHeaderCard(
                       image: Assets.headerHeaderHandyman,
-                      title: "Service",
-                      subTitle: "Job Completed")
+                      title: locale.service,
+                      subTitle: locale.jobCompleted)
                 else
                   Container(
                     padding: const EdgeInsets.only(top: 6),
@@ -114,7 +116,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                             children: [
                               Row(
                                 children: [
-                                  Text("Cost for Service", style: theme.textTheme.bodyLarge),
+                                  Text(locale.costForService, style: theme.textTheme.bodyLarge),
                                   const Spacer(),
                                   Text(
                                     r"$ 7.00",
@@ -126,7 +128,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                               ),
                               const SizedBox(height: 10),
                               CustomButton(
-                                text: "Pay Now",
+                                text: locale.payNow,
                                 onTap: () {},
                               )
                             ],
@@ -146,7 +148,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Booked For", style: theme.textTheme.bodyMedium),
+                                Text(locale.bookedFor, style: theme.textTheme.bodyMedium),
                                 Text("23 June, 10:00 AM", style: theme.textTheme.bodyMedium),
                               ],
                             ),
@@ -155,7 +157,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                             if (!_isDelivered) ...[
                               Row(
                                 children: [
-                                  Text("Estimate Cost", style: theme.textTheme.bodyMedium),
+                                  Text(locale.estimateCost, style: theme.textTheme.bodyMedium),
                                   const Spacer(),
                                   Text(r"$5.00", style: theme.textTheme.bodyMedium),
                                   Text("/hr",
@@ -175,7 +177,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                                 height: 30,
                               ),
                               title: Text(
-                                "Service Address",
+                                locale.serviceAddress,
                                 style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
                               ),
                               subtitle: Padding(
@@ -203,7 +205,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                                   Navigator.pop(context);
                                   Navigator.pop(context);
                                 },
-                                text: "Cancel Order",
+                                text: locale.cancelOrder,
                                 buttonColor: const Color(0xFFF1D7D6),
                                 textColor: Colors.red,
                               ),
@@ -215,7 +217,7 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                                   Navigator.pop(context);
                                   Navigator.pop(context);
                                 },
-                                text: "My Orders",
+                                text: locale.myOrders,
                                 buttonColor: const Color(0xFFB8EDB9),
                                 textColor: theme.primaryColor,
                               ),

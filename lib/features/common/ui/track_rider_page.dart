@@ -10,6 +10,7 @@ import 'package:deligo/features/order/ui/widgets/order_header_card.dart';
 import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
 import 'package:deligo/features/order/ui/widgets/service_man_card.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,6 +45,7 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final locale = AppLocalizations.of(context);
     DeliveryType type = ModalRoute.of(context)?.settings.arguments as DeliveryType;
     return BlocBuilder<CartCubit, List<ProductDomain>>(
       builder: (context, state) {
@@ -55,7 +57,10 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
               shrinkWrap: true,
               children: [
                 if (_isCompleted)
-                  OrderHeaderCard(image: type.image, title: "Ride", subTitle: "Trip Completed")
+                  OrderHeaderCard(
+                      image: type.image,
+                      title: "Ride",
+                      subTitle: AppLocalizations.of(context).tripCompleted)
                 else
                   Container(
                     padding: const EdgeInsets.only(top: 6),
@@ -109,7 +114,7 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          "Trip Details",
+                          locale.tripDetails,
                           style: theme.textTheme.titleMedium?.copyWith(color: theme.hintColor),
                         ),
                       ),
@@ -128,7 +133,7 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Ride Cost", style: theme.textTheme.bodyMedium),
+                                Text(locale.rideCost, style: theme.textTheme.bodyMedium),
                                 Text(r"$8.00", style: theme.textTheme.bodyMedium),
                               ],
                             ),
@@ -136,12 +141,12 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                             const CustomDivider(),
                             Row(
                               children: [
-                                Text("Payment Method", style: theme.textTheme.bodyMedium),
+                                Text(locale.paymentMethod, style: theme.textTheme.bodyMedium),
                                 const Spacer(),
                                 Image.asset(Assets.paymentVecWallet, scale: 4),
                                 const SizedBox(width: 10),
                                 Text(
-                                  "Wallet",
+                                  locale.wallet,
                                   style:
                                       theme.textTheme.labelSmall?.copyWith(color: theme.hintColor),
                                 ),

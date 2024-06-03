@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("kilómetros"),
         "logout": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
+        "paymentMethod": MessageLookupByLibrary.simpleMessage("Método de pago"),
         "phoneNumber":
             MessageLookupByLibrary.simpleMessage("Número de teléfono"),
         "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "termsConditions":
             MessageLookupByLibrary.simpleMessage("Términos y condiciones"),
         "verification": MessageLookupByLibrary.simpleMessage("Verificación"),
+        "wallet": MessageLookupByLibrary.simpleMessage("Cartera"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Tu ubicación")
       };
 }

@@ -72,12 +72,12 @@ class GroceryStoreScreen extends StatelessWidget {
                   children: [
                     CustomInfoWidget(
                       Icons.directions_bike_outlined,
-                      "Delivery in",
+                      AppLocalizations.of(context).deliveryIn,
                       "${store.deliveryTime} min",
                     ),
                     CustomInfoWidget(
                       Icons.watch_later_outlined,
-                      "Opening Timing",
+                      AppLocalizations.of(context).openingTiming,
                       store.timing,
                     ),
                   ],

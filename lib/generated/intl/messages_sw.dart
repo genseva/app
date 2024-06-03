@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "logout": MessageLookupByLibrary.simpleMessage("Ondoka"),
+        "paymentMethod": MessageLookupByLibrary.simpleMessage("Njia ya malipo"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nambari ya simu"),
         "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
             "Search Medicine or pharma store"),
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "termsConditions":
             MessageLookupByLibrary.simpleMessage("Sheria na Masharti"),
         "verification": MessageLookupByLibrary.simpleMessage("Uthibitishaji"),
+        "wallet": MessageLookupByLibrary.simpleMessage("Mkoba"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Eneo lako")
       };
 }

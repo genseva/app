@@ -5,6 +5,7 @@ import 'package:deligo/features/common/model/category_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
 import 'package:deligo/features/food/ui/widgets/food_card.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -77,8 +78,8 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
-                CustomInfoWidget(Icons.directions_bike_outlined, "Delivery in", "20 min"),
-                CustomInfoWidget(Icons.restaurant_menu, "Price Range", r"$$$$"),
+                CustomInfoWidget(Icons.directions_bike_outlined, AppLocalizations.of(context).deliveryIn, "20 min"),
+                CustomInfoWidget(Icons.restaurant_menu, AppLocalizations.of(context).priceRange, r"$$$$"),
               ],
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/features/common/model/store_domain.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,7 +48,7 @@ class CartBottomBar extends StatelessWidget {
                           ),
                           const SizedBox(height: 3),
                           Text(
-                            "Extra Charges may apply",
+                            AppLocalizations.of(context).extraChargesMayApply,
                             style:
                                 theme.textTheme.labelSmall?.copyWith(color: Colors.grey.shade300),
                           )
@@ -57,7 +58,7 @@ class CartBottomBar extends StatelessWidget {
                       const Icon(Icons.shopping_basket_outlined, color: Colors.white),
                       const SizedBox(width: 10),
                       Text(
-                        "View Cart",
+                        AppLocalizations.of(context).viewCart,
                         style: theme.textTheme.bodyLarge
                             ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
                       ),

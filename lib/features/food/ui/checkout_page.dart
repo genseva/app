@@ -7,6 +7,7 @@ import 'package:deligo/features/cart/model/coupon_domain.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -103,7 +104,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     size: 18,
                   ),
                   title: Text(
-                    "Add instruction to restaurant",
+                    AppLocalizations.of(context).addInstructionToRestaurant,
                     style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
                   ),
                 ),
@@ -119,7 +120,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     size: 18,
                   ),
                   title: Text(
-                    "Apply Coupon",
+                    AppLocalizations.of(context).applyCoupon,
                     style: theme.textTheme.bodyLarge,
                   ),
                   subtitle: Text(
@@ -169,7 +170,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              subtitle: Text("View detailed bill",
+              subtitle: Text(AppLocalizations.of(context).viewDetailedBill,
                   style: theme.textTheme.titleSmall?.copyWith(
                     color: theme.primaryColor,
                   )),
@@ -185,7 +186,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     elevation: WidgetStateProperty.all(0),
                     backgroundColor: WidgetStateProperty.all(theme.primaryColor)),
                 child: Text(
-                  "Proceed to Pay",
+                  AppLocalizations.of(context).proceedToPay,
                   style: theme.textTheme.bodySmall!
                       .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
                   textAlign: TextAlign.center,

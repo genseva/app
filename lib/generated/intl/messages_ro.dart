@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "logout": MessageLookupByLibrary.simpleMessage("Deconectare"),
+        "paymentMethod":
+            MessageLookupByLibrary.simpleMessage("Modalitate de plată"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Număr de telefon"),
         "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
             "Search Medicine or pharma store"),
@@ -46,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "termsConditions":
             MessageLookupByLibrary.simpleMessage("termeni si conditii"),
         "verification": MessageLookupByLibrary.simpleMessage("Verificare"),
+        "wallet": MessageLookupByLibrary.simpleMessage("Portofel"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Locația ta")
       };
 }

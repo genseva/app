@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "logout": MessageLookupByLibrary.simpleMessage("Çıkış Yap"),
+        "paymentMethod": MessageLookupByLibrary.simpleMessage("Ödeme şekli"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefon numarası"),
         "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
             "Search Medicine or pharma store"),
@@ -42,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "termsConditions":
             MessageLookupByLibrary.simpleMessage("şartlar ve koşullar"),
         "verification": MessageLookupByLibrary.simpleMessage("Doğrulama"),
+        "wallet": MessageLookupByLibrary.simpleMessage("Cüzdan"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Konumunuz")
       };
 }

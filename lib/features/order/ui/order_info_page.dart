@@ -9,6 +9,7 @@ import 'package:deligo/features/order/ui/widgets/order_header_card.dart';
 import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
 import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -159,7 +160,7 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                               Navigator.pop(context);
                               Navigator.pop(context);
                             },
-                            text: "Cancel Order",
+                            text: AppLocalizations.of(context).cancelOrder,
                             buttonColor: const Color(0xFFF1D7D6),
                             textColor: Colors.red,
                           ),

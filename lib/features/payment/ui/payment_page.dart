@@ -1,5 +1,6 @@
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/payment/ui/payment_type_list.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,7 +13,7 @@ class PaymentPage extends StatelessWidget {
     final cubit = context.read<CartCubit>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Payment Options"),
+        title:  Text(AppLocalizations.of(context).paymentOptions),
         centerTitle: false,
       ),
       body: Column(
@@ -24,7 +25,7 @@ class PaymentPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Amount to Pay",
+                  AppLocalizations.of(context).amountToPay,
                   style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(

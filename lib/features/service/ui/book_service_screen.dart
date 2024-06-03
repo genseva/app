@@ -30,7 +30,7 @@ class BookServiceScreen extends StatelessWidget {
             ),
             Flexible(
               child: CategoryList(
-                storeListTitle: "Providers near me",
+                storeListTitle: AppLocalizations.of(context).providersNearMe,
                 stores: StoreDomain.serviceList,
                 categories: CategoryDomain.serviceList,
                 routesName: PageRoutes.providerDetailsScreen,
