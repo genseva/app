@@ -7,10 +7,11 @@ class StoreDomain {
   final String deliveryTime;
   final double distance;
   final String timing;
+  final String? rating;
   final double? serviceCharge;
 
   StoreDomain(this.image, this.name, this.location, this.deliveryTime, this.distance, this.timing,
-      {this.serviceCharge});
+      {this.serviceCharge, this.rating});
 
   static final List<StoreDomain> foodList = [
     StoreDomain(
@@ -20,6 +21,7 @@ class StoreDomain {
       '20',
       1.5,
       'fastFoodBeverages',
+      rating: '4.5',
     ),
     StoreDomain(
       Assets.foodRestaurantFood2,
@@ -28,6 +30,7 @@ class StoreDomain {
       '30',
       4.5,
       'chineseFoodsItalianFoods',
+      rating: '3.5',
     ),
     StoreDomain(
       Assets.foodRestaurantFood3,
@@ -36,6 +39,7 @@ class StoreDomain {
       '25',
       2.5,
       'fastFoodBeverages',
+      rating: '5',
     ),
     StoreDomain(
       Assets.foodRestaurantFood1,
@@ -44,6 +48,7 @@ class StoreDomain {
       '10',
       0.5,
       'fastFoodBeverages',
+      rating: '4.5',
     ),
     StoreDomain(
       Assets.foodRestaurantFood2,
@@ -52,6 +57,7 @@ class StoreDomain {
       '20',
       1.5,
       'chineseFoodsItalianFoods',
+      rating: '2.5',
     ),
     StoreDomain(
       Assets.foodRestaurantFood3,
@@ -60,6 +66,7 @@ class StoreDomain {
       '23',
       4.5,
       'fastFoodBeverages',
+      rating: '3.5',
     ),
   ];
 

@@ -53,7 +53,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   size: 18,
                 ),
                 title: Text(
-                  "Delivery to ${address.name} | ${_cubit.store?.deliveryTime ?? ""} min",
+                  "Deliver to ${address.name} | ${_cubit.store?.deliveryTime ?? ""} min",
                   style:
                       Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),

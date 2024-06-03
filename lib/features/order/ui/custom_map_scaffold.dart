@@ -99,9 +99,10 @@ class _CustomMapScaffoldState extends State<CustomMapScaffold> {
               ),
             ),
           if (widget.showBackButton)
-            const Positioned(
+            Positioned(
               top: 52,
-              child: BackButton(),
+              child: IconButton(
+                  onPressed: () => Navigator.pop(context), icon: Icon(Icons.arrow_back_ios_sharp)),
             ),
           Positioned(
             top: 52,
@@ -123,7 +124,7 @@ class _CustomMapScaffoldState extends State<CustomMapScaffold> {
                         ),
                         margin: const EdgeInsets.all(16),
                         padding: const EdgeInsets.all(8),
-                        child: const Icon(Icons.keyboard_arrow_left),
+                        child: const Icon(Icons.arrow_back_ios_sharp),
                       ),
                     ),
                     const Spacer(),

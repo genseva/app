@@ -110,12 +110,20 @@ class StoreList extends StatelessWidget {
                         ],
                       ),
                       const CustomDivider(),
-                      Text(
-                        store.timing,
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          color: theme.hintColor,
-                          fontSize: 12,
-                        ),
+                      Row(
+                        children: [
+                          if (store.rating != null) ...[
+                            RatingCard(rating: store.rating),
+                            const SizedBox(width: 10),
+                          ],
+                          Text(
+                            store.timing,
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                              color: theme.hintColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
                       ),
                     ]
                   ],

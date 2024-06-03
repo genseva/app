@@ -24,12 +24,12 @@ class _CustomFiltersState extends State<CustomFilters> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: widget.filters.length <= 3 ? 50 : 100,
       child: SingleChildScrollView(
         padding: const EdgeInsetsDirectional.only(end: 16),
         scrollDirection: Axis.horizontal,
         child: StaggeredGrid.count(
-          crossAxisCount: 2,
+          crossAxisCount: widget.filters.length <= 3 ? 1 : 2,
           mainAxisSpacing: 8,
           axisDirection: AxisDirection.right,
           children: List.generate(

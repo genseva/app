@@ -50,6 +50,7 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
       builder: (context, state) {
         return CustomMapScaffold(
           bottomSheetInitialSize: _isDelivered ? 0.16 : null,
+          showBackButton: true,
           bottomSheetBuilder: (context, controller) {
             return ListView(
               controller: controller,
