@@ -3,11 +3,13 @@ import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class AddressCard extends StatelessWidget {
-  const AddressCard(this.isDelivered, {super.key, this.pickupIcon, this.dropIcon});
+  const AddressCard(this.isDelivered,
+      {super.key, this.pickupIcon, this.dropIcon, required this.store});
 
   final bool isDelivered;
   final String? pickupIcon;
   final String? dropIcon;
+  final StoreDomain store;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class AddressCard extends StatelessWidget {
               if (pickupIcon != null)
                 Image.asset(pickupIcon ?? '', scale: 3)
               else
-                Icon(Icons.restaurant_menu_outlined, color: theme.primaryColor),
+                _pickupIcon(store, theme),
               const SizedBox(height: 16),
               Icon(Icons.more_vert, color: theme.hintColor, size: 30),
               const SizedBox(height: 16),
@@ -39,7 +41,7 @@ class AddressCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  StoreDomain.foodList.first.name,
+                  store.name,
                   style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
                 ),
                 Text(
@@ -72,5 +74,15 @@ class AddressCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _pickupIcon(StoreDomain store, ThemeData theme) {
+    IconData icon = Icons.restaurant_menu_outlined;
+    if (store.type == "shop" || store.type == "medicine") {
+      icon = Icons.store;
+    } else if (store.type == "grocery") {
+      icon = Icons.shopping_basket;
+    }
+    return Icon(icon, color: theme.primaryColor);
   }
 }

@@ -3,6 +3,7 @@ import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/cart/cubit/cart_cubit.dart';
 import 'package:deligo/features/common/model/delivery_type.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
+import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
 import 'package:deligo/features/order/ui/widgets/address_card.dart';
 import 'package:deligo/features/order/ui/widgets/get_rating_card.dart';
@@ -125,6 +126,7 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                       ),
                       AddressCard(
                         _isCompleted,
+                        store: StoreDomain.ecommerce.first,
                         pickupIcon: Assets.pinsIcLocation,
                         dropIcon: Assets.pinsIcLocation1,
                       ),

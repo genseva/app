@@ -130,7 +130,7 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                       ],
                       DeliverymanCard(_isDelivered),
                       const SizedBox(height: 10),
-                      AddressCard(_isDelivered),
+                      AddressCard(_isDelivered, store: _cubit.store!),
                       const SizedBox(height: 10),
                       const OrderInfoCard(),
                       Padding(
