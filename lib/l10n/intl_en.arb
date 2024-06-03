@@ -126,5 +126,6 @@
   "tripDetails": "Trip Details",
   "tripCompleted": "Trip Completed",
   "viewCart": "View Cart",
-  "extraChargesMayApply": "Extra Charges may apply"
+  "extraChargesMayApply": "Extra Charges may apply",
+  "addDestination": "Add Destination"
 }

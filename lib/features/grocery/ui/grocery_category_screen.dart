@@ -1,7 +1,8 @@
 import 'package:deligo/components/custom_divider.dart';
+import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
 import 'package:deligo/features/common/model/category_domain.dart';
+import 'package:deligo/features/common/model/store_domain.dart';
 import 'package:deligo/features/grocery/ui/grocery_item_card.dart';
-import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class GroceryCategoryScreen extends StatefulWidget {
@@ -33,15 +34,15 @@ class _GroceryCategoryScreenState extends State<GroceryCategoryScreen>
 
   @override
   Widget build(BuildContext context) {
-    final locale = AppLocalizations.of(context);
     final theme = Theme.of(context);
+    final StoreDomain store = ModalRoute.of(context)?.settings.arguments as StoreDomain;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        title: const Text("Mega mart 24x7"),
+        title: const Text("Megamart 24x7"),
         actions: [
           IconButton(
             onPressed: () {},
@@ -97,6 +98,7 @@ class _GroceryCategoryScreenState extends State<GroceryCategoryScreen>
           )
         ],
       ),
+      bottomNavigationBar: CartBottomBar(store),
     );
   }
 }

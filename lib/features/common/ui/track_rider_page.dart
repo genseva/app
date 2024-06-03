@@ -51,6 +51,7 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
       builder: (context, state) {
         return CustomMapScaffold(
           bottomSheetInitialSize: _isCompleted ? 0.16 : null,
+          showBackButton: true,
           bottomSheetBuilder: (context, controller) {
             return ListView(
               controller: controller,

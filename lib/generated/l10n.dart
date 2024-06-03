@@ -1319,6 +1319,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Add Destination`
+  String get addDestination {
+    return Intl.message(
+      'Add Destination',
+      name: 'addDestination',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

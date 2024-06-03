@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addDestination": MessageLookupByLibrary.simpleMessage("Hedef Ekle"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Dili değiştir"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("E-posta Adresi"),
         "enterFullName": MessageLookupByLibrary.simpleMessage("Tam Adı Girin"),

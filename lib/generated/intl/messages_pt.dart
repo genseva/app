@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addDestination":
+            MessageLookupByLibrary.simpleMessage("Adicionar destino"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Mudar idioma"),
         "emailAddress":
             MessageLookupByLibrary.simpleMessage("Endereço de email"),

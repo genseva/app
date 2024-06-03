@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Account Options"),
         "addADestination":
             MessageLookupByLibrary.simpleMessage("Add a destination"),
+        "addDestination":
+            MessageLookupByLibrary.simpleMessage("Add Destination"),
         "addInstructionToRestaurant": MessageLookupByLibrary.simpleMessage(
             "Add instruction to restaurant"),
         "addNewAddress":

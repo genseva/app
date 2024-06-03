@@ -97,7 +97,8 @@ class GroceryStoreScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 15),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, PageRoutes.groceryCategoryScreen),
+                      onTap: () => Navigator.pushNamed(context, PageRoutes.groceryCategoryScreen,
+                          arguments: store),
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
@@ -132,9 +133,14 @@ class GroceryStoreScreen extends StatelessWidget {
                               ),
                             ),
                             const Spacer(),
-                            Icon(
-                              Icons.chevron_right,
-                              color: theme.primaryColor,
+                            GestureDetector(
+                              onTap: () => Navigator.pushNamed(
+                                  context, PageRoutes.groceryCategoryScreen,
+                                  arguments: store),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: theme.primaryColor,
+                              ),
                             ),
                           ],
                         ),

@@ -124,7 +124,7 @@ class CabChild extends StatelessWidget {
                         buttonColor: theme.scaffoldBackgroundColor,
                         prefixIcon: Icons.add_circle,
                         prefixIconColor: Colors.yellow.shade700,
-                        text: locale.addADestination,
+                        text: locale.addDestination,
                         textColor: theme.hintColor,
                         textStyle: theme.textTheme.bodyMedium,
                       ),
