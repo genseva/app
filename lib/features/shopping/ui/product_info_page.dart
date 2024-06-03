@@ -173,6 +173,9 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.fromLTRB(30, 16, 20, 30),
+        decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: theme.dividerColor, width: 0.2)),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
