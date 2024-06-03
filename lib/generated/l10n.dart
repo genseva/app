@@ -1359,6 +1359,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Delivery Cost`
+  String get deliveryCost {
+    return Intl.message(
+      'Delivery Cost',
+      name: 'deliveryCost',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

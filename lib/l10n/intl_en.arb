@@ -130,5 +130,6 @@
   "addDestination": "Add Destination",
   "askUsOrSuggest": "Ask us or suggest anyway we can improve",
   "submitMessage": "Submit Message",
-  "yourQuestionGotAnswered": "Your Question got answered"
+  "yourQuestionGotAnswered": "Your Question got answered",
+  "deliveryCost": "Delivery Cost"
 }

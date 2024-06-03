@@ -131,15 +131,16 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(locale.rideCost, style: theme.textTheme.bodyMedium),
-                                Text(r"$8.00", style: theme.textTheme.bodyMedium),
-                              ],
-                            ),
-                            const SizedBox(height: 8),
-                            const CustomDivider(),
+                            if (type == DeliveryType.delivery) ...[
+                              _buildRow("Delivering", "Documents"),
+                              _buildRow("Max. Weight", "3-5 kgs."),
+                              _buildRow("Delivery Type", "InstaDelivery (1-2 hrs)"),
+                            ],
+                            _buildRow(
+                                type == DeliveryType.delivery
+                                    ? locale.deliveryCost
+                                    : locale.rideCost,
+                                r"$8.00"),
                             Row(
                               children: [
                                 Text(locale.paymentMethod, style: theme.textTheme.bodyMedium),
@@ -148,8 +149,7 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                                 const SizedBox(width: 10),
                                 Text(
                                   locale.wallet,
-                                  style:
-                                      theme.textTheme.labelSmall?.copyWith(color: theme.hintColor),
+                                  style: theme.textTheme.bodyMedium,
                                 ),
                               ],
                             ),
@@ -178,6 +178,24 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
           },
         );
       },
+    );
+  }
+
+  Widget _buildRow(String leftText, String rightText) {
+    final theme = Theme.of(context);
+
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(leftText, style: theme.textTheme.bodyMedium),
+            Text(rightText, style: theme.textTheme.bodyMedium),
+          ],
+        ),
+        const SizedBox(height: 8),
+        const CustomDivider(),
+      ],
     );
   }
 }

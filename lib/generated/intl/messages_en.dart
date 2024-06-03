@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Cost for Service"),
         "dairy": MessageLookupByLibrary.simpleMessage("Dairy"),
         "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+        "deliveryCost": MessageLookupByLibrary.simpleMessage("Delivery Cost"),
         "deliveryIn": MessageLookupByLibrary.simpleMessage("Delivery in"),
         "deliveryInMins":
             MessageLookupByLibrary.simpleMessage("Delivery in 20 mins"),
