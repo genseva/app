@@ -18,7 +18,7 @@ class LanguagePage extends StatefulWidget {
 }
 
 class _LanguagePageState extends State<LanguagePage> {
-  late LanguageCubit _languageCubit;
+  late final LanguageCubit _languageCubit;
 
   String? _selectedLocale;
 
@@ -61,7 +61,6 @@ class _LanguagePageState extends State<LanguagePage> {
                   });
                 },
                 builder: (context, currentLocale) {
-                  _selectedLocale ??= currentLocale.languageCode;
                   return ListView.builder(
                     physics: const BouncingScrollPhysics(),
                     itemCount: AppConfig.languagesSupported.length,

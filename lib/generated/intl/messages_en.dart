@@ -22,191 +22,172 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "StoresFound":
-            MessageLookupByLibrary.simpleMessage("Tiendas encontradas"),
-        "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+        "StoresFound": MessageLookupByLibrary.simpleMessage("Stores Found"),
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
         "accountOptions":
-            MessageLookupByLibrary.simpleMessage("Opciones de cuenta"),
+            MessageLookupByLibrary.simpleMessage("Account Options"),
         "addADestination":
-            MessageLookupByLibrary.simpleMessage("Agregar un destino"),
+            MessageLookupByLibrary.simpleMessage("Add a destination"),
         "addInstructionToRestaurant": MessageLookupByLibrary.simpleMessage(
-            "Agregar instrucciones al restaurante"),
+            "Add instruction to restaurant"),
         "addNewAddress":
-            MessageLookupByLibrary.simpleMessage("Agregar nueva dirección"),
+            MessageLookupByLibrary.simpleMessage("Add New Address"),
         "allTransactions":
-            MessageLookupByLibrary.simpleMessage("Todas las transacciones"),
-        "amountToPay": MessageLookupByLibrary.simpleMessage("Monto a pagar"),
-        "applyCoupon": MessageLookupByLibrary.simpleMessage("Aplicar cupón"),
-        "bestRated": MessageLookupByLibrary.simpleMessage("Mejor valorado"),
-        "bookService":
-            MessageLookupByLibrary.simpleMessage("Servicio de reserva"),
-        "bookedFor": MessageLookupByLibrary.simpleMessage("Reservado para"),
-        "cabs": MessageLookupByLibrary.simpleMessage("TAXI"),
-        "cancelOrder": MessageLookupByLibrary.simpleMessage("Cancelar orden"),
+            MessageLookupByLibrary.simpleMessage("All Transactions"),
+        "amountToPay": MessageLookupByLibrary.simpleMessage("Amount to Pay"),
+        "applyCoupon": MessageLookupByLibrary.simpleMessage("Apply Coupon"),
+        "bestRated": MessageLookupByLibrary.simpleMessage("Best Rated"),
+        "bookService": MessageLookupByLibrary.simpleMessage("Book Service"),
+        "bookedFor": MessageLookupByLibrary.simpleMessage("Booked For"),
+        "cabs": MessageLookupByLibrary.simpleMessage("CABS"),
+        "cancelOrder": MessageLookupByLibrary.simpleMessage("Cancel Order"),
         "changeLanguage":
-            MessageLookupByLibrary.simpleMessage("Cambiar idioma"),
-        "chinese": MessageLookupByLibrary.simpleMessage("Chino"),
+            MessageLookupByLibrary.simpleMessage("Change Language"),
+        "chinese": MessageLookupByLibrary.simpleMessage("Chinese"),
         "chineseFoodsItalianFoods": MessageLookupByLibrary.simpleMessage(
-            "Comidas chinas, Comidas italianas"),
+            "Chinese Foods, Italian Foods"),
         "costForService":
-            MessageLookupByLibrary.simpleMessage("Costo del servicio"),
-        "dairy": MessageLookupByLibrary.simpleMessage("Lácteos"),
-        "delivered": MessageLookupByLibrary.simpleMessage("Entregado"),
-        "deliveryIn": MessageLookupByLibrary.simpleMessage("Entrega en"),
+            MessageLookupByLibrary.simpleMessage("Cost for Service"),
+        "dairy": MessageLookupByLibrary.simpleMessage("Dairy"),
+        "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+        "deliveryIn": MessageLookupByLibrary.simpleMessage("Delivery in"),
         "deliveryInMins":
-            MessageLookupByLibrary.simpleMessage("Entrega en 20 minutos"),
-        "dessert": MessageLookupByLibrary.simpleMessage("Postre"),
-        "emailAddress": MessageLookupByLibrary.simpleMessage(
-            "Dirección de correo electrónico"),
-        "enterEmailAddress": MessageLookupByLibrary.simpleMessage(
-            "Introducir la dirección de correo electrónico"),
-        "enterFullName": MessageLookupByLibrary.simpleMessage(
-            "Introduce el nombre completo"),
-        "enterOtp":
-            MessageLookupByLibrary.simpleMessage("Ingrese OTP de 4 dígitos"),
+            MessageLookupByLibrary.simpleMessage("Delivery in 20 mins"),
+        "dessert": MessageLookupByLibrary.simpleMessage("Dessert"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "enterEmailAddress":
+            MessageLookupByLibrary.simpleMessage("Enter email address"),
+        "enterFullName":
+            MessageLookupByLibrary.simpleMessage("Enter full name"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Enter 4 digit OTP"),
         "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Ingresa número telefónico"),
+            MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
         "enterVerificationCodeSent": MessageLookupByLibrary.simpleMessage(
-            "Ingrese el código de verificación enviado al número dado"),
-        "estimateCost": MessageLookupByLibrary.simpleMessage("Costo estimado"),
+            "Enter verification code sent on given number"),
+        "estimateCost": MessageLookupByLibrary.simpleMessage("Estimate Cost"),
         "everythingAboutYou":
-            MessageLookupByLibrary.simpleMessage("Todo sobre ti"),
-        "extraChargesMayApply": MessageLookupByLibrary.simpleMessage(
-            "Se pueden aplicar cargos adicionales"),
+            MessageLookupByLibrary.simpleMessage("Everything about you"),
+        "extraChargesMayApply":
+            MessageLookupByLibrary.simpleMessage("Extra Charges may apply"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
-        "fastDelivery": MessageLookupByLibrary.simpleMessage("Entrega rápida"),
+        "fastDelivery": MessageLookupByLibrary.simpleMessage("Fast Delivery"),
         "fastFoodBeverages":
-            MessageLookupByLibrary.simpleMessage("Comida Rápida, Bebidas"),
-        "fastFoods": MessageLookupByLibrary.simpleMessage("Comidas rápidas"),
-        "favorite": MessageLookupByLibrary.simpleMessage("Favorito"),
-        "food": MessageLookupByLibrary.simpleMessage("ALIMENTO"),
-        "foodNearMe":
-            MessageLookupByLibrary.simpleMessage("Comida cerca de mí"),
-        "foodOffers": MessageLookupByLibrary.simpleMessage("Ofertas de comida"),
-        "fruits": MessageLookupByLibrary.simpleMessage("frutas"),
-        "fullName": MessageLookupByLibrary.simpleMessage("Nombre completo"),
-        "getSupport": MessageLookupByLibrary.simpleMessage("Obtener apoyo"),
+            MessageLookupByLibrary.simpleMessage("Fast Food, Beverages"),
+        "fastFoods": MessageLookupByLibrary.simpleMessage("Fast Foods"),
+        "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
+        "food": MessageLookupByLibrary.simpleMessage("FOOD"),
+        "foodNearMe": MessageLookupByLibrary.simpleMessage("Food Near me"),
+        "foodOffers": MessageLookupByLibrary.simpleMessage("Food Offers"),
+        "fruits": MessageLookupByLibrary.simpleMessage("Fruits"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
-        "grocery":
-            MessageLookupByLibrary.simpleMessage("TIENDA DE COMESTIBLES"),
-        "groceryNearMe": MessageLookupByLibrary.simpleMessage(
-            "Tienda de comestibles cerca de mí"),
-        "groceryOffers":
-            MessageLookupByLibrary.simpleMessage("Ofertas de comestibles"),
-        "heyMate": MessageLookupByLibrary.simpleMessage("oye, amigo"),
-        "history": MessageLookupByLibrary.simpleMessage("Historia"),
-        "home": MessageLookupByLibrary.simpleMessage("Hogar"),
-        "jobCompleted":
-            MessageLookupByLibrary.simpleMessage("Trabajo completo"),
-        "jobDone": MessageLookupByLibrary.simpleMessage("Trabajo hecho"),
-        "km": MessageLookupByLibrary.simpleMessage("kilómetros"),
-        "logout": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
-        "medicine": MessageLookupByLibrary.simpleMessage("MEDICAMENTO"),
-        "minLeft": MessageLookupByLibrary.simpleMessage("minutos restantes"),
-        "myOrders": MessageLookupByLibrary.simpleMessage("Mis ordenes"),
-        "nearMe": MessageLookupByLibrary.simpleMessage("Cerca de mí"),
-        "next": MessageLookupByLibrary.simpleMessage("Próximo"),
-        "offers": MessageLookupByLibrary.simpleMessage("Ofertas"),
-        "ongoing": MessageLookupByLibrary.simpleMessage("En curso"),
-        "openingTiming":
-            MessageLookupByLibrary.simpleMessage("Horario de apertura"),
+        "grocery": MessageLookupByLibrary.simpleMessage("GROCERY"),
+        "groceryNearMe":
+            MessageLookupByLibrary.simpleMessage("Grocery Near Me"),
+        "groceryOffers": MessageLookupByLibrary.simpleMessage("Grocery Offers"),
+        "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
+        "history": MessageLookupByLibrary.simpleMessage("History"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "jobCompleted": MessageLookupByLibrary.simpleMessage("Job Completed"),
+        "jobDone": MessageLookupByLibrary.simpleMessage("Job Done"),
+        "km": MessageLookupByLibrary.simpleMessage("km"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "medicine": MessageLookupByLibrary.simpleMessage("MEDICINE"),
+        "minLeft": MessageLookupByLibrary.simpleMessage("min left"),
+        "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
+        "nearMe": MessageLookupByLibrary.simpleMessage("Near me"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "offers": MessageLookupByLibrary.simpleMessage("Offers"),
+        "ongoing": MessageLookupByLibrary.simpleMessage("Ongoing"),
+        "openingTiming": MessageLookupByLibrary.simpleMessage("Opening Timing"),
         "orContinueWith":
-            MessageLookupByLibrary.simpleMessage("O continuar con"),
-        "orderFoods": MessageLookupByLibrary.simpleMessage("Ordenar alimentos"),
-        "orderGrocery":
-            MessageLookupByLibrary.simpleMessage("ordenar comestibles"),
-        "orderMedicine":
-            MessageLookupByLibrary.simpleMessage("Ordenar medicina"),
-        "orders": MessageLookupByLibrary.simpleMessage("Pedidos"),
-        "parcel": MessageLookupByLibrary.simpleMessage("PARCELA"),
-        "payNow": MessageLookupByLibrary.simpleMessage("Pagar ahora"),
-        "paymentMethod": MessageLookupByLibrary.simpleMessage("Método de pago"),
+            MessageLookupByLibrary.simpleMessage("Or Continue with"),
+        "orderFoods": MessageLookupByLibrary.simpleMessage("Order Foods"),
+        "orderGrocery": MessageLookupByLibrary.simpleMessage("Order Grocery"),
+        "orderMedicine": MessageLookupByLibrary.simpleMessage("Order Medicine"),
+        "orders": MessageLookupByLibrary.simpleMessage("Orders"),
+        "parcel": MessageLookupByLibrary.simpleMessage("PARCEL"),
+        "payNow": MessageLookupByLibrary.simpleMessage("Pay Now"),
+        "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method"),
         "paymentOptions":
-            MessageLookupByLibrary.simpleMessage("Opciones de pago"),
-        "personalCare":
-            MessageLookupByLibrary.simpleMessage("Cuidado personal"),
-        "pharmaStoreNearMe": MessageLookupByLibrary.simpleMessage(
-            "Tienda farmacéutica cerca de mí"),
-        "phoneNumber":
-            MessageLookupByLibrary.simpleMessage("Número de teléfono"),
-        "portfolio": MessageLookupByLibrary.simpleMessage("portafolio"),
-        "priceRange": MessageLookupByLibrary.simpleMessage("Rango de precios"),
-        "proceedToPay": MessageLookupByLibrary.simpleMessage("Proceda a pagar"),
-        "profile": MessageLookupByLibrary.simpleMessage("Perfil"),
+            MessageLookupByLibrary.simpleMessage("Payment Options"),
+        "personalCare": MessageLookupByLibrary.simpleMessage("Personal Care"),
+        "pharmaStoreNearMe":
+            MessageLookupByLibrary.simpleMessage("Pharma Store near me"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "portfolio": MessageLookupByLibrary.simpleMessage("Portfolio"),
+        "priceRange": MessageLookupByLibrary.simpleMessage("Price Range"),
+        "proceedToPay": MessageLookupByLibrary.simpleMessage("Proceed to Pay"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "providersNearMe":
-            MessageLookupByLibrary.simpleMessage("Proveedores cerca de mí"),
+            MessageLookupByLibrary.simpleMessage("Providers near me"),
         "recentSearches":
-            MessageLookupByLibrary.simpleMessage("Búsquedas recientes"),
-        "resend": MessageLookupByLibrary.simpleMessage("REENVIAR"),
+            MessageLookupByLibrary.simpleMessage("Recent Searches"),
+        "resend": MessageLookupByLibrary.simpleMessage("RESEND"),
         "restaurantsFound":
-            MessageLookupByLibrary.simpleMessage("Restaurantes encontrados"),
-        "reviews": MessageLookupByLibrary.simpleMessage("Reseñas"),
-        "ride": MessageLookupByLibrary.simpleMessage("CONDUCIR"),
-        "rideCost": MessageLookupByLibrary.simpleMessage("Costo del viaje"),
-        "saveExtraWhileOrdering": MessageLookupByLibrary.simpleMessage(
-            "Ahorre más al realizar el pedido"),
+            MessageLookupByLibrary.simpleMessage("Restaurants found"),
+        "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "ride": MessageLookupByLibrary.simpleMessage("RIDE"),
+        "rideCost": MessageLookupByLibrary.simpleMessage("Ride Cost"),
+        "saveExtraWhileOrdering":
+            MessageLookupByLibrary.simpleMessage("Save extra while ordering"),
         "savedAddresses":
-            MessageLookupByLibrary.simpleMessage("Direcciones guardadas"),
+            MessageLookupByLibrary.simpleMessage("Saved Addresses"),
         "savedLocations":
-            MessageLookupByLibrary.simpleMessage("Ubicaciones guardadas"),
-        "seaFood": MessageLookupByLibrary.simpleMessage("Mariscos"),
+            MessageLookupByLibrary.simpleMessage("Saved Locations"),
+        "seaFood": MessageLookupByLibrary.simpleMessage("Sea Food"),
         "searchDeliveryLocation":
-            MessageLookupByLibrary.simpleMessage("Buscar ubicación de entrega"),
+            MessageLookupByLibrary.simpleMessage("Search delivery location"),
         "searchForADestination":
-            MessageLookupByLibrary.simpleMessage("Buscar un destino"),
+            MessageLookupByLibrary.simpleMessage("Search for a destination"),
         "searchForDestination":
-            MessageLookupByLibrary.simpleMessage("buscar destino"),
+            MessageLookupByLibrary.simpleMessage("Search for destination"),
         "searchItemOrStore":
-            MessageLookupByLibrary.simpleMessage("Buscar artículo o tienda"),
+            MessageLookupByLibrary.simpleMessage("Search item or store"),
         "searchLocation":
-            MessageLookupByLibrary.simpleMessage("Buscar ubicación"),
+            MessageLookupByLibrary.simpleMessage("Search Location"),
         "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
-            "Buscar tienda de medicamentos o farmacia"),
+            "Search Medicine or pharma store"),
         "searchProducts":
-            MessageLookupByLibrary.simpleMessage("Buscar Productos"),
-        "seeAll": MessageLookupByLibrary.simpleMessage("Ver todo"),
-        "selectDate": MessageLookupByLibrary.simpleMessage("Seleccione fecha"),
+            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "seeAll": MessageLookupByLibrary.simpleMessage("See all"),
+        "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
         "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Seleccione el idioma"),
-        "selectOnMap":
-            MessageLookupByLibrary.simpleMessage("Seleccionar en el mapa"),
-        "selectSize":
-            MessageLookupByLibrary.simpleMessage("Selecciona el tamaño"),
-        "sendRequest": MessageLookupByLibrary.simpleMessage("Enviar petición"),
-        "service": MessageLookupByLibrary.simpleMessage("SERVICIO"),
+            MessageLookupByLibrary.simpleMessage("Select Language"),
+        "selectOnMap": MessageLookupByLibrary.simpleMessage("Select on map"),
+        "selectSize": MessageLookupByLibrary.simpleMessage("Select Size"),
+        "sendRequest": MessageLookupByLibrary.simpleMessage("Send Request"),
+        "service": MessageLookupByLibrary.simpleMessage("SERVICE"),
         "serviceAddress":
-            MessageLookupByLibrary.simpleMessage("Dirección de Servicio"),
-        "services": MessageLookupByLibrary.simpleMessage("Servicios"),
-        "shop": MessageLookupByLibrary.simpleMessage("COMERCIO"),
-        "signInNow": MessageLookupByLibrary.simpleMessage("Regístrate"),
-        "signUpNow": MessageLookupByLibrary.simpleMessage("Regístrate ahora"),
-        "startShopping":
-            MessageLookupByLibrary.simpleMessage("Empieza a comprar"),
-        "submit": MessageLookupByLibrary.simpleMessage("Entregar"),
-        "supportFaqs": MessageLookupByLibrary.simpleMessage(
-            "Soporte y preguntas frecuentes"),
+            MessageLookupByLibrary.simpleMessage("Service Address"),
+        "services": MessageLookupByLibrary.simpleMessage("Services"),
+        "shop": MessageLookupByLibrary.simpleMessage("SHOP"),
+        "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now"),
+        "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
+        "startShopping": MessageLookupByLibrary.simpleMessage("Start Shopping"),
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "supportFaqs": MessageLookupByLibrary.simpleMessage("Support & FAQs"),
         "termsConditions":
-            MessageLookupByLibrary.simpleMessage("Términos y condiciones"),
-        "topUps": MessageLookupByLibrary.simpleMessage("Recargas"),
-        "tripCompleted":
-            MessageLookupByLibrary.simpleMessage("Viaje completado"),
-        "tripDetails":
-            MessageLookupByLibrary.simpleMessage("Detalles del viaje"),
-        "update": MessageLookupByLibrary.simpleMessage("Actualizar"),
-        "vegOnly": MessageLookupByLibrary.simpleMessage("Sólo verduras"),
-        "vegetable": MessageLookupByLibrary.simpleMessage("Verdura"),
-        "verification": MessageLookupByLibrary.simpleMessage("Verificación"),
-        "viewCart": MessageLookupByLibrary.simpleMessage("Ver carrito"),
+            MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
+        "topUps": MessageLookupByLibrary.simpleMessage("Top Ups"),
+        "tripCompleted": MessageLookupByLibrary.simpleMessage("Trip Completed"),
+        "tripDetails": MessageLookupByLibrary.simpleMessage("Trip Details"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
+        "vegOnly": MessageLookupByLibrary.simpleMessage("Veg Only"),
+        "vegetable": MessageLookupByLibrary.simpleMessage("Vegetable"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verification"),
+        "viewCart": MessageLookupByLibrary.simpleMessage("View Cart"),
         "viewDetailedBill":
-            MessageLookupByLibrary.simpleMessage("Ver factura detallada"),
-        "wallet": MessageLookupByLibrary.simpleMessage("Billetera"),
-        "whatAreYouLookingFor":
-            MessageLookupByLibrary.simpleMessage("¿Qué estás buscando hoy?"),
+            MessageLookupByLibrary.simpleMessage("View detailed bill"),
+        "wallet": MessageLookupByLibrary.simpleMessage("Wallet"),
+        "whatAreYouLookingFor": MessageLookupByLibrary.simpleMessage(
+            "What are you looking for today?"),
         "whereToDeliver":
-            MessageLookupByLibrary.simpleMessage("¿Dónde entregar?"),
-        "whereToGo": MessageLookupByLibrary.simpleMessage("¿Dónde ir?"),
+            MessageLookupByLibrary.simpleMessage("Where to deliver?"),
+        "whereToGo": MessageLookupByLibrary.simpleMessage("Where to go?"),
         "youAreNotRegistered":
-            MessageLookupByLibrary.simpleMessage("Aún no estás registrado"),
-        "yourLocation": MessageLookupByLibrary.simpleMessage("Tu ubicación")
+            MessageLookupByLibrary.simpleMessage("You\'re not registered yet"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Your location")
       };
 }
