@@ -1,9 +1,9 @@
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/features/service/ui/widgets/select_date_list.dart';
 import 'package:deligo/features/service/ui/widgets/select_time_list.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class SelectServiceDate extends StatefulWidget {
   const SelectServiceDate({super.key, this.isSheet = true});
@@ -15,12 +15,10 @@ class SelectServiceDate extends StatefulWidget {
 }
 
 class _SelectServiceDateState extends State<SelectServiceDate> {
-
-
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    var locale = AppLocalizations.of(context);
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -44,7 +42,7 @@ class _SelectServiceDateState extends State<SelectServiceDate> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                           child: Text(
-                            "Select Date",
+                            locale.selectDate,
                             style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
                           ),
                         ),
@@ -71,7 +69,7 @@ class _SelectServiceDateState extends State<SelectServiceDate> {
                     Icon(Icons.calendar_month_outlined, color: theme.primaryColor, size: 15),
                     const SizedBox(width: 8),
                     Text(
-                      "Select Date",
+                      locale.selectDate,
                       style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
                     ),
                   ],
@@ -88,7 +86,7 @@ class _SelectServiceDateState extends State<SelectServiceDate> {
           CustomButton(
             prefixIcon: Icons.assignment_turned_in_outlined,
             prefixIconColor: theme.scaffoldBackgroundColor,
-            text: "Send Request",
+            text: locale.sendRequest,
             onTap: () => Navigator.pushNamed(context, PageRoutes.serviceRequestScreen),
           )
         ],

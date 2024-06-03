@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -27,7 +26,9 @@ class AppLocalizations {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<AppLocalizations> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -718,6 +719,346 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Send Request`
+  String get sendRequest {
+    return Intl.message(
+      'Send Request',
+      name: 'sendRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Date`
+  String get selectDate {
+    return Intl.message(
+      'Select Date',
+      name: 'selectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price Range`
+  String get priceRange {
+    return Intl.message(
+      'Price Range',
+      name: 'priceRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Job Done`
+  String get jobDone {
+    return Intl.message(
+      'Job Done',
+      name: 'jobDone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Services`
+  String get services {
+    return Intl.message(
+      'Services',
+      name: 'services',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Portfolio`
+  String get portfolio {
+    return Intl.message(
+      'Portfolio',
+      name: 'portfolio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message(
+      'Reviews',
+      name: 'reviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Size`
+  String get selectSize {
+    return Intl.message(
+      'Select Size',
+      name: 'selectSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your location`
+  String get yourLocation {
+    return Intl.message(
+      'Your location',
+      name: 'yourLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for a destination`
+  String get searchForADestination {
+    return Intl.message(
+      'Search for a destination',
+      name: 'searchForADestination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search delivery location`
+  String get searchDeliveryLocation {
+    return Intl.message(
+      'Search delivery location',
+      name: 'searchDeliveryLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select on map`
+  String get selectOnMap {
+    return Intl.message(
+      'Select on map',
+      name: 'selectOnMap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for destination`
+  String get searchForDestination {
+    return Intl.message(
+      'Search for destination',
+      name: 'searchForDestination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a destination`
+  String get addADestination {
+    return Intl.message(
+      'Add a destination',
+      name: 'addADestination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved Locations`
+  String get savedLocations {
+    return Intl.message(
+      'Saved Locations',
+      name: 'savedLocations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent Searches`
+  String get recentSearches {
+    return Intl.message(
+      'Recent Searches',
+      name: 'recentSearches',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pharma Store near me`
+  String get pharmaStoreNearMe {
+    return Intl.message(
+      'Pharma Store near me',
+      name: 'pharmaStoreNearMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved Addresses`
+  String get savedAddresses {
+    return Intl.message(
+      'Saved Addresses',
+      name: 'savedAddresses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support & FAQs`
+  String get supportFaqs {
+    return Intl.message(
+      'Support & FAQs',
+      name: 'supportFaqs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms & Conditions`
+  String get termsConditions {
+    return Intl.message(
+      'Terms & Conditions',
+      name: 'termsConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account Options`
+  String get accountOptions {
+    return Intl.message(
+      'Account Options',
+      name: 'accountOptions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search Location`
+  String get searchLocation {
+    return Intl.message(
+      'Search Location',
+      name: 'searchLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Address`
+  String get addNewAddress {
+    return Intl.message(
+      'Add New Address',
+      name: 'addNewAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Everything about you`
+  String get everythingAboutYou {
+    return Intl.message(
+      'Everything about you',
+      name: 'everythingAboutYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Food Offers`
+  String get foodOffers {
+    return Intl.message(
+      'Food Offers',
+      name: 'foodOffers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Grocery Offers`
+  String get groceryOffers {
+    return Intl.message(
+      'Grocery Offers',
+      name: 'groceryOffers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get delivered {
+    return Intl.message(
+      'Delivered',
+      name: 'delivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ongoing`
+  String get ongoing {
+    return Intl.message(
+      'Ongoing',
+      name: 'ongoing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message(
+      'History',
+      name: 'history',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -741,10 +1082,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
 
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
-
   @override
   Future<AppLocalizations> load(Locale locale) => AppLocalizations.load(locale);
-
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

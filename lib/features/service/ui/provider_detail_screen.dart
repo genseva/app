@@ -4,6 +4,7 @@ import 'package:deligo/features/service/ui/widgets/portfolio_tab.dart';
 import 'package:deligo/features/service/ui/widgets/reviews_tab.dart';
 import 'package:deligo/features/service/ui/widgets/select_service_date.dart';
 import 'package:deligo/features/service/ui/widgets/services_tab.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProviderDetailScreen extends StatelessWidget {
@@ -13,6 +14,7 @@ class ProviderDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = ModalRoute.of(context)?.settings.arguments as StoreDomain;
     final theme = Theme.of(context);
+    var locale = AppLocalizations.of(context);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -62,8 +64,8 @@ class ProviderDetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomInfoWidget(Icons.star, "120+ ratings", "4.2"),
-                  CustomInfoWidget(Icons.work_history_outlined, "Job Done", "148"),
-                  CustomInfoWidget(Icons.payments, "Price Range", r"$20.00/hr"),
+                  CustomInfoWidget(Icons.work_history_outlined, locale.jobDone, "148"),
+                  CustomInfoWidget(Icons.payments, locale.priceRange, r"$20.00/hr"),
                 ],
               ),
             ),
@@ -78,10 +80,10 @@ class ProviderDetailScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: TabBar(
-                            tabs: const [
-                              Tab(text: "Services"),
-                              Tab(text: "Portfolio"),
-                              Tab(text: "Reviews"),
+                            tabs: [
+                              Tab(text: locale.services),
+                              Tab(text: locale.portfolio),
+                              Tab(text: locale.reviews),
                             ],
                             indicatorColor: theme.primaryColor,
                             labelColor: theme.primaryColor,

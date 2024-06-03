@@ -30,7 +30,7 @@ class OrderMedicinePage extends StatelessWidget {
             ),
             Flexible(
               child: CategoryList(
-                storeListTitle: "Pharma Store near me",
+                storeListTitle: locale.pharmaStoreNearMe,
                 stores: StoreDomain.medicineList,
                 categories: CategoryDomain.medicineList,
                 routesName: PageRoutes.medicineStorePage,

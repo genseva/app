@@ -2,6 +2,7 @@ import 'package:deligo/components/add_button.dart';
 import 'package:deligo/components/rating_card.dart';
 import 'package:deligo/features/common/model/product_domain.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProductInfoPage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
     ];
     var theme = Theme.of(context);
     ProductDomain product = ModalRoute.of(context)?.settings.arguments as ProductDomain;
+    var locale = AppLocalizations.of(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -103,7 +105,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        "Select Size",
+                        locale.selectSize,
                         style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
                       ),
                       const SizedBox(height: 16),
@@ -137,7 +139,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        "Select Size",
+                        locale.selectSize,
                         style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
                       ),
                       const SizedBox(height: 16),

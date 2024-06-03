@@ -54,7 +54,7 @@ class _LoginUIState extends State<LoginUI> {
                 CustomTextField(
                   textEditingController: _numberController,
                   hintText: locale.enterPhoneNumber,
-                  title: 'Phone Number',
+                  title: locale.phoneNumber,
                   textInputType: TextInputType.phone,
                 ),
                 const SizedBox(height: 32),

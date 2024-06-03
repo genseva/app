@@ -1,6 +1,7 @@
 import 'package:deligo/components/custom_button.dart';
 import 'package:deligo/components/option_tile.dart';
 import 'package:deligo/features/account/model/address.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,8 @@ class SavedAddressesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    var locale = AppLocalizations.of(context);
+
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -19,7 +22,7 @@ class SavedAddressesPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Saved Addresses",
+                locale.savedAddresses,
                 style: theme.textTheme.headlineSmall,
               ),
               const SizedBox(height: 20),
@@ -44,7 +47,7 @@ class SavedAddressesPage extends StatelessWidget {
               CustomButton(
                 prefixIcon: Icons.add,
                 prefixIconColor: theme.scaffoldBackgroundColor,
-                text: "Add New Address",
+                text: locale.addNewAddress,
                 onTap: () => Navigator.pushNamed(context, PageRoutes.addNewAddressesPage),
               ),
               const SizedBox(height: 20),

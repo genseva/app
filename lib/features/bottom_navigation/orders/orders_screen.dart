@@ -1,5 +1,6 @@
 import 'package:deligo/features/bottom_navigation/orders/ongoing_order_list.dart';
 import 'package:deligo/features/bottom_navigation/orders/order_history_list.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    final locale = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: theme.scaffoldBackgroundColor,
@@ -54,9 +56,9 @@ class OrdersScreen extends StatelessWidget {
                       tabAlignment: TabAlignment.start,
                       isScrollable: true,
                       dividerHeight: 0,
-                      tabs: const [
-                        Tab(text: "Ongoing"),
-                        Tab(text: "History"),
+                      tabs:  [
+                        Tab(text: locale.ongoing),
+                        Tab(text: locale.history),
                       ],
                     ),
                   ),

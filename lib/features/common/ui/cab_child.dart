@@ -3,6 +3,7 @@ import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/account/model/address.dart';
 import 'package:deligo/features/common/model/delivery_type.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,8 @@ class CabChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    var locale = AppLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
@@ -45,11 +48,11 @@ class CabChild extends StatelessWidget {
                               onTap: () => Navigator.pushNamed(
                                 context,
                                 PageRoutes.whereToPage,
-                                arguments: (type, "Your location"),
+                                arguments: (type, locale.yourLocation),
                               ),
                               bgColor: Colors.transparent,
                               showBorder: false,
-                              hintText: "Your location",
+                              hintText: locale.yourLocation,
                             ),
                           ),
                         ],
@@ -77,15 +80,15 @@ class CabChild extends StatelessWidget {
                               arguments: (
                                 type,
                                 type != DeliveryType.delivery
-                                    ? "Search for a destination"
-                                    : "Search delivery location"
+                                    ? locale.searchForADestination
+                                    : locale.searchDeliveryLocation
                               ),
                             ),
                             bgColor: Colors.transparent,
                             showBorder: false,
                             hintText: type != DeliveryType.delivery
-                                ? "Search for a destination"
-                                : "Search delivery location",
+                                ? locale.searchForADestination
+                                : locale.searchDeliveryLocation,
                           ),
                         ),
                       ],
@@ -105,7 +108,7 @@ class CabChild extends StatelessWidget {
                       buttonColor: theme.scaffoldBackgroundColor,
                       prefixIcon: Icons.pin_drop,
                       prefixIconColor: theme.primaryColor,
-                      text: "Select on map",
+                      text: locale.selectOnMap,
                       textColor: theme.hintColor,
                       textStyle: theme.textTheme.bodyMedium,
                     ),
@@ -116,12 +119,12 @@ class CabChild extends StatelessWidget {
                       child: CustomButton(
                         onTap: () {
                           Navigator.pushNamed(context, PageRoutes.whereToPage,
-                              arguments: (type, "Search for destination"));
+                              arguments: (type, locale.searchForDestination));
                         },
                         buttonColor: theme.scaffoldBackgroundColor,
                         prefixIcon: Icons.add_circle,
                         prefixIconColor: Colors.yellow.shade700,
-                        text: "Add a destination",
+                        text: locale.addADestination,
                         textColor: theme.hintColor,
                         textStyle: theme.textTheme.bodyMedium,
                       ),
@@ -141,12 +144,12 @@ class CabChild extends StatelessWidget {
               padding: EdgeInsets.zero,
               children: [
                 Text(
-                  "Saved Locations",
+                  locale.savedLocations,
                   style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
                 ),
                 _addressList(AddressDomain.list, theme),
                 Text(
-                  "Recent Searches",
+                  locale.recentSearches,
                   style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
                 ),
                 _addressList(AddressDomain.recentSearches, theme),

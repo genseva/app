@@ -21,22 +21,27 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'tr';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Dili değiştir"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("E-posta Adresi"),
         "enterFullName": MessageLookupByLibrary.simpleMessage("Tam Adı Girin"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("OTP\'yi girin"),
-        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Telefon Numarasını Girin"),
+        "enterPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Telefon Numarasını Girin"),
         "fullName": MessageLookupByLibrary.simpleMessage("Ad Soyad"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
+        "logout": MessageLookupByLibrary.simpleMessage("Çıkış Yap"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefon numarası"),
-        "searchMedicineOrPharmaStore":
-            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
-        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
+        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
+            "Search Medicine or pharma store"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Dil Seçin"),
         "submit": MessageLookupByLibrary.simpleMessage("Göndermek"),
-        "verification": MessageLookupByLibrary.simpleMessage("Doğrulama")
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("şartlar ve koşullar"),
+        "verification": MessageLookupByLibrary.simpleMessage("Doğrulama"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Konumunuz")
       };
 }

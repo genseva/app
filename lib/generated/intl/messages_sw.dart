@@ -21,22 +21,29 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'sw';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changeLanguage": MessageLookupByLibrary.simpleMessage("Badilisha Lugha"),
+        "changeLanguage":
+            MessageLookupByLibrary.simpleMessage("Badilisha Lugha"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Barua pepe"),
-        "enterFullName": MessageLookupByLibrary.simpleMessage("Ingiza Jina Kamili"),
+        "enterFullName":
+            MessageLookupByLibrary.simpleMessage("Ingiza Jina Kamili"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Ingiza OTP"),
-        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Weka Nambari ya Simu"),
+        "enterPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Weka Nambari ya Simu"),
         "fullName": MessageLookupByLibrary.simpleMessage("Jina kamili"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
+        "logout": MessageLookupByLibrary.simpleMessage("Ondoka"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nambari ya simu"),
-        "searchMedicineOrPharmaStore":
-            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
-        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
+        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
+            "Search Medicine or pharma store"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chagua Lugha"),
         "submit": MessageLookupByLibrary.simpleMessage("Wasilisha"),
-        "verification": MessageLookupByLibrary.simpleMessage("Uthibitishaji")
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("Sheria na Masharti"),
+        "verification": MessageLookupByLibrary.simpleMessage("Uthibitishaji"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Eneo lako")
       };
 }

@@ -29,7 +29,7 @@ class OffersScreen extends StatelessWidget {
         backgroundColor: theme.scaffoldBackgroundColor,
         toolbarHeight: kTextTabBarHeight + 20,
         title: Text(
-          "Offers",
+          locale.offers,
           style: theme.textTheme.headlineLarge?.copyWith(fontSize: 24, fontWeight: FontWeight.w600),
         ),
         actions: [
@@ -84,9 +84,9 @@ class OffersScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 12),
                 CustomFilters(filters: filters),
-                _buildTitleRow(theme, "Food Offers", locale.seeAll),
+                _buildTitleRow(theme, locale.foodOffers, locale.seeAll),
                 _buildOfferList(theme, OfferDomain.list.sublist(0, 2)),
-                _buildTitleRow(theme, "Grocery Offers", locale.seeAll),
+                _buildTitleRow(theme, locale.groceryOffers, locale.seeAll),
                 _buildOfferList(theme, OfferDomain.list.sublist(2, OfferDomain.list.length)),
               ],
             ),

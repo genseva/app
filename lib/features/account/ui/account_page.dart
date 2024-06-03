@@ -1,5 +1,6 @@
 import 'package:deligo/components/option_tile.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
@@ -10,36 +11,38 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    var locale = AppLocalizations.of(context);
+
     final List<(IconData, String, VoidCallback?)> options = [
       (
         Icons.location_on,
-        "Saved Addresses",
+        locale.savedAddresses,
         () => Navigator.pushNamed(context, PageRoutes.savedAddressesPage),
       ),
       (
         Icons.mail,
-        "Support & FAQs",
+        locale.supportFaqs,
         () => Navigator.pushNamed(context, PageRoutes.supportPage),
       ),
       (
         Icons.language,
-        "Change Language",
+        locale.changeLanguage,
         () => Navigator.pushNamed(context, PageRoutes.languagePage),
       ),
       (
         Icons.assignment,
-        "Terms & Conditions",
+        locale.termsConditions,
         () => Navigator.pushNamed(context, PageRoutes.tncPage),
       ),
       (
         Icons.logout,
-        "Logout",
+        locale.logout,
         () => Phoenix.rebirth(context),
       ),
     ];
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Account"),
+        title:   Text(locale.account),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -144,7 +147,7 @@ class AccountPage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              "Account Options",
+              locale.accountOptions,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.unselectedWidgetColor,
                 fontWeight: FontWeight.bold,

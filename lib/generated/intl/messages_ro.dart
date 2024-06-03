@@ -21,22 +21,31 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ro';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changeLanguage": MessageLookupByLibrary.simpleMessage("Schimbați limba"),
-        "emailAddress": MessageLookupByLibrary.simpleMessage("Adresa de e-mail"),
-        "enterFullName": MessageLookupByLibrary.simpleMessage("Introduceți numele complet"),
+        "changeLanguage":
+            MessageLookupByLibrary.simpleMessage("Schimbați limba"),
+        "emailAddress":
+            MessageLookupByLibrary.simpleMessage("Adresa de e-mail"),
+        "enterFullName":
+            MessageLookupByLibrary.simpleMessage("Introduceți numele complet"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Introduceți OTP"),
-        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Introduceti numarul de telefon"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+            "Introduceti numarul de telefon"),
         "fullName": MessageLookupByLibrary.simpleMessage("Numele complet"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
+        "logout": MessageLookupByLibrary.simpleMessage("Deconectare"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Număr de telefon"),
-        "searchMedicineOrPharmaStore":
-            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
-        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
-        "selectLanguage": MessageLookupByLibrary.simpleMessage("Selecteaza limba"),
+        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
+            "Search Medicine or pharma store"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Selecteaza limba"),
         "submit": MessageLookupByLibrary.simpleMessage("Trimite"),
-        "verification": MessageLookupByLibrary.simpleMessage("Verificare")
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("termeni si conditii"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verificare"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Locația ta")
       };
 }

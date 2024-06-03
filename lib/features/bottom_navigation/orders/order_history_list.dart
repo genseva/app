@@ -1,5 +1,6 @@
 import 'package:deligo/components/custom_divider.dart';
 import 'package:deligo/features/wallet/model/transaction_domain.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class OrderHistoryList extends StatelessWidget {
@@ -8,6 +9,7 @@ class OrderHistoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    final locale = AppLocalizations.of(context);
     return ListView.separated(
         padding: const EdgeInsets.symmetric(vertical: 10),
         itemBuilder: (context, index) {
@@ -33,7 +35,7 @@ class OrderHistoryList extends StatelessWidget {
                   ),
                   title: Text(transaction.title),
                   subtitle: Text(
-                    "Delivered",
+                    locale.delivered,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: theme.hintColor,
                     ),

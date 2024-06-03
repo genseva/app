@@ -21,23 +21,30 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changeLanguage": MessageLookupByLibrary.simpleMessage("Sprache ändern"),
+        "changeLanguage":
+            MessageLookupByLibrary.simpleMessage("Sprache ändern"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("E-Mail-Addresse"),
-        "enterFullName":
-            MessageLookupByLibrary.simpleMessage("Geben Sie den vollständigen Namen ein"),
+        "enterFullName": MessageLookupByLibrary.simpleMessage(
+            "Geben Sie den vollständigen Namen ein"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("OTP eingeben"),
-        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Telefonnummer eingeben"),
+        "enterPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Telefonnummer eingeben"),
         "fullName": MessageLookupByLibrary.simpleMessage("Vollständiger Name"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
+        "logout": MessageLookupByLibrary.simpleMessage("Ausloggen"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefonnummer"),
-        "searchMedicineOrPharmaStore":
-            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
-        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
-        "selectLanguage": MessageLookupByLibrary.simpleMessage("Sprache auswählen"),
+        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
+            "Search Medicine or pharma store"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Sprache auswählen"),
         "submit": MessageLookupByLibrary.simpleMessage("Einreichen"),
-        "verification": MessageLookupByLibrary.simpleMessage("Überprüfung")
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("Terms & amp; Bedingungen"),
+        "verification": MessageLookupByLibrary.simpleMessage("Überprüfung"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Ihr Standort")
       };
 }

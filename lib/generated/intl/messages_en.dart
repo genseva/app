@@ -21,78 +21,139 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "StoresFound": MessageLookupByLibrary.simpleMessage("Stores Found"),
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "accountOptions":
+            MessageLookupByLibrary.simpleMessage("Account Options"),
+        "addADestination":
+            MessageLookupByLibrary.simpleMessage("Add a destination"),
+        "addNewAddress":
+            MessageLookupByLibrary.simpleMessage("Add New Address"),
         "bestRated": MessageLookupByLibrary.simpleMessage("Best Rated"),
         "bookService": MessageLookupByLibrary.simpleMessage("Book Service"),
         "cabs": MessageLookupByLibrary.simpleMessage("CABS"),
-        "changeLanguage": MessageLookupByLibrary.simpleMessage("Change Language"),
+        "changeLanguage":
+            MessageLookupByLibrary.simpleMessage("Change Language"),
         "chinese": MessageLookupByLibrary.simpleMessage("Chinese"),
-        "chineseFoodsItalianFoods":
-            MessageLookupByLibrary.simpleMessage("Chinese Foods, Italian Foods"),
+        "chineseFoodsItalianFoods": MessageLookupByLibrary.simpleMessage(
+            "Chinese Foods, Italian Foods"),
         "dairy": MessageLookupByLibrary.simpleMessage("Dairy"),
-        "deliveryInMins": MessageLookupByLibrary.simpleMessage("Delivery in 20 mins"),
+        "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+        "deliveryInMins":
+            MessageLookupByLibrary.simpleMessage("Delivery in 20 mins"),
         "dessert": MessageLookupByLibrary.simpleMessage("Dessert"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
-        "enterEmailAddress": MessageLookupByLibrary.simpleMessage("Enter email address"),
-        "enterFullName": MessageLookupByLibrary.simpleMessage("Enter full name"),
+        "enterEmailAddress":
+            MessageLookupByLibrary.simpleMessage("Enter email address"),
+        "enterFullName":
+            MessageLookupByLibrary.simpleMessage("Enter full name"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Enter 4 digit OTP"),
-        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
-        "enterVerificationCodeSent":
-            MessageLookupByLibrary.simpleMessage("Enter verification code sent on given number"),
+        "enterPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Enter Phone Number"),
+        "enterVerificationCodeSent": MessageLookupByLibrary.simpleMessage(
+            "Enter verification code sent on given number"),
+        "everythingAboutYou":
+            MessageLookupByLibrary.simpleMessage("Everything about you"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "fastDelivery": MessageLookupByLibrary.simpleMessage("Fast Delivery"),
-        "fastFoodBeverages": MessageLookupByLibrary.simpleMessage("Fast Food, Beverages"),
+        "fastFoodBeverages":
+            MessageLookupByLibrary.simpleMessage("Fast Food, Beverages"),
         "fastFoods": MessageLookupByLibrary.simpleMessage("Fast Foods"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "food": MessageLookupByLibrary.simpleMessage("FOOD"),
         "foodNearMe": MessageLookupByLibrary.simpleMessage("Food Near me"),
+        "foodOffers": MessageLookupByLibrary.simpleMessage("Food Offers"),
         "fruits": MessageLookupByLibrary.simpleMessage("Fruits"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "grocery": MessageLookupByLibrary.simpleMessage("GROCERY"),
-        "groceryNearMe": MessageLookupByLibrary.simpleMessage("Grocery Near Me"),
+        "groceryNearMe":
+            MessageLookupByLibrary.simpleMessage("Grocery Near Me"),
+        "groceryOffers": MessageLookupByLibrary.simpleMessage("Grocery Offers"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Hey mate"),
+        "history": MessageLookupByLibrary.simpleMessage("History"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "jobDone": MessageLookupByLibrary.simpleMessage("Job Done"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "medicine": MessageLookupByLibrary.simpleMessage("MEDICINE"),
         "minLeft": MessageLookupByLibrary.simpleMessage("min left"),
         "nearMe": MessageLookupByLibrary.simpleMessage("Near me"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
         "offers": MessageLookupByLibrary.simpleMessage("Offers"),
-        "orContinueWith": MessageLookupByLibrary.simpleMessage("Or Continue with"),
+        "ongoing": MessageLookupByLibrary.simpleMessage("Ongoing"),
+        "orContinueWith":
+            MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "orderFoods": MessageLookupByLibrary.simpleMessage("Order Foods"),
         "orderGrocery": MessageLookupByLibrary.simpleMessage("Order Grocery"),
         "orderMedicine": MessageLookupByLibrary.simpleMessage("Order Medicine"),
         "orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "parcel": MessageLookupByLibrary.simpleMessage("PARCEL"),
         "personalCare": MessageLookupByLibrary.simpleMessage("Personal Care"),
+        "pharmaStoreNearMe":
+            MessageLookupByLibrary.simpleMessage("Pharma Store near me"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "portfolio": MessageLookupByLibrary.simpleMessage("Portfolio"),
+        "priceRange": MessageLookupByLibrary.simpleMessage("Price Range"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "recentSearches":
+            MessageLookupByLibrary.simpleMessage("Recent Searches"),
         "resend": MessageLookupByLibrary.simpleMessage("RESEND"),
-        "restaurantsFound": MessageLookupByLibrary.simpleMessage("Restaurants found"),
+        "restaurantsFound":
+            MessageLookupByLibrary.simpleMessage("Restaurants found"),
+        "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "ride": MessageLookupByLibrary.simpleMessage("RIDE"),
-        "saveExtraWhileOrdering": MessageLookupByLibrary.simpleMessage("Save extra while ordering"),
+        "saveExtraWhileOrdering":
+            MessageLookupByLibrary.simpleMessage("Save extra while ordering"),
+        "savedAddresses":
+            MessageLookupByLibrary.simpleMessage("Saved Addresses"),
+        "savedLocations":
+            MessageLookupByLibrary.simpleMessage("Saved Locations"),
         "seaFood": MessageLookupByLibrary.simpleMessage("Sea Food"),
-        "searchItemOrStore": MessageLookupByLibrary.simpleMessage("Search item or store"),
-        "searchMedicineOrPharmaStore":
-            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
-        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
+        "searchDeliveryLocation":
+            MessageLookupByLibrary.simpleMessage("Search delivery location"),
+        "searchForADestination":
+            MessageLookupByLibrary.simpleMessage("Search for a destination"),
+        "searchForDestination":
+            MessageLookupByLibrary.simpleMessage("Search for destination"),
+        "searchItemOrStore":
+            MessageLookupByLibrary.simpleMessage("Search item or store"),
+        "searchLocation":
+            MessageLookupByLibrary.simpleMessage("Search Location"),
+        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
+            "Search Medicine or pharma store"),
+        "searchProducts":
+            MessageLookupByLibrary.simpleMessage("Search Products"),
         "seeAll": MessageLookupByLibrary.simpleMessage("See all"),
-        "selectLanguage": MessageLookupByLibrary.simpleMessage("Select Language"),
+        "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Select Language"),
+        "selectOnMap": MessageLookupByLibrary.simpleMessage("Select on map"),
+        "selectSize": MessageLookupByLibrary.simpleMessage("Select Size"),
+        "sendRequest": MessageLookupByLibrary.simpleMessage("Send Request"),
         "service": MessageLookupByLibrary.simpleMessage("SERVICE"),
+        "services": MessageLookupByLibrary.simpleMessage("Services"),
         "shop": MessageLookupByLibrary.simpleMessage("SHOP"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Sign in now"),
         "signUpNow": MessageLookupByLibrary.simpleMessage("Sign up Now"),
         "startShopping": MessageLookupByLibrary.simpleMessage("Start Shopping"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "supportFaqs": MessageLookupByLibrary.simpleMessage("Support & FAQs"),
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
         "vegOnly": MessageLookupByLibrary.simpleMessage("Veg Only"),
         "vegetable": MessageLookupByLibrary.simpleMessage("Vegetable"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
-        "whatAreYouLookingFor":
-            MessageLookupByLibrary.simpleMessage("What are you looking for today?"),
-        "whereToDeliver": MessageLookupByLibrary.simpleMessage("Where to deliver?"),
+        "whatAreYouLookingFor": MessageLookupByLibrary.simpleMessage(
+            "What are you looking for today?"),
+        "whereToDeliver":
+            MessageLookupByLibrary.simpleMessage("Where to deliver?"),
         "whereToGo": MessageLookupByLibrary.simpleMessage("Where to go?"),
-        "youAreNotRegistered": MessageLookupByLibrary.simpleMessage("You\'re not registered yet")
+        "youAreNotRegistered":
+            MessageLookupByLibrary.simpleMessage("You\'re not registered yet"),
+        "yourLocation": MessageLookupByLibrary.simpleMessage("Your location")
       };
 }

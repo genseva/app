@@ -3,6 +3,7 @@ import 'package:deligo/components/custom_text_field.dart';
 import 'package:deligo/features/account/model/address.dart';
 import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
 import 'package:deligo/generated/assets.dart';
+import 'package:deligo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class AddNewAddressPage extends StatefulWidget {
@@ -19,6 +20,8 @@ class _AddNewAddressPageState extends State<AddNewAddressPage> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var locale = AppLocalizations.of(context);
+
     return CustomMapScaffold(
       pin: Assets.pinsIcLocation,
       showCenterPin: true,
@@ -35,7 +38,7 @@ class _AddNewAddressPageState extends State<AddNewAddressPage> {
             prefixIcon: const Icon(Icons.search),
             onTap: () {},
             bgColor: theme.scaffoldBackgroundColor,
-            hintText: "Search Location",
+            hintText: locale.searchLocation,
           ),
         ),
       ),
@@ -49,7 +52,7 @@ class _AddNewAddressPageState extends State<AddNewAddressPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Add New Address", style: theme.textTheme.headlineSmall),
+            Text(locale.addNewAddress, style: theme.textTheme.headlineSmall),
             ListTile(
               minVerticalPadding: 10,
               contentPadding: const EdgeInsets.only(top: 10),
@@ -94,7 +97,7 @@ class _AddNewAddressPageState extends State<AddNewAddressPage> {
             ),
             const SizedBox(height: 20),
             CustomButton(
-              text: "Next",
+              text: locale.next,
               onTap: () {
                 Navigator.pop(context);
               },
