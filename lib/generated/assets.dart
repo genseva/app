@@ -82,6 +82,12 @@ class Assets {
   static const String headerHeaderPainreleaf = 'assets/header/header_painreleaf.png';
   static const String headerHeaderRide = 'assets/header/header_ride.png';
   static const String itemsBrush = 'assets/grocery/items/brush.png';
+  static const String itemsDairyButter = 'assets/grocery/items/dairy_butter.png';
+  static const String itemsDairyButtermilk = 'assets/grocery/items/dairy_buttermilk.png';
+  static const String itemsDairyCheese = 'assets/grocery/items/dairy_cheese.png';
+  static const String itemsDairyCustard = 'assets/grocery/items/dairy_Custard.png';
+  static const String itemsDairyMilk = 'assets/grocery/items/dairy_milk.png';
+  static const String itemsDairyYogurt = 'assets/grocery/items/dairy_yogurt.png';
   static const String itemsLotion = 'assets/grocery/items/lotion.png';
   static const String itemsPersonalcareBox = 'assets/grocery/items/personalcare_box.png';
   static const String itemsPersonalcareLiquid = 'assets/grocery/items/personalcare_liquid.png';

@@ -52,14 +52,27 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   color: Theme.of(context).primaryColor,
                   size: 18,
                 ),
-                title: Text(
-                  "Deliver to ${address.name} | ${_cubit.store?.deliveryTime ?? ""} min",
-                  style:
-                      Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                title: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        _cubit.store?.type == "shop"
+                            ? "Deliver to ${address.name} "
+                            : "Deliver to ${address.name}  | ${_cubit.store?.deliveryTime} min",
+                        style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    if (_cubit.store?.type == "shop")
+                      Text(
+                        "CHANGE",
+                        style: theme.textTheme.bodyLarge
+                            ?.copyWith(fontWeight: FontWeight.bold, color: theme.primaryColor),
+                      ),
+                  ],
                 ),
                 subtitle: Text(
                   address.address,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey),
+                  style: theme.textTheme.bodySmall?.copyWith(color: Colors.grey),
                 ),
               ),
               const SizedBox(height: 10),
@@ -73,17 +86,19 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     final product = products[index];
                     return ListTile(
                       minVerticalPadding: 10,
-                      leading: product.isVeg != null ? Image.asset(
-                        product.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
-                        height: 16,
-                        width: 40,
-                      ) : ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          product.image,
-                          height: 40,
-                        ),
-                      ),
+                      leading: product.isVeg != null
+                          ? Image.asset(
+                              product.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
+                              height: 16,
+                              width: 40,
+                            )
+                          : ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                product.image,
+                                height: 40,
+                              ),
+                            ),
                       title: Text(
                         product.name,
                         style: theme.textTheme.titleSmall?.copyWith(

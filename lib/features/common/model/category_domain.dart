@@ -152,7 +152,12 @@ class CategoryDomain {
       ],
     ),
     CategoryDomain("Dairy", [
-      ProductDomain("Milk", Assets.itemsPersonalcareLiquid, 13.00, cartQuantity: 350, unit: "ml"),
+      ProductDomain("Milk", Assets.itemsDairyMilk, 24.00, cartQuantity: 10, unit: "ml"),
+      ProductDomain("Butter", Assets.itemsDairyButter, 10.00, cartQuantity: 10, unit: "ml"),
+      ProductDomain("Butter Milk", Assets.itemsDairyButtermilk, 8.00, cartQuantity: 10, unit: "ml"),
+      ProductDomain("Yogurt", Assets.itemsDairyYogurt, 4.00, cartQuantity: 10, unit: "ml"),
+      ProductDomain("Cheese", Assets.itemsDairyCheese, 9.00, cartQuantity: 500, unit: "g"),
+      ProductDomain("Custard", Assets.itemsDairyCustard, 5.00, cartQuantity: 10, unit: "ml"),
     ]),
     CategoryDomain("Fruits", [
       ProductDomain("Fresh Capsicum", Assets.itemsVegCapsicum, 6.00, cartQuantity: 500, unit: "g"),

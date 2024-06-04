@@ -65,8 +65,10 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                 if (_isCompleted)
                   OrderHeaderCard(
                       image: type.image,
-                      title: "Ride",
-                      subTitle: AppLocalizations.of(context).tripCompleted)
+                      title: type == DeliveryType.delivery ? "Package" : "Ride",
+                      subTitle: type == DeliveryType.delivery
+                          ? "Delivery Completed"
+                          : AppLocalizations.of(context).tripCompleted)
                 else
                   Container(
                     padding: const EdgeInsets.only(top: 6),
@@ -78,7 +80,14 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                       children: [
                         Row(
                           children: [
-                            Image.asset(Assets.assetsDelivery, scale: 4),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                  type == DeliveryType.cab
+                                      ? Assets.assetsCar
+                                      : Assets.rideElectRide,
+                                  scale: 4),
+                            ),
                             Text.rich(
                               TextSpan(
                                 text: "Driver Arriving in ",

@@ -60,7 +60,7 @@ class AddressCard extends StatelessWidget {
               ],
             ),
           ),
-          if (!isDelivered)
+          if (!isDelivered || store.type == "shop")
             Container(
               margin: const EdgeInsets.only(top: 10),
               padding: const EdgeInsets.all(8),

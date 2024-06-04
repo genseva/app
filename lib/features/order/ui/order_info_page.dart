@@ -52,7 +52,7 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
         return CustomMapScaffold(
           bottomSheetInitialSize: _isDelivered ? 0.16 : null,
           showBackButton: true,
-          onBackTap: (){
+          onBackTap: () {
             Navigator.pushNamedAndRemoveUntil(context, PageRoutes.bottomNavigation, (r) => false);
           },
           bottomSheetBuilder: (context, controller) {
@@ -100,22 +100,31 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                     child: Row(
                       children: [
                         Image.asset(Assets.assetsDelivery, scale: 4),
-                        Text.rich(
-                          TextSpan(
-                            text: "Deliveryman arriving in ",
-                            children: [
-                              TextSpan(
-                                text: "20 mins",
-                                style: theme.textTheme.bodyLarge?.copyWith(
-                                  color: theme.scaffoldBackgroundColor,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              )
-                            ],
+                        if (_cubit.store?.type == "shop")
+                          Text(
+                            "Order has been sent to seller",
+                            style: theme.textTheme.bodyLarge?.copyWith(
+                              color: theme.scaffoldBackgroundColor,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          )
+                        else
+                          Text.rich(
+                            TextSpan(
+                              text: "Deliveryman arriving in ",
+                              children: [
+                                TextSpan(
+                                  text: "20 mins",
+                                  style: theme.textTheme.bodyLarge?.copyWith(
+                                    color: theme.scaffoldBackgroundColor,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
+                            style: theme.textTheme.bodyLarge
+                                ?.copyWith(color: theme.scaffoldBackgroundColor),
                           ),
-                          style: theme.textTheme.bodyLarge
-                              ?.copyWith(color: theme.scaffoldBackgroundColor),
-                        ),
                       ],
                     ),
                   ),
@@ -128,8 +137,14 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                         const GetRatingCard(),
                         const SizedBox(height: 10),
                       ],
-                      DeliverymanCard(_isDelivered),
-                      const SizedBox(height: 10),
+                      if (_cubit.store?.type != "shop") DeliverymanCard(_isDelivered),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          "Delivery Details",
+                          style: theme.textTheme.titleMedium?.copyWith(color: theme.hintColor),
+                        ),
+                      ),
                       AddressCard(_isDelivered, store: _cubit.store!),
                       const SizedBox(height: 10),
                       const OrderInfoCard(),
