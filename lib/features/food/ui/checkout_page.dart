@@ -117,7 +117,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 ),
               ),
               const SizedBox(height: 2),
-              Container(
+              if(_cubit.store?.type =="food")
+                Container(
                 color: Colors.white,
                 child: ListTile(
                   leading: Icon(
