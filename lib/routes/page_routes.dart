@@ -39,42 +39,60 @@ import 'package:flutter/material.dart';
 
 class PageRoutes {
   static const String bottomNavigation = 'bottom_navigation';
+
+  // food
   static const String orderFoodScreen = 'order_food';
+  static const String restaurantPage = 'restaurant_page';
+
+  //grocery
   static const String orderGroceryScreen = 'grocery_food';
   static const String groceryStoreScreen = 'grocery_store_screen';
   static const String groceryCategoryScreen = 'grocery_category_screen';
-  static const String restaurantPage = 'restaurant_page';
+
+  //checkout
   static const String checkoutPage = 'checkout_page';
   static const String paymentPage = 'payment_page';
-  static const String accountPage = 'account_page';
   static const String walletPage = 'wallet_page';
-  static const String bookRideScreen = 'book_ride_screen';
-  static const String bookCabScreen = 'book_cab_screen';
-  static const String bookServiceScreen = 'book_service_screen';
-  static const String bookParcelScreen = 'book_parcel_screen';
-  static const String orderMedicineScreen = 'order_medicine_screen';
-  static const String medicineList = 'medicine_list';
-  static const String medicineStorePage = 'medicine_store_page';
-  static const String shoppingScreen = 'shopping_screen';
-  static const String shoppingProductScreen = 'shopping_product_screen';
-  static const String productInfoPage = 'product_info_page';
+
+  //account
   static const String profilePage = 'profile_page';
   static const String languagePage = 'language_page';
   static const String savedAddressesPage = 'saved_addresses_page';
   static const String addNewAddressesPage = 'add_new_addresses_page';
   static const String supportPage = 'support_page';
-  static const String tncPage = 'tnc_page';
+  static const String accountPage = 'account_page';
   static const String subCategoryPage = 'sub_category_page';
-  static const String orderInfoPage = 'order_info_page';
+  static const String tncPage = 'tnc_page';
+
+  //delivery, cab, ride common
+  static const String bookRideScreen = 'book_ride_screen';
+  static const String bookCabScreen = 'book_cab_screen';
   static const String whereToPage = 'where_to_page';
   static const String selectRidePage = 'select_ride_page';
-  static const String trackRiderPage = 'track_rider_page';
-  static const String setDestinationPage = 'set_destination_page';
-  static const String serviceProviderScreen = 'service_provider_screen';
-  static const String providerDetailsScreen = 'provider_details_Screen';
-  static const String serviceRequestScreen = 'service_request_Screen';
   static const String deliveryDetailsPage = 'delivery_details_page';
   static const String pickupDetailsPage = 'pickup_details_page';
+  static const String setDestinationPage = 'set_destination_page';
+  static const String trackRiderPage = 'track_rider_page';
+  static const String bookParcelScreen = 'book_parcel_screen';
+
+  //service
+  static const String providerDetailsScreen = 'provider_details_Screen';
+  static const String serviceRequestScreen = 'service_request_Screen';
+  static const String serviceProviderScreen = 'service_provider_screen';
+  static const String bookServiceScreen = 'book_service_screen';
+
+  //medicine
+  static const String orderMedicineScreen = 'order_medicine_screen';
+  static const String medicineList = 'medicine_list';
+  static const String medicineStorePage = 'medicine_store_page';
+
+  //ecommerce
+  static const String shoppingScreen = 'shopping_screen';
+  static const String shoppingProductScreen = 'shopping_product_screen';
+  static const String productInfoPage = 'product_info_page';
+
+  //orders
+  static const String orderInfoPage = 'order_info_page';
 
   Map<String, WidgetBuilder> routes() {
     return {
