@@ -23,7 +23,8 @@ class _SelectTimeListState extends State<SelectTimeList> {
 
     while (startTime.isBefore(endTime)) {
       DateTime timeIncrement = startTime.add(step);
-      timeSlots.add((DateFormat("hh:mm").format(timeIncrement), DateFormat("a").format(timeIncrement)));
+      timeSlots
+          .add((DateFormat("hh:mm").format(timeIncrement), DateFormat("a").format(timeIncrement)));
       startTime = timeIncrement;
     }
 

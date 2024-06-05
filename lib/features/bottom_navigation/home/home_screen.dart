@@ -172,22 +172,22 @@ class HomeScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 var offer = OfferDomain.list[index];
                 return GestureDetector(
-                onTap: () {
-                  OfferInfoPopUp.showPage(context, offer);
-                },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Hero(
-                    tag: offer.offerCode,
-                    child: Image.asset(
-                      offer.bannerUrl,
-                      height: 130,
-                      width: MediaQuery.of(context).size.width * 0.64,
-                      fit: BoxFit.cover,
+                  onTap: () {
+                    OfferInfoPopUp.showPage(context, offer);
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Hero(
+                      tag: offer.offerCode,
+                      child: Image.asset(
+                        offer.bannerUrl,
+                        height: 130,
+                        width: MediaQuery.of(context).size.width * 0.64,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-              );
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(width: 8),
             ),

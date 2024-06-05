@@ -72,7 +72,8 @@ class _MedicineStorePageState extends State<MedicineStorePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
-                CustomInfoWidget(Icons.access_time, AppLocalizations.of(context).openingTiming, store.timing),
+                CustomInfoWidget(
+                    Icons.access_time, AppLocalizations.of(context).openingTiming, store.timing),
               ],
             ),
           ),

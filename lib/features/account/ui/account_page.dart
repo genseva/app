@@ -42,7 +42,7 @@ class AccountPage extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-        title:   Text(locale.account),
+        title: Text(locale.account),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

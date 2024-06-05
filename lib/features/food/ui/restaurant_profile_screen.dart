@@ -78,8 +78,10 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
-                CustomInfoWidget(Icons.directions_bike_outlined, AppLocalizations.of(context).deliveryIn, "20 min"),
-                CustomInfoWidget(Icons.restaurant_menu, AppLocalizations.of(context).priceRange, r"$$$$"),
+                CustomInfoWidget(Icons.directions_bike_outlined,
+                    AppLocalizations.of(context).deliveryIn, "20 min"),
+                CustomInfoWidget(
+                    Icons.restaurant_menu, AppLocalizations.of(context).priceRange, r"$$$$"),
               ],
             ),
           ),

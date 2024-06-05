@@ -32,13 +32,13 @@ class OfferInfoPopUp extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-       Padding(
-         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-         child: CircleAvatar(
-           backgroundColor: theme.scaffoldBackgroundColor,
-           child: const CloseButton(),
-         ),
-       ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: CircleAvatar(
+            backgroundColor: theme.scaffoldBackgroundColor,
+            child: const CloseButton(),
+          ),
+        ),
         const SizedBox(height: 12),
         ClipRRect(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(27)),

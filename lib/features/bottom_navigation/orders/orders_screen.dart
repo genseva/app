@@ -56,7 +56,7 @@ class OrdersScreen extends StatelessWidget {
                       tabAlignment: TabAlignment.start,
                       isScrollable: true,
                       dividerHeight: 0,
-                      tabs:  [
+                      tabs: [
                         Tab(text: locale.ongoing),
                         Tab(text: locale.history),
                       ],

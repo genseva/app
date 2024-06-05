@@ -133,7 +133,7 @@ class WalletPage extends StatelessWidget {
                             tabAlignment: TabAlignment.start,
                             isScrollable: true,
                             dividerHeight: 0,
-                            tabs:  [
+                            tabs: [
                               Tab(text: locale.allTransactions),
                               Tab(text: locale.topUps),
                             ],

@@ -85,7 +85,7 @@ class SupportPage extends StatelessWidget {
             maxLines: 3,
           ),
           const SizedBox(height: 20),
-           CustomButton(text: locale.submitMessage),
+          CustomButton(text: locale.submitMessage),
           const SizedBox(height: 28),
           Text(
             "FAQs",

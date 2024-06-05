@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddItemButton extends StatefulWidget {
-  const AddItemButton({super.key,required this.store, required this.product});
+  const AddItemButton({super.key, required this.store, required this.product});
 
   final StoreDomain store;
   final ProductDomain product;

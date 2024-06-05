@@ -21,31 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'id';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "addDestination":
-            MessageLookupByLibrary.simpleMessage("Tambahkan Tujuan"),
+        "addDestination": MessageLookupByLibrary.simpleMessage("Tambahkan Tujuan"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Ganti BAHASA"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Alamat email"),
-        "enterFullName":
-            MessageLookupByLibrary.simpleMessage("Masukkan Nama Lengkap"),
+        "enterFullName": MessageLookupByLibrary.simpleMessage("Masukkan Nama Lengkap"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Masukkan OTP"),
-        "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Masukkan nomor telepon"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Masukkan nomor telepon"),
         "fullName": MessageLookupByLibrary.simpleMessage("Nama lengkap"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "logout": MessageLookupByLibrary.simpleMessage("Keluar"),
-        "paymentMethod":
-            MessageLookupByLibrary.simpleMessage("Cara Pembayaran"),
+        "paymentMethod": MessageLookupByLibrary.simpleMessage("Cara Pembayaran"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nomor telepon"),
-        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
-            "Search Medicine or pharma store"),
-        "searchProducts":
-            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "searchMedicineOrPharmaStore":
+            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
+        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Pilih bahasa"),
         "submit": MessageLookupByLibrary.simpleMessage("Kirim"),
-        "termsConditions":
-            MessageLookupByLibrary.simpleMessage("Syarat & Ketentuan"),
+        "termsConditions": MessageLookupByLibrary.simpleMessage("Syarat & Ketentuan"),
         "verification": MessageLookupByLibrary.simpleMessage("Verifikasi"),
         "wallet": MessageLookupByLibrary.simpleMessage("Dompet"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Lokasimu")

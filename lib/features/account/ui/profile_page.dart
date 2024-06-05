@@ -58,17 +58,17 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 32),
-               const CustomTextField(
+              const CustomTextField(
                 title: "Phone Number",
                 initialValue: "+1 9876543210",
               ),
               const SizedBox(height: 24),
-               CustomTextField(
+              CustomTextField(
                 title: locale.fullName,
                 initialValue: "Samantha Smith",
               ),
               const SizedBox(height: 24),
-               CustomTextField(
+              CustomTextField(
                 title: locale.emailAddress,
                 initialValue: "samanthasmith@email.com",
               ),

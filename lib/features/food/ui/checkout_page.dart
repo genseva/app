@@ -117,21 +117,21 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 ),
               ),
               const SizedBox(height: 2),
-              if(_cubit.store?.type =="food")
+              if (_cubit.store?.type == "food")
                 Container(
-                color: Colors.white,
-                child: ListTile(
-                  leading: Icon(
-                    Icons.assignment,
-                    color: greyTextColor,
-                    size: 18,
-                  ),
-                  title: Text(
-                    AppLocalizations.of(context).addInstructionToRestaurant,
-                    style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.assignment,
+                      color: greyTextColor,
+                      size: 18,
+                    ),
+                    title: Text(
+                      AppLocalizations.of(context).addInstructionToRestaurant,
+                      style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                    ),
                   ),
                 ),
-              ),
               const SizedBox(height: 10),
               if (_cubit.coupon == null)
                 ListTile(

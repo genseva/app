@@ -13,7 +13,7 @@ class PaymentPage extends StatelessWidget {
     final cubit = context.read<CartCubit>();
     return Scaffold(
       appBar: AppBar(
-        title:  Text(AppLocalizations.of(context).paymentOptions),
+        title: Text(AppLocalizations.of(context).paymentOptions),
         centerTitle: false,
       ),
       body: Column(
