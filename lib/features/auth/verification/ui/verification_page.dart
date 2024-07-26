@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'verification_interactor.dart';
 
 class VerificationPage extends StatefulWidget {
-  const VerificationPage(this.onVerificationDone, {Key? key}) : super(key: key);
+  const VerificationPage(this.onVerificationDone, {super.key});
 
   final VoidCallback onVerificationDone;
 

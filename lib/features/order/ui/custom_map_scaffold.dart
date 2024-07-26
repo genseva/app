@@ -46,7 +46,7 @@ class _CustomMapScaffoldState extends State<CustomMapScaffold> {
       body: Stack(
         children: <Widget>[
           FutureBuilder<BitmapDescriptor>(
-            future: BitmapDescriptor.fromAssetImage(
+            future: BitmapDescriptor.asset(
               ImageConfiguration.empty,
               widget.pin ?? Assets.pinsIcLocation,
             ),

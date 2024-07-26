@@ -60,7 +60,7 @@ class PaymentPage extends StatelessWidget {
               ],
             ),
           ),
-          PaymentTypeList(),
+          const PaymentTypeList(),
         ],
       ),
     );
