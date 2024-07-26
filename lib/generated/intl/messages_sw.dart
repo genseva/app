@@ -21,18 +21,15 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'sw';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "StoresFound":
-            MessageLookupByLibrary.simpleMessage("Maduka Yamepatikana"),
+        "StoresFound": MessageLookupByLibrary.simpleMessage("Maduka Yamepatikana"),
         "account": MessageLookupByLibrary.simpleMessage("Akaunti"),
-        "accountOptions":
-            MessageLookupByLibrary.simpleMessage("Chaguzi za Akaunti"),
-        "addADestination":
-            MessageLookupByLibrary.simpleMessage("Ongeza unakoenda"),
-        "addInstructionToRestaurant": MessageLookupByLibrary.simpleMessage(
-            "Ongeza maagizo kwenye mgahawa"),
-        "addNewAddress":
-            MessageLookupByLibrary.simpleMessage("Ongeza Anwani Mpya"),
+        "accountOptions": MessageLookupByLibrary.simpleMessage("Chaguzi za Akaunti"),
+        "addADestination": MessageLookupByLibrary.simpleMessage("Ongeza unakoenda"),
+        "addInstructionToRestaurant":
+            MessageLookupByLibrary.simpleMessage("Ongeza maagizo kwenye mgahawa"),
+        "addNewAddress": MessageLookupByLibrary.simpleMessage("Ongeza Anwani Mpya"),
         "allTransactions": MessageLookupByLibrary.simpleMessage("Miamala Yote"),
         "amountToPay": MessageLookupByLibrary.simpleMessage("Kiasi cha Kulipa"),
         "applyCoupon": MessageLookupByLibrary.simpleMessage("Tumia Kuponi"),
@@ -41,61 +38,46 @@ class MessageLookup extends MessageLookupByLibrary {
         "bookedFor": MessageLookupByLibrary.simpleMessage("Imehifadhiwa Kwa"),
         "cabs": MessageLookupByLibrary.simpleMessage("CABS"),
         "cancelOrder": MessageLookupByLibrary.simpleMessage("Ghairi Agizo"),
-        "changeLanguage":
-            MessageLookupByLibrary.simpleMessage("Badilisha Lugha"),
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("Badilisha Lugha"),
         "chinese": MessageLookupByLibrary.simpleMessage("Kichina"),
-        "chineseFoodsItalianFoods": MessageLookupByLibrary.simpleMessage(
-            "Vyakula vya Kichina, Vyakula vya Kiitaliano"),
-        "costForService":
-            MessageLookupByLibrary.simpleMessage("Gharama ya Huduma"),
+        "chineseFoodsItalianFoods":
+            MessageLookupByLibrary.simpleMessage("Vyakula vya Kichina, Vyakula vya Kiitaliano"),
+        "costForService": MessageLookupByLibrary.simpleMessage("Gharama ya Huduma"),
         "dairy": MessageLookupByLibrary.simpleMessage("Maziwa"),
         "delivered": MessageLookupByLibrary.simpleMessage("Imewasilishwa"),
-        "deliveryIn":
-            MessageLookupByLibrary.simpleMessage("Uwasilishaji ndani"),
-        "deliveryInMins": MessageLookupByLibrary.simpleMessage(
-            "Uwasilishaji ndani ya dakika 20"),
+        "deliveryIn": MessageLookupByLibrary.simpleMessage("Uwasilishaji ndani"),
+        "deliveryInMins": MessageLookupByLibrary.simpleMessage("Uwasilishaji ndani ya dakika 20"),
         "dessert": MessageLookupByLibrary.simpleMessage("Kitindamlo"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Barua pepe"),
-        "enterEmailAddress":
-            MessageLookupByLibrary.simpleMessage("Weka barua pepe"),
-        "enterFullName":
-            MessageLookupByLibrary.simpleMessage("Ingiza jina kamili"),
-        "enterOtp":
-            MessageLookupByLibrary.simpleMessage("Weka OTP yenye tarakimu 4"),
-        "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Weka Nambari ya Simu"),
+        "enterEmailAddress": MessageLookupByLibrary.simpleMessage("Weka barua pepe"),
+        "enterFullName": MessageLookupByLibrary.simpleMessage("Ingiza jina kamili"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Weka OTP yenye tarakimu 4"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Weka Nambari ya Simu"),
         "enterVerificationCodeSent": MessageLookupByLibrary.simpleMessage(
             "Weka nambari ya kuthibitisha iliyotumwa kwa nambari uliyopewa"),
         "estimateCost": MessageLookupByLibrary.simpleMessage("Kadiria Gharama"),
-        "everythingAboutYou":
-            MessageLookupByLibrary.simpleMessage("Kila kitu kuhusu wewe"),
-        "extraChargesMayApply": MessageLookupByLibrary.simpleMessage(
-            "Gharama za Ziada zinaweza kutozwa"),
+        "everythingAboutYou": MessageLookupByLibrary.simpleMessage("Kila kitu kuhusu wewe"),
+        "extraChargesMayApply":
+            MessageLookupByLibrary.simpleMessage("Gharama za Ziada zinaweza kutozwa"),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
-        "fastDelivery":
-            MessageLookupByLibrary.simpleMessage("Utoaji wa Haraka"),
-        "fastFoodBeverages": MessageLookupByLibrary.simpleMessage(
-            "Vyakula vya Haraka, Vinywaji"),
+        "fastDelivery": MessageLookupByLibrary.simpleMessage("Utoaji wa Haraka"),
+        "fastFoodBeverages": MessageLookupByLibrary.simpleMessage("Vyakula vya Haraka, Vinywaji"),
         "fastFoods": MessageLookupByLibrary.simpleMessage("Vyakula vya Haraka"),
         "favorite": MessageLookupByLibrary.simpleMessage("Kipendwa"),
         "food": MessageLookupByLibrary.simpleMessage("CHAKULA"),
-        "foodNearMe":
-            MessageLookupByLibrary.simpleMessage("Chakula karibu nami"),
-        "foodOffers":
-            MessageLookupByLibrary.simpleMessage("Matoleo ya Chakula"),
+        "foodNearMe": MessageLookupByLibrary.simpleMessage("Chakula karibu nami"),
+        "foodOffers": MessageLookupByLibrary.simpleMessage("Matoleo ya Chakula"),
         "fruits": MessageLookupByLibrary.simpleMessage("Matunda"),
         "fullName": MessageLookupByLibrary.simpleMessage("Jina kamili"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Pata Usaidizi"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "grocery": MessageLookupByLibrary.simpleMessage("RIWAYA"),
-        "groceryNearMe":
-            MessageLookupByLibrary.simpleMessage("Chakula Karibu Nami"),
+        "groceryNearMe": MessageLookupByLibrary.simpleMessage("Chakula Karibu Nami"),
         "groceryOffers": MessageLookupByLibrary.simpleMessage("Ofa za Chakula"),
         "heyMate": MessageLookupByLibrary.simpleMessage("Habari mwenzangu"),
         "history": MessageLookupByLibrary.simpleMessage("Historia"),
         "home": MessageLookupByLibrary.simpleMessage("Nyumbani"),
-        "jobCompleted":
-            MessageLookupByLibrary.simpleMessage("Kazi Imekamilika"),
+        "jobCompleted": MessageLookupByLibrary.simpleMessage("Kazi Imekamilika"),
         "jobDone": MessageLookupByLibrary.simpleMessage("Kazi Imefanywa"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "logout": MessageLookupByLibrary.simpleMessage("Ondoka"),
@@ -106,8 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Inayofuata"),
         "offers": MessageLookupByLibrary.simpleMessage("Matoleo"),
         "ongoing": MessageLookupByLibrary.simpleMessage("Inaendelea"),
-        "openingTiming":
-            MessageLookupByLibrary.simpleMessage("Muda wa Kufungua"),
+        "openingTiming": MessageLookupByLibrary.simpleMessage("Muda wa Kufungua"),
         "orContinueWith": MessageLookupByLibrary.simpleMessage("Au Endelea na"),
         "orderFoods": MessageLookupByLibrary.simpleMessage("Agiza Vyakula"),
         "orderGrocery": MessageLookupByLibrary.simpleMessage("Agiza Chakula"),
@@ -116,43 +97,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "parcel": MessageLookupByLibrary.simpleMessage("PARCEL"),
         "payNow": MessageLookupByLibrary.simpleMessage("LIPA sasa"),
         "paymentMethod": MessageLookupByLibrary.simpleMessage("Njia ya malipo"),
-        "paymentOptions":
-            MessageLookupByLibrary.simpleMessage("Chaguzi za Malipo"),
-        "personalCare":
-            MessageLookupByLibrary.simpleMessage("Utunzaji wa Kibinafsi"),
-        "pharmaStoreNearMe":
-            MessageLookupByLibrary.simpleMessage("Duka la Pharma karibu nami"),
+        "paymentOptions": MessageLookupByLibrary.simpleMessage("Chaguzi za Malipo"),
+        "personalCare": MessageLookupByLibrary.simpleMessage("Utunzaji wa Kibinafsi"),
+        "pharmaStoreNearMe": MessageLookupByLibrary.simpleMessage("Duka la Pharma karibu nami"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Nambari ya simu"),
         "portfolio": MessageLookupByLibrary.simpleMessage("Kwingineko"),
         "priceRange": MessageLookupByLibrary.simpleMessage("Kiwango cha Bei"),
         "proceedToPay": MessageLookupByLibrary.simpleMessage("Endelea Kulipa"),
         "profile": MessageLookupByLibrary.simpleMessage("Wasifu"),
-        "providersNearMe":
-            MessageLookupByLibrary.simpleMessage("Watoa huduma karibu nami"),
-        "recentSearches":
-            MessageLookupByLibrary.simpleMessage("Utafutaji wa Hivi Karibuni"),
+        "providersNearMe": MessageLookupByLibrary.simpleMessage("Watoa huduma karibu nami"),
+        "recentSearches": MessageLookupByLibrary.simpleMessage("Utafutaji wa Hivi Karibuni"),
         "resend": MessageLookupByLibrary.simpleMessage("TUMA TENA"),
-        "restaurantsFound":
-            MessageLookupByLibrary.simpleMessage("Mikahawa imepatikana"),
+        "restaurantsFound": MessageLookupByLibrary.simpleMessage("Mikahawa imepatikana"),
         "reviews": MessageLookupByLibrary.simpleMessage("Ukaguzi"),
         "ride": MessageLookupByLibrary.simpleMessage("PANDA"),
-        "rideCost":
-            MessageLookupByLibrary.simpleMessage("Gharama ya Kuendesha"),
-        "saveExtraWhileOrdering": MessageLookupByLibrary.simpleMessage(
-            "Okoa ziada wakati wa kuagiza"),
-        "savedAddresses":
-            MessageLookupByLibrary.simpleMessage("Anwani Zilizohifadhiwa"),
-        "savedLocations":
-            MessageLookupByLibrary.simpleMessage("Maeneo Yaliyohifadhiwa"),
+        "rideCost": MessageLookupByLibrary.simpleMessage("Gharama ya Kuendesha"),
+        "saveExtraWhileOrdering":
+            MessageLookupByLibrary.simpleMessage("Okoa ziada wakati wa kuagiza"),
+        "savedAddresses": MessageLookupByLibrary.simpleMessage("Anwani Zilizohifadhiwa"),
+        "savedLocations": MessageLookupByLibrary.simpleMessage("Maeneo Yaliyohifadhiwa"),
         "seaFood": MessageLookupByLibrary.simpleMessage("Chakula cha Bahari"),
         "searchDeliveryLocation":
             MessageLookupByLibrary.simpleMessage("Tafuta mahali pa kupelekwa"),
-        "searchForADestination":
-            MessageLookupByLibrary.simpleMessage("Tafuta unakoenda"),
-        "searchForDestination":
-            MessageLookupByLibrary.simpleMessage("Tafuta unakoenda"),
-        "searchItemOrStore":
-            MessageLookupByLibrary.simpleMessage("Tafuta bidhaa au duka"),
+        "searchForADestination": MessageLookupByLibrary.simpleMessage("Tafuta unakoenda"),
+        "searchForDestination": MessageLookupByLibrary.simpleMessage("Tafuta unakoenda"),
+        "searchItemOrStore": MessageLookupByLibrary.simpleMessage("Tafuta bidhaa au duka"),
         "searchLocation": MessageLookupByLibrary.simpleMessage("Tafuta Mahali"),
         "searchMedicineOrPharmaStore":
             MessageLookupByLibrary.simpleMessage("Tafuta Dawa au duka la dawa"),
@@ -160,42 +129,34 @@ class MessageLookup extends MessageLookupByLibrary {
         "seeAll": MessageLookupByLibrary.simpleMessage("Ona yote"),
         "selectDate": MessageLookupByLibrary.simpleMessage("Chagua Tarehe"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chagua Lugha"),
-        "selectOnMap":
-            MessageLookupByLibrary.simpleMessage("Chagua kwenye ramani"),
+        "selectOnMap": MessageLookupByLibrary.simpleMessage("Chagua kwenye ramani"),
         "selectSize": MessageLookupByLibrary.simpleMessage("Chagua Ukubwa"),
         "sendRequest": MessageLookupByLibrary.simpleMessage("Tuma ombi"),
         "service": MessageLookupByLibrary.simpleMessage("HUDUMA"),
-        "serviceAddress":
-            MessageLookupByLibrary.simpleMessage("Anwani ya Huduma"),
+        "serviceAddress": MessageLookupByLibrary.simpleMessage("Anwani ya Huduma"),
         "services": MessageLookupByLibrary.simpleMessage("Huduma"),
         "shop": MessageLookupByLibrary.simpleMessage("DUKA"),
         "signInNow": MessageLookupByLibrary.simpleMessage("Ingia sasa"),
         "signUpNow": MessageLookupByLibrary.simpleMessage("Jiunge sasa"),
         "startShopping": MessageLookupByLibrary.simpleMessage("Anza Ununuzi"),
         "submit": MessageLookupByLibrary.simpleMessage("Wasilisha"),
-        "supportFaqs": MessageLookupByLibrary.simpleMessage(
-            "Usaidizi na Maswali Yanayoulizwa Mara kwa Mara"),
-        "termsConditions":
-            MessageLookupByLibrary.simpleMessage("Sheria na Masharti"),
+        "supportFaqs":
+            MessageLookupByLibrary.simpleMessage("Usaidizi na Maswali Yanayoulizwa Mara kwa Mara"),
+        "termsConditions": MessageLookupByLibrary.simpleMessage("Sheria na Masharti"),
         "topUps": MessageLookupByLibrary.simpleMessage("Juu Juu"),
-        "tripCompleted":
-            MessageLookupByLibrary.simpleMessage("Safari Imekamilika"),
-        "tripDetails":
-            MessageLookupByLibrary.simpleMessage("Maelezo ya Safari"),
+        "tripCompleted": MessageLookupByLibrary.simpleMessage("Safari Imekamilika"),
+        "tripDetails": MessageLookupByLibrary.simpleMessage("Maelezo ya Safari"),
         "update": MessageLookupByLibrary.simpleMessage("Sasisha"),
         "vegOnly": MessageLookupByLibrary.simpleMessage("Mboga Tu"),
         "vegetable": MessageLookupByLibrary.simpleMessage("Mboga"),
         "verification": MessageLookupByLibrary.simpleMessage("Uthibitishaji"),
         "viewCart": MessageLookupByLibrary.simpleMessage("Tazama Rukwama"),
-        "viewDetailedBill":
-            MessageLookupByLibrary.simpleMessage("Tazama muswada wa kina"),
+        "viewDetailedBill": MessageLookupByLibrary.simpleMessage("Tazama muswada wa kina"),
         "wallet": MessageLookupByLibrary.simpleMessage("Mkoba"),
-        "whatAreYouLookingFor":
-            MessageLookupByLibrary.simpleMessage("Unatafuta nini leo?"),
+        "whatAreYouLookingFor": MessageLookupByLibrary.simpleMessage("Unatafuta nini leo?"),
         "whereToDeliver": MessageLookupByLibrary.simpleMessage("Wapi kutoa?"),
         "whereToGo": MessageLookupByLibrary.simpleMessage("Kwenda wapi?"),
-        "youAreNotRegistered":
-            MessageLookupByLibrary.simpleMessage("Bado haujasajiliwa"),
+        "youAreNotRegistered": MessageLookupByLibrary.simpleMessage("Bado haujasajiliwa"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Eneo lako")
       };
 }

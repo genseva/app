@@ -21,28 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'tr';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addDestination": MessageLookupByLibrary.simpleMessage("Hedef Ekle"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Dili değiştir"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("E-posta Adresi"),
         "enterFullName": MessageLookupByLibrary.simpleMessage("Tam Adı Girin"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("OTP\'yi girin"),
-        "enterPhoneNumber":
-            MessageLookupByLibrary.simpleMessage("Telefon Numarasını Girin"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage("Telefon Numarasını Girin"),
         "fullName": MessageLookupByLibrary.simpleMessage("Ad Soyad"),
         "getSupport": MessageLookupByLibrary.simpleMessage("Get Support"),
         "km": MessageLookupByLibrary.simpleMessage("km"),
         "logout": MessageLookupByLibrary.simpleMessage("Çıkış Yap"),
         "paymentMethod": MessageLookupByLibrary.simpleMessage("Ödeme şekli"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Telefon numarası"),
-        "searchMedicineOrPharmaStore": MessageLookupByLibrary.simpleMessage(
-            "Search Medicine or pharma store"),
-        "searchProducts":
-            MessageLookupByLibrary.simpleMessage("Search Products"),
+        "searchMedicineOrPharmaStore":
+            MessageLookupByLibrary.simpleMessage("Search Medicine or pharma store"),
+        "searchProducts": MessageLookupByLibrary.simpleMessage("Search Products"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Dil Seçin"),
         "submit": MessageLookupByLibrary.simpleMessage("Göndermek"),
-        "termsConditions":
-            MessageLookupByLibrary.simpleMessage("şartlar ve koşullar"),
+        "termsConditions": MessageLookupByLibrary.simpleMessage("şartlar ve koşullar"),
         "verification": MessageLookupByLibrary.simpleMessage("Doğrulama"),
         "wallet": MessageLookupByLibrary.simpleMessage("Cüzdan"),
         "yourLocation": MessageLookupByLibrary.simpleMessage("Konumunuz")
