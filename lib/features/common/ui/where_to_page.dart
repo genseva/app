@@ -74,7 +74,6 @@ class WhereToPage extends StatelessWidget {
       cursorColor: Theme.of(context).cardColor,
       resultTextStyle: Theme.of(context).textTheme.labelLarge,
       textStyle: Theme.of(context).textTheme.labelLarge,
-      onError: (response) => print(response),
     );
     if (prediction != null) Navigator.pop(context);
   }
