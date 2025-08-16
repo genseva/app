@@ -1,6 +1,6 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/generated/l10n.dart';
+import '../../../components/custom_button.dart';
+import '../../../components/custom_text_field.dart';
+import '../../../generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SupportPage extends StatelessWidget {
@@ -16,7 +16,7 @@ class SupportPage extends StatelessWidget {
           'eget felis eget nunc. Placerat in egestas erat imperdiet sed. Vestibulum '
           'mattis ullamcorper velit sed. At auctor urna nunc id cursus metus aliquam. In '
           'nibh mauris cursus mattis. Quis blandit turpis cursus in hac habitasse platea '
-          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor'
+          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor',
     ),
     (
       "How to start a Lorem ipsum dolor?",
@@ -27,7 +27,7 @@ class SupportPage extends StatelessWidget {
           'eget felis eget nunc. Placerat in egestas erat imperdiet sed. Vestibulum '
           'mattis ullamcorper velit sed. At auctor urna nunc id cursus metus aliquam. In '
           'nibh mauris cursus mattis. Quis blandit turpis cursus in hac habitasse platea '
-          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor'
+          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor',
     ),
     (
       "How to add Lorem ipsum?",
@@ -38,7 +38,7 @@ class SupportPage extends StatelessWidget {
           'eget felis eget nunc. Placerat in egestas erat imperdiet sed. Vestibulum '
           'mattis ullamcorper velit sed. At auctor urna nunc id cursus metus aliquam. In '
           'nibh mauris cursus mattis. Quis blandit turpis cursus in hac habitasse platea '
-          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor'
+          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor',
     ),
     (
       "How to Lorem ipsum dolor?",
@@ -49,7 +49,7 @@ class SupportPage extends StatelessWidget {
           'eget felis eget nunc. Placerat in egestas erat imperdiet sed. Vestibulum '
           'mattis ullamcorper velit sed. At auctor urna nunc id cursus metus aliquam. In '
           'nibh mauris cursus mattis. Quis blandit turpis cursus in hac habitasse platea '
-          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor'
+          'dictumst. Orci a scelerisque purus semper eget duis at tellus. At tempor',
     ),
   ];
 
@@ -62,16 +62,11 @@ class SupportPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
-          Text(
-            locale.getSupport,
-            style: theme.textTheme.headlineSmall,
-          ),
+          Text(locale.getSupport, style: theme.textTheme.headlineSmall),
           const SizedBox(height: 10),
           Text(
             locale.askUsOrSuggest,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              color: theme.hintColor,
-            ),
+            style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
           ),
           const SizedBox(height: 20),
           const CustomTextField(
@@ -89,14 +84,14 @@ class SupportPage extends StatelessWidget {
           const SizedBox(height: 28),
           Text(
             "FAQs",
-            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+            style: theme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 6),
           Text(
             locale.yourQuestionGotAnswered,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              color: theme.hintColor,
-            ),
+            style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
           ),
           const SizedBox(height: 28),
           ListView.separated(

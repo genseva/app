@@ -1,8 +1,8 @@
-import 'package:deligo/components/custom_scaffold.dart';
-import 'package:deligo/features/common/model/delivery_type.dart';
-import 'package:deligo/features/common/ui/cab_child.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'package:genseva/components/custom_scaffold.dart';
+import 'package:genseva/features/common/model/delivery_type.dart';
+import 'package:genseva/features/common/ui/cab_child.dart';
+import 'package:genseva/generated/assets.dart';
+import 'package:genseva/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class BookRideScreen extends StatelessWidget {

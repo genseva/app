@@ -1,10 +1,12 @@
-import 'package:deligo/features/common/model/ride_domain.dart';
-import 'package:deligo/generated/assets.dart';
+import 'package:genseva/features/common/model/ride_domain.dart';
+import 'package:genseva/generated/assets.dart';
 
 enum DeliveryType {
   delivery(Assets.headerHeaderPackage, "Where to Deliver?", [
-    RideDomain(Assets.rideInstDelivry, "InstaDelivery", "1-2 hrs", "Max 3-5 kgs", "8.00"),
-    RideDomain(Assets.rideSameDayDelivery, "SameDayDelivery", "6-8 hrs", "Max 15-20 kgs", "10.00"),
+    RideDomain(Assets.rideInstDelivry, "InstaDelivery", "1-2 hrs",
+        "Max 3-5 kgs", "8.00"),
+    RideDomain(Assets.rideSameDayDelivery, "SameDayDelivery", "6-8 hrs",
+        "Max 15-20 kgs", "10.00"),
   ]),
   bike(Assets.headerHeaderRide, "Where to go?", [
     RideDomain(Assets.rideInstaRide, "InstaRide", "5-6 mins", "1", "8.00"),

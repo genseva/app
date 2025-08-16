@@ -1,9 +1,9 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/features/account/model/address.dart';
-import 'package:deligo/features/common/model/delivery_type.dart';
-import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_button.dart';
+import 'package:genseva/features/account/model/address.dart';
+import 'package:genseva/features/common/model/delivery_type.dart';
+import 'package:genseva/features/order/ui/custom_map_scaffold.dart';
+import 'package:genseva/generated/assets.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SetDestinationPage extends StatefulWidget {
@@ -14,11 +14,13 @@ class SetDestinationPage extends StatefulWidget {
 }
 
 class _SetDestinationPageState extends State<SetDestinationPage> {
-  AddressDomain address = AddressDomain(Icons.location_on, "Loading...", "Loading...");
+  AddressDomain address =
+      AddressDomain(Icons.location_on, "Loading...", "Loading...");
 
   @override
   Widget build(BuildContext context) {
-    DeliveryType type = ModalRoute.of(context)?.settings.arguments as DeliveryType;
+    DeliveryType type =
+        ModalRoute.of(context)?.settings.arguments as DeliveryType;
     final theme = Theme.of(context);
     return CustomMapScaffold(
       pin: Assets.pinsIcLocation1,
@@ -44,13 +46,15 @@ class _SetDestinationPageState extends State<SetDestinationPage> {
               leading: Image.asset(Assets.pinsIcLocation1, height: 35),
               title: Text(
                 address.name,
-                style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+                style: theme.textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.w600),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: Text(
                   address.address,
-                  style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+                  style: theme.textTheme.bodySmall
+                      ?.copyWith(color: theme.hintColor),
                 ),
               ),
               trailing: Icon(Icons.bookmark, color: theme.hintColor),

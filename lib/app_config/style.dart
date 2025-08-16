@@ -1,4 +1,4 @@
-import 'package:deligo/app_config/colors.dart';
+import 'package:genseva/app_config/colors.dart';
 import 'package:flutter/material.dart';
 
 ThemeData appTheme = ThemeData(
@@ -9,7 +9,6 @@ ThemeData appTheme = ThemeData(
   cardColor: cardColor,
   hintColor: greyTextColor,
   disabledColor: const Color(0xffF4F7F9),
-  indicatorColor: const Color(0xFFDFF6E0),
 
   textSelectionTheme: TextSelectionThemeData(cursorColor: mainColor),
 
@@ -49,6 +48,7 @@ ThemeData appTheme = ThemeData(
   textTheme: const TextTheme(
     headlineSmall: TextStyle(fontWeight: FontWeight.bold),
   ).apply(bodyColor: Colors.black),
+  tabBarTheme: const TabBarThemeData(indicatorColor: Color(0xFFDFF6E0)),
 );
 
 /// NAME         SIZE  WEIGHT  SPACING

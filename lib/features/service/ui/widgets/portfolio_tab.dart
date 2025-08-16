@@ -1,4 +1,4 @@
-import 'package:deligo/generated/assets.dart';
+import '../../../generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 

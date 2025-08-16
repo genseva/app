@@ -1,4 +1,4 @@
-import 'package:deligo/features/wallet/model/transaction_domain.dart';
+import '../model/transaction_domain.dart';
 import 'package:flutter/material.dart';
 
 class TransactionList extends StatelessWidget {
@@ -17,11 +17,16 @@ class TransactionList extends StatelessWidget {
         bool isCard = transaction.title.toLowerCase().contains("card");
         return Material(
           child: ListTile(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 4,
+            ),
             leading: Container(
               height: 52,
               width: 52,
-              padding: isCard ? const EdgeInsetsDirectional.fromSTEB(8, 8, 0, 0) : null,
+              padding: isCard
+                  ? const EdgeInsetsDirectional.fromSTEB(8, 8, 0, 0)
+                  : null,
               decoration: isCard
                   ? BoxDecoration(
                       borderRadius: BorderRadius.circular(10),

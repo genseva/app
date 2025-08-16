@@ -1,5 +1,5 @@
-import 'package:deligo/features/payment/models/payment_method.dart';
-import 'package:deligo/generated/assets.dart';
+import 'package:genseva/features/payment/models/payment_method.dart';
+import 'package:genseva/generated/assets.dart';
 
 class PaymentCategory {
   final String title;

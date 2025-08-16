@@ -1,10 +1,10 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/account/model/address.dart';
-import 'package:deligo/features/common/model/delivery_type.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_button.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/components/custom_text_field.dart';
+import 'package:genseva/features/account/model/address.dart';
+import 'package:genseva/features/common/model/delivery_type.dart';
+import 'package:genseva/generated/l10n.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class CabChild extends StatelessWidget {
@@ -102,7 +102,8 @@ class CabChild extends StatelessWidget {
                   Expanded(
                     child: CustomButton(
                       onTap: () {
-                        Navigator.pushNamed(context, PageRoutes.setDestinationPage,
+                        Navigator.pushNamed(
+                            context, PageRoutes.setDestinationPage,
                             arguments: type);
                       },
                       buttonColor: theme.scaffoldBackgroundColor,
@@ -145,12 +146,14 @@ class CabChild extends StatelessWidget {
               children: [
                 Text(
                   locale.savedLocations,
-                  style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+                  style: theme.textTheme.bodyLarge
+                      ?.copyWith(color: theme.hintColor),
                 ),
                 _addressList(AddressDomain.list, theme),
                 Text(
                   locale.recentSearches,
-                  style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+                  style: theme.textTheme.bodyLarge
+                      ?.copyWith(color: theme.hintColor),
                 ),
                 _addressList(AddressDomain.recentSearches, theme),
               ],
@@ -182,13 +185,14 @@ class CabChild extends StatelessWidget {
               children: [
                 Text(
                   address.name,
-                  style:
-                      theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold, height: 1),
+                  style: theme.textTheme.bodyLarge
+                      ?.copyWith(fontWeight: FontWeight.bold, height: 1),
                 ),
                 const SizedBox(height: 6),
                 Text(
                   address.address,
-                  style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                  style: theme.textTheme.bodyMedium
+                      ?.copyWith(color: theme.hintColor),
                 ),
               ],
             )

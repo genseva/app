@@ -1,8 +1,8 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/features/wallet/model/transaction_domain.dart';
-import 'package:deligo/features/wallet/ui/transaction_list.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
+import '../../../components/custom_button.dart';
+import '../model/transaction_domain.dart';
+import 'transaction_list.dart';
+import '../../../generated/assets.dart';
+import '../../../generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class WalletPage extends StatelessWidget {
@@ -34,10 +34,11 @@ class WalletPage extends StatelessWidget {
                             color: theme.scaffoldBackgroundColor,
                           ),
                           title: const Text("GoWallet"),
-                          titleTextStyle: theme.textTheme.headlineLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: theme.scaffoldBackgroundColor,
-                          ),
+                          titleTextStyle: theme.textTheme.headlineLarge
+                              ?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: theme.scaffoldBackgroundColor,
+                              ),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,15 +51,18 @@ class WalletPage extends StatelessWidget {
                                   Text(
                                     "Total Balance",
                                     style: theme.textTheme.bodyLarge?.copyWith(
-                                      color: theme.scaffoldBackgroundColor.withOpacity(0.8),
+                                      color: theme.scaffoldBackgroundColor
+                                          .withOpacity(0.8),
                                     ),
                                   ),
                                   Text(
-                                    r"$" " 150.50",
-                                    style: theme.textTheme.headlineLarge?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: theme.scaffoldBackgroundColor,
-                                    ),
+                                    r"$"
+                                    " 150.50",
+                                    style: theme.textTheme.headlineLarge
+                                        ?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: theme.scaffoldBackgroundColor,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -82,7 +86,9 @@ class WalletPage extends StatelessWidget {
                             backgroundColor: theme.scaffoldBackgroundColor,
                             radius: 24,
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.only(start: 6),
+                              padding: const EdgeInsetsDirectional.only(
+                                start: 6,
+                              ),
                               child: IconButton(
                                 color: theme.primaryColorDark,
                                 icon: const Icon(Icons.arrow_back_ios),
@@ -90,16 +96,20 @@ class WalletPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          title: const Text("GoMoney can be use for paying only"),
+                          title: const Text(
+                            "GoMoney can be use for paying only",
+                          ),
                           titleTextStyle: theme.textTheme.bodyMedium?.copyWith(
-                            color: theme.scaffoldBackgroundColor.withOpacity(0.8),
+                            color: theme.scaffoldBackgroundColor.withOpacity(
+                              0.8,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
           Expanded(
@@ -119,8 +129,9 @@ class WalletPage extends StatelessWidget {
                         height: 4,
                         margin: const EdgeInsets.all(6),
                         decoration: BoxDecoration(
-                            color: theme.hintColor.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(6)),
+                          color: theme.hintColor.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
                       ),
                     ),
                     Row(
@@ -129,7 +140,9 @@ class WalletPage extends StatelessWidget {
                           child: TabBar(
                             indicatorColor: Colors.green,
                             labelColor: theme.primaryColor,
-                            indicatorPadding: const EdgeInsetsDirectional.only(end: 20),
+                            indicatorPadding: const EdgeInsetsDirectional.only(
+                              end: 20,
+                            ),
                             tabAlignment: TabAlignment.start,
                             isScrollable: true,
                             dividerHeight: 0,
@@ -151,7 +164,7 @@ class WalletPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -1,7 +1,7 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/account/model/address.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_button.dart';
+import 'package:genseva/components/custom_text_field.dart';
+import 'package:genseva/features/account/model/address.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -28,7 +28,8 @@ class _DeliveryDetailsPageState extends State<DeliveryDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    AddressDomain address = ModalRoute.of(context)?.settings.arguments as AddressDomain;
+    AddressDomain address =
+        ModalRoute.of(context)?.settings.arguments as AddressDomain;
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
@@ -56,14 +57,15 @@ class _DeliveryDetailsPageState extends State<DeliveryDetailsPage> {
             minVerticalPadding: 16,
             title: Text(
               address.name,
-              style:
-                  theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600, height: 0.4),
+              style: theme.textTheme.titleMedium
+                  ?.copyWith(fontWeight: FontWeight.w600, height: 0.4),
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(
                 address.address,
-                style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+                style:
+                    theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
               ),
             ),
             trailing: FittedBox(
@@ -88,12 +90,14 @@ class _DeliveryDetailsPageState extends State<DeliveryDetailsPage> {
               const SizedBox(width: 16),
               Text(
                 "Recipient",
-                style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+                style:
+                    theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
               ),
               const Spacer(),
               Text(
                 "USE MY DETAILS",
-                style: theme.textTheme.bodyMedium?.copyWith(color: theme.primaryColor),
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(color: theme.primaryColor),
               ),
               const SizedBox(width: 16),
             ],
@@ -113,9 +117,11 @@ class _DeliveryDetailsPageState extends State<DeliveryDetailsPage> {
                 iconSize: 30,
                 style: ButtonStyle(
                   shape: WidgetStateProperty.all(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)),
                   ),
-                  backgroundColor: WidgetStateProperty.all(theme.primaryColor.withOpacity(0.1)),
+                  backgroundColor: WidgetStateProperty.all(
+                      theme.primaryColor.withOpacity(0.1)),
                   foregroundColor: WidgetStateProperty.all(theme.primaryColor),
                 ),
               ),
@@ -132,7 +138,8 @@ class _DeliveryDetailsPageState extends State<DeliveryDetailsPage> {
             padding: const EdgeInsets.all(16),
             child: Text(
               "Package Type",
-              style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+              style:
+                  theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
             ),
           ),
           SizedBox(
@@ -184,7 +191,8 @@ class _DeliveryDetailsPageState extends State<DeliveryDetailsPage> {
       bottomNavigationBar: CustomButton(
         text: "Next",
         margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-        onTap: () => Navigator.pushNamed(context, PageRoutes.pickupDetailsPage, arguments: address),
+        onTap: () => Navigator.pushNamed(context, PageRoutes.pickupDetailsPage,
+            arguments: address),
       ),
     );
   }

@@ -1,10 +1,10 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/common/model/delivery_type.dart';
-import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
-import 'package:deligo/features/payment/ui/payment_type_list.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_button.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/components/custom_text_field.dart';
+import 'package:genseva/features/common/model/delivery_type.dart';
+import 'package:genseva/features/order/ui/custom_map_scaffold.dart';
+import 'package:genseva/features/payment/ui/payment_type_list.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SelectRidePage extends StatefulWidget {
@@ -109,7 +109,9 @@ class _SelectRidePageState extends State<SelectRidePage> {
               ),
             ),
             const SizedBox(height: 8),
-            Text(args.$2, style: theme.textTheme.labelMedium?.copyWith(color: theme.hintColor)),
+            Text(args.$2,
+                style: theme.textTheme.labelMedium
+                    ?.copyWith(color: theme.hintColor)),
             ListView.builder(
               shrinkWrap: true,
               padding: const EdgeInsets.all(16),
@@ -135,23 +137,27 @@ class _SelectRidePageState extends State<SelectRidePage> {
                     leading: Image.asset(ride.image, height: 30),
                     title: Text(
                       ride.name,
-                      style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+                      style: theme.textTheme.titleMedium
+                          ?.copyWith(fontWeight: FontWeight.w600),
                     ),
                     subtitle: Row(
                       children: [
                         Text(
                           "${ride.time}   •   ",
-                          style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                          style: theme.textTheme.bodyMedium
+                              ?.copyWith(color: theme.hintColor),
                         ),
                         Text(
                           ride.quantity,
-                          style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                          style: theme.textTheme.bodyMedium
+                              ?.copyWith(color: theme.hintColor),
                         ),
                       ],
                     ),
                     trailing: Text(
                       r"$" + ride.price,
-                      style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+                      style: theme.textTheme.titleSmall
+                          ?.copyWith(fontWeight: FontWeight.w600),
                     ),
                   ),
                 );
@@ -177,7 +183,8 @@ class _SelectRidePageState extends State<SelectRidePage> {
                           ),
                           Expanded(
                             child: PaymentTypeList(
-                              onTap: () => Navigator.pushNamed(context, PageRoutes.trackRiderPage,
+                              onTap: () => Navigator.pushNamed(
+                                  context, PageRoutes.trackRiderPage,
                                   arguments: type),
                             ),
                           )

@@ -1,9 +1,9 @@
-import 'package:deligo/components/add_button.dart';
-import 'package:deligo/components/rating_card.dart';
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
+import '../../../components/add_button.dart';
+import '../../../components/rating_card.dart';
+import '../../common/model/product_domain.dart';
+import '../../common/model/store_domain.dart';
+import '../../../generated/assets.dart';
+import '../../../generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProductInfoPage extends StatefulWidget {
@@ -16,16 +16,10 @@ class ProductInfoPage extends StatefulWidget {
 class _ProductInfoPageState extends State<ProductInfoPage> {
   @override
   Widget build(BuildContext context) {
-    List<String> sizes = [
-      'S',
-      'M',
-      'L',
-      'XL',
-      '2XL',
-      '3XL',
-    ];
+    List<String> sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL'];
     var theme = Theme.of(context);
-    ProductDomain product = ModalRoute.of(context)?.settings.arguments as ProductDomain;
+    ProductDomain product =
+        ModalRoute.of(context)?.settings.arguments as ProductDomain;
     var locale = AppLocalizations.of(context);
     return Scaffold(
       body: Stack(
@@ -66,9 +60,14 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 10,
+                  ),
                   decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(16),
+                    ),
                     color: Colors.white,
                   ),
                   child: Column(
@@ -80,17 +79,22 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
                           height: 4,
                           margin: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                              color: theme.hintColor.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(6)),
+                            color: theme.hintColor.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 16),
                       Row(
                         children: [
                           Expanded(
-                              child: Text(product.name,
-                                  style: theme.textTheme.titleLarge
-                                      ?.copyWith(fontWeight: FontWeight.w600))),
+                            child: Text(
+                              product.name,
+                              style: theme.textTheme.titleLarge?.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
@@ -98,55 +102,64 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
                               const SizedBox(height: 5),
                               Text(
                                 "138 Reviews",
-                                style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+                                style: theme.textTheme.bodySmall?.copyWith(
+                                  color: theme.hintColor,
+                                ),
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       Text(
                         locale.selectSize,
-                        style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: theme.hintColor,
+                        ),
                       ),
                       const SizedBox(height: 16),
                       SizedBox(
                         height: 50,
                         child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) {
-                              return SizedBox(
-                                width: 50,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(color: theme.hintColor),
-                                    color: Colors.white,
-                                  ),
-                                  padding: const EdgeInsets.all(8),
-                                  child: Center(
-                                      child: Text(
-                                    sizes[index],
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge
-                                        ?.copyWith(fontWeight: FontWeight.w600),
-                                  )),
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return SizedBox(
+                              width: 50,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: theme.hintColor),
+                                  color: Colors.white,
                                 ),
-                              );
-                            },
-                            separatorBuilder: (context, index) => const SizedBox(width: 10),
-                            itemCount: sizes.length),
+                                padding: const EdgeInsets.all(8),
+                                child: Center(
+                                  child: Text(
+                                    sizes[index],
+                                    style: Theme.of(context).textTheme.bodyLarge
+                                        ?.copyWith(fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                          separatorBuilder: (context, index) =>
+                              const SizedBox(width: 10),
+                          itemCount: sizes.length,
+                        ),
                       ),
                       const SizedBox(height: 16),
                       Text(
                         locale.selectSize,
-                        style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: theme.hintColor,
+                        ),
                       ),
                       const SizedBox(height: 16),
                       Text(
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                        style: theme.textTheme.bodyMedium?.copyWith(color: Colors.grey[800]),
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: Colors.grey[800],
+                        ),
                       ),
                       const SizedBox(height: 16),
                       Image.asset(Assets.productsStore, height: 50),
@@ -168,25 +181,27 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
             color: theme.primaryColor,
           ),
           padding: const EdgeInsets.all(8),
-          child: const Icon(
-            Icons.shopping_basket,
-            color: Colors.white,
-          ),
+          child: const Icon(Icons.shopping_basket, color: Colors.white),
         ),
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.fromLTRB(30, 16, 20, 30),
         decoration: BoxDecoration(
-          border: Border(top: BorderSide(color: theme.dividerColor, width: 0.2)),
+          border: Border(
+            top: BorderSide(color: theme.dividerColor, width: 0.2),
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              r"$" "${product.price}",
-              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
+              r"$"
+              "${product.price}",
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
             ),
-            AddItemButton(store: StoreDomain.ecommerce.first, product: product)
+            AddItemButton(store: StoreDomain.ecommerce.first, product: product),
           ],
         ),
       ),

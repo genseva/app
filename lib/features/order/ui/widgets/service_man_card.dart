@@ -1,8 +1,8 @@
-import 'package:deligo/components/rating_card.dart';
+import 'package:genseva/components/rating_card.dart';
 import 'package:flutter/material.dart';
 
 class ServiceManCard extends StatelessWidget {
-  ServiceManCard(this.name, this.image, this.title, {super.key});
+  const ServiceManCard(this.name, this.image, this.title, {super.key});
 
   final String name;
   final String image;
@@ -43,7 +43,8 @@ class ServiceManCard extends StatelessWidget {
                   children: [
                     Text(
                       "George Anderson",
-                      style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
+                      style: theme.textTheme.bodyLarge
+                          ?.copyWith(fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(width: 20),
                     const RatingCard(rating: "4.5"),

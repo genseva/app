@@ -1,8 +1,8 @@
-import 'package:deligo/components/custom_scaffold.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'package:genseva/components/custom_scaffold.dart';
+import 'package:genseva/components/custom_text_field.dart';
+import 'package:genseva/features/common/model/category_domain.dart';
+import 'package:genseva/generated/assets.dart';
+import 'package:genseva/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SubCategoryList extends StatelessWidget {
@@ -29,12 +29,14 @@ class SubCategoryList extends StatelessWidget {
               CustomTextField(
                 bgColor: theme.scaffoldBackgroundColor,
                 hintText: locale.searchProducts,
-                prefixIcon: Icon(Icons.search, color: theme.primaryColorDark, size: 24),
+                prefixIcon:
+                    Icon(Icons.search, color: theme.primaryColorDark, size: 24),
               ),
               const SizedBox(height: 20),
               Text(
                 "Select Category",
-                style: theme.textTheme.labelLarge?.copyWith(color: theme.hintColor),
+                style: theme.textTheme.labelLarge
+                    ?.copyWith(color: theme.hintColor),
               ),
               const SizedBox(height: 20),
               Expanded(
@@ -45,13 +47,16 @@ class SubCategoryList extends StatelessWidget {
                     var item = category.subCategories?[index];
                     return GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, args.$2, arguments: (category, item));
+                        Navigator.pushNamed(context, args.$2,
+                            arguments: (category, item));
                       },
                       child: Container(
                         padding: const EdgeInsets.all(18),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: theme.hintColor.withOpacity(0.3), width: 0.5),
+                          border: Border.all(
+                              color: theme.hintColor.withOpacity(0.3),
+                              width: 0.5),
                         ),
                         child: Row(
                           children: [

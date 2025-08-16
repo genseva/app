@@ -1,12 +1,12 @@
-import 'package:deligo/components/custom_shadow.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
-import 'package:deligo/features/grocery/ui/grocery_item_card.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_shadow.dart';
+import 'package:genseva/components/custom_text_field.dart';
+import 'package:genseva/features/cart/ui/cart_bottom_bar.dart';
+import 'package:genseva/features/common/model/category_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
+import 'package:genseva/features/food/ui/widgets/custom_info_widget.dart';
+import 'package:genseva/features/grocery/ui/grocery_item_card.dart';
+import 'package:genseva/generated/l10n.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class GroceryStoreScreen extends StatelessWidget {
@@ -14,7 +14,8 @@ class GroceryStoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final StoreDomain store = ModalRoute.of(context)?.settings.arguments as StoreDomain;
+    final StoreDomain store =
+        ModalRoute.of(context)?.settings.arguments as StoreDomain;
     final locale = AppLocalizations.of(context);
     final theme = Theme.of(context);
     return Scaffold(
@@ -50,11 +51,13 @@ class GroceryStoreScreen extends StatelessWidget {
                       children: [
                         Text(
                           "${store.location} • ",
-                          style: theme.textTheme.titleSmall?.copyWith(color: Colors.grey),
+                          style: theme.textTheme.titleSmall
+                              ?.copyWith(color: Colors.grey),
                         ),
                         Text(
                           "${store.distance} km",
-                          style: theme.textTheme.titleSmall?.copyWith(color: Colors.black54),
+                          style: theme.textTheme.titleSmall
+                              ?.copyWith(color: Colors.black54),
                         ),
                       ],
                     ),
@@ -66,7 +69,8 @@ class GroceryStoreScreen extends StatelessWidget {
                 thickness: 0.4,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -97,7 +101,8 @@ class GroceryStoreScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 15),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, PageRoutes.groceryCategoryScreen,
+                      onTap: () => Navigator.pushNamed(
+                          context, PageRoutes.groceryCategoryScreen,
                           arguments: store),
                       child: Container(
                         padding: const EdgeInsets.all(16),
@@ -105,7 +110,8 @@ class GroceryStoreScreen extends StatelessWidget {
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(5),
                         ),
-                        child: const Icon(Icons.assignment, color: Colors.white),
+                        child:
+                            const Icon(Icons.assignment, color: Colors.white),
                       ),
                     ),
                   ],
@@ -153,7 +159,8 @@ class GroceryStoreScreen extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemCount: category.items.length,
                             itemBuilder: (context, index) {
-                              return GroceryItemCard(store, category.items[index]);
+                              return GroceryItemCard(
+                                  store, category.items[index]);
                             },
                           ),
                         ),

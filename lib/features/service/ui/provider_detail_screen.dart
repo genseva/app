@@ -1,10 +1,10 @@
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
-import 'package:deligo/features/service/ui/widgets/portfolio_tab.dart';
-import 'package:deligo/features/service/ui/widgets/reviews_tab.dart';
-import 'package:deligo/features/service/ui/widgets/select_service_date.dart';
-import 'package:deligo/features/service/ui/widgets/services_tab.dart';
-import 'package:deligo/generated/l10n.dart';
+import '../../common/model/store_domain.dart';
+import '../../food/ui/widgets/custom_info_widget.dart';
+import '../widgets/portfolio_tab.dart';
+import '../widgets/reviews_tab.dart';
+import '../widgets/select_service_date.dart';
+import '../widgets/services_tab.dart';
+import '../../../generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProviderDetailScreen extends StatelessWidget {
@@ -64,8 +64,10 @@ class ProviderDetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomInfoWidget(Icons.star, "120+ ratings", "4.2"),
-                  CustomInfoWidget(Icons.work_history_outlined, locale.jobDone, "148"),
-                  CustomInfoWidget(Icons.payments, locale.priceRange, r"$20.00/hr"),
+                  CustomInfoWidget(
+                      Icons.work_history_outlined, locale.jobDone, "148"),
+                  CustomInfoWidget(
+                      Icons.payments, locale.priceRange, r"$20.00/hr"),
                 ],
               ),
             ),
@@ -87,8 +89,8 @@ class ProviderDetailScreen extends StatelessWidget {
                             ],
                             indicatorColor: theme.primaryColor,
                             labelColor: theme.primaryColor,
-                            labelStyle:
-                                theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+                            labelStyle: theme.textTheme.titleSmall
+                                ?.copyWith(fontWeight: FontWeight.w600),
                             unselectedLabelStyle: theme.textTheme.titleSmall,
                           ),
                         ),

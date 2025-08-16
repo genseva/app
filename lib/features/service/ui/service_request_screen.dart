@@ -1,16 +1,16 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/features/account/model/address.dart';
-import 'package:deligo/features/cart/cubit/cart_cubit.dart';
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
-import 'package:deligo/features/order/ui/widgets/get_rating_card.dart';
-import 'package:deligo/features/order/ui/widgets/order_header_card.dart';
-import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
-import 'package:deligo/features/order/ui/widgets/service_man_card.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import '../../../components/custom_button.dart';
+import '../../../components/custom_divider.dart';
+import '../../account/model/address.dart';
+import '../../cart/cubit/cart_cubit.dart';
+import '../../common/model/product_domain.dart';
+import '../../order/ui/custom_map_scaffold.dart';
+import '../../order/ui/widgets/get_rating_card.dart';
+import '../../order/ui/widgets/order_header_card.dart';
+import '../../order/ui/widgets/order_info_card.dart';
+import '../../order/ui/widgets/service_man_card.dart';
+import '../../../generated/assets.dart';
+import '../../../generated/l10n.dart';
+import '../../../routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -54,7 +54,8 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
           bottomSheetInitialSize: _isDelivered ? 0.16 : null,
           showBackButton: true,
           onBackTap: () {
-            Navigator.pushNamedAndRemoveUntil(context, PageRoutes.bottomNavigation, (r) => false);
+            Navigator.pushNamedAndRemoveUntil(
+                context, PageRoutes.bottomNavigation, (r) => false);
           },
           bottomSheetBuilder: (context, controller) {
             return ListView(
@@ -70,7 +71,8 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                   Container(
                     padding: const EdgeInsets.only(top: 6),
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
+                      borderRadius:
+                          const BorderRadius.vertical(top: Radius.circular(30)),
                       color: theme.primaryColor,
                     ),
                     child: Column(
@@ -91,14 +93,15 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                                   )
                                 ],
                               ),
-                              style: theme.textTheme.bodyLarge
-                                  ?.copyWith(color: theme.scaffoldBackgroundColor),
+                              style: theme.textTheme.bodyLarge?.copyWith(
+                                  color: theme.scaffoldBackgroundColor),
                             ),
                           ],
                         ),
                         Container(
                           decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(20)),
                             color: Colors.white,
                           ),
                           height: 20,
@@ -121,7 +124,8 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                             children: [
                               Row(
                                 children: [
-                                  Text(locale.costForService, style: theme.textTheme.bodyLarge),
+                                  Text(locale.costForService,
+                                      style: theme.textTheme.bodyLarge),
                                   const Spacer(),
                                   Text(
                                     r"$ 7.00",
@@ -141,8 +145,8 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                         ),
                         const SizedBox(height: 10),
                       ],
-                      ServiceManCard(
-                          "Tap, Basin & Sink Problem", Assets.profilesPlumber1, "Plumber"),
+                      ServiceManCard("Tap, Basin & Sink Problem",
+                          Assets.profilesPlumber1, "Plumber"),
                       const SizedBox(height: 10),
                       Container(
                         color: Colors.white,
@@ -153,8 +157,10 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(locale.bookedFor, style: theme.textTheme.bodyMedium),
-                                Text("23 June, 10:00 AM", style: theme.textTheme.bodyMedium),
+                                Text(locale.bookedFor,
+                                    style: theme.textTheme.bodyMedium),
+                                Text("23 June, 10:00 AM",
+                                    style: theme.textTheme.bodyMedium),
                               ],
                             ),
                             const SizedBox(height: 8),
@@ -162,9 +168,11 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                             if (!_isDelivered) ...[
                               Row(
                                 children: [
-                                  Text(locale.estimateCost, style: theme.textTheme.bodyMedium),
+                                  Text(locale.estimateCost,
+                                      style: theme.textTheme.bodyMedium),
                                   const Spacer(),
-                                  Text(r"$5.00", style: theme.textTheme.bodyMedium),
+                                  Text(r"$5.00",
+                                      style: theme.textTheme.bodyMedium),
                                   Text("/hr",
                                       style: theme.textTheme.labelSmall
                                           ?.copyWith(color: theme.hintColor)),
@@ -183,7 +191,8 @@ class _ServiceRequestScreenState extends State<ServiceRequestScreen> {
                               ),
                               title: Text(
                                 locale.serviceAddress,
-                                style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                                style: theme.textTheme.titleSmall
+                                    ?.copyWith(color: theme.hintColor),
                               ),
                               subtitle: Padding(
                                 padding: const EdgeInsets.only(top: 8),

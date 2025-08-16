@@ -1,11 +1,11 @@
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/custom_shadow.dart';
-import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
-import 'package:deligo/features/medicine/ui/medicine_item_card.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/components/custom_shadow.dart';
+import 'package:genseva/features/cart/ui/cart_bottom_bar.dart';
+import 'package:genseva/features/common/model/category_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
+import 'package:genseva/features/food/ui/widgets/custom_info_widget.dart';
+import 'package:genseva/features/medicine/ui/medicine_item_card.dart';
+import 'package:genseva/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -20,7 +20,8 @@ class _MedicineStorePageState extends State<MedicineStorePage> {
   @override
   Widget build(BuildContext context) {
     StoreDomain store =
-        ModalRoute.of(context)?.settings.arguments as StoreDomain? ?? StoreDomain.foodList.first;
+        ModalRoute.of(context)?.settings.arguments as StoreDomain? ??
+            StoreDomain.foodList.first;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -52,12 +53,17 @@ class _MedicineStorePageState extends State<MedicineStorePage> {
                   children: [
                     Text(
                       "${store.location} • ",
-                      style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleSmall
+                          ?.copyWith(color: Colors.grey),
                     ),
                     Text(
                       "1.5 km",
-                      style:
-                          Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.black54),
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleSmall
+                          ?.copyWith(color: Colors.black54),
                     ),
                   ],
                 ),
@@ -72,8 +78,8 @@ class _MedicineStorePageState extends State<MedicineStorePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
-                CustomInfoWidget(
-                    Icons.access_time, AppLocalizations.of(context).openingTiming, store.timing),
+                CustomInfoWidget(Icons.access_time,
+                    AppLocalizations.of(context).openingTiming, store.timing),
               ],
             ),
           ),

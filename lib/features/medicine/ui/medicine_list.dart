@@ -1,9 +1,9 @@
-import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
-import 'package:deligo/features/medicine/ui/medicine_item_card.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'package:genseva/features/cart/ui/cart_bottom_bar.dart';
+import 'package:genseva/features/common/model/category_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
+import 'package:genseva/features/food/ui/widgets/custom_filters.dart';
+import 'package:genseva/features/medicine/ui/medicine_item_card.dart';
+import 'package:genseva/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class MedicineList extends StatelessWidget {

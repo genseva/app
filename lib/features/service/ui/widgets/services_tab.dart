@@ -1,6 +1,6 @@
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
+import '../../../components/custom_divider.dart';
+import '../../common/model/category_domain.dart';
+import '../../common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class ServicesTab extends StatelessWidget {
@@ -20,7 +20,8 @@ class ServicesTab extends StatelessWidget {
               Expanded(
                   child: Text(
                 services,
-                style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w500),
+                style: theme.textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.w500),
               )),
               Text(
                 r"$" "${provider.serviceCharge}",

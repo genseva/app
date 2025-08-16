@@ -1,7 +1,7 @@
-import 'package:deligo/features/auth/login_navigator.dart';
-import 'package:deligo/features/cart/cubit/cart_cubit.dart';
-import 'package:deligo/features/language/bloc/language_cubit.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'features/auth/login_navigator.dart';
+import 'features/cart/cubit/cart_cubit.dart';
+import 'features/language/bloc/language_cubit.dart';
+import 'generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,9 +13,10 @@ import 'app_config/style.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
-  );
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarIconBrightness: Brightness.dark,
@@ -26,16 +27,10 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider<LanguageCubit>(
-          create: (context) => LanguageCubit(),
-        ),
-        BlocProvider(
-          create: (context) => CartCubit(),
-        ),
+        BlocProvider<LanguageCubit>(create: (context) => LanguageCubit()),
+        BlocProvider(create: (context) => CartCubit()),
       ],
-      child: Phoenix(
-        child: const MyApp(),
-      ),
+      child: Phoenix(child: const MyApp()),
     ),
   );
 }

@@ -1,4 +1,4 @@
-import 'package:deligo/app_config/colors.dart';
+import 'package:genseva/app_config/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -35,7 +35,8 @@ class _CustomFiltersState extends State<CustomFilters> {
           children: List.generate(
             widget.filters.length,
             (index) {
-              var isSelected = _selectedFilters.contains(widget.filters[index].title);
+              var isSelected =
+                  _selectedFilters.contains(widget.filters[index].title);
               return FilterChip(
                 selected: isSelected,
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -45,7 +46,9 @@ class _CustomFiltersState extends State<CustomFilters> {
                 padding: const EdgeInsets.all(10),
                 avatar: Icon(
                   widget.filters[index].icon,
-                  color: isSelected ? Theme.of(context).scaffoldBackgroundColor : blackColor,
+                  color: isSelected
+                      ? Theme.of(context).scaffoldBackgroundColor
+                      : blackColor,
                   size: 20,
                 ),
                 shape: RoundedRectangleBorder(
@@ -55,7 +58,9 @@ class _CustomFiltersState extends State<CustomFilters> {
                 label: Text(
                   widget.filters[index].title,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        color: isSelected ? Theme.of(context).scaffoldBackgroundColor : null,
+                        color: isSelected
+                            ? Theme.of(context).scaffoldBackgroundColor
+                            : null,
                         fontSize: 12,
                       ),
                 ),

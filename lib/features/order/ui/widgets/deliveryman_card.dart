@@ -1,4 +1,4 @@
-import 'package:deligo/generated/assets.dart';
+import 'package:genseva/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class DeliverymanCard extends StatelessWidget {

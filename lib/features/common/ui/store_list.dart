@@ -1,7 +1,7 @@
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/rating_card.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/components/rating_card.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
+import 'package:genseva/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class StoreList extends StatelessWidget {
@@ -47,8 +47,8 @@ class StoreList extends StatelessWidget {
                     ),
                     Text(
                       store.location,
-                      style:
-                          theme.textTheme.bodySmall!.copyWith(fontSize: 12, color: theme.hintColor),
+                      style: theme.textTheme.bodySmall!
+                          .copyWith(fontSize: 12, color: theme.hintColor),
                     ),
                     const SizedBox(
                       height: 8,
@@ -56,8 +56,8 @@ class StoreList extends StatelessWidget {
                     if (store.serviceCharge != null) ...[
                       Text(
                         "Electrician",
-                        style: theme.textTheme.bodyLarge!
-                            .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                            fontSize: 12, color: theme.unselectedWidgetColor),
                       ),
                       const CustomDivider(),
                       Row(
@@ -94,18 +94,21 @@ class StoreList extends StatelessWidget {
                         children: [
                           Text(
                             "Delivery in ${store.deliveryTime} mins",
-                            style: theme.textTheme.bodyLarge!
-                                .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                                fontSize: 12,
+                                color: theme.unselectedWidgetColor),
                           ),
                           Text(
                             "  •  ",
-                            style: theme.textTheme.bodyLarge!
-                                .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                                fontSize: 12,
+                                color: theme.unselectedWidgetColor),
                           ),
                           Text(
                             '${store.distance} ${locale.km}',
-                            style: theme.textTheme.bodyLarge!
-                                .copyWith(fontSize: 12, color: theme.unselectedWidgetColor),
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                                fontSize: 12,
+                                color: theme.unselectedWidgetColor),
                           )
                         ],
                       ),

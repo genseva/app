@@ -1,11 +1,11 @@
-import 'package:deligo/components/custom_scaffold.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/category/ui/category_list.dart';
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import '../../../components/custom_scaffold.dart';
+import '../../../components/custom_text_field.dart';
+import '../../category/ui/category_list.dart';
+import '../../common/model/category_domain.dart';
+import '../../common/model/store_domain.dart';
+import '../../../generated/assets.dart';
+import '../../../generated/l10n.dart';
+import '../../../routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class BookServiceScreen extends StatelessWidget {
@@ -26,7 +26,8 @@ class BookServiceScreen extends StatelessWidget {
             CustomTextField(
               bgColor: theme.scaffoldBackgroundColor,
               hintText: locale.searchMedicineOrPharmaStore,
-              prefixIcon: Icon(Icons.search, color: theme.primaryColorDark, size: 24),
+              prefixIcon:
+                  Icon(Icons.search, color: theme.primaryColorDark, size: 24),
             ),
             Flexible(
               child: CategoryList(

@@ -1,5 +1,5 @@
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/generated/assets.dart';
+import 'product_domain.dart';
+import '../../../generated/assets.dart';
 
 class CategoryDomain {
   final String title;
@@ -130,13 +130,16 @@ class CategoryDomain {
       [
         ProductDomain("Fresh Potatoes", Assets.itemsVegPotatoes, 5.00,
             cartQuantity: 500, unit: "g"),
-        ProductDomain("Fresh Broccoli", Assets.itemsVegCouli, 5.00, cartQuantity: 500, unit: "g"),
+        ProductDomain("Fresh Broccoli", Assets.itemsVegCouli, 5.00,
+            cartQuantity: 500, unit: "g"),
         ProductDomain("Fresh Capsicum", Assets.itemsVegCapsicum, 6.00,
             cartQuantity: 500, unit: "g"),
-        ProductDomain("Fresh Eggplant", Assets.itemsVegBringle, 9.00, cartQuantity: 500, unit: "g"),
+        ProductDomain("Fresh Eggplant", Assets.itemsVegBringle, 9.00,
+            cartQuantity: 500, unit: "g"),
         ProductDomain("Cauliflower", Assets.itemsVegColiflower, 7.00,
             cartQuantity: 1000, unit: "g"),
-        ProductDomain("Onion", Assets.itemsVegOnion, 5.00, cartQuantity: 500, unit: "g"),
+        ProductDomain("Onion", Assets.itemsVegOnion, 5.00,
+            cartQuantity: 500, unit: "g"),
         ProductDomain("Lady finger", Assets.itemsVegLadiesfinger, 7.00,
             cartQuantity: 500, unit: "g"),
       ],
@@ -144,23 +147,33 @@ class CategoryDomain {
     CategoryDomain(
       "Personal Care",
       [
-        ProductDomain("Cleanser", Assets.itemsPersonalcareBox, 5.00, cartQuantity: 250, unit: "ml"),
-        ProductDomain("Tooth Brush", Assets.itemsBrush, 5.00, cartQuantity: 1, unit: "pc(s)"),
+        ProductDomain("Cleanser", Assets.itemsPersonalcareBox, 5.00,
+            cartQuantity: 250, unit: "ml"),
+        ProductDomain("Tooth Brush", Assets.itemsBrush, 5.00,
+            cartQuantity: 1, unit: "pc(s)"),
         ProductDomain("Shampoo", Assets.itemsPersonalcareLiquid, 13.00,
             cartQuantity: 350, unit: "ml"),
-        ProductDomain("Night Cream", Assets.itemsLotion, 10.00, cartQuantity: 200, unit: "g"),
+        ProductDomain("Night Cream", Assets.itemsLotion, 10.00,
+            cartQuantity: 200, unit: "g"),
       ],
     ),
     CategoryDomain("Dairy", [
-      ProductDomain("Milk", Assets.itemsDairyMilk, 24.00, cartQuantity: 10, unit: "ml"),
-      ProductDomain("Butter", Assets.itemsDairyButter, 10.00, cartQuantity: 10, unit: "ml"),
-      ProductDomain("Butter Milk", Assets.itemsDairyButtermilk, 8.00, cartQuantity: 10, unit: "ml"),
-      ProductDomain("Yogurt", Assets.itemsDairyYogurt, 4.00, cartQuantity: 10, unit: "ml"),
-      ProductDomain("Cheese", Assets.itemsDairyCheese, 9.00, cartQuantity: 500, unit: "g"),
-      ProductDomain("Custard", Assets.itemsDairyCustard, 5.00, cartQuantity: 10, unit: "ml"),
+      ProductDomain("Milk", Assets.itemsDairyMilk, 24.00,
+          cartQuantity: 10, unit: "ml"),
+      ProductDomain("Butter", Assets.itemsDairyButter, 10.00,
+          cartQuantity: 10, unit: "ml"),
+      ProductDomain("Butter Milk", Assets.itemsDairyButtermilk, 8.00,
+          cartQuantity: 10, unit: "ml"),
+      ProductDomain("Yogurt", Assets.itemsDairyYogurt, 4.00,
+          cartQuantity: 10, unit: "ml"),
+      ProductDomain("Cheese", Assets.itemsDairyCheese, 9.00,
+          cartQuantity: 500, unit: "g"),
+      ProductDomain("Custard", Assets.itemsDairyCustard, 5.00,
+          cartQuantity: 10, unit: "ml"),
     ]),
     CategoryDomain("Fruits", [
-      ProductDomain("Fresh Capsicum", Assets.itemsVegCapsicum, 6.00, cartQuantity: 500, unit: "g"),
+      ProductDomain("Fresh Capsicum", Assets.itemsVegCapsicum, 6.00,
+          cartQuantity: 500, unit: "g"),
     ]),
   ];
 
@@ -168,11 +181,16 @@ class CategoryDomain {
     CategoryDomain(
       "Her Fashion",
       [
-        ProductDomain("Women White Skirt", Assets.productsItem1, 10.00, cartQuantity: 0),
-        ProductDomain("Women Pink Dress", Assets.productsItem2, 8.00, cartQuantity: 0),
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
-        ProductDomain("Women Yellow Dress", Assets.productsItem4, 12.00, cartQuantity: 0),
-        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00, cartQuantity: 0),
+        ProductDomain("Women White Skirt", Assets.productsItem1, 10.00,
+            cartQuantity: 0),
+        ProductDomain("Women Pink Dress", Assets.productsItem2, 8.00,
+            cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
+        ProductDomain("Women Yellow Dress", Assets.productsItem4, 12.00,
+            cartQuantity: 0),
+        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00,
+            cartQuantity: 0),
       ],
       subCategories: [
         "Clothing",
@@ -189,26 +207,39 @@ class CategoryDomain {
     CategoryDomain(
       "His Fashion",
       [
-        ProductDomain("Women White Skirt", Assets.productsItem1, 10.00, cartQuantity: 0),
-        ProductDomain("Women Pink Dress", Assets.productsItem2, 8.00, cartQuantity: 0),
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
-        ProductDomain("Women Yellow Dress", Assets.productsItem4, 12.00, cartQuantity: 0),
-        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00, cartQuantity: 0),
+        ProductDomain("Women White Skirt", Assets.productsItem1, 10.00,
+            cartQuantity: 0),
+        ProductDomain("Women Pink Dress", Assets.productsItem2, 8.00,
+            cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
+        ProductDomain("Women Yellow Dress", Assets.productsItem4, 12.00,
+            cartQuantity: 0),
+        ProductDomain("Women White Skirt", Assets.productsItem1, 19.00,
+            cartQuantity: 0),
       ],
       image: Assets.categoriesEcomHisfashion,
     ),
     CategoryDomain(
       "Kid's Fashion",
       [
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
       ],
-      subCategories: ["Clothing", "Shoes", "Watches", "Handbags", "Accessories"],
+      subCategories: [
+        "Clothing",
+        "Shoes",
+        "Watches",
+        "Handbags",
+        "Accessories"
+      ],
       image: Assets.categoriesEcomKidfashion,
     ),
     CategoryDomain(
       "Appliances",
       [
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
       ],
       subCategories: ["Washing Machine", "Television", "Refrigerator"],
       image: Assets.categoriesEcomAppliances,
@@ -216,7 +247,8 @@ class CategoryDomain {
     CategoryDomain(
       "Phones",
       [
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
       ],
       subCategories: ["Mobile", "Tablet", "Laptop", "Smart Watch"],
       image: Assets.categoriesEcomPhone,
@@ -224,7 +256,8 @@ class CategoryDomain {
     CategoryDomain(
       "Beauty Care",
       [
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
       ],
       subCategories: ["Hair Care", "Skin Care", "Body Care", "Make Up"],
       image: Assets.categoriesEcomBeauty,
@@ -232,7 +265,8 @@ class CategoryDomain {
     CategoryDomain(
       "Toys",
       [
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
       ],
       subCategories: ["Board Games", "Games", "Dolls", "Puzzles"],
       image: Assets.categoriesEcomToys,
@@ -240,17 +274,29 @@ class CategoryDomain {
     CategoryDomain(
       "Health Care",
       [
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
       ],
-      subCategories: ["Health Care", "Health Care", "Health Care", "Health Care"],
+      subCategories: [
+        "Health Care",
+        "Health Care",
+        "Health Care",
+        "Health Care"
+      ],
       image: Assets.categoriesEcomHealth,
     ),
     CategoryDomain(
       "Pet Supplies",
       [
-        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00, cartQuantity: 0),
+        ProductDomain("Women Blue Shirt", Assets.productsItem3, 7.00,
+            cartQuantity: 0),
       ],
-      subCategories: ["Pet Supplies", "Pet Supplies", "Pet Supplies", "Pet Supplies"],
+      subCategories: [
+        "Pet Supplies",
+        "Pet Supplies",
+        "Pet Supplies",
+        "Pet Supplies"
+      ],
       image: Assets.categoriesEcomPet,
     ),
   ];
@@ -363,13 +409,22 @@ class CategoryDomain {
     CategoryDomain(
       "Home Clean",
       [],
-      subCategories: ["Floor Clean, Carpet Clean", "Carpet Clean", "Garden Clean"],
+      subCategories: [
+        "Floor Clean, Carpet Clean",
+        "Carpet Clean",
+        "Garden Clean"
+      ],
       image: Assets.categoriesHandyCleaner,
     ),
     CategoryDomain(
       "Electrician",
       [],
-      subCategories: ["Fan Fitting", "TV Installation", "AC Installation", "CCTV Installation"],
+      subCategories: [
+        "Fan Fitting",
+        "TV Installation",
+        "AC Installation",
+        "CCTV Installation"
+      ],
       image: Assets.categoriesHandyElec,
     ),
     CategoryDomain(
@@ -390,13 +445,23 @@ class CategoryDomain {
     CategoryDomain(
       "Carpainter",
       [],
-      subCategories: ["Painting", "Wall Painting", "Floor Painting", "Curtain Painting"],
+      subCategories: [
+        "Painting",
+        "Wall Painting",
+        "Floor Painting",
+        "Curtain Painting"
+      ],
       image: Assets.categoriesHandyCarpainter,
     ),
     CategoryDomain(
       "Painter",
       [],
-      subCategories: ["Painting", "Wall Painting", "Floor Painting", "Curtain Painting"],
+      subCategories: [
+        "Painting",
+        "Wall Painting",
+        "Floor Painting",
+        "Curtain Painting"
+      ],
       image: Assets.categoriesHandyPainter,
     ),
     CategoryDomain(

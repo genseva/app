@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.flutter.deligo">
+    package="com.genseva.app">
    <application
-        android:label="Deligo"
+        android:label="GenSeva"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

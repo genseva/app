@@ -1,5 +1,5 @@
-import 'package:deligo/features/account/model/address.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
+import 'package:genseva/features/account/model/address.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class AddressCard extends StatelessWidget {
@@ -42,20 +42,24 @@ class AddressCard extends StatelessWidget {
               children: [
                 Text(
                   store.name,
-                  style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                  style: theme.textTheme.titleSmall
+                      ?.copyWith(color: theme.hintColor),
                 ),
                 Text(
                   AddressDomain.list[1].address,
-                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 20),
                 Text(
                   "Delivery Location",
-                  style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                  style: theme.textTheme.titleSmall
+                      ?.copyWith(color: theme.hintColor),
                 ),
                 Text(
                   AddressDomain.list.first.address,
-                  style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleSmall
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),

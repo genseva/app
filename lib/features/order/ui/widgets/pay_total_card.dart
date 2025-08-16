@@ -1,5 +1,5 @@
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/features/cart/cubit/cart_cubit.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/features/cart/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 
 class PayTotalCard extends StatelessWidget {
@@ -84,14 +84,16 @@ class PayTotalCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   isPaid ? "Paid via GoWallet" : "To Pay",
-                  style: theme.textTheme.bodyLarge
-                      ?.copyWith(color: isPaid ? theme.primaryColor : Colors.black),
+                  style: theme.textTheme.bodyLarge?.copyWith(
+                      color: isPaid ? theme.primaryColor : Colors.black),
                 ),
               ),
               Text(
                 r"$" " ${cubit.getCartTotalWithCharges().toStringAsFixed(2)}",
-                style:
-                    Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w400),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(fontWeight: FontWeight.w400),
               ),
             ],
           ),

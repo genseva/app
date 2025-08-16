@@ -1,5 +1,5 @@
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/features/common/model/category_domain.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class CategoryGrid extends StatelessWidget {

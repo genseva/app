@@ -1,7 +1,7 @@
-import 'package:deligo/components/add_button.dart';
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
+import 'package:genseva/components/add_button.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/features/common/model/product_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class MedicineItemCard extends StatelessWidget {
@@ -62,7 +62,9 @@ class MedicineItemCard extends StatelessWidget {
                             color: Colors.grey,
                           ),
                         ),
-                        AddItemButton(store: StoreDomain.medicineList.first, product: item),
+                        AddItemButton(
+                            store: StoreDomain.medicineList.first,
+                            product: item),
                       ],
                     )
                   ],
@@ -109,8 +111,8 @@ class MedicineItemCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         item.name,
-                        style:
-                            theme.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w600),
+                        style: theme.textTheme.headlineMedium
+                            ?.copyWith(fontWeight: FontWeight.w600),
                       ),
                     ),
                   ],
@@ -118,7 +120,8 @@ class MedicineItemCard extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   "More Seller(s)",
-                  style: theme.textTheme.bodyLarge?.copyWith(color: Colors.black45),
+                  style: theme.textTheme.bodyLarge
+                      ?.copyWith(color: Colors.black45),
                 ),
                 const SizedBox(height: 10),
                 ListView.separated(
@@ -148,7 +151,10 @@ class MedicineItemCard extends StatelessWidget {
                           children: [
                             Text(
                               "${store.location}   •   ",
-                              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
                                     color: theme.hintColor,
                                   ),
                             ),

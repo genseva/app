@@ -1,8 +1,8 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/features/service/ui/widgets/select_date_list.dart';
-import 'package:deligo/features/service/ui/widgets/select_time_list.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import '../../../components/custom_button.dart';
+import 'select_date_list.dart';
+import 'select_time_list.dart';
+import '../../../generated/l10n.dart';
+import '../../../routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class SelectServiceDate extends StatefulWidget {
@@ -40,17 +40,21 @@ class _SelectServiceDateState extends State<SelectServiceDate> {
                       children: [
                         const SizedBox(height: 16),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 20),
                           child: Text(
                             locale.selectDate,
-                            style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                            style: theme.textTheme.titleSmall
+                                ?.copyWith(color: theme.hintColor),
                           ),
                         ),
                         const SelectDateList(),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 20),
                           child: Text("Available Time",
-                              style: theme.textTheme.titleSmall?.copyWith(color: Colors.grey)),
+                              style: theme.textTheme.titleSmall
+                                  ?.copyWith(color: Colors.grey)),
                         ),
                         const SelectTimeList(),
                         const SelectServiceDate(isSheet: false),
@@ -66,18 +70,21 @@ class _SelectServiceDateState extends State<SelectServiceDate> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.calendar_month_outlined, color: theme.primaryColor, size: 15),
+                    Icon(Icons.calendar_month_outlined,
+                        color: theme.primaryColor, size: 15),
                     const SizedBox(width: 8),
                     Text(
                       locale.selectDate,
-                      style: theme.textTheme.titleSmall?.copyWith(color: theme.hintColor),
+                      style: theme.textTheme.titleSmall
+                          ?.copyWith(color: theme.hintColor),
                     ),
                   ],
                 ),
                 const SizedBox(height: 5),
                 Text(
                   "23 June, 10:00 AM",
-                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -87,7 +94,8 @@ class _SelectServiceDateState extends State<SelectServiceDate> {
             prefixIcon: Icons.assignment_turned_in_outlined,
             prefixIconColor: theme.scaffoldBackgroundColor,
             text: locale.sendRequest,
-            onTap: () => Navigator.pushNamed(context, PageRoutes.serviceRequestScreen),
+            onTap: () =>
+                Navigator.pushNamed(context, PageRoutes.serviceRequestScreen),
           )
         ],
       ),

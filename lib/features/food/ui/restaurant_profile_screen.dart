@@ -1,11 +1,11 @@
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/components/custom_shadow.dart';
-import 'package:deligo/features/cart/ui/cart_bottom_bar.dart';
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/features/food/ui/widgets/custom_info_widget.dart';
-import 'package:deligo/features/food/ui/widgets/food_card.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/components/custom_shadow.dart';
+import 'package:genseva/features/cart/ui/cart_bottom_bar.dart';
+import 'package:genseva/features/common/model/category_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
+import 'package:genseva/features/food/ui/widgets/custom_info_widget.dart';
+import 'package:genseva/features/food/ui/widgets/food_card.dart';
+import 'package:genseva/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -23,7 +23,8 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
   @override
   Widget build(BuildContext context) {
     StoreDomain store =
-        ModalRoute.of(context)?.settings.arguments as StoreDomain? ?? StoreDomain.foodList.first;
+        ModalRoute.of(context)?.settings.arguments as StoreDomain? ??
+            StoreDomain.foodList.first;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -58,12 +59,17 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                   children: [
                     Text(
                       "${store.location} • ",
-                      style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleSmall
+                          ?.copyWith(color: Colors.grey),
                     ),
                     Text(
                       "1.5 km",
-                      style:
-                          Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.black54),
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleSmall
+                          ?.copyWith(color: Colors.black54),
                     ),
                   ],
                 ),
@@ -80,8 +86,8 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                 CustomInfoWidget(Icons.star, "60+ ratings", "4.2"),
                 CustomInfoWidget(Icons.directions_bike_outlined,
                     AppLocalizations.of(context).deliveryIn, "20 min"),
-                CustomInfoWidget(
-                    Icons.restaurant_menu, AppLocalizations.of(context).priceRange, r"$$$$"),
+                CustomInfoWidget(Icons.restaurant_menu,
+                    AppLocalizations.of(context).priceRange, r"$$$$"),
               ],
             ),
           ),
@@ -121,7 +127,8 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
       floatingActionButton: MenuAnchor(
         alignmentOffset: const Offset(4, 4),
         style: MenuStyle(
-          backgroundColor: WidgetStatePropertyAll(Theme.of(context).primaryColorDark),
+          backgroundColor:
+              WidgetStatePropertyAll(Theme.of(context).primaryColorDark),
           padding: const WidgetStatePropertyAll(EdgeInsets.all(16)),
         ),
         builder: (context, menuController, child) {
@@ -134,7 +141,9 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
             foregroundColor: Theme.of(context).scaffoldBackgroundColor,
             extendedIconLabelSpacing: 16,
             onPressed: () {
-              menuController.isOpen ? menuController.close() : menuController.open();
+              menuController.isOpen
+                  ? menuController.close()
+                  : menuController.open();
             },
           );
         },
@@ -154,10 +163,8 @@ class _RestaurantProfilePageState extends State<RestaurantProfilePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   category.title,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: Theme.of(context).scaffoldBackgroundColor),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).scaffoldBackgroundColor),
                   textAlign: TextAlign.center,
                 ),
               ),

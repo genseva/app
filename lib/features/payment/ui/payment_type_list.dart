@@ -1,6 +1,6 @@
-import 'package:deligo/components/option_tile.dart';
-import 'package:deligo/features/payment/models/payment_category.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/option_tile.dart';
+import 'package:genseva/features/payment/models/payment_category.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class PaymentTypeList extends StatelessWidget {
@@ -21,7 +21,8 @@ class PaymentTypeList extends StatelessWidget {
           children: [
             Text(
               category.title,
-              style: theme.textTheme.bodyMedium?.copyWith(color: theme.unselectedWidgetColor),
+              style: theme.textTheme.bodyMedium
+                  ?.copyWith(color: theme.unselectedWidgetColor),
             ),
             ...category.paymentMethods.map(
               (paymentMethod) {

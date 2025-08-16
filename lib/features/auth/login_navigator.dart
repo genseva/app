@@ -1,4 +1,4 @@
-import 'package:deligo/features/language/ui/language_page.dart';
+import 'package:genseva/features/language/ui/language_page.dart';
 import 'package:deligo/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 

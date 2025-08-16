@@ -1,6 +1,6 @@
-import 'package:deligo/features/cart/cubit/cart_cubit.dart';
-import 'package:deligo/features/payment/ui/payment_type_list.dart';
-import 'package:deligo/generated/l10n.dart';
+import 'package:genseva/features/cart/cubit/cart_cubit.dart';
+import 'package:genseva/features/payment/ui/payment_type_list.dart';
+import 'package:genseva/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,11 +26,13 @@ class PaymentPage extends StatelessWidget {
               children: [
                 Text(
                   AppLocalizations.of(context).amountToPay,
-                  style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.bodyLarge
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   r"$" " ${cubit.getCartTotalWithCharges().toStringAsFixed(2)}",
-                  style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleLarge
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -39,7 +41,8 @@ class PaymentPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "${cubit.state.length} items",
-              style: theme.textTheme.bodyMedium?.copyWith(color: theme.unselectedWidgetColor),
+              style: theme.textTheme.bodyMedium
+                  ?.copyWith(color: theme.unselectedWidgetColor),
             ),
           ),
           const SizedBox(height: 20),

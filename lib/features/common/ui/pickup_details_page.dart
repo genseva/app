@@ -1,8 +1,8 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_text_field.dart';
-import 'package:deligo/features/account/model/address.dart';
-import 'package:deligo/features/common/model/delivery_type.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_button.dart';
+import 'package:genseva/components/custom_text_field.dart';
+import 'package:genseva/features/account/model/address.dart';
+import 'package:genseva/features/common/model/delivery_type.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class PickupDetailsPage extends StatefulWidget {
@@ -23,7 +23,8 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    AddressDomain address = ModalRoute.of(context)?.settings.arguments as AddressDomain;
+    AddressDomain address =
+        ModalRoute.of(context)?.settings.arguments as AddressDomain;
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
@@ -51,14 +52,15 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
             minVerticalPadding: 16,
             title: Text(
               address.name,
-              style:
-                  theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600, height: 0.4),
+              style: theme.textTheme.titleMedium
+                  ?.copyWith(fontWeight: FontWeight.w600, height: 0.4),
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(
                 address.address,
-                style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+                style:
+                    theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
               ),
             ),
             trailing: FittedBox(
@@ -83,12 +85,14 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
               const SizedBox(width: 16),
               Text(
                 "Sender Details",
-                style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+                style:
+                    theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
               ),
               const Spacer(),
               Text(
                 "CLEAR DETAILS",
-                style: theme.textTheme.bodyMedium?.copyWith(color: theme.primaryColor),
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(color: theme.primaryColor),
               ),
               const SizedBox(width: 16),
             ],
@@ -108,9 +112,11 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
                 iconSize: 30,
                 style: ButtonStyle(
                   shape: WidgetStateProperty.all(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)),
                   ),
-                  backgroundColor: WidgetStateProperty.all(theme.primaryColor.withOpacity(0.1)),
+                  backgroundColor: WidgetStateProperty.all(
+                      theme.primaryColor.withOpacity(0.1)),
                   foregroundColor: WidgetStateProperty.all(theme.primaryColor),
                 ),
               ),
@@ -127,7 +133,8 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
             padding: const EdgeInsets.all(16),
             child: Text(
               "Select Package Weight",
-              style: theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
+              style:
+                  theme.textTheme.bodyLarge?.copyWith(color: theme.hintColor),
             ),
           ),
           ListView.separated(
@@ -157,7 +164,8 @@ class _PickupDetailsPageState extends State<PickupDetailsPage> {
                   children: [
                     Text(
                       packageWeight.$1,
-                      style: theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                      style: theme.textTheme.bodyLarge
+                          ?.copyWith(fontWeight: FontWeight.bold),
                     ),
                     Text(
                       packageWeight.$2,

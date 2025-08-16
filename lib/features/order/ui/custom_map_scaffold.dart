@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:deligo/features/account/model/address.dart';
-import 'package:deligo/generated/assets.dart';
+import 'package:genseva/features/account/model/address.dart';
+import 'package:genseva/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -67,12 +67,14 @@ class _CustomMapScaffoldState extends State<CustomMapScaffold> {
                 onCameraMove: (CameraPosition cameraPosition) async {
                   if (widget.showCenterPin) {
                     widget.onAddressUpdate?.call(
-                      AddressDomain(Icons.location_on, "Loading...", "Loading..."),
+                      AddressDomain(
+                          Icons.location_on, "Loading...", "Loading..."),
                     );
                     _debouncer.run(() async {
                       position = cameraPosition.target;
                       List<Placemark> placemarks =
-                          await placemarkFromCoordinates(position.latitude, position.longitude);
+                          await placemarkFromCoordinates(
+                              position.latitude, position.longitude);
                       AddressDomain address = AddressDomain(
                         Icons.location_on,
                         placemarks.firstOrNull?.name ?? "Loading...",

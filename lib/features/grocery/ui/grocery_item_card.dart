@@ -1,6 +1,6 @@
-import 'package:deligo/components/add_button.dart';
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
+import 'package:genseva/components/add_button.dart';
+import 'package:genseva/features/common/model/product_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
 import 'package:flutter/material.dart';
 
 class GroceryItemCard extends StatelessWidget {

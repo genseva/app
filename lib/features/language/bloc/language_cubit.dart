@@ -1,5 +1,5 @@
-import 'package:deligo/app_config/app_config.dart';
-import 'package:deligo/features/language/data/app_settings_local_data_source.dart';
+import 'package:genseva/app_config/app_config.dart';
+import 'package:genseva/features/language/data/app_settings_local_data_source.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

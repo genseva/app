@@ -1,16 +1,16 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/features/cart/cubit/cart_cubit.dart';
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
-import 'package:deligo/features/order/ui/widgets/address_card.dart';
-import 'package:deligo/features/order/ui/widgets/deliveryman_card.dart';
-import 'package:deligo/features/order/ui/widgets/get_rating_card.dart';
-import 'package:deligo/features/order/ui/widgets/order_header_card.dart';
-import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
-import 'package:deligo/features/order/ui/widgets/pay_total_card.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_button.dart';
+import 'package:genseva/features/cart/cubit/cart_cubit.dart';
+import 'package:genseva/features/common/model/product_domain.dart';
+import 'package:genseva/features/order/ui/custom_map_scaffold.dart';
+import 'package:genseva/features/order/ui/widgets/address_card.dart';
+import 'package:genseva/features/order/ui/widgets/deliveryman_card.dart';
+import 'package:genseva/features/order/ui/widgets/get_rating_card.dart';
+import 'package:genseva/features/order/ui/widgets/order_header_card.dart';
+import 'package:genseva/features/order/ui/widgets/order_info_card.dart';
+import 'package:genseva/features/order/ui/widgets/pay_total_card.dart';
+import 'package:genseva/generated/assets.dart';
+import 'package:genseva/generated/l10n.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -53,7 +53,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
           bottomSheetInitialSize: _isDelivered ? 0.16 : null,
           showBackButton: true,
           onBackTap: () {
-            Navigator.pushNamedAndRemoveUntil(context, PageRoutes.bottomNavigation, (r) => false);
+            Navigator.pushNamedAndRemoveUntil(
+                context, PageRoutes.bottomNavigation, (r) => false);
           },
           bottomSheetBuilder: (context, controller) {
             return ListView(
@@ -122,8 +123,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                                 )
                               ],
                             ),
-                            style: theme.textTheme.bodyLarge
-                                ?.copyWith(color: theme.scaffoldBackgroundColor),
+                            style: theme.textTheme.bodyLarge?.copyWith(
+                                color: theme.scaffoldBackgroundColor),
                           ),
                       ],
                     ),
@@ -137,12 +138,14 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                         const GetRatingCard(),
                         const SizedBox(height: 10),
                       ],
-                      if (_cubit.store?.type != "shop") DeliverymanCard(_isDelivered),
+                      if (_cubit.store?.type != "shop")
+                        DeliverymanCard(_isDelivered),
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                           "Delivery Details",
-                          style: theme.textTheme.titleMedium?.copyWith(color: theme.hintColor),
+                          style: theme.textTheme.titleMedium
+                              ?.copyWith(color: theme.hintColor),
                         ),
                       ),
                       AddressCard(_isDelivered, store: _cubit.store!),
@@ -152,7 +155,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                           "Ordered Item(s)",
-                          style: theme.textTheme.titleMedium?.copyWith(color: theme.hintColor),
+                          style: theme.textTheme.titleMedium
+                              ?.copyWith(color: theme.hintColor),
                         ),
                       ),
                       Container(
@@ -200,7 +204,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                               ),
                             );
                           },
-                          separatorBuilder: (context, index) => const SizedBox(),
+                          separatorBuilder: (context, index) =>
+                              const SizedBox(),
                           itemCount: state.length,
                         ),
                       ),
@@ -208,7 +213,8 @@ class _OrderInfoPageState extends State<OrderInfoPage> {
                       PayTotalCard(_cubit, isPaid: true),
                       if (!_isDelivered)
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 80, vertical: 20),
                           child: CustomButton(
                             onTap: () {
                               Navigator.pop(context);

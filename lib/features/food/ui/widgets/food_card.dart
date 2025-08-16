@@ -1,7 +1,7 @@
-import 'package:deligo/components/add_button.dart';
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/generated/assets.dart';
+import 'package:genseva/components/add_button.dart';
+import 'package:genseva/features/common/model/product_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
+import 'package:genseva/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class FoodCard extends StatefulWidget {
@@ -36,7 +36,9 @@ class _FoodCardState extends State<FoodCard> {
                     Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: Image.asset(
-                        food.isVegetarian ? Assets.foodFoodVeg : Assets.foodFoodNonveg,
+                        food.isVegetarian
+                            ? Assets.foodFoodVeg
+                            : Assets.foodFoodNonveg,
                         height: 16,
                       ),
                     ),
@@ -57,7 +59,10 @@ class _FoodCardState extends State<FoodCard> {
                     Text(
                       food.isCustomizable ? "Customize" : "",
                       textAlign: TextAlign.end,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(color: Colors.grey),
                     )
                   ],
                 ),

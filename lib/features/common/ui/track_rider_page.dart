@@ -1,18 +1,18 @@
-import 'package:deligo/components/custom_button.dart';
-import 'package:deligo/components/custom_divider.dart';
-import 'package:deligo/features/cart/cubit/cart_cubit.dart';
-import 'package:deligo/features/common/model/delivery_type.dart';
-import 'package:deligo/features/common/model/product_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/features/order/ui/custom_map_scaffold.dart';
-import 'package:deligo/features/order/ui/widgets/address_card.dart';
-import 'package:deligo/features/order/ui/widgets/get_rating_card.dart';
-import 'package:deligo/features/order/ui/widgets/order_header_card.dart';
-import 'package:deligo/features/order/ui/widgets/order_info_card.dart';
-import 'package:deligo/features/order/ui/widgets/service_man_card.dart';
-import 'package:deligo/generated/assets.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import 'package:genseva/components/custom_button.dart';
+import 'package:genseva/components/custom_divider.dart';
+import 'package:genseva/features/cart/cubit/cart_cubit.dart';
+import 'package:genseva/features/common/model/delivery_type.dart';
+import 'package:genseva/features/common/model/product_domain.dart';
+import 'package:genseva/features/common/model/store_domain.dart';
+import 'package:genseva/features/order/ui/custom_map_scaffold.dart';
+import 'package:genseva/features/order/ui/widgets/address_card.dart';
+import 'package:genseva/features/order/ui/widgets/get_rating_card.dart';
+import 'package:genseva/features/order/ui/widgets/order_header_card.dart';
+import 'package:genseva/features/order/ui/widgets/order_info_card.dart';
+import 'package:genseva/features/order/ui/widgets/service_man_card.dart';
+import 'package:genseva/generated/assets.dart';
+import 'package:genseva/generated/l10n.dart';
+import 'package:genseva/routes/page_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,14 +48,16 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final locale = AppLocalizations.of(context);
-    DeliveryType type = ModalRoute.of(context)?.settings.arguments as DeliveryType;
+    DeliveryType type =
+        ModalRoute.of(context)?.settings.arguments as DeliveryType;
     return BlocBuilder<CartCubit, List<ProductDomain>>(
       builder: (context, state) {
         return CustomMapScaffold(
           bottomSheetInitialSize: _isCompleted ? 0.16 : null,
           showBackButton: true,
           onBackTap: () {
-            Navigator.pushNamedAndRemoveUntil(context, PageRoutes.bottomNavigation, (r) => false);
+            Navigator.pushNamedAndRemoveUntil(
+                context, PageRoutes.bottomNavigation, (r) => false);
           },
           bottomSheetBuilder: (context, controller) {
             return ListView(
@@ -73,7 +75,8 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                   Container(
                     padding: const EdgeInsets.only(top: 6),
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
+                      borderRadius:
+                          const BorderRadius.vertical(top: Radius.circular(30)),
                       color: theme.primaryColor,
                     ),
                     child: Column(
@@ -101,14 +104,15 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                                   )
                                 ],
                               ),
-                              style: theme.textTheme.bodyLarge
-                                  ?.copyWith(color: theme.scaffoldBackgroundColor),
+                              style: theme.textTheme.bodyLarge?.copyWith(
+                                  color: theme.scaffoldBackgroundColor),
                             ),
                           ],
                         ),
                         Container(
                           decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(20)),
                             color: Colors.white,
                           ),
                           height: 20,
@@ -125,12 +129,14 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                         const GetRatingCard(),
                         const SizedBox(height: 10),
                       ],
-                      ServiceManCard("Tyota Calya", Assets.reviewerReviewer1, "KLV - 1234"),
+                      ServiceManCard("Tyota Calya", Assets.reviewerReviewer1,
+                          "KLV - 1234"),
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                           locale.tripDetails,
-                          style: theme.textTheme.titleMedium?.copyWith(color: theme.hintColor),
+                          style: theme.textTheme.titleMedium
+                              ?.copyWith(color: theme.hintColor),
                         ),
                       ),
                       AddressCard(
@@ -149,7 +155,8 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                             if (type == DeliveryType.delivery) ...[
                               _buildRow("Delivering", "Documents"),
                               _buildRow("Max. Weight", "3-5 kgs."),
-                              _buildRow("Delivery Type", "InstaDelivery (1-2 hrs)"),
+                              _buildRow(
+                                  "Delivery Type", "InstaDelivery (1-2 hrs)"),
                             ],
                             _buildRow(
                                 type == DeliveryType.delivery
@@ -158,7 +165,8 @@ class _TrackRiderPageState extends State<TrackRiderPage> {
                                 r"$8.00"),
                             Row(
                               children: [
-                                Text(locale.paymentMethod, style: theme.textTheme.bodyMedium),
+                                Text(locale.paymentMethod,
+                                    style: theme.textTheme.bodyMedium),
                                 const Spacer(),
                                 Image.asset(Assets.paymentVecWallet, scale: 4),
                                 const SizedBox(width: 10),

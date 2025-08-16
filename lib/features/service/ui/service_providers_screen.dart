@@ -1,9 +1,9 @@
-import 'package:deligo/features/common/model/category_domain.dart';
-import 'package:deligo/features/common/model/store_domain.dart';
-import 'package:deligo/features/common/ui/store_list.dart';
-import 'package:deligo/features/food/ui/widgets/custom_filters.dart';
-import 'package:deligo/generated/l10n.dart';
-import 'package:deligo/routes/page_routes.dart';
+import '../../common/model/category_domain.dart';
+import '../../common/model/store_domain.dart';
+import '../../common/ui/store_list.dart';
+import '../../food/ui/widgets/custom_filters.dart';
+import '../../../generated/l10n.dart';
+import '../../../routes/page_routes.dart';
 import 'package:flutter/material.dart';
 
 class ServiceProvidersScreen extends StatelessWidget {
@@ -39,7 +39,8 @@ class ServiceProvidersScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Flexible(
               child: StoreList(StoreDomain.serviceList, onTap: (store) {
-                Navigator.pushNamed(context, PageRoutes.providerDetailsScreen, arguments: store);
+                Navigator.pushNamed(context, PageRoutes.providerDetailsScreen,
+                    arguments: store);
               }),
             ),
           ],

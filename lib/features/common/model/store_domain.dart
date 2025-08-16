@@ -1,4 +1,4 @@
-import 'package:deligo/generated/assets.dart';
+import '../../../generated/assets.dart';
 
 class StoreDomain {
   final String image;
@@ -11,8 +11,8 @@ class StoreDomain {
   final double? serviceCharge;
   final String? type;
 
-  StoreDomain(this.image, this.name, this.location, this.deliveryTime, this.distance, this.timing,
-      this.type,
+  StoreDomain(this.image, this.name, this.location, this.deliveryTime,
+      this.distance, this.timing, this.type,
       {this.serviceCharge, this.rating});
 
   static final List<StoreDomain> foodList = [
